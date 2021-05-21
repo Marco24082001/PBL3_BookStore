@@ -39,6 +39,7 @@ namespace GUI
             this.label10 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.AddHoaDon = new FontAwesome.Sharp.IconButton();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -62,7 +63,6 @@ namespace GUI
             this.XoaSach = new FontAwesome.Sharp.IconButton();
             this.iconButton6 = new FontAwesome.Sharp.IconButton();
             this.Edit = new FontAwesome.Sharp.IconButton();
-            this.ThemHoaDon = new FontAwesome.Sharp.IconButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
@@ -118,6 +118,7 @@ namespace GUI
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(744, 351);
             this.dataGridView1.TabIndex = 41;
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // iconPictureBox1
             // 
@@ -172,6 +173,7 @@ namespace GUI
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.AddHoaDon);
             this.groupBox3.Controls.Add(this.dateTimePicker1);
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.textBox1);
@@ -182,8 +184,6 @@ namespace GUI
             this.groupBox3.Controls.Add(this.txtMaDN);
             this.groupBox3.Controls.Add(this.numericUpDown4);
             this.groupBox3.Controls.Add(this.label25);
-            this.groupBox3.Controls.Add(this.ThemHoaDon);
-            this.groupBox3.Controls.Add(this.ThemSach);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.label27);
             this.groupBox3.Controls.Add(this.XoaChiTiet);
@@ -199,10 +199,26 @@ namespace GUI
             this.groupBox3.TabIndex = 48;
             this.groupBox3.TabStop = false;
             // 
+            // AddHoaDon
+            // 
+            this.AddHoaDon.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.AddHoaDon.IconChar = FontAwesome.Sharp.IconChar.FileMedical;
+            this.AddHoaDon.IconColor = System.Drawing.Color.Blue;
+            this.AddHoaDon.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.AddHoaDon.IconSize = 30;
+            this.AddHoaDon.Location = new System.Drawing.Point(326, 48);
+            this.AddHoaDon.Name = "AddHoaDon";
+            this.AddHoaDon.Size = new System.Drawing.Size(117, 36);
+            this.AddHoaDon.TabIndex = 68;
+            this.AddHoaDon.Text = "Hóa đơn";
+            this.AddHoaDon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.AddHoaDon.UseVisualStyleBackColor = false;
+            this.AddHoaDon.Click += new System.EventHandler(this.AddHoaDon_Click);
+            // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(415, 118);
+            this.dateTimePicker1.Location = new System.Drawing.Point(426, 118);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(166, 27);
             this.dateTimePicker1.TabIndex = 67;
@@ -211,7 +227,7 @@ namespace GUI
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(311, 120);
+            this.label4.Location = new System.Drawing.Point(322, 120);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(98, 20);
             this.label4.TabIndex = 66;
@@ -219,7 +235,7 @@ namespace GUI
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(415, 50);
+            this.textBox1.Location = new System.Drawing.Point(426, 185);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(166, 27);
             this.textBox1.TabIndex = 65;
@@ -228,7 +244,7 @@ namespace GUI
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(311, 53);
+            this.label3.Location = new System.Drawing.Point(322, 188);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(77, 20);
             this.label3.TabIndex = 64;
@@ -251,8 +267,7 @@ namespace GUI
             this.ThemChiTiet.IconColor = System.Drawing.Color.Blue;
             this.ThemChiTiet.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ThemChiTiet.IconSize = 20;
-            this.ThemChiTiet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ThemChiTiet.Location = new System.Drawing.Point(27, 239);
+            this.ThemChiTiet.Location = new System.Drawing.Point(30, 239);
             this.ThemChiTiet.Name = "ThemChiTiet";
             this.ThemChiTiet.Size = new System.Drawing.Size(149, 34);
             this.ThemChiTiet.TabIndex = 62;
@@ -308,8 +323,7 @@ namespace GUI
             this.ThemSach.IconColor = System.Drawing.Color.Blue;
             this.ThemSach.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ThemSach.IconSize = 20;
-            this.ThemSach.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ThemSach.Location = new System.Drawing.Point(375, 239);
+            this.ThemSach.Location = new System.Drawing.Point(667, 522);
             this.ThemSach.Name = "ThemSach";
             this.ThemSach.Size = new System.Drawing.Size(164, 34);
             this.ThemSach.TabIndex = 39;
@@ -347,7 +361,6 @@ namespace GUI
             this.XoaChiTiet.IconColor = System.Drawing.Color.Red;
             this.XoaChiTiet.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.XoaChiTiet.IconSize = 25;
-            this.XoaChiTiet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.XoaChiTiet.Location = new System.Drawing.Point(158, 546);
             this.XoaChiTiet.Name = "XoaChiTiet";
             this.XoaChiTiet.Size = new System.Drawing.Size(106, 34);
@@ -365,7 +378,6 @@ namespace GUI
             this.ChinhSua.IconColor = System.Drawing.Color.Blue;
             this.ChinhSua.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ChinhSua.IconSize = 25;
-            this.ChinhSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ChinhSua.Location = new System.Drawing.Point(27, 546);
             this.ChinhSua.Name = "ChinhSua";
             this.ChinhSua.Size = new System.Drawing.Size(124, 34);
@@ -423,7 +435,6 @@ namespace GUI
             this.XacNhan.IconColor = System.Drawing.Color.Blue;
             this.XacNhan.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.XacNhan.IconSize = 25;
-            this.XacNhan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.XacNhan.Location = new System.Drawing.Point(522, 677);
             this.XacNhan.Name = "XacNhan";
             this.XacNhan.Size = new System.Drawing.Size(116, 34);
@@ -442,8 +453,7 @@ namespace GUI
             this.XoaSach.IconColor = System.Drawing.Color.Red;
             this.XoaSach.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.XoaSach.IconSize = 20;
-            this.XoaSach.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.XoaSach.Location = new System.Drawing.Point(800, 524);
+            this.XoaSach.Location = new System.Drawing.Point(991, 522);
             this.XoaSach.Name = "XoaSach";
             this.XoaSach.Size = new System.Drawing.Size(78, 34);
             this.XoaSach.TabIndex = 36;
@@ -462,7 +472,6 @@ namespace GUI
             this.iconButton6.IconColor = System.Drawing.Color.Blue;
             this.iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton6.IconSize = 20;
-            this.iconButton6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButton6.Location = new System.Drawing.Point(1178, 524);
             this.iconButton6.Name = "iconButton6";
             this.iconButton6.Size = new System.Drawing.Size(100, 34);
@@ -471,7 +480,6 @@ namespace GUI
             this.iconButton6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButton6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton6.UseVisualStyleBackColor = false;
-            this.iconButton6.Click += new System.EventHandler(this.iconButton6_Click);
             // 
             // Edit
             // 
@@ -482,8 +490,7 @@ namespace GUI
             this.Edit.IconColor = System.Drawing.Color.Blue;
             this.Edit.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Edit.IconSize = 20;
-            this.Edit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Edit.Location = new System.Drawing.Point(667, 524);
+            this.Edit.Location = new System.Drawing.Point(853, 522);
             this.Edit.Name = "Edit";
             this.Edit.Size = new System.Drawing.Size(121, 34);
             this.Edit.TabIndex = 38;
@@ -492,26 +499,6 @@ namespace GUI
             this.Edit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Edit.UseVisualStyleBackColor = false;
             this.Edit.Click += new System.EventHandler(this.Edit_Click);
-            // 
-            // ThemHoaDon
-            // 
-            this.ThemHoaDon.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.ThemHoaDon.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ThemHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ThemHoaDon.IconChar = FontAwesome.Sharp.IconChar.Plus;
-            this.ThemHoaDon.IconColor = System.Drawing.Color.Blue;
-            this.ThemHoaDon.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ThemHoaDon.IconSize = 20;
-            this.ThemHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ThemHoaDon.Location = new System.Drawing.Point(191, 239);
-            this.ThemHoaDon.Name = "ThemHoaDon";
-            this.ThemHoaDon.Size = new System.Drawing.Size(164, 34);
-            this.ThemHoaDon.TabIndex = 39;
-            this.ThemHoaDon.Text = "Thêm hóa đơn";
-            this.ThemHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ThemHoaDon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ThemHoaDon.UseVisualStyleBackColor = false;
-            this.ThemHoaDon.Click += new System.EventHandler(this.ThemHoaDon_Click);
             // 
             // QuanLySach
             // 
@@ -526,6 +513,7 @@ namespace GUI
             this.Controls.Add(this.XoaSach);
             this.Controls.Add(this.iconButton6);
             this.Controls.Add(this.Edit);
+            this.Controls.Add(this.ThemSach);
             this.Name = "QuanLySach";
             this.Text = "Quản lý kho sách";
             this.Load += new System.EventHandler(this.QuanLySach_Load);
@@ -575,6 +563,6 @@ namespace GUI
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
-        private FontAwesome.Sharp.IconButton ThemHoaDon;
+        private FontAwesome.Sharp.IconButton AddHoaDon;
     }
 }

@@ -132,7 +132,12 @@ namespace GUI
         {
             if (!ChecktxtSDT()) return;
             if (!ChecktxtHoTen()) return;
-            if (!CheckSoLuong()) return;            
+            if (!CheckSoLuong()) return;
+            if (txtMaDonBan.Text == "")
+            {
+                MessageBox.Show("Vui lòng tạo mã hóa đơn");
+                return;
+            }
             int soSachinList = 0;
             foreach(CHI_TIET_HOA_DON_BAN i in list)
             {
@@ -346,6 +351,12 @@ namespace GUI
         private void AddHoaDon_Click(object sender, EventArgs e)
         {
             txtMaDonBan.Text = BLL_QuanLy.Instance.Bll_CreateHDB();
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            cbbMaSach.SelectedItem = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            numericUpDown1.Value = 1;
         }
     }
 }

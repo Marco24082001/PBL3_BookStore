@@ -40,6 +40,7 @@ namespace GUI
             this.label5 = new System.Windows.Forms.Label();
             this.txtTenSach = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.AddHoaDon = new FontAwesome.Sharp.IconButton();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.cbbMaSach = new System.Windows.Forms.ComboBox();
             this.Xoa = new FontAwesome.Sharp.IconButton();
@@ -66,7 +67,6 @@ namespace GUI
             this.DangXuat = new FontAwesome.Sharp.IconButton();
             this.infoNhanVien = new FontAwesome.Sharp.IconPictureBox();
             this.ThanhToan = new FontAwesome.Sharp.IconButton();
-            this.AddHoaDon = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
@@ -116,6 +116,7 @@ namespace GUI
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(799, 423);
             this.dataGridView1.TabIndex = 24;
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // iconPictureBox1
             // 
@@ -207,6 +208,22 @@ namespace GUI
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             // 
+            // AddHoaDon
+            // 
+            this.AddHoaDon.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.AddHoaDon.IconChar = FontAwesome.Sharp.IconChar.FileMedical;
+            this.AddHoaDon.IconColor = System.Drawing.Color.Blue;
+            this.AddHoaDon.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.AddHoaDon.IconSize = 30;
+            this.AddHoaDon.Location = new System.Drawing.Point(463, 21);
+            this.AddHoaDon.Name = "AddHoaDon";
+            this.AddHoaDon.Size = new System.Drawing.Size(117, 36);
+            this.AddHoaDon.TabIndex = 28;
+            this.AddHoaDon.Text = "Hóa đơn";
+            this.AddHoaDon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.AddHoaDon.UseVisualStyleBackColor = false;
+            this.AddHoaDon.Click += new System.EventHandler(this.AddHoaDon_Click);
+            // 
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -235,7 +252,6 @@ namespace GUI
             this.Xoa.IconColor = System.Drawing.Color.Red;
             this.Xoa.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Xoa.IconSize = 25;
-            this.Xoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Xoa.Location = new System.Drawing.Point(157, 476);
             this.Xoa.Name = "Xoa";
             this.Xoa.Size = new System.Drawing.Size(106, 34);
@@ -253,7 +269,6 @@ namespace GUI
             this.ChinhSua.IconColor = System.Drawing.Color.Blue;
             this.ChinhSua.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ChinhSua.IconSize = 25;
-            this.ChinhSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ChinhSua.Location = new System.Drawing.Point(26, 476);
             this.ChinhSua.Name = "ChinhSua";
             this.ChinhSua.Size = new System.Drawing.Size(124, 34);
@@ -265,19 +280,19 @@ namespace GUI
             // 
             // Them
             // 
+            this.Them.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.Them.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Them.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
             this.Them.IconColor = System.Drawing.Color.Blue;
             this.Them.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Them.IconSize = 25;
-            this.Them.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Them.Location = new System.Drawing.Point(474, 214);
+            this.Them.Location = new System.Drawing.Point(463, 214);
             this.Them.Name = "Them";
-            this.Them.Size = new System.Drawing.Size(106, 34);
+            this.Them.Size = new System.Drawing.Size(117, 34);
             this.Them.TabIndex = 20;
             this.Them.Text = "Thêm";
             this.Them.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Them.UseVisualStyleBackColor = true;
+            this.Them.UseVisualStyleBackColor = false;
             this.Them.Click += new System.EventHandler(this.Them_Click);
             // 
             // numericUpDown1
@@ -467,7 +482,6 @@ namespace GUI
             this.DangXuat.IconColor = System.Drawing.Color.Red;
             this.DangXuat.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.DangXuat.IconSize = 25;
-            this.DangXuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.DangXuat.Location = new System.Drawing.Point(92, 33);
             this.DangXuat.Name = "DangXuat";
             this.DangXuat.Size = new System.Drawing.Size(129, 34);
@@ -504,7 +518,6 @@ namespace GUI
             this.ThanhToan.IconColor = System.Drawing.Color.Blue;
             this.ThanhToan.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ThanhToan.IconSize = 25;
-            this.ThanhToan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ThanhToan.Location = new System.Drawing.Point(492, 713);
             this.ThanhToan.Name = "ThanhToan";
             this.ThanhToan.Size = new System.Drawing.Size(140, 34);
@@ -513,16 +526,6 @@ namespace GUI
             this.ThanhToan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ThanhToan.UseVisualStyleBackColor = false;
             this.ThanhToan.Click += new System.EventHandler(this.ThanhToan_Click);
-            // 
-            // AddHoaDon
-            // 
-            this.AddHoaDon.Location = new System.Drawing.Point(490, 29);
-            this.AddHoaDon.Name = "AddHoaDon";
-            this.AddHoaDon.Size = new System.Drawing.Size(75, 23);
-            this.AddHoaDon.TabIndex = 26;
-            this.AddHoaDon.Text = "NewHoaDon";
-            this.AddHoaDon.UseVisualStyleBackColor = true;
-            this.AddHoaDon.Click += new System.EventHandler(this.AddHoaDon_Click);
             // 
             // NhanVien
             // 
@@ -593,6 +596,6 @@ namespace GUI
         private System.Windows.Forms.Label txtTen;
         private FontAwesome.Sharp.IconPictureBox infoNhanVien;
         private System.Windows.Forms.PictureBox Thoat;
-        private System.Windows.Forms.Button AddHoaDon;
+        private FontAwesome.Sharp.IconButton AddHoaDon;
     }
 }

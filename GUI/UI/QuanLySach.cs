@@ -84,7 +84,7 @@ namespace GUI
         {
             if(txtMaDN.Text == "")
             {
-                MessageBox.Show("Vui lòng nhập mã hóa đơn");
+                MessageBox.Show("Vui lòng tạo mã hóa đơn");
                 return;
             }
             foreach(string i in BLL_QuanLy.Instance.Bll_GetAllMaDonNhap())
@@ -240,14 +240,15 @@ namespace GUI
 
         }
 
-        private void ThemHoaDon_Click(object sender, EventArgs e)
+        private void AddHoaDon_Click(object sender, EventArgs e)
         {
             txtMaDN.Text = BLL_QuanLy.Instance.Bll_CreateHDN();
         }
 
-        private void iconButton6_Click(object sender, EventArgs e)
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            cbbMaSach.SelectedItem = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            numericUpDown4.Value = 1;
         }
     }
 }

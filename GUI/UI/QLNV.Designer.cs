@@ -127,7 +127,6 @@ namespace GUI
             this.Xoa.IconColor = System.Drawing.Color.Red;
             this.Xoa.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Xoa.IconSize = 25;
-            this.Xoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Xoa.Location = new System.Drawing.Point(599, 627);
             this.Xoa.Name = "Xoa";
             this.Xoa.Size = new System.Drawing.Size(85, 36);
@@ -147,7 +146,6 @@ namespace GUI
             this.SapXep.IconColor = System.Drawing.Color.Blue;
             this.SapXep.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SapXep.IconSize = 25;
-            this.SapXep.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.SapXep.Location = new System.Drawing.Point(923, 625);
             this.SapXep.Name = "SapXep";
             this.SapXep.Size = new System.Drawing.Size(115, 38);
@@ -167,7 +165,6 @@ namespace GUI
             this.ChinhSua.IconColor = System.Drawing.Color.Blue;
             this.ChinhSua.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ChinhSua.IconSize = 25;
-            this.ChinhSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ChinhSua.Location = new System.Drawing.Point(436, 627);
             this.ChinhSua.Name = "ChinhSua";
             this.ChinhSua.Size = new System.Drawing.Size(131, 36);
@@ -187,7 +184,6 @@ namespace GUI
             this.Them.IconColor = System.Drawing.Color.Blue;
             this.Them.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Them.IconSize = 25;
-            this.Them.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Them.Location = new System.Drawing.Point(309, 627);
             this.Them.Name = "Them";
             this.Them.Size = new System.Drawing.Size(100, 36);

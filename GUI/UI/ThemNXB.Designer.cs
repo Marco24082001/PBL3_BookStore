@@ -65,7 +65,6 @@ namespace GUI
             this.XacNhan.IconColor = System.Drawing.Color.Blue;
             this.XacNhan.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.XacNhan.IconSize = 20;
-            this.XacNhan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.XacNhan.Location = new System.Drawing.Point(291, 238);
             this.XacNhan.Name = "XacNhan";
             this.XacNhan.Size = new System.Drawing.Size(122, 34);
@@ -84,7 +83,6 @@ namespace GUI
             this.Thoat.IconColor = System.Drawing.Color.Red;
             this.Thoat.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Thoat.IconSize = 25;
-            this.Thoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Thoat.Location = new System.Drawing.Point(36, 238);
             this.Thoat.Name = "Thoat";
             this.Thoat.Size = new System.Drawing.Size(110, 34);
