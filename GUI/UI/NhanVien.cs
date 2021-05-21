@@ -132,7 +132,12 @@ namespace GUI
         {
             if (!ChecktxtSDT()) return;
             if (!ChecktxtHoTen()) return;
-            if (!CheckSoLuong()) return;            
+            if (!CheckSoLuong()) return;
+            if (txtMaDonBan.Text == "")
+            {
+                MessageBox.Show("Vui lòng tạo mã hóa đơn");
+                return;
+            }
             int soSachinList = 0;
             foreach(CHI_TIET_HOA_DON_BAN i in list)
             {
