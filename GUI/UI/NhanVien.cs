@@ -347,5 +347,11 @@ namespace GUI
         {
             txtMaDonBan.Text = BLL_QuanLy.Instance.Bll_CreateHDB();
         }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            cbbMaSach.SelectedItem = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            numericUpDown1.Value = 1;
+        }
     }
 }
