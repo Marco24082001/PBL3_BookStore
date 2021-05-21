@@ -62,6 +62,7 @@ namespace GUI
             this.XoaSach = new FontAwesome.Sharp.IconButton();
             this.iconButton6 = new FontAwesome.Sharp.IconButton();
             this.Edit = new FontAwesome.Sharp.IconButton();
+            this.ThemHoaDon = new FontAwesome.Sharp.IconButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
@@ -181,6 +182,7 @@ namespace GUI
             this.groupBox3.Controls.Add(this.txtMaDN);
             this.groupBox3.Controls.Add(this.numericUpDown4);
             this.groupBox3.Controls.Add(this.label25);
+            this.groupBox3.Controls.Add(this.ThemHoaDon);
             this.groupBox3.Controls.Add(this.ThemSach);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.label27);
@@ -469,6 +471,7 @@ namespace GUI
             this.iconButton6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButton6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton6.UseVisualStyleBackColor = false;
+            this.iconButton6.Click += new System.EventHandler(this.iconButton6_Click);
             // 
             // Edit
             // 
@@ -489,6 +492,26 @@ namespace GUI
             this.Edit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Edit.UseVisualStyleBackColor = false;
             this.Edit.Click += new System.EventHandler(this.Edit_Click);
+            // 
+            // ThemHoaDon
+            // 
+            this.ThemHoaDon.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.ThemHoaDon.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ThemHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ThemHoaDon.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.ThemHoaDon.IconColor = System.Drawing.Color.Blue;
+            this.ThemHoaDon.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ThemHoaDon.IconSize = 20;
+            this.ThemHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ThemHoaDon.Location = new System.Drawing.Point(191, 239);
+            this.ThemHoaDon.Name = "ThemHoaDon";
+            this.ThemHoaDon.Size = new System.Drawing.Size(164, 34);
+            this.ThemHoaDon.TabIndex = 39;
+            this.ThemHoaDon.Text = "Thêm hóa đơn";
+            this.ThemHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ThemHoaDon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ThemHoaDon.UseVisualStyleBackColor = false;
+            this.ThemHoaDon.Click += new System.EventHandler(this.ThemHoaDon_Click);
             // 
             // QuanLySach
             // 
@@ -552,5 +575,6 @@ namespace GUI
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
+        private FontAwesome.Sharp.IconButton ThemHoaDon;
     }
 }

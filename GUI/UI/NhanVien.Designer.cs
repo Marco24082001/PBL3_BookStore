@@ -66,6 +66,7 @@ namespace GUI
             this.DangXuat = new FontAwesome.Sharp.IconButton();
             this.infoNhanVien = new FontAwesome.Sharp.IconPictureBox();
             this.ThanhToan = new FontAwesome.Sharp.IconButton();
+            this.AddHoaDon = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
@@ -178,6 +179,7 @@ namespace GUI
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.AddHoaDon);
             this.groupBox2.Controls.Add(this.dataGridView2);
             this.groupBox2.Controls.Add(this.cbbMaSach);
             this.groupBox2.Controls.Add(this.Xoa);
@@ -512,6 +514,16 @@ namespace GUI
             this.ThanhToan.UseVisualStyleBackColor = false;
             this.ThanhToan.Click += new System.EventHandler(this.ThanhToan_Click);
             // 
+            // AddHoaDon
+            // 
+            this.AddHoaDon.Location = new System.Drawing.Point(490, 29);
+            this.AddHoaDon.Name = "AddHoaDon";
+            this.AddHoaDon.Size = new System.Drawing.Size(75, 23);
+            this.AddHoaDon.TabIndex = 26;
+            this.AddHoaDon.Text = "NewHoaDon";
+            this.AddHoaDon.UseVisualStyleBackColor = true;
+            this.AddHoaDon.Click += new System.EventHandler(this.AddHoaDon_Click);
+            // 
             // NhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -581,5 +593,6 @@ namespace GUI
         private System.Windows.Forms.Label txtTen;
         private FontAwesome.Sharp.IconPictureBox infoNhanVien;
         private System.Windows.Forms.PictureBox Thoat;
+        private System.Windows.Forms.Button AddHoaDon;
     }
 }

@@ -62,7 +62,7 @@ namespace GUI
             foreach (DataGridViewRow i in r)
             {
                 string manv = i.Cells["MaNhanVien"].Value.ToString();
-                BLL_QuanLy.Instance.Bll_OffNVByMaNV(manv);
+                BLL_QuanLy.Instance.Bll_ChangeTrangThaiNV(manv);
             }
             setData();
         }
