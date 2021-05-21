@@ -161,6 +161,7 @@ namespace GUI
         private void QuanLySach_Load(object sender, EventArgs e)
         {
             txtTong.Text = "0";
+            txtMaDN.Enabled = false;
         }
 
         private void XoaChiTiet_Click(object sender, EventArgs e)
@@ -206,8 +207,16 @@ namespace GUI
 
         private void Edit_Click(object sender, EventArgs e)
         {
+            DataGridViewSelectedRowCollection r = dataGridView1.SelectedRows;
+            if (r.Count > 1)
+            {
+                MessageBox.Show("Chi duoc phep Edit 1 Row");
+                return;
+            }
             ThemSach f = new ThemSach();
+            f.masach = dataGridView1.CurrentRow.Cells["MaSach"].Value.ToString();
             f.Show();
+            f.d = new ThemSach.MyDel(setData1);
         }
 
         private void XoaSach_Click(object sender, EventArgs e)
@@ -220,13 +229,23 @@ namespace GUI
             }
             foreach (DataGridViewRow i in r)
             {
-                string manv = i.Cells["MaNhanVien"].Value.ToString();
-                BLL_QuanLy.Instance.Bll_OffNVByMaNV(manv);
+                string maSach = i.Cells["MaSach"].Value.ToString();
+                BLL_QuanLy.Instance.Bll_ChaneTrangThaiSach(maSach);
             }
             setData1();
         }
 
         private void ChinhSua_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ThemHoaDon_Click(object sender, EventArgs e)
+        {
+            txtMaDN.Text = BLL_QuanLy.Instance.Bll_CreateHDN();
+        }
+
+        private void iconButton6_Click(object sender, EventArgs e)
         {
 
         }

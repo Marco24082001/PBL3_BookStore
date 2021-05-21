@@ -13,6 +13,9 @@ namespace GUI
 {
     public partial class ThemSach : Form
     {
+        public string masach { get; set; }
+        public delegate void MyDel();
+        public MyDel d;
         public ThemSach()
         {
             InitializeComponent();
@@ -95,18 +98,18 @@ namespace GUI
             }
             return true;
         }
-        private void XacNhan_Click(object sender, EventArgs e)
+        private void AddSach()
         {
             if (CheckMaSach() == false) return;
             if (CheckTenSach() == false) return;
             if (CheckGia(txtGiaNhap.Text) == false) return;
             if (CheckGia(txtGiaBan.Text) == false) return;
-            if(cbbNXB.SelectedIndex == -1)
+            if (cbbNXB.SelectedIndex == -1)
             {
                 MessageBox.Show("Vui lòng chọn NXB");
                 return;
             }
-            if(cbbTL.SelectedIndex == -1)
+            if (cbbTL.SelectedIndex == -1)
             {
                 MessageBox.Show("Vui lòng chọn Thể loại sách");
                 return;
@@ -121,10 +124,58 @@ namespace GUI
             a.MaLoaiSach = cbbTL.SelectedItem.ToString();
             BLL_QuanLy.Instance.Bll_AddSach(a);
         }
+        private void EditSach()
+        {
+            if (CheckTenSach() == false) return;
+            if (CheckGia(txtGiaNhap.Text) == false) return;
+            if (CheckGia(txtGiaBan.Text) == false) return;
+            if (cbbNXB.SelectedIndex == -1)
+            {
+                MessageBox.Show("Vui lòng chọn NXB");
+                return;
+            }
+            if (cbbTL.SelectedIndex == -1)
+            {
+                MessageBox.Show("Vui lòng chọn Thể loại sách");
+                return;
+            }
+            SACH a = new SACH();
+            a.MaSach = txtMaSach.Text;
+            a.TenSach = txtTenSach.Text;
+            a.GiaNhap = Convert.ToInt32(txtGiaNhap.Text);
+            a.GiaBan = Convert.ToInt32(txtGiaBan.Text);
+            a.SoLuong = 0;
+            a.MaNXB = cbbNXB.SelectedItem.ToString();
+            a.MaLoaiSach = cbbTL.SelectedItem.ToString();
+            BLL_QuanLy.Instance.Bll_EditSach(a);
+        }
+        private void XacNhan_Click(object sender, EventArgs e)
+        {
+            if(masach == null)
+            {
+                AddSach();
+            }
+            else
+            {
+                EditSach();
+            }
+            d();
+        }
 
         private void ThemSach_Load(object sender, EventArgs e)
         {
-            txtMaSach.Text = "S1"; txtMaSach.Enabled = false;
+            if(masach != null)
+            {
+                txtMaSach.Text = masach; txtMaSach.Enabled = false;
+                SACH a = new SACH();
+                a = BLL_QuanLy.Instance.Bll_GetSachByMaSach(masach);
+                txtTenSach.Text = a.TenSach;
+                txtGiaNhap.Text = a.GiaNhap.ToString();
+                txtGiaNhap.Enabled = false;
+                txtGiaBan.Text = a.GiaBan.ToString();
+                cbbNXB.SelectedItem = a.MaNXB;
+                cbbTL.SelectedItem = a.MaLoaiSach;
+            }
         }
     }
 }

@@ -28,7 +28,6 @@ namespace GUI
             setCbbMaSach();
             setData1();
             setCbbLoaiSach();
-
             this.Text = string.Empty;
             this.ControlBox = false;
             this.DoubleBuffered = true;
@@ -46,11 +45,18 @@ namespace GUI
         public void setData2()
         {
             dataGridView2.DataSource = null;
-            dataGridView2.DataSource = list;
-            dataGridView2.Columns[0].Visible = false;
-            dataGridView2.Columns[6].Visible = false;
-            dataGridView2.Columns[7].Visible = false;
-            if(list.Count != 0) dataGridView2.CurrentCell = dataGridView2.Rows[0].Cells[1];
+            if(list.Count == 0)
+            {
+                return;
+            }
+            else
+            {
+                dataGridView2.DataSource = list;
+                dataGridView2.Columns[0].Visible = false;
+                dataGridView2.Columns[6].Visible = false;
+                dataGridView2.Columns[7].Visible = false;
+                dataGridView2.CurrentCell = dataGridView2.Rows[0].Cells[1];
+            }
         }
         public void setCbbMaSach()
         {
@@ -67,39 +73,26 @@ namespace GUI
             {
                 cbbTheLoai.Items.Add(i);
             }
-            cbbMaSach.SelectedIndex = 0;
+            cbbTheLoai.SelectedIndex = 0;
         }
         private void NhanVien_Load(object sender, EventArgs e)
         {
             txtMaNhanVien.Text = txtTen.Text = BLL_QuanLy.Instance.Bll_GetNameNVByMaNV(maNV);
             txtMaNhanVien.Enabled = false;
+            txtMaDonBan.Enabled = false;
             TongCong.Text = "0";
         }
-
-        private void Them_Click(object sender, EventArgs e)
+        private bool ChecktxtSDT()
         {
-            if(txtMaDonBan.Text == "")
-            {
-                MessageBox.Show("Vui long nhap ma don ban");
-                return;
-            }
             if (txtSDT.Text == "")
             {
                 MessageBox.Show("Vui long nhap số điện thoại");
-                return;
+                return false;
             }
-            if (txtHoTen.Text == "")
+            if(txtSDT.Text.Length > 10)
             {
-                MessageBox.Show("Vui long nhap họ tên");
-                return;
-            }
-            foreach (string i in BLL_QuanLy.Instance.Bll_GetAllMaDonBan())
-            {
-                if(txtMaDonBan.Text == i)
-                {
-                    MessageBox.Show("Mã đơn này đã tồn tại");
-                    return;
-                }
+                MessageBox.Show("Khong Nhap qua 10 so");
+                return false;
             }
             string a = txtSDT.Text;
             for (int i = 0; i < txtSDT.TextLength; i++)
@@ -107,14 +100,39 @@ namespace GUI
                 if ((int)a[i] < 48 || (int)a[i] > 57)
                 {
                     MessageBox.Show("Số điện thoại ko hợp lệ");
-                    return;
+                    return false;
                 }
             }
-            if(numericUpDown1.Value == 0)
+            return true;
+        }
+        private bool ChecktxtHoTen()
+        {
+            if (txtHoTen.Text == "")
+            {
+                MessageBox.Show("Vui long nhap họ tên");
+                return false;
+            }
+            if(txtHoTen.Text.Length > 30)
+            {
+                MessageBox.Show("Không nhập quá 30 kí tự");
+                return false;
+            }
+            return true;
+        }
+        private bool CheckSoLuong()
+        {
+            if (numericUpDown1.Value == 0)
             {
                 MessageBox.Show("Vui lòng chọn số lượng sách");
-                return;
+                return false;
             }
+            return true;
+        }
+        private void Them_Click(object sender, EventArgs e)
+        {
+            if (!ChecktxtSDT()) return;
+            if (!ChecktxtHoTen()) return;
+            if (!CheckSoLuong()) return;            
             int soSachinList = 0;
             foreach(CHI_TIET_HOA_DON_BAN i in list)
             {
@@ -160,11 +178,7 @@ namespace GUI
 
         private void ChinhSua_Click(object sender, EventArgs e)
         {
-            int stt = Convert.ToInt32(dataGridView2.CurrentRow.Cells["STT"].Value.ToString());
-            foreach(CHI_TIET_HOA_DON_BAN a in list)
-            {
-                
-            }
+            
         }
 
         private void Xoa_Click(object sender, EventArgs e)
@@ -225,7 +239,6 @@ namespace GUI
             {
                 tong += a.SoLuong * (BLL_QuanLy.Instance.Bll_GetGiaBanByMaSach(a.MaSach) - BLL_QuanLy.Instance.Bll_GetGiaNhapByMaSach(a.MaSach));
             }
-            MessageBox.Show(txtMaNhanVien.Text);
             DOANH_SO_BAN_HANG dsbh = new DOANH_SO_BAN_HANG()
             {
                 MaNhanVien = maNV,
@@ -328,6 +341,11 @@ namespace GUI
                 user = new NguoiDung(maNV);
             }
             user.Show();
+        }
+
+        private void AddHoaDon_Click(object sender, EventArgs e)
+        {
+            txtMaDonBan.Text = BLL_QuanLy.Instance.Bll_CreateHDB();
         }
     }
 }
