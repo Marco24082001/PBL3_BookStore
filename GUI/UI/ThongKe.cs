@@ -90,6 +90,11 @@ namespace GUI
 
         private void setBestSeller()
         {
+            lbBestSeller.Text = "";
+            if (dataGridView2.Rows.Count == 0)
+            {              
+                return;
+            }
             List<string> lMaNV = new List<string>();
             List<int> money = new List<int>();
             int tong = 0;
