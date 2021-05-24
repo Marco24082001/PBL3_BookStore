@@ -79,28 +79,20 @@ namespace GUI
         {
             ThemSach f = new ThemSach();
             f.Show();
+            f.d += new ThemSach.MyDel(setData1);
         }
         private void ThemChiTiet_Click(object sender, EventArgs e)
         {
             if(txtMaDN.Text == "")
             {
-                MessageBox.Show("Vui lòng tạo mã hóa đơn");
+                MessageBox.Show("Nhap ma hoa don");
                 return;
-            }
-            foreach(string i in BLL_QuanLy.Instance.Bll_GetAllMaDonNhap())
-            {
-                if(txtMaDN.Text == i)
-                {
-                    MessageBox.Show("Mã hóa đơn đã tồn tại");
-                    return;
-                }
             }
             if(cbbMaSach.SelectedIndex == -1)
             {
                 MessageBox.Show("Vui lòng chọn mã sách");
                 return;
             }
-            txtMaDN.Enabled = false;
             CHI_TIET_HOA_DON_NHAP ct = new CHI_TIET_HOA_DON_NHAP()
             {
                 MaDonNhap = txtMaDN.Text,
@@ -150,7 +142,6 @@ namespace GUI
             }
             list.Clear();
             dataGridView2.DataSource = null;
-            txtMaDN.Enabled = true;
             txtMaDN.Text = "";
             cbbMaSach.SelectedIndex = 0;
             numericUpDown4.Value = 0;
@@ -182,7 +173,6 @@ namespace GUI
             }
             else
             {
-                txtMaDN.Enabled = true;
                 dataGridView2.DataSource = null;
             }
             txtTong.Text = "0";
@@ -249,6 +239,11 @@ namespace GUI
         {
             cbbMaSach.SelectedItem = dataGridView1.CurrentRow.Cells[0].Value.ToString();
             numericUpDown4.Value = 1;
+        }
+
+        private void SapXep_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

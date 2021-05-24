@@ -50,7 +50,6 @@ namespace GUI
             this.txtMaDN = new System.Windows.Forms.TextBox();
             this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
             this.label25 = new System.Windows.Forms.Label();
-            this.ThemSach = new FontAwesome.Sharp.IconButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.XoaChiTiet = new FontAwesome.Sharp.IconButton();
@@ -59,9 +58,10 @@ namespace GUI
             this.label11 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.ThemSach = new FontAwesome.Sharp.IconButton();
             this.XacNhan = new FontAwesome.Sharp.IconButton();
             this.XoaSach = new FontAwesome.Sharp.IconButton();
-            this.iconButton6 = new FontAwesome.Sharp.IconButton();
+            this.SapXep = new FontAwesome.Sharp.IconButton();
             this.Edit = new FontAwesome.Sharp.IconButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -314,25 +314,6 @@ namespace GUI
             this.label25.TabIndex = 49;
             this.label25.Text = "Số lượng :";
             // 
-            // ThemSach
-            // 
-            this.ThemSach.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.ThemSach.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ThemSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ThemSach.IconChar = FontAwesome.Sharp.IconChar.Plus;
-            this.ThemSach.IconColor = System.Drawing.Color.Blue;
-            this.ThemSach.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ThemSach.IconSize = 20;
-            this.ThemSach.Location = new System.Drawing.Point(667, 522);
-            this.ThemSach.Name = "ThemSach";
-            this.ThemSach.Size = new System.Drawing.Size(164, 34);
-            this.ThemSach.TabIndex = 39;
-            this.ThemSach.Text = "Thêm sách mới";
-            this.ThemSach.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ThemSach.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ThemSach.UseVisualStyleBackColor = false;
-            this.ThemSach.Click += new System.EventHandler(this.ThemSach_Click);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -426,6 +407,25 @@ namespace GUI
             this.label14.TabIndex = 10;
             this.label14.Text = "Hóa đơn nhập";
             // 
+            // ThemSach
+            // 
+            this.ThemSach.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.ThemSach.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ThemSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ThemSach.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.ThemSach.IconColor = System.Drawing.Color.Blue;
+            this.ThemSach.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ThemSach.IconSize = 20;
+            this.ThemSach.Location = new System.Drawing.Point(667, 522);
+            this.ThemSach.Name = "ThemSach";
+            this.ThemSach.Size = new System.Drawing.Size(164, 34);
+            this.ThemSach.TabIndex = 39;
+            this.ThemSach.Text = "Thêm sách mới";
+            this.ThemSach.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ThemSach.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ThemSach.UseVisualStyleBackColor = false;
+            this.ThemSach.Click += new System.EventHandler(this.ThemSach_Click);
+            // 
             // XacNhan
             // 
             this.XacNhan.BackColor = System.Drawing.SystemColors.ScrollBar;
@@ -439,7 +439,7 @@ namespace GUI
             this.XacNhan.Name = "XacNhan";
             this.XacNhan.Size = new System.Drawing.Size(116, 34);
             this.XacNhan.TabIndex = 49;
-            this.XacNhan.Text = "Xác nhận";
+            this.XacNhan.Text = " ";
             this.XacNhan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.XacNhan.UseVisualStyleBackColor = false;
             this.XacNhan.Click += new System.EventHandler(this.XacNhan_Click);
@@ -463,23 +463,24 @@ namespace GUI
             this.XoaSach.UseVisualStyleBackColor = false;
             this.XoaSach.Click += new System.EventHandler(this.XoaSach_Click);
             // 
-            // iconButton6
+            // SapXep
             // 
-            this.iconButton6.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.iconButton6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton6.IconChar = FontAwesome.Sharp.IconChar.Sort;
-            this.iconButton6.IconColor = System.Drawing.Color.Blue;
-            this.iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton6.IconSize = 20;
-            this.iconButton6.Location = new System.Drawing.Point(1178, 524);
-            this.iconButton6.Name = "iconButton6";
-            this.iconButton6.Size = new System.Drawing.Size(100, 34);
-            this.iconButton6.TabIndex = 37;
-            this.iconButton6.Text = "Sắp sếp";
-            this.iconButton6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton6.UseVisualStyleBackColor = false;
+            this.SapXep.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.SapXep.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SapXep.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SapXep.IconChar = FontAwesome.Sharp.IconChar.Sort;
+            this.SapXep.IconColor = System.Drawing.Color.Blue;
+            this.SapXep.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.SapXep.IconSize = 20;
+            this.SapXep.Location = new System.Drawing.Point(1178, 524);
+            this.SapXep.Name = "SapXep";
+            this.SapXep.Size = new System.Drawing.Size(100, 34);
+            this.SapXep.TabIndex = 37;
+            this.SapXep.Text = "Sắp sếp";
+            this.SapXep.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.SapXep.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.SapXep.UseVisualStyleBackColor = false;
+            this.SapXep.Click += new System.EventHandler(this.SapXep_Click);
             // 
             // Edit
             // 
@@ -511,7 +512,7 @@ namespace GUI
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.XoaSach);
-            this.Controls.Add(this.iconButton6);
+            this.Controls.Add(this.SapXep);
             this.Controls.Add(this.Edit);
             this.Controls.Add(this.ThemSach);
             this.Name = "QuanLySach";
@@ -531,7 +532,7 @@ namespace GUI
 
         #endregion
         private FontAwesome.Sharp.IconButton XoaSach;
-        private FontAwesome.Sharp.IconButton iconButton6;
+        private FontAwesome.Sharp.IconButton SapXep;
         private FontAwesome.Sharp.IconButton Edit;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label10;

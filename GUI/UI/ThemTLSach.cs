@@ -37,9 +37,9 @@ namespace GUI
             {
                 BLL_QuanLy.Instance.Bll_AddLoaiSach(ls);
             }
-            catch(DbEntityValidationException ex)
+            catch(DbEntityValidationException)
             {
-                MessageBox.Show("Trang du lieu");
+                MessageBox.Show("Error");
             }
             
             d();

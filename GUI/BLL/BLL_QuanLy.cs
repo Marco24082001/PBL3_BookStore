@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Core.Objects;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -343,5 +344,30 @@ namespace GUI.BLL
             }
             return list;
         }
-    }
+        public List<BAO_CAO_DOANH_THU> Bll_GetBaoCaoDoanhThuFolowNam(int nam)
+        {
+            return db.BAO_CAO_DOANH_THU.Where(p => p.ThoiGian.Value.Year == nam).ToList();
+        }
+        public List<BAO_CAO_DOANH_THU> Bll_GetBaoCaoDoanhThuFolowNamThang(int nam, int thang)
+        {
+            return db.BAO_CAO_DOANH_THU.Where(p => p.ThoiGian.Value.Year == nam && p.ThoiGian.Value.Month == thang).ToList();
+        }
+        public List<BAO_CAO_DOANH_THU> Bll_GetBaoCaoDoanhThuFolowNamThangNgay(int nam, int thang, int ngay)
+        {
+            return db.BAO_CAO_DOANH_THU.Where(p => p.ThoiGian.Value.Year == nam && p.ThoiGian.Value.Month == thang && p.ThoiGian.Value.Day == ngay).ToList();
+        }
+
+        public List<DOANH_SO_BAN_HANG> Bll_GetDoanhSoBanHangFolowNam(int nam)
+        {
+            return db.DOANH_SO_BAN_HANG.Where(p => p.ThoiGian.Value.Year == nam).ToList();
+        }
+        public List<DOANH_SO_BAN_HANG> Bll_GetDoanhSoBanHangFolowNamThang(int nam, int thang)
+        {
+            return db.DOANH_SO_BAN_HANG.Where(p => p.ThoiGian.Value.Year == nam && p.ThoiGian.Value.Month == thang).ToList();
+        }
+        public List<DOANH_SO_BAN_HANG> Bll_GetDoanhSoBanHangFolowNamThangNgay(int nam, int thang, int ngay)
+        {
+            return db.DOANH_SO_BAN_HANG.Where(p => p.ThoiGian.Value.Year == nam && p.ThoiGian.Value.Month == thang && p.ThoiGian.Value.Day == ngay).ToList();
+        }
+    }   
 }

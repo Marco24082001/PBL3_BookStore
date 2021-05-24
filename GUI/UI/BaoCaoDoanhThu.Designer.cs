@@ -31,28 +31,34 @@ namespace GUI
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.TongDoanhThu = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.iconButton6 = new FontAwesome.Sharp.IconButton();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.backPage = new FontAwesome.Sharp.IconButton();
+            this.cbbNgay = new System.Windows.Forms.ComboBox();
+            this.cbbThang = new System.Windows.Forms.ComboBox();
+            this.cbbNam = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbbNgay);
+            this.groupBox1.Controls.Add(this.cbbThang);
+            this.groupBox1.Controls.Add(this.cbbNam);
             this.groupBox1.Controls.Add(this.dataGridView2);
-            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.TongDoanhThu);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.iconButton6);
             this.groupBox1.Controls.Add(this.comboBox2);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(212, 144);
+            this.groupBox1.Location = new System.Drawing.Point(212, 90);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1025, 476);
+            this.groupBox1.Size = new System.Drawing.Size(1025, 530);
             this.groupBox1.TabIndex = 54;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Doanh thu";
@@ -60,7 +66,7 @@ namespace GUI
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(34, 32);
+            this.dataGridView2.Location = new System.Drawing.Point(35, 90);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowHeadersWidth = 51;
@@ -69,20 +75,20 @@ namespace GUI
             this.dataGridView2.Size = new System.Drawing.Size(923, 382);
             this.dataGridView2.TabIndex = 34;
             // 
-            // textBox5
+            // TongDoanhThu
             // 
-            this.textBox5.Enabled = false;
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(768, 427);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(189, 27);
-            this.textBox5.TabIndex = 33;
+            this.TongDoanhThu.Enabled = false;
+            this.TongDoanhThu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TongDoanhThu.Location = new System.Drawing.Point(769, 485);
+            this.TongDoanhThu.Name = "TongDoanhThu";
+            this.TongDoanhThu.Size = new System.Drawing.Size(189, 27);
+            this.TongDoanhThu.TabIndex = 33;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(569, 425);
+            this.label8.Location = new System.Drawing.Point(570, 483);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(193, 29);
             this.label8.TabIndex = 32;
@@ -98,7 +104,7 @@ namespace GUI
             this.iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton6.IconSize = 20;
             this.iconButton6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton6.Location = new System.Drawing.Point(34, 420);
+            this.iconButton6.Location = new System.Drawing.Point(35, 478);
             this.iconButton6.Name = "iconButton6";
             this.iconButton6.Size = new System.Drawing.Size(100, 34);
             this.iconButton6.TabIndex = 31;
@@ -111,7 +117,7 @@ namespace GUI
             // 
             this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(140, 424);
+            this.comboBox2.Location = new System.Drawing.Point(141, 482);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(110, 28);
             this.comboBox2.TabIndex = 30;
@@ -147,6 +153,33 @@ namespace GUI
             this.backPage.UseVisualStyleBackColor = false;
             this.backPage.Click += new System.EventHandler(this.backPage_Click);
             // 
+            // cbbNgay
+            // 
+            this.cbbNgay.FormattingEnabled = true;
+            this.cbbNgay.Location = new System.Drawing.Point(577, 56);
+            this.cbbNgay.Name = "cbbNgay";
+            this.cbbNgay.Size = new System.Drawing.Size(121, 28);
+            this.cbbNgay.TabIndex = 35;
+            this.cbbNgay.SelectedIndexChanged += new System.EventHandler(this.cbbNgay_SelectedIndexChanged);
+            // 
+            // cbbThang
+            // 
+            this.cbbThang.FormattingEnabled = true;
+            this.cbbThang.Location = new System.Drawing.Point(418, 56);
+            this.cbbThang.Name = "cbbThang";
+            this.cbbThang.Size = new System.Drawing.Size(121, 28);
+            this.cbbThang.TabIndex = 36;
+            this.cbbThang.SelectedIndexChanged += new System.EventHandler(this.cbbThang_SelectedIndexChanged);
+            // 
+            // cbbNam
+            // 
+            this.cbbNam.FormattingEnabled = true;
+            this.cbbNam.Location = new System.Drawing.Point(269, 56);
+            this.cbbNam.Name = "cbbNam";
+            this.cbbNam.Size = new System.Drawing.Size(121, 28);
+            this.cbbNam.TabIndex = 37;
+            this.cbbNam.SelectedIndexChanged += new System.EventHandler(this.cbbNam_SelectedIndexChanged);
+            // 
             // BaoCaoDoanhThu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -156,6 +189,7 @@ namespace GUI
             this.Controls.Add(this.groupBox1);
             this.Name = "BaoCaoDoanhThu";
             this.Text = "Quản lý doanh thu";
+            this.Load += new System.EventHandler(this.BaoCaoDoanhThu_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
@@ -167,11 +201,14 @@ namespace GUI
 
         private FontAwesome.Sharp.IconButton backPage;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox TongDoanhThu;
         private System.Windows.Forms.Label label8;
         private FontAwesome.Sharp.IconButton iconButton6;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.ComboBox cbbNgay;
+        private System.Windows.Forms.ComboBox cbbThang;
+        private System.Windows.Forms.ComboBox cbbNam;
     }
 }
