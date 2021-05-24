@@ -97,7 +97,6 @@ namespace GUI
             this.OK.IconColor = System.Drawing.Color.Blue;
             this.OK.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.OK.IconSize = 20;
-            this.OK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.OK.Location = new System.Drawing.Point(229, 244);
             this.OK.Name = "OK";
             this.OK.Size = new System.Drawing.Size(122, 34);
@@ -126,7 +125,6 @@ namespace GUI
             this.Thoat.IconColor = System.Drawing.Color.Red;
             this.Thoat.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Thoat.IconSize = 25;
-            this.Thoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Thoat.Location = new System.Drawing.Point(54, 244);
             this.Thoat.Name = "Thoat";
             this.Thoat.Size = new System.Drawing.Size(110, 34);

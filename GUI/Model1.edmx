@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="QUAN_LY_HIEU_SACHModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="QUAN_LY_HIEU_SACHModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="BAO_CAO_DOANH_THU">
           <Key>
             <PropertyRef Name="STT" />
@@ -112,6 +112,16 @@
           <Property Name="MaNXB" Type="varchar" MaxLength="5" Nullable="false" />
           <Property Name="MaLoaiSach" Type="varchar" MaxLength="5" Nullable="false" />
           <Property Name="TrangThai" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="TK_NHANVIEN">
           <Key>
@@ -264,6 +274,7 @@
           <EntitySet Name="NHA_XUAT_BAN" EntityType="Self.NHA_XUAT_BAN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NHAN_VIEN" EntityType="Self.NHAN_VIEN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SACH" EntityType="Self.SACH" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TK_NHANVIEN" EntityType="Self.TK_NHANVIEN" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__BAO_CAO_D__MaSac__4222D4EF" Association="Self.FK__BAO_CAO_D__MaSac__4222D4EF">
             <End Role="SACH" EntitySet="SACH" />
@@ -444,6 +455,16 @@
           <NavigationProperty Name="LOAI_SACH" Relationship="Self.FK__SACH__MaLoaiSach__29572725" FromRole="SACH" ToRole="LOAI_SACH" />
           <NavigationProperty Name="NHA_XUAT_BAN" Relationship="Self.FK__SACH__MaNXB__286302EC" FromRole="SACH" ToRole="NHA_XUAT_BAN" />
         </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
         <EntityType Name="TK_NHANVIEN">
           <Key>
             <PropertyRef Name="TKNV" />
@@ -596,6 +617,7 @@
           <EntitySet Name="NHA_XUAT_BAN" EntityType="Self.NHA_XUAT_BAN" />
           <EntitySet Name="NHAN_VIEN" EntityType="Self.NHAN_VIEN" />
           <EntitySet Name="SACHes" EntityType="Self.SACH" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="TK_NHANVIEN" EntityType="Self.TK_NHANVIEN" />
           <AssociationSet Name="FK__BAO_CAO_D__MaSac__4222D4EF" Association="Self.FK__BAO_CAO_D__MaSac__4222D4EF">
             <End Role="SACH" EntitySet="SACHes" />
@@ -767,6 +789,17 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="QUAN_LY_HIEU_SACHModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="TK_NHANVIEN">
             <EntityTypeMapping TypeName="QUAN_LY_HIEU_SACHModel.TK_NHANVIEN">
               <MappingFragment StoreEntitySet="TK_NHANVIEN">
@@ -791,7 +824,7 @@
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="true" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
-        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>
     </Options>

@@ -23,14 +23,52 @@ namespace GUI.BLL
         }
         private BLL_QuanLy() { }
 
+        public string Bll_CreateHDB()
+        {
+            try
+            {
+                string a = db.HOA_DON_BAN.OrderByDescending(x => x.MaDonBan).Take(1).Single().MaDonBan;
+                string s = "";
+                for (int i = 3; i < a.Length; i++)
+                {
+                    s += a[i];
+                }
+                int so = Convert.ToInt32(s) + 1;
+                s = "HDB" + so.ToString();
+                return s;
+            }
+            catch(InvalidOperationException ex)
+            {
+                return "HDB1";
+            }
+        }
+        public string Bll_CreateHDN()
+        {
+            try
+            {
+                string a = db.HOA_DON_NHAP.OrderByDescending(x => x.MaDonNhap).Take(1).Single().MaDonNhap;
+                string s = "";
+                for (int i = 3; i < a.Length; i++)
+                {
+                    s += a[i];
+                }
+                int so = Convert.ToInt32(s) + 1;
+                s = "HDN" + so.ToString();
+                return s;
+            }
+            catch(InvalidOperationException ex)
+            {
+                return "HDN1";
+            }            
+        }
+
         public bool Bll_CheckTKMK(string tk, string mk)
         {
             //QuanLyEntities db = new QuanLyEntities();
-            var list = db.TK_NHANVIEN.ToList();
-            List<TK_NHANVIEN> tk_NhanVien = list;
-            foreach (TK_NHANVIEN i in tk_NhanVien)
+            List<TK_NHANVIEN> list = db.TK_NHANVIEN.ToList();
+            foreach (TK_NHANVIEN i in list)
             {
-                if (tk == i.TKNV && mk == i.Pass)
+                if (tk == i.TKNV && mk == i.Pass && db.NHAN_VIEN.Find(i.TKNV).TrangThai)
                 {
                     return true;
                 }
@@ -106,7 +144,10 @@ namespace GUI.BLL
         {
             return db.NHAN_VIEN.Find(manv);
         }
-
+        public SACH Bll_GetSachByMaSach(string masach)
+        {
+            return db.SACHes.Find(masach);
+        }
         public TK_NHANVIEN Bll_GetTKByMaNV(string manv)
         {
             return db.TK_NHANVIEN.Find(manv);
@@ -217,7 +258,7 @@ namespace GUI.BLL
         }
         public void Bll_EditNhanVien(NHAN_VIEN nv)
         {
-            var tmp = db.NHAN_VIEN.Find(nv.MaNhanVien);
+            NHAN_VIEN tmp = db.NHAN_VIEN.Find(nv.MaNhanVien);
             tmp.HoTen = nv.HoTen;
             tmp.DanToc = nv.DanToc;
             tmp.GioiTinh = nv.GioiTinh;
@@ -229,6 +270,15 @@ namespace GUI.BLL
             tmp.isAdmin = nv.isAdmin;
             db.SaveChanges();
         }
+        public void Bll_EditSach(SACH s)
+        {
+            SACH tmp = db.SACHes.Find(s.MaSach);
+            tmp.TenSach = s.TenSach;
+            tmp.GiaBan = s.GiaBan;
+            tmp.NHA_XUAT_BAN = s.NHA_XUAT_BAN;
+            tmp.LOAI_SACH = s.LOAI_SACH;
+            db.SaveChanges();
+        }
 
         public void BLL_EditMatKhau(TK_NHANVIEN tk)
         {
@@ -237,17 +287,17 @@ namespace GUI.BLL
             db.SaveChanges();
         }
 
-        public void Bll_OffNVByMaNV(string manv)
+        public void Bll_ChangeTrangThaiNV(string manv)
         {
             var a = db.NHAN_VIEN.Find(manv);
-            a.TrangThai = false;
+            a.TrangThai = !(a.TrangThai);
             db.SaveChanges();
         }
 
-        public void Bll_OffSachByMaSach(string ma)
+        public void Bll_ChaneTrangThaiSach(string ma)
         {
             var a = db.SACHes.Find(ma);
-            a.TrangThai = false;
+            a.TrangThai = !(a.TrangThai);
             db.SaveChanges();
         }
 

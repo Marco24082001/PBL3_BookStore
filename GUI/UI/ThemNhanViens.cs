@@ -44,8 +44,11 @@ namespace GUI
         }
 
         private void LamMoi_Click(object sender, EventArgs e)
-        {            
-            txtMaNV.Text = "";
+        {    
+            if(maNV == null)
+            {
+                txtMaNV.Text = "";
+            }
             txtHoTen.Text = "";
             Nam.Checked = true;
             txtDanToc.Text = "";

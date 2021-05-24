@@ -1,0 +1,3 @@
+# PBL3-Version...
+
+name = QuanLyEntities
