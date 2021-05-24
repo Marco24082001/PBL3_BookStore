@@ -23,5 +23,10 @@ namespace GUI
         public string TenLoaiSach { get; set; }
     
         public virtual ICollection<SACH> SACHes { get; set; }
+
+        public override string ToString()
+        {
+            return TenLoaiSach;
+        }
     }
 }
