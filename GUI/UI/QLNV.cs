@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -24,6 +25,19 @@ namespace GUI
             dataGridView1.Columns[10].Visible = false;
             dataGridView1.Columns[11].Visible = false;
         }
+
+        public void setcbbSort()
+        {
+            //cbbSort.Items.Add()
+            Type type = typeof(NHAN_VIEN);
+            PropertyInfo[] propertyinfo = type.GetProperties();
+            foreach (PropertyInfo info in propertyinfo)
+            {
+                if (info.Name == "TrangThai") break;
+                cbbSort.Items.Add(info.Name);
+            }
+        }
+
         private void Xem_Click(object sender, EventArgs e)
         {
             dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetAllNhanVien();
@@ -67,11 +81,6 @@ namespace GUI
             setData();
         }
 
-        private void SapXep_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void QLNV_Load(object sender, EventArgs e)
         {
             setData();
@@ -86,6 +95,17 @@ namespace GUI
         {
             string a = textBox1.Text;
             dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetNhanVienByName(a);
+        }
+
+        private void sortBtn_Click(object sender, EventArgs e)
+        {
+            List<string> LMNV = new List<string>();
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                LMNV.Add(dataGridView1.Rows[i].Cells[0].Value.ToString());
+            }
+            string CategorySort = cbbSort.SelectedItem.ToString();
+            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_Sort_NhanVien(LMNV, CategorySort);
         }
     }
 }

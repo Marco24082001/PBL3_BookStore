@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
@@ -28,6 +29,7 @@ namespace GUI
             setCbbMaSach();
             setData1();
             setCbbLoaiSach();
+            setcbbSort();
             this.Text = string.Empty;
             this.ControlBox = false;
             this.DoubleBuffered = true;
@@ -75,6 +77,22 @@ namespace GUI
             }
             cbbTheLoai.SelectedIndex = 0;
         }
+
+        public void setcbbSort()
+        {
+            //cbbSort.Items.Add()
+            Type type = typeof(SACH);
+            PropertyInfo[] propertyinfo = type.GetProperties();
+            foreach (PropertyInfo info in propertyinfo)
+            {
+                if (info.Name == "TrangThai") break;
+                if(info.Name != "GiaNhap")
+                {
+                    cbbSort.Items.Add(info.Name);
+                }
+            }
+        }
+
         private void NhanVien_Load(object sender, EventArgs e)
         {
             txtMaNhanVien.Text = txtTen.Text = BLL_QuanLy.Instance.Bll_GetNameNVByMaNV(maNV);
@@ -82,6 +100,7 @@ namespace GUI
             txtMaDonBan.Enabled = false;
             TongCong.Text = "0";
         }
+
         private bool ChecktxtSDT()
         {
             if (txtSDT.Text == "")
@@ -105,6 +124,7 @@ namespace GUI
             }
             return true;
         }
+
         private bool ChecktxtHoTen()
         {
             if (txtHoTen.Text == "")
@@ -119,6 +139,7 @@ namespace GUI
             }
             return true;
         }
+
         private bool CheckSoLuong()
         {
             if (numericUpDown1.Value == 0)
@@ -362,6 +383,17 @@ namespace GUI
         {
             cbbMaSach.SelectedItem = dataGridView1.CurrentRow.Cells[0].Value.ToString();
             numericUpDown1.Value = 1;
+        }
+
+        private void sortBtn_Click(object sender, EventArgs e)
+        {
+            List<string> LMS = new List<string>();
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                LMS.Add(dataGridView1.Rows[i].Cells[0].Value.ToString());
+            }
+            string CategorySort = cbbSort.SelectedItem.ToString();
+            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_Sort(LMS, CategorySort);
         }
     }
 }

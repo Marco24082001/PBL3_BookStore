@@ -37,7 +37,7 @@ namespace GUI
             this.label9 = new System.Windows.Forms.Label();
             this.txtTenSach = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbbSort = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.AddHoaDon = new FontAwesome.Sharp.IconButton();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -61,7 +61,7 @@ namespace GUI
             this.ThemSach = new FontAwesome.Sharp.IconButton();
             this.XacNhan = new FontAwesome.Sharp.IconButton();
             this.XoaSach = new FontAwesome.Sharp.IconButton();
-            this.SapXep = new FontAwesome.Sharp.IconButton();
+            this.sortBtn = new FontAwesome.Sharp.IconButton();
             this.Edit = new FontAwesome.Sharp.IconButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -162,14 +162,14 @@ namespace GUI
             this.label10.TabIndex = 37;
             this.label10.Text = "List book :";
             // 
-            // comboBox1
+            // cbbSort
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(1298, 528);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(134, 28);
-            this.comboBox1.TabIndex = 45;
+            this.cbbSort.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbSort.FormattingEnabled = true;
+            this.cbbSort.Location = new System.Drawing.Point(1298, 528);
+            this.cbbSort.Name = "cbbSort";
+            this.cbbSort.Size = new System.Drawing.Size(134, 28);
+            this.cbbSort.TabIndex = 45;
             // 
             // groupBox3
             // 
@@ -463,24 +463,24 @@ namespace GUI
             this.XoaSach.UseVisualStyleBackColor = false;
             this.XoaSach.Click += new System.EventHandler(this.XoaSach_Click);
             // 
-            // SapXep
+            // sortBtn
             // 
-            this.SapXep.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.SapXep.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SapXep.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SapXep.IconChar = FontAwesome.Sharp.IconChar.Sort;
-            this.SapXep.IconColor = System.Drawing.Color.Blue;
-            this.SapXep.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.SapXep.IconSize = 20;
-            this.SapXep.Location = new System.Drawing.Point(1178, 524);
-            this.SapXep.Name = "SapXep";
-            this.SapXep.Size = new System.Drawing.Size(100, 34);
-            this.SapXep.TabIndex = 37;
-            this.SapXep.Text = "Sắp sếp";
-            this.SapXep.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.SapXep.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.SapXep.UseVisualStyleBackColor = false;
-            this.SapXep.Click += new System.EventHandler(this.SapXep_Click);
+            this.sortBtn.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.sortBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sortBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sortBtn.IconChar = FontAwesome.Sharp.IconChar.Sort;
+            this.sortBtn.IconColor = System.Drawing.Color.Blue;
+            this.sortBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.sortBtn.IconSize = 20;
+            this.sortBtn.Location = new System.Drawing.Point(1178, 524);
+            this.sortBtn.Name = "sortBtn";
+            this.sortBtn.Size = new System.Drawing.Size(100, 34);
+            this.sortBtn.TabIndex = 37;
+            this.sortBtn.Text = "Sắp sếp";
+            this.sortBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.sortBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.sortBtn.UseVisualStyleBackColor = false;
+            this.sortBtn.Click += new System.EventHandler(this.sortBtn_Click);
             // 
             // Edit
             // 
@@ -509,10 +509,10 @@ namespace GUI
             this.ClientSize = new System.Drawing.Size(1444, 753);
             this.Controls.Add(this.XacNhan);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbbSort);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.XoaSach);
-            this.Controls.Add(this.SapXep);
+            this.Controls.Add(this.sortBtn);
             this.Controls.Add(this.Edit);
             this.Controls.Add(this.ThemSach);
             this.Name = "QuanLySach";
@@ -532,14 +532,14 @@ namespace GUI
 
         #endregion
         private FontAwesome.Sharp.IconButton XoaSach;
-        private FontAwesome.Sharp.IconButton SapXep;
+        private FontAwesome.Sharp.IconButton sortBtn;
         private FontAwesome.Sharp.IconButton Edit;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label10;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtTenSach;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbbSort;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbbTheLoai;
