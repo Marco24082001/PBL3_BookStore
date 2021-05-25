@@ -35,11 +35,11 @@ namespace GUI
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.Xoa = new FontAwesome.Sharp.IconButton();
-            this.SapXep = new FontAwesome.Sharp.IconButton();
             this.ChinhSua = new FontAwesome.Sharp.IconButton();
             this.Them = new FontAwesome.Sharp.IconButton();
+            this.cbbSort = new System.Windows.Forms.ComboBox();
+            this.sortBtn = new FontAwesome.Sharp.IconButton();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -109,15 +109,6 @@ namespace GUI
             this.label1.TabIndex = 26;
             this.label1.Text = "Hiệu Sách ";
             // 
-            // comboBox2
-            // 
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(1044, 627);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(140, 28);
-            this.comboBox2.TabIndex = 24;
-            // 
             // Xoa
             // 
             this.Xoa.BackColor = System.Drawing.SystemColors.ScrollBar;
@@ -136,25 +127,6 @@ namespace GUI
             this.Xoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Xoa.UseVisualStyleBackColor = false;
             this.Xoa.Click += new System.EventHandler(this.Xoa_Click);
-            // 
-            // SapXep
-            // 
-            this.SapXep.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.SapXep.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SapXep.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SapXep.IconChar = FontAwesome.Sharp.IconChar.Sort;
-            this.SapXep.IconColor = System.Drawing.Color.Blue;
-            this.SapXep.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.SapXep.IconSize = 25;
-            this.SapXep.Location = new System.Drawing.Point(923, 625);
-            this.SapXep.Name = "SapXep";
-            this.SapXep.Size = new System.Drawing.Size(115, 38);
-            this.SapXep.TabIndex = 25;
-            this.SapXep.Text = "Sắp xếp";
-            this.SapXep.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.SapXep.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.SapXep.UseVisualStyleBackColor = false;
-            this.SapXep.Click += new System.EventHandler(this.SapXep_Click);
             // 
             // ChinhSua
             // 
@@ -194,18 +166,46 @@ namespace GUI
             this.Them.UseVisualStyleBackColor = false;
             this.Them.Click += new System.EventHandler(this.Them_Click);
             // 
+            // cbbSort
+            // 
+            this.cbbSort.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbSort.FormattingEnabled = true;
+            this.cbbSort.Location = new System.Drawing.Point(1020, 631);
+            this.cbbSort.Name = "cbbSort";
+            this.cbbSort.Size = new System.Drawing.Size(134, 28);
+            this.cbbSort.TabIndex = 47;
+            // 
+            // sortBtn
+            // 
+            this.sortBtn.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.sortBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sortBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sortBtn.IconChar = FontAwesome.Sharp.IconChar.Sort;
+            this.sortBtn.IconColor = System.Drawing.Color.Blue;
+            this.sortBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.sortBtn.IconSize = 20;
+            this.sortBtn.Location = new System.Drawing.Point(900, 627);
+            this.sortBtn.Name = "sortBtn";
+            this.sortBtn.Size = new System.Drawing.Size(100, 36);
+            this.sortBtn.TabIndex = 46;
+            this.sortBtn.Text = "Sắp sếp";
+            this.sortBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.sortBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.sortBtn.UseVisualStyleBackColor = false;
+            this.sortBtn.Click += new System.EventHandler(this.sortBtn_Click);
+            // 
             // QLNV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1444, 753);
+            this.Controls.Add(this.cbbSort);
+            this.Controls.Add(this.sortBtn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Xoa);
-            this.Controls.Add(this.SapXep);
             this.Controls.Add(this.ChinhSua);
             this.Controls.Add(this.Them);
-            this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.groupBox3);
             this.Name = "QLNV";
             this.Text = "Quản lý nhân viên";
@@ -223,12 +223,12 @@ namespace GUI
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox comboBox2;
         private FontAwesome.Sharp.IconButton Them;
         private FontAwesome.Sharp.IconButton ChinhSua;
         private FontAwesome.Sharp.IconButton Xoa;
-        private FontAwesome.Sharp.IconButton SapXep;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cbbSort;
+        private FontAwesome.Sharp.IconButton sortBtn;
     }
 }
