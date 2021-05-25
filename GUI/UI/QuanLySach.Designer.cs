@@ -439,7 +439,7 @@ namespace GUI
             this.XacNhan.Name = "XacNhan";
             this.XacNhan.Size = new System.Drawing.Size(116, 34);
             this.XacNhan.TabIndex = 49;
-            this.XacNhan.Text = "Xác nhận";
+            this.XacNhan.Text = " ";
             this.XacNhan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.XacNhan.UseVisualStyleBackColor = false;
             this.XacNhan.Click += new System.EventHandler(this.XacNhan_Click);

@@ -215,6 +215,11 @@ namespace GUI
                 list.RemoveAt(i.Index); 
             }
             setData2();
+            if(list.Count == 0)
+            {
+                txtHoTen.Enabled = true;
+                txtSDT.Enabled = true;
+            }
         }
 
         private void ThanhToan_Click(object sender, EventArgs e)

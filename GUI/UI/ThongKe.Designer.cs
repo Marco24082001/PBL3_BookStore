@@ -33,14 +33,14 @@ namespace GUI
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbBestSeller = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lb1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.cbbNam = new System.Windows.Forms.ComboBox();
+            this.TongDoanhSo = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.iconButton6 = new FontAwesome.Sharp.IconButton();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -51,6 +51,8 @@ namespace GUI
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label3 = new System.Windows.Forms.Label();
             this.NextPage = new FontAwesome.Sharp.IconButton();
+            this.cbbThang = new System.Windows.Forms.ComboBox();
+            this.cbbNgay = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
@@ -69,15 +71,14 @@ namespace GUI
             this.label1.TabIndex = 26;
             this.label1.Text = "Best seller :";
             // 
-            // label2
+            // lbBestSeller
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(216, 52);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(126, 28);
-            this.label2.TabIndex = 27;
-            this.label2.Text = "Thành Vĩ";
+            this.lbBestSeller.AutoSize = true;
+            this.lbBestSeller.Font = new System.Drawing.Font("Century", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBestSeller.Location = new System.Drawing.Point(216, 52);
+            this.lbBestSeller.Name = "lbBestSeller";
+            this.lbBestSeller.Size = new System.Drawing.Size(0, 28);
+            this.lbBestSeller.TabIndex = 27;
             // 
             // label4
             // 
@@ -89,22 +90,24 @@ namespace GUI
             this.label4.TabIndex = 29;
             this.label4.Text = "Tổng đơn hàng :";
             // 
-            // label5
+            // lb1
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(737, 54);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 28);
-            this.label5.TabIndex = 30;
-            this.label5.Text = "100";
+            this.lb1.AutoSize = true;
+            this.lb1.Font = new System.Drawing.Font("Century", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb1.Location = new System.Drawing.Point(737, 54);
+            this.lb1.Name = "lb1";
+            this.lb1.Size = new System.Drawing.Size(54, 28);
+            this.lb1.TabIndex = 30;
+            this.lb1.Text = "100";
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dataGridView2);
             this.groupBox1.Controls.Add(this.iconPictureBox2);
-            this.groupBox1.Controls.Add(this.comboBox3);
-            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.cbbNgay);
+            this.groupBox1.Controls.Add(this.cbbThang);
+            this.groupBox1.Controls.Add(this.cbbNam);
+            this.groupBox1.Controls.Add(this.TongDoanhSo);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.iconButton6);
             this.groupBox1.Controls.Add(this.comboBox2);
@@ -143,23 +146,23 @@ namespace GUI
             this.iconPictureBox2.TabIndex = 35;
             this.iconPictureBox2.TabStop = false;
             // 
-            // comboBox3
+            // cbbNam
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(69, 59);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 28);
-            this.comboBox3.TabIndex = 34;
-            this.comboBox3.Text = "Ngày";
+            this.cbbNam.FormattingEnabled = true;
+            this.cbbNam.Location = new System.Drawing.Point(69, 59);
+            this.cbbNam.Name = "cbbNam";
+            this.cbbNam.Size = new System.Drawing.Size(121, 28);
+            this.cbbNam.TabIndex = 34;
+            this.cbbNam.SelectedIndexChanged += new System.EventHandler(this.cbbNam_SelectedIndexChanged);
             // 
-            // textBox5
+            // TongDoanhSo
             // 
-            this.textBox5.Enabled = false;
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(520, 480);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(189, 27);
-            this.textBox5.TabIndex = 33;
+            this.TongDoanhSo.Enabled = false;
+            this.TongDoanhSo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TongDoanhSo.Location = new System.Drawing.Point(520, 480);
+            this.TongDoanhSo.Name = "TongDoanhSo";
+            this.TongDoanhSo.Size = new System.Drawing.Size(189, 27);
+            this.TongDoanhSo.TabIndex = 33;
             // 
             // label8
             // 
@@ -294,6 +297,24 @@ namespace GUI
             this.NextPage.UseVisualStyleBackColor = false;
             this.NextPage.Click += new System.EventHandler(this.NextPage_Click);
             // 
+            // cbbThang
+            // 
+            this.cbbThang.FormattingEnabled = true;
+            this.cbbThang.Location = new System.Drawing.Point(218, 59);
+            this.cbbThang.Name = "cbbThang";
+            this.cbbThang.Size = new System.Drawing.Size(121, 28);
+            this.cbbThang.TabIndex = 34;
+            this.cbbThang.SelectedIndexChanged += new System.EventHandler(this.cbbThang_SelectedIndexChanged);
+            // 
+            // cbbNgay
+            // 
+            this.cbbNgay.FormattingEnabled = true;
+            this.cbbNgay.Location = new System.Drawing.Point(377, 59);
+            this.cbbNgay.Name = "cbbNgay";
+            this.cbbNgay.Size = new System.Drawing.Size(121, 28);
+            this.cbbNgay.TabIndex = 34;
+            this.cbbNgay.SelectedIndexChanged += new System.EventHandler(this.cbbNgay_SelectedIndexChanged);
+            // 
             // ThongKe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -303,13 +324,14 @@ namespace GUI
             this.Controls.Add(this.NextPage);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lb1);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lbBestSeller);
             this.Controls.Add(this.label1);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "ThongKe";
             this.Text = "Quản lý doanh thu";
+            this.Load += new System.EventHandler(this.ThongKe_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
@@ -325,13 +347,13 @@ namespace GUI
 
         #endregion
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbBestSeller;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lb1;
         private System.Windows.Forms.GroupBox groupBox1;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.ComboBox cbbNam;
+        private System.Windows.Forms.TextBox TongDoanhSo;
         private System.Windows.Forms.Label label8;
         private FontAwesome.Sharp.IconButton iconButton6;
         private System.Windows.Forms.ComboBox comboBox2;
@@ -343,5 +365,7 @@ namespace GUI
         private System.Windows.Forms.Label label3;
         private FontAwesome.Sharp.IconButton NextPage;
         private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.ComboBox cbbNgay;
+        private System.Windows.Forms.ComboBox cbbThang;
     }
 }

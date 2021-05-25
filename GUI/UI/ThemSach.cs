@@ -16,6 +16,7 @@ namespace GUI
         public string masach { get; set; }
         public delegate void MyDel();
         public MyDel d;
+        public bool check { get; set; }
         public ThemSach()
         {
             InitializeComponent();
@@ -62,6 +63,11 @@ namespace GUI
 
         private bool CheckMaSach()
         {
+            if(txtMaSach.Text == "")
+            {
+                MessageBox.Show("Nhap ma sach");
+                return false;
+            }
             foreach(string i in BLL_QuanLy.Instance.Bll_GetAllMaSach())
             {
                 if(txtMaSach.Text == i)
@@ -79,6 +85,11 @@ namespace GUI
         }
         private bool CheckTenSach()
         {
+            if(txtTenSach.Text == "")
+            {
+                MessageBox.Show("Nhap ten sach");
+                return false;
+            }
             if(txtTenSach.TextLength > 30)
             {
                 MessageBox.Show("Tên sách không quá 30 kí tự");
@@ -88,6 +99,11 @@ namespace GUI
         }
         private bool CheckGia(string a)
         {
+            if(a == "")
+            {
+                MessageBox.Show("Nhap gia");
+                return false;
+            }
             for (int i = 0; i < a.Length; i++)
             {
                 if ((int)a[i] < 48 || (int)a[i] > 57)
@@ -123,6 +139,7 @@ namespace GUI
             a.MaNXB = cbbNXB.SelectedItem.ToString();
             a.MaLoaiSach = cbbTL.SelectedItem.ToString();
             BLL_QuanLy.Instance.Bll_AddSach(a);
+            check = true;
         }
         private void EditSach()
         {
@@ -148,6 +165,7 @@ namespace GUI
             a.MaNXB = cbbNXB.SelectedItem.ToString();
             a.MaLoaiSach = cbbTL.SelectedItem.ToString();
             BLL_QuanLy.Instance.Bll_EditSach(a);
+            check = true;
         }
         private void XacNhan_Click(object sender, EventArgs e)
         {
@@ -159,11 +177,12 @@ namespace GUI
             {
                 EditSach();
             }
-            d();
+            if(check) d();
         }
 
         private void ThemSach_Load(object sender, EventArgs e)
         {
+            check = false;
             if(masach != null)
             {
                 txtMaSach.Text = masach; txtMaSach.Enabled = false;
