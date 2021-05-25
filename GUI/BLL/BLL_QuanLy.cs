@@ -343,5 +343,73 @@ namespace GUI.BLL
             }
             return list;
         }
+
+        public List<SACH> Bll_GetSachByMS(List<string> LMS)
+        {
+            List<SACH> listSach = new List<SACH>();
+            foreach(string MS in LMS)
+            {
+                listSach.Add(db.SACHes.Find(MS));
+            }
+            return listSach;
+        }
+
+        public List<NHAN_VIEN> Bll_GetSachByMNV(List<string> LMNV)
+        {
+            List<NHAN_VIEN> listNhanVien = new List<NHAN_VIEN>();
+            foreach(string MNV in LMNV)
+            {
+                listNhanVien.Add(db.NHAN_VIEN.Find(MNV));
+            }
+            return listNhanVien;
+        }
+
+        public List<SACH> Bll_Sort(List<string> LMS, string CategorySort)
+        {
+            switch(CategorySort)
+            {
+                case "MaSach":
+                    return Bll_GetSachByMS(LMS).OrderBy(s => s.MaSach).ToList();
+                case "TenSach":
+                    return Bll_GetSachByMS(LMS).OrderBy(s => s.TenSach).ToList();
+                case "GiaBan":
+                    return Bll_GetSachByMS(LMS).OrderBy(s => s.GiaBan).ToList();
+                case "GiaNhap":
+                    return Bll_GetSachByMS(LMS).OrderBy(s => s.GiaNhap).ToList();
+                case "SoLuong":
+                    return Bll_GetSachByMS(LMS).OrderBy(s => s.SoLuong).ToList();
+                case "MaLoaiSach":
+                    return Bll_GetSachByMS(LMS).OrderBy(s => s.MaLoaiSach).ToList();
+                case "MaNXB":
+                    return Bll_GetSachByMS(LMS).OrderBy(s => s.MaNXB).ToList();
+                default:
+                    return Bll_GetSachByMS(LMS).OrderBy(s => s.MaSach).ToList();
+            }
+        }
+
+        public List<NHAN_VIEN> Bll_Sort_NhanVien(List<string> LMNV, string CategorySort)
+        {
+            switch (CategorySort)
+            {
+                case "MaNhanVien":
+                    return Bll_GetSachByMNV(LMNV).OrderBy(s => s.MaNhanVien).ToList();
+                case "HoTen":
+                    return Bll_GetSachByMNV(LMNV).OrderBy(s => s.HoTen).ToList();
+                case "DanToc":
+                    return Bll_GetSachByMNV(LMNV).OrderBy(s => s.DanToc).ToList();
+                case "GioiTinh":
+                    return Bll_GetSachByMNV(LMNV).OrderBy(s => s.GioiTinh).ToList();
+                case "CMND":
+                    return Bll_GetSachByMNV(LMNV).OrderBy(s => s.CMND).ToList();
+                case "SoDienThoai":
+                    return Bll_GetSachByMNV(LMNV).OrderBy(s => s.SoDienThoai).ToList();
+                case "QueQuan":
+                    return Bll_GetSachByMNV(LMNV).OrderBy(s => s.QueQuan).ToList();
+                case "NgaySinh":
+                    return Bll_GetSachByMNV(LMNV).OrderBy(s => s.NgaySinh).ToList();
+                default:
+                    return Bll_GetSachByMNV(LMNV).OrderBy(s => s.MaNhanVien).ToList();
+            }
+        }
     }
 }

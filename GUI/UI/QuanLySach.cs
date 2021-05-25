@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Reflection;
 using GUI.BLL;
 
 namespace GUI
@@ -19,6 +20,7 @@ namespace GUI
             InitializeComponent();
             setcbbMaSach();
             setcbbTheLoai();
+            setcbbSort();
         }
         public void setData1()
         {
@@ -67,6 +69,19 @@ namespace GUI
             }
             cbbTheLoai.SelectedIndex = 0;
         }
+
+        public void setcbbSort()
+        {
+            //cbbSort.Items.Add()
+            Type type = typeof(SACH);
+            PropertyInfo[] propertyinfo = type.GetProperties();
+            foreach (PropertyInfo info in propertyinfo)
+            {
+                if (info.Name == "TrangThai") break;
+                cbbSort.Items.Add(info.Name);
+            }
+        }
+
         private void Them_Click(object sender, EventArgs e)
         {
             foreach(CHI_TIET_HOA_DON_NHAP i in list)
@@ -249,6 +264,17 @@ namespace GUI
         {
             cbbMaSach.SelectedItem = dataGridView1.CurrentRow.Cells[0].Value.ToString();
             numericUpDown4.Value = 1;
+        }
+
+        private void sortBtn_Click(object sender, EventArgs e)
+        {
+            List<string> LMS = new List<string>();
+            for(int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                LMS.Add(dataGridView1.Rows[i].Cells[0].Value.ToString());
+            }
+            string CategorySort = cbbSort.SelectedItem.ToString();
+            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_Sort(LMS, CategorySort);
         }
     }
 }
