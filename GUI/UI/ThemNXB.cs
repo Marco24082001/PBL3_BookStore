@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Validation;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -32,7 +33,15 @@ namespace GUI
             NHA_XUAT_BAN nxb = new NHA_XUAT_BAN();
             nxb.MaNXB = txtMaNXB.Text;
             nxb.TenNXB = txtTenNXB.Text;
-            BLL_QuanLy.Instance.Bll_AddNXB(nxb);
+            try
+            {
+                BLL_QuanLy.Instance.Bll_AddNXB(nxb);
+            }
+            catch(DbEntityValidationException)
+            {
+                MessageBox.Show("Error");
+                return;
+            }              
             d();
         }
 

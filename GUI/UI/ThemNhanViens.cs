@@ -65,6 +65,11 @@ namespace GUI
         }
         private bool NhapMaNV()
         {
+            if(txtMaNV.Text == "")
+            {
+                MessageBox.Show("Nhap ma NV");
+                return false;
+            }
             foreach(string ma in BLL_QuanLy.Instance.Bll_GetAllMaNV())
             {
                 if(ma == txtMaNV.Text)
@@ -82,6 +87,11 @@ namespace GUI
         }
         private bool NhapHoTen()
         {
+            if(txtHoTen.Text == "")
+            {
+                MessageBox.Show("Nhap ho ten");
+                return false;
+            }
             if(txtHoTen.Text.Length > 30)
             {
                 MessageBox.Show("Tên không quá 30 kí tự");
@@ -89,8 +99,27 @@ namespace GUI
             }
             return true;
         }
+        private bool NhapDanToc()
+        {
+            if(txtDanToc.Text == "")
+            {
+                MessageBox.Show("Nhap Dan toc");
+                return false;
+            }
+            if(txtDanToc.TextLength > 10)
+            {
+                MessageBox.Show("Dan toc khong qua 10 ki tu");
+                return false;
+            }
+            return true;
+        }
         private bool NhapCMND()
         {
+            if(txtCMND.Text == "")
+            {
+                MessageBox.Show("Nhap CMND");
+                return false;
+            }
             string a = txtCMND.Text;
             if (txtCMND.TextLength > 12)
             {
@@ -110,6 +139,11 @@ namespace GUI
 
         private bool NhapSDT()
         {
+            if(txtSdt.Text == "")
+            {
+                MessageBox.Show("Nhap SDT");
+                return false;
+            }
             string a = txtSdt.Text;
             if(txtSdt.TextLength > 10)
             {
@@ -128,9 +162,28 @@ namespace GUI
         }
         private bool NhapQueQuan()
         {
+            if(txtQueQuan.Text == "")
+            {
+                MessageBox.Show("Nhap Que Quan");
+                return false;
+            }
             if (txtQueQuan.Text.Length > 50)
             {
                 MessageBox.Show("Tên không quá 50 kí tự");
+                return false;
+            }
+            return true;
+        }
+        private bool NhapMatKhau()
+        {
+            if (txtMatKhau.Text == "")
+            {
+                MessageBox.Show("Nhap Mat Khau");
+                return false;
+            }
+            if (txtQueQuan.Text.Length > 10)
+            {
+                MessageBox.Show("Tên không quá 10 kí tự");
                 return false;
             }
             return true;
@@ -139,9 +192,11 @@ namespace GUI
         {
             if (NhapMaNV() == false) return;
             if (NhapHoTen() == false) return;
+            if (!NhapHoTen()) return;
             if (NhapCMND() == false) return;
             if (NhapSDT() == false) return;
             if (NhapQueQuan() == false) return;
+            if (!NhapMatKhau()) return;
             NHAN_VIEN nv = new NHAN_VIEN();            
             nv.MaNhanVien = txtMaNV.Text;
             nv.HoTen = txtHoTen.Text;

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Core.Objects;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,7 +38,7 @@ namespace GUI.BLL
                 s = "HDB" + so.ToString();
                 return s;
             }
-            catch(InvalidOperationException ex)
+            catch(InvalidOperationException)
             {
                 return "HDB1";
             }
@@ -56,7 +57,7 @@ namespace GUI.BLL
                 s = "HDN" + so.ToString();
                 return s;
             }
-            catch(InvalidOperationException ex)
+            catch(InvalidOperationException)
             {
                 return "HDN1";
             }            
@@ -343,5 +344,99 @@ namespace GUI.BLL
             }
             return list;
         }
+
+        public List<SACH> Bll_GetSachByMS(List<string> LMS)
+        {
+            List<SACH> listSach = new List<SACH>();
+            foreach(string MS in LMS)
+            {
+                listSach.Add(db.SACHes.Find(MS));
+            }
+            return listSach;
+        }
+
+        public List<NHAN_VIEN> Bll_GetSachByMNV(List<string> LMNV)
+        {
+            List<NHAN_VIEN> listNhanVien = new List<NHAN_VIEN>();
+            foreach(string MNV in LMNV)
+            {
+                listNhanVien.Add(db.NHAN_VIEN.Find(MNV));
+            }
+            return listNhanVien;
+        }
+
+        public List<SACH> Bll_Sort(List<string> LMS, string CategorySort)
+        {
+            switch(CategorySort)
+            {
+                case "MaSach":
+                    return Bll_GetSachByMS(LMS).OrderBy(s => s.MaSach).ToList();
+                case "TenSach":
+                    return Bll_GetSachByMS(LMS).OrderBy(s => s.TenSach).ToList();
+                case "GiaBan":
+                    return Bll_GetSachByMS(LMS).OrderBy(s => s.GiaBan).ToList();
+                case "GiaNhap":
+                    return Bll_GetSachByMS(LMS).OrderBy(s => s.GiaNhap).ToList();
+                case "SoLuong":
+                    return Bll_GetSachByMS(LMS).OrderBy(s => s.SoLuong).ToList();
+                case "MaLoaiSach":
+                    return Bll_GetSachByMS(LMS).OrderBy(s => s.MaLoaiSach).ToList();
+                case "MaNXB":
+                    return Bll_GetSachByMS(LMS).OrderBy(s => s.MaNXB).ToList();
+                default:
+                    return Bll_GetSachByMS(LMS).OrderBy(s => s.MaSach).ToList();
+            }
+        }
+
+        public List<NHAN_VIEN> Bll_Sort_NhanVien(List<string> LMNV, string CategorySort)
+        {
+            switch (CategorySort)
+            {
+                case "MaNhanVien":
+                    return Bll_GetSachByMNV(LMNV).OrderBy(s => s.MaNhanVien).ToList();
+                case "HoTen":
+                    return Bll_GetSachByMNV(LMNV).OrderBy(s => s.HoTen).ToList();
+                case "DanToc":
+                    return Bll_GetSachByMNV(LMNV).OrderBy(s => s.DanToc).ToList();
+                case "GioiTinh":
+                    return Bll_GetSachByMNV(LMNV).OrderBy(s => s.GioiTinh).ToList();
+                case "CMND":
+                    return Bll_GetSachByMNV(LMNV).OrderBy(s => s.CMND).ToList();
+                case "SoDienThoai":
+                    return Bll_GetSachByMNV(LMNV).OrderBy(s => s.SoDienThoai).ToList();
+                case "QueQuan":
+                    return Bll_GetSachByMNV(LMNV).OrderBy(s => s.QueQuan).ToList();
+                case "NgaySinh":
+                    return Bll_GetSachByMNV(LMNV).OrderBy(s => s.NgaySinh).ToList();
+                default:
+                    return Bll_GetSachByMNV(LMNV).OrderBy(s => s.MaNhanVien).ToList();
+            }
+        }
     }
+        public List<BAO_CAO_DOANH_THU> Bll_GetBaoCaoDoanhThuFolowNam(int nam)
+        {
+            return db.BAO_CAO_DOANH_THU.Where(p => p.ThoiGian.Value.Year == nam).ToList();
+        }
+        public List<BAO_CAO_DOANH_THU> Bll_GetBaoCaoDoanhThuFolowNamThang(int nam, int thang)
+        {
+            return db.BAO_CAO_DOANH_THU.Where(p => p.ThoiGian.Value.Year == nam && p.ThoiGian.Value.Month == thang).ToList();
+        }
+        public List<BAO_CAO_DOANH_THU> Bll_GetBaoCaoDoanhThuFolowNamThangNgay(int nam, int thang, int ngay)
+        {
+            return db.BAO_CAO_DOANH_THU.Where(p => p.ThoiGian.Value.Year == nam && p.ThoiGian.Value.Month == thang && p.ThoiGian.Value.Day == ngay).ToList();
+        }
+
+        public List<DOANH_SO_BAN_HANG> Bll_GetDoanhSoBanHangFolowNam(int nam)
+        {
+            return db.DOANH_SO_BAN_HANG.Where(p => p.ThoiGian.Value.Year == nam).ToList();
+        }
+        public List<DOANH_SO_BAN_HANG> Bll_GetDoanhSoBanHangFolowNamThang(int nam, int thang)
+        {
+            return db.DOANH_SO_BAN_HANG.Where(p => p.ThoiGian.Value.Year == nam && p.ThoiGian.Value.Month == thang).ToList();
+        }
+        public List<DOANH_SO_BAN_HANG> Bll_GetDoanhSoBanHangFolowNamThangNgay(int nam, int thang, int ngay)
+        {
+            return db.DOANH_SO_BAN_HANG.Where(p => p.ThoiGian.Value.Year == nam && p.ThoiGian.Value.Month == thang && p.ThoiGian.Value.Day == ngay).ToList();
+        }
+    }   
 }

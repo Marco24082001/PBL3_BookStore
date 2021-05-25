@@ -67,6 +67,8 @@ namespace GUI
             this.DangXuat = new FontAwesome.Sharp.IconButton();
             this.infoNhanVien = new FontAwesome.Sharp.IconPictureBox();
             this.ThanhToan = new FontAwesome.Sharp.IconButton();
+            this.cbbSort = new System.Windows.Forms.ComboBox();
+            this.sortBtn = new FontAwesome.Sharp.IconButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
@@ -91,6 +93,8 @@ namespace GUI
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbbSort);
+            this.groupBox1.Controls.Add(this.sortBtn);
             this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Controls.Add(this.iconPictureBox1);
             this.groupBox1.Controls.Add(this.label7);
@@ -114,7 +118,7 @@ namespace GUI
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(799, 423);
+            this.dataGridView1.Size = new System.Drawing.Size(799, 386);
             this.dataGridView1.TabIndex = 24;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
@@ -527,6 +531,34 @@ namespace GUI
             this.ThanhToan.UseVisualStyleBackColor = false;
             this.ThanhToan.Click += new System.EventHandler(this.ThanhToan_Click);
             // 
+            // cbbSort
+            // 
+            this.cbbSort.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbSort.FormattingEnabled = true;
+            this.cbbSort.Location = new System.Drawing.Point(725, 487);
+            this.cbbSort.Name = "cbbSort";
+            this.cbbSort.Size = new System.Drawing.Size(134, 28);
+            this.cbbSort.TabIndex = 47;
+            // 
+            // sortBtn
+            // 
+            this.sortBtn.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.sortBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sortBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sortBtn.IconChar = FontAwesome.Sharp.IconChar.Sort;
+            this.sortBtn.IconColor = System.Drawing.Color.Blue;
+            this.sortBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.sortBtn.IconSize = 20;
+            this.sortBtn.Location = new System.Drawing.Point(605, 483);
+            this.sortBtn.Name = "sortBtn";
+            this.sortBtn.Size = new System.Drawing.Size(100, 34);
+            this.sortBtn.TabIndex = 46;
+            this.sortBtn.Text = "Sắp sếp";
+            this.sortBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.sortBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.sortBtn.UseVisualStyleBackColor = false;
+            this.sortBtn.Click += new System.EventHandler(this.sortBtn_Click);
+            // 
             // NhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -597,5 +629,7 @@ namespace GUI
         private FontAwesome.Sharp.IconPictureBox infoNhanVien;
         private System.Windows.Forms.PictureBox Thoat;
         private FontAwesome.Sharp.IconButton AddHoaDon;
+        private System.Windows.Forms.ComboBox cbbSort;
+        private FontAwesome.Sharp.IconButton sortBtn;
     }
 }
