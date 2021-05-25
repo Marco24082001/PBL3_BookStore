@@ -142,7 +142,7 @@ namespace GUI
             }
             foreach(string i in listMa)
             {
-                lbBestSeller.Text += i;
+                lbBestSeller.Text += BLL_QuanLy.Instance.Bll_GetNameNVByMaNV(i);
             }
         }
         private void setBackground()
@@ -177,7 +177,9 @@ namespace GUI
 
         private void cbbNgay_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dataGridView2.DataSource = BLL_QuanLy.Instance.Bll_GetDoanhSoBanHangFolowNamThangNgay(Convert.ToInt32(cbbNam.SelectedItem.ToString()), Convert.ToInt32(cbbThang.SelectedItem.ToString()), Convert.ToInt32(cbbNgay.SelectedItem.ToString()));
+            dataGridView2.DataSource = BLL_QuanLy.Instance.Bll_GetDoanhSoBanHangFolowNamThangNgay(Convert.ToInt32(cbbNam.SelectedItem.ToString()),
+                Convert.ToInt32(cbbThang.SelectedItem.ToString()), 
+                Convert.ToInt32(cbbNgay.SelectedItem.ToString()));
             setBackground();
         }
 

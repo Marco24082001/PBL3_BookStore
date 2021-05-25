@@ -38,7 +38,7 @@ namespace GUI.BLL
                 s = "HDB" + so.ToString();
                 return s;
             }
-            catch(InvalidOperationException ex)
+            catch(InvalidOperationException)
             {
                 return "HDB1";
             }
@@ -57,7 +57,7 @@ namespace GUI.BLL
                 s = "HDN" + so.ToString();
                 return s;
             }
-            catch(InvalidOperationException ex)
+            catch(InvalidOperationException)
             {
                 return "HDN1";
             }            
