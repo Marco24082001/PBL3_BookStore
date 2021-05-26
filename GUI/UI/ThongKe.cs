@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using LiveCharts;
 using GUI.BLL;
 using LiveCharts.Wpf;
+using System.Reflection;
 
 namespace GUI
 {
@@ -22,11 +23,12 @@ namespace GUI
             InitializeComponent();
             setData();
             setcbbNam();
+            setcbbSort();
         }   
 
         public void setData()
         {
-            dataGridView2.DataSource = BLL_QuanLy.Instance.BLL_GetAllDoanhSoBanHang();
+            dataGridView1.DataSource = BLL_QuanLy.Instance.BLL_GetAllDoanhSoBanHang();      
         }
 
         private void NextPage_Click(object sender, EventArgs e)
@@ -116,17 +118,28 @@ namespace GUI
             num3.Visible = true;
         }
 
+        public void setcbbSort()
+        {
+            Type type = typeof(DOANH_SO_BAN_HANG);
+            PropertyInfo[] propertyinfo = type.GetProperties();
+            foreach (PropertyInfo info in propertyinfo)
+            {
+                if (info.Name == "NHAN_VIEN") break;
+                cbbSort.Items.Add(info.Name);
+            }
+        }
+
         private void setBestSeller()
         {
             lbBestSeller.Text = "";
-            if (dataGridView2.Rows.Count == 0)
+            if (dataGridView1.Rows.Count == 0)
             {              
                 return;
             }
             List<string> lMaNV = new List<string>();
             List<int> money = new List<int>();
             int tong = 0;
-            foreach (DataGridViewRow i in dataGridView2.Rows)
+            foreach (DataGridViewRow i in dataGridView1.Rows)
             {
                 if(lMaNV.Count == 0)
                 {
@@ -145,7 +158,7 @@ namespace GUI
             }
             for(int i = 0; i < lMaNV.Count; i++)
             {
-                foreach (DataGridViewRow dg in dataGridView2.Rows)
+                foreach (DataGridViewRow dg in dataGridView1.Rows)
                 {
                     if(lMaNV[i] == dg.Cells["MaNhanVien"].Value.ToString())
                     {
@@ -176,13 +189,14 @@ namespace GUI
         private void setBackground()
         {
             int Tong = 0;
-            lb1.Text = dataGridView2.Rows.Count.ToString();
-            foreach(DataGridViewRow i in dataGridView2.Rows)
+            lb1.Text = dataGridView1.Rows.Count.ToString();
+            foreach (DataGridViewRow i in dataGridView1.Rows)
             {
                 Tong += Convert.ToInt32(i.Cells["DoanhSoBan"].Value.ToString());
             }
             TongDoanhSo.Text = Tong.ToString();
             setBestSeller();
+            dataGridView1.Columns["NHAN_VIEN"].Visible = false;
         }
 
         private void cbbNam_SelectedIndexChanged(object sender, EventArgs e)
@@ -192,20 +206,20 @@ namespace GUI
             cbbThang.Text = "";
             cbbNgay.Text = "";
             setcbbThang();
-            dataGridView2.DataSource = BLL_QuanLy.Instance.Bll_GetDoanhSoBanHangFolowNam(Convert.ToInt32(cbbNam.SelectedItem.ToString()));
+            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetDoanhSoBanHangFolowNam(Convert.ToInt32(cbbNam.SelectedItem.ToString()));
             setBackground();
         }
 
         private void cbbThang_SelectedIndexChanged(object sender, EventArgs e)
         {
             setcbbNgay();
-            dataGridView2.DataSource = BLL_QuanLy.Instance.Bll_GetDoanhSoBanHangFolowNamThang(Convert.ToInt32(cbbNam.SelectedItem.ToString()), Convert.ToInt32(cbbThang.SelectedItem.ToString()));
+            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetDoanhSoBanHangFolowNamThang(Convert.ToInt32(cbbNam.SelectedItem.ToString()), Convert.ToInt32(cbbThang.SelectedItem.ToString()));
             setBackground();
         }
 
         private void cbbNgay_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dataGridView2.DataSource = BLL_QuanLy.Instance.Bll_GetDoanhSoBanHangFolowNamThangNgay(Convert.ToInt32(cbbNam.SelectedItem.ToString()),
+            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetDoanhSoBanHangFolowNamThangNgay(Convert.ToInt32(cbbNam.SelectedItem.ToString()),
                 Convert.ToInt32(cbbThang.SelectedItem.ToString()), 
                 Convert.ToInt32(cbbNgay.SelectedItem.ToString()));
             setBackground();
@@ -285,6 +299,17 @@ namespace GUI
             {
                 loadChart((int)num1.Value, (int)num2.Value, (int)num3.Value);
             }
+        }
+
+        private void sortBtn_Click(object sender, EventArgs e)
+        {
+            List<int> LSTT = new List<int>();
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                LSTT.Add((int)dataGridView1.Rows[i].Cells[0].Value);
+            }
+            string CategorySort = cbbSort.SelectedItem.ToString();
+            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_Sort_TurnOver(LSTT, CategorySort);
         }
     }
 }

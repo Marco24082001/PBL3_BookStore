@@ -109,6 +109,7 @@ namespace GUI
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(24, 80);
             this.dataGridView1.Name = "dataGridView1";
@@ -158,9 +159,9 @@ namespace GUI
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(6, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(122, 29);
+            this.label10.Size = new System.Drawing.Size(110, 29);
             this.label10.TabIndex = 37;
-            this.label10.Text = "List book :";
+            this.label10.Text = "List book";
             // 
             // cbbSort
             // 
@@ -202,6 +203,7 @@ namespace GUI
             // AddHoaDon
             // 
             this.AddHoaDon.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.AddHoaDon.Cursor = System.Windows.Forms.Cursors.Hand;
             this.AddHoaDon.IconChar = FontAwesome.Sharp.IconChar.FileMedical;
             this.AddHoaDon.IconColor = System.Drawing.Color.Blue;
             this.AddHoaDon.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -279,6 +281,7 @@ namespace GUI
             // 
             // dataGridView2
             // 
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(30, 328);
             this.dataGridView2.Name = "dataGridView2";
@@ -393,9 +396,9 @@ namespace GUI
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(1, 291);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(186, 29);
+            this.label13.Size = new System.Drawing.Size(180, 29);
             this.label13.TabIndex = 7;
-            this.label13.Text = "Chi tiết hóa đơn:";
+            this.label13.Text = "Chi tiết hóa đơn";
             // 
             // label14
             // 

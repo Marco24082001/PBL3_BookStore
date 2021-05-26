@@ -367,12 +367,30 @@ namespace GUI.BLL
             return listNhanVien;
         }
 
-        public List<SACH> Bll_Sort(List<string> LMS, string CategorySort)
+        public List<DOANH_SO_BAN_HANG> Bll_GetTurnoverBySTT(List<int> LSTT)
+        {
+            List<DOANH_SO_BAN_HANG> listTurnOver = new List<DOANH_SO_BAN_HANG>();
+            foreach (int STT in LSTT)
+            {
+                listTurnOver.Add(db.DOANH_SO_BAN_HANG.Find(STT));
+            }
+            return listTurnOver;
+        }
+
+        public List<BAO_CAO_DOANH_THU> Bll_GetDoanhThuBySTT(List<int> LSTT)
+        {
+            List<BAO_CAO_DOANH_THU> listDoanhThu = new List<BAO_CAO_DOANH_THU>();
+            foreach (int STT in LSTT)
+            {
+                listDoanhThu.Add(db.BAO_CAO_DOANH_THU.Find(STT));
+            }
+            return listDoanhThu;
+        }
+
+        public List<SACH> Bll_Sort_Sach(List<string> LMS, string CategorySort)
         {
             switch(CategorySort)
             {
-                case "MaSach":
-                    return Bll_GetSachByMS(LMS).OrderBy(s => s.MaSach).ToList();
                 case "TenSach":
                     return Bll_GetSachByMS(LMS).OrderBy(s => s.TenSach).ToList();
                 case "GiaBan":
@@ -394,8 +412,6 @@ namespace GUI.BLL
         {
             switch (CategorySort)
             {
-                case "MaNhanVien":
-                    return Bll_GetSachByMNV(LMNV).OrderBy(s => s.MaNhanVien).ToList();
                 case "HoTen":
                     return Bll_GetSachByMNV(LMNV).OrderBy(s => s.HoTen).ToList();
                 case "DanToc":
@@ -413,7 +429,42 @@ namespace GUI.BLL
                 default:
                     return Bll_GetSachByMNV(LMNV).OrderBy(s => s.MaNhanVien).ToList();
             }
-        
+        }
+
+        public List<DOANH_SO_BAN_HANG> Bll_Sort_TurnOver(List<int> LSTT, string CategorySort)
+        {
+            switch (CategorySort)
+            {
+                case "STT":
+                    return Bll_GetTurnoverBySTT(LSTT).OrderBy(s => s.STT).ToList();
+                case "MaNhanVien":
+                    return Bll_GetTurnoverBySTT(LSTT).OrderBy(s => s.MaNhanVien).ToList();
+                case "DoanhSoBan":
+                    return Bll_GetTurnoverBySTT(LSTT).OrderBy(s => s.DoanhSoBan).ToList();
+                default:
+                    return Bll_GetTurnoverBySTT(LSTT).OrderByDescending(s => s.ThoiGian).ToList();
+            }
+        }
+
+        public List<BAO_CAO_DOANH_THU> Bll_Sort_DoanhThu(List<int> LSTT, string CategorySort)
+        {
+            switch (CategorySort)
+            {
+                case "STT":
+                    return Bll_GetDoanhThuBySTT(LSTT).OrderBy(s => s.STT).ToList();
+                case "MaSach":
+                    return Bll_GetDoanhThuBySTT(LSTT).OrderBy(s => s.MaSach).ToList();
+                case "GiaNhap":
+                    return Bll_GetDoanhThuBySTT(LSTT).OrderBy(s => s.GiaNhap).ToList();
+                case "GiaBan":
+                    return Bll_GetDoanhThuBySTT(LSTT).OrderByDescending(s => s.GiaBan).ToList();
+                case "SoLuongBan":
+                    return Bll_GetDoanhThuBySTT(LSTT).OrderByDescending(s => s.SoLuongBan).ToList();
+                case "DoanhThu":
+                    return Bll_GetDoanhThuBySTT(LSTT).OrderByDescending(s => s.DoanhThu).ToList();
+                default:
+                    return Bll_GetDoanhThuBySTT(LSTT).OrderByDescending(s => s.ThoiGian).ToList();
+            }
         }
         public List<BAO_CAO_DOANH_THU> Bll_GetBaoCaoDoanhThuFolowNam(int nam)
         {
@@ -444,25 +495,6 @@ namespace GUI.BLL
         public SeriesCollection Bll_GetValueChart(int num1, int num2, int num3 = -1)
         {
             SeriesCollection series = new SeriesCollection();
-            //var years = db.DOANH_SO_BAN_HANG.Select(p => new { Year = p.ThoiGian.Value.Year }).Distinct();
-
-            //foreach (var year in years)
-            //{
-            //    List<int> values = new List<int>();
-            //    for (int month = 1; month <= 11; month++)
-            //    {
-            //        int value = 0;
-            //        var data = db.DOANH_SO_BAN_HANG.Where(p => p.ThoiGian.Value.Year.Equals(year.Year) && p.ThoiGian.Value.Month.Equals(month))
-            //                                       .Select(p => new { p.DoanhSoBan, p.ThoiGian.Value.Month })
-            //                                       .GroupBy(p => p.Month)
-            //                                       .Select(p => new { Month = p.Key, SumTurnover = p.Sum(i => i.DoanhSoBan) });
-            //        if (data.SingleOrDefault() != null)
-            //            value = (int)data.SingleOrDefault().SumTurnover;
-            //        values.Add(value);
-            //    }
-            //    series.Add(new LineSeries() { Title = year.Year.ToString(), Values = new ChartValues<int>(values) });
-            //}
-            //return series;
             if (num3 != -1)
             {
                 var months = db.DOANH_SO_BAN_HANG.Where(p => p.ThoiGian.Value.Year.Equals(num3) && p.ThoiGian.Value.Month.Equals(num1) || p.ThoiGian.Value.Month.Equals(num2))

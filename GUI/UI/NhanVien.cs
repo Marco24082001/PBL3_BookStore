@@ -393,7 +393,7 @@ namespace GUI
                 LMS.Add(dataGridView1.Rows[i].Cells[0].Value.ToString());
             }
             string CategorySort = cbbSort.SelectedItem.ToString();
-            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_Sort(LMS, CategorySort);
+            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_Sort_Sach(LMS, CategorySort);
         }
     }
 }

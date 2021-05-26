@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,11 +21,12 @@ namespace GUI
             InitializeComponent();
             setData();
             setcbbNam();
+            setcbbSort();
         }
 
         public void setData()
         {
-            dataGridView2.DataSource = BLL_QuanLy.Instance.Bll_GetAllBaoCaoDT();
+            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetAllBaoCaoDT();
         }
 
         private void backPage_Click(object sender, EventArgs e)
@@ -88,10 +90,22 @@ namespace GUI
                 }
             }
         }
+
+        public void setcbbSort()
+        {
+            Type type = typeof(BAO_CAO_DOANH_THU);
+            PropertyInfo[] propertyinfo = type.GetProperties();
+            foreach (PropertyInfo info in propertyinfo)
+            {
+                if (info.Name == "SACH") break;
+                cbbSort.Items.Add(info.Name);
+            }
+        }
+
         private void setBackground()
         {
             int Tong = 0;
-            foreach (DataGridViewRow i in dataGridView2.Rows)
+            foreach (DataGridViewRow i in dataGridView1.Rows)
             {
                 Tong += Convert.ToInt32(i.Cells["DoanhThu"].Value.ToString());
             }
@@ -104,26 +118,37 @@ namespace GUI
             cbbThang.Text = "";
             cbbNgay.Text = "";
             setcbbThang();
-            dataGridView2.DataSource = BLL_QuanLy.Instance.Bll_GetBaoCaoDoanhThuFolowNam(Convert.ToInt32(cbbNam.SelectedItem.ToString()));
+            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetBaoCaoDoanhThuFolowNam(Convert.ToInt32(cbbNam.SelectedItem.ToString()));
             setBackground();
         }
 
         private void cbbThang_SelectedIndexChanged(object sender, EventArgs e)
         {
             setcbbNgay();
-            dataGridView2.DataSource = BLL_QuanLy.Instance.Bll_GetBaoCaoDoanhThuFolowNamThang(Convert.ToInt32(cbbNam.SelectedItem.ToString()), Convert.ToInt32(cbbThang.SelectedItem.ToString()));
+            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetBaoCaoDoanhThuFolowNamThang(Convert.ToInt32(cbbNam.SelectedItem.ToString()), Convert.ToInt32(cbbThang.SelectedItem.ToString()));
             setBackground();
         }
 
         private void cbbNgay_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dataGridView2.DataSource = BLL_QuanLy.Instance.Bll_GetBaoCaoDoanhThuFolowNamThangNgay(Convert.ToInt32(cbbNam.SelectedItem.ToString()), Convert.ToInt32(cbbThang.SelectedItem.ToString()), Convert.ToInt32(cbbNgay.SelectedItem.ToString()));
+            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetBaoCaoDoanhThuFolowNamThangNgay(Convert.ToInt32(cbbNam.SelectedItem.ToString()), Convert.ToInt32(cbbThang.SelectedItem.ToString()), Convert.ToInt32(cbbNgay.SelectedItem.ToString()));
             setBackground();
         }
 
         private void BaoCaoDoanhThu_Load(object sender, EventArgs e)
         {
             setBackground();
+        }
+
+        private void sortBtn_Click(object sender, EventArgs e)
+        {
+            List<int> LSTT = new List<int>();
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                LSTT.Add((int)dataGridView1.Rows[i].Cells[0].Value);
+            }
+            string CategorySort = cbbSort.SelectedItem.ToString();
+            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_Sort_DoanhThu(LSTT, CategorySort);
         }
     }
 }
