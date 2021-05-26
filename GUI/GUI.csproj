@@ -99,6 +99,9 @@
     <Compile Include="SACH.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="TK_NHANVIEN.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -244,11 +247,11 @@
     <EmbeddedResource Include="UI\ThongKe.resx">
       <DependentUpon>ThongKe.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="App.Config" />
     <EntityDeploy Include="Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="App.Config" />
     <None Include="Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </None>
@@ -280,6 +283,9 @@
     </PackageReference>
     <PackageReference Include="Guna.UI2.WinForms">
       <Version>2.0.1.4</Version>
+    </PackageReference>
+    <PackageReference Include="LiveCharts.WinForms">
+      <Version>0.9.7.1</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>

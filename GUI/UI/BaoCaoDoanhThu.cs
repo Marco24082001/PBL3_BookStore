@@ -29,7 +29,7 @@ namespace GUI
 
         private void backPage_Click(object sender, EventArgs e)
         {
-            ThongKe f = new ThongKe();
+            Thongke f = new Thongke();
             Sender(f);
         }
         public void setcbbNam()

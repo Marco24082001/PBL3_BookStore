@@ -435,11 +435,11 @@ namespace GUI
             this.XacNhan.IconColor = System.Drawing.Color.Blue;
             this.XacNhan.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.XacNhan.IconSize = 25;
-            this.XacNhan.Location = new System.Drawing.Point(522, 677);
+            this.XacNhan.Location = new System.Drawing.Point(519, 677);
             this.XacNhan.Name = "XacNhan";
-            this.XacNhan.Size = new System.Drawing.Size(116, 34);
+            this.XacNhan.Size = new System.Drawing.Size(119, 34);
             this.XacNhan.TabIndex = 49;
-            this.XacNhan.Text = " ";
+            this.XacNhan.Text = " Xác nhận";
             this.XacNhan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.XacNhan.UseVisualStyleBackColor = false;
             this.XacNhan.Click += new System.EventHandler(this.XacNhan_Click);

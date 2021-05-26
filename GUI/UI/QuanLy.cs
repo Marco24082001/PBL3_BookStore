@@ -118,8 +118,8 @@ namespace GUI
         private void btnQLDT_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color3);
-            ThongKe f = new ThongKe();
-            ThongKe.Sender = new ThongKe.MyDel(OpenChildForm);
+            Thongke f = new Thongke();
+            Thongke.Sender = new Thongke.MyDel(OpenChildForm);
             OpenChildForm(f);
         }
 
