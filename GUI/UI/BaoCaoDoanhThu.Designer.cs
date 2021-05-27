@@ -40,8 +40,18 @@ namespace GUI
             this.cbbSort = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.backPage = new FontAwesome.Sharp.IconButton();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.loadBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.numDay = new System.Windows.Forms.NumericUpDown();
+            this.turnoverChart = new LiveCharts.WinForms.CartesianChart();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numDay)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -56,9 +66,9 @@ namespace GUI
             this.groupBox1.Controls.Add(this.cbbSort);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(212, 90);
+            this.groupBox1.Location = new System.Drawing.Point(12, 122);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1025, 530);
+            this.groupBox1.Size = new System.Drawing.Size(734, 530);
             this.groupBox1.TabIndex = 54;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Doanh thu";
@@ -66,7 +76,7 @@ namespace GUI
             // cbbNgay
             // 
             this.cbbNgay.FormattingEnabled = true;
-            this.cbbNgay.Location = new System.Drawing.Point(577, 56);
+            this.cbbNgay.Location = new System.Drawing.Point(343, 46);
             this.cbbNgay.Name = "cbbNgay";
             this.cbbNgay.Size = new System.Drawing.Size(121, 28);
             this.cbbNgay.TabIndex = 35;
@@ -75,7 +85,7 @@ namespace GUI
             // cbbThang
             // 
             this.cbbThang.FormattingEnabled = true;
-            this.cbbThang.Location = new System.Drawing.Point(418, 56);
+            this.cbbThang.Location = new System.Drawing.Point(184, 46);
             this.cbbThang.Name = "cbbThang";
             this.cbbThang.Size = new System.Drawing.Size(121, 28);
             this.cbbThang.TabIndex = 36;
@@ -84,7 +94,7 @@ namespace GUI
             // cbbNam
             // 
             this.cbbNam.FormattingEnabled = true;
-            this.cbbNam.Location = new System.Drawing.Point(269, 56);
+            this.cbbNam.Location = new System.Drawing.Point(35, 46);
             this.cbbNam.Name = "cbbNam";
             this.cbbNam.Size = new System.Drawing.Size(121, 28);
             this.cbbNam.TabIndex = 37;
@@ -100,14 +110,14 @@ namespace GUI
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(923, 382);
+            this.dataGridView1.Size = new System.Drawing.Size(663, 350);
             this.dataGridView1.TabIndex = 34;
             // 
             // TongDoanhThu
             // 
             this.TongDoanhThu.Enabled = false;
             this.TongDoanhThu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TongDoanhThu.Location = new System.Drawing.Point(769, 485);
+            this.TongDoanhThu.Location = new System.Drawing.Point(510, 485);
             this.TongDoanhThu.Name = "TongDoanhThu";
             this.TongDoanhThu.Size = new System.Drawing.Size(189, 27);
             this.TongDoanhThu.TabIndex = 33;
@@ -116,7 +126,7 @@ namespace GUI
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(570, 483);
+            this.label8.Location = new System.Drawing.Point(311, 483);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(193, 29);
             this.label8.TabIndex = 32;
@@ -181,11 +191,100 @@ namespace GUI
             this.backPage.UseVisualStyleBackColor = false;
             this.backPage.Click += new System.EventHandler(this.backPage_Click);
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.guna2HtmlLabel1);
+            this.groupBox2.Controls.Add(this.loadBtn);
+            this.groupBox2.Controls.Add(this.numDay);
+            this.groupBox2.Controls.Add(this.turnoverChart);
+            this.groupBox2.Controls.Add(this.iconPictureBox1);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Location = new System.Drawing.Point(751, 124);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Size = new System.Drawing.Size(682, 528);
+            this.groupBox2.TabIndex = 56;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Doanh thu";
+            // 
+            // loadBtn
+            // 
+            this.loadBtn.BorderRadius = 15;
+            this.loadBtn.CheckedState.Parent = this.loadBtn;
+            this.loadBtn.CustomImages.Parent = this.loadBtn;
+            this.loadBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loadBtn.ForeColor = System.Drawing.Color.White;
+            this.loadBtn.HoverState.Parent = this.loadBtn;
+            this.loadBtn.Location = new System.Drawing.Point(508, 61);
+            this.loadBtn.Name = "loadBtn";
+            this.loadBtn.ShadowDecoration.Parent = this.loadBtn;
+            this.loadBtn.Size = new System.Drawing.Size(125, 31);
+            this.loadBtn.TabIndex = 52;
+            this.loadBtn.Text = "Load";
+            this.loadBtn.Click += new System.EventHandler(this.loadBtn_Click);
+            // 
+            // numDay
+            // 
+            this.numDay.Location = new System.Drawing.Point(65, 61);
+            this.numDay.Margin = new System.Windows.Forms.Padding(2);
+            this.numDay.Name = "numDay";
+            this.numDay.Size = new System.Drawing.Size(95, 22);
+            this.numDay.TabIndex = 33;
+            this.numDay.ValueChanged += new System.EventHandler(this.numDay_ValueChanged);
+            // 
+            // turnoverChart
+            // 
+            this.turnoverChart.Location = new System.Drawing.Point(39, 126);
+            this.turnoverChart.Margin = new System.Windows.Forms.Padding(2);
+            this.turnoverChart.Name = "turnoverChart";
+            this.turnoverChart.Size = new System.Drawing.Size(617, 348);
+            this.turnoverChart.TabIndex = 28;
+            this.turnoverChart.Text = "cartesianChart1";
+            // 
+            // iconPictureBox1
+            // 
+            this.iconPictureBox1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.iconPictureBox1.ForeColor = System.Drawing.Color.Black;
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Sort;
+            this.iconPictureBox1.IconColor = System.Drawing.Color.Black;
+            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox1.IconSize = 29;
+            this.iconPictureBox1.Location = new System.Drawing.Point(11, 58);
+            this.iconPictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.iconPictureBox1.Name = "iconPictureBox1";
+            this.iconPictureBox1.Size = new System.Drawing.Size(32, 29);
+            this.iconPictureBox1.TabIndex = 27;
+            this.iconPictureBox1.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(6, 0);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(207, 29);
+            this.label3.TabIndex = 25;
+            this.label3.Text = "Biểu đồ doanh thu";
+            // 
+            // guna2HtmlLabel1
+            // 
+            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(169, 59);
+            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(90, 24);
+            this.guna2HtmlLabel1.TabIndex = 53;
+            this.guna2HtmlLabel1.Text = "Ngày trước";
+            // 
             // BaoCaoDoanhThu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1444, 753);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.backPage);
             this.Controls.Add(this.groupBox1);
             this.Name = "BaoCaoDoanhThu";
@@ -194,6 +293,10 @@ namespace GUI
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numDay)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -211,5 +314,12 @@ namespace GUI
         private System.Windows.Forms.ComboBox cbbNgay;
         private System.Windows.Forms.ComboBox cbbThang;
         private System.Windows.Forms.ComboBox cbbNam;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private Guna.UI2.WinForms.Guna2Button loadBtn;
+        private System.Windows.Forms.NumericUpDown numDay;
+        private LiveCharts.WinForms.CartesianChart turnoverChart;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private System.Windows.Forms.Label label3;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
     }
 }

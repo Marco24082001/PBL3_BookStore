@@ -54,7 +54,7 @@ namespace GUI
             this.lblMonth = new System.Windows.Forms.Label();
             this.radioYear = new Guna.UI2.WinForms.Guna2CustomRadioButton();
             this.radioMonth = new Guna.UI2.WinForms.Guna2CustomRadioButton();
-            this.turnoverChart = new LiveCharts.WinForms.CartesianChart();
+            this.salesChart = new LiveCharts.WinForms.CartesianChart();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.NextPage = new FontAwesome.Sharp.IconButton();
@@ -266,7 +266,7 @@ namespace GUI
             this.groupBox2.Controls.Add(this.lblMonth);
             this.groupBox2.Controls.Add(this.radioYear);
             this.groupBox2.Controls.Add(this.radioMonth);
-            this.groupBox2.Controls.Add(this.turnoverChart);
+            this.groupBox2.Controls.Add(this.salesChart);
             this.groupBox2.Controls.Add(this.iconPictureBox1);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Location = new System.Drawing.Point(688, 131);
@@ -381,14 +381,14 @@ namespace GUI
             this.radioMonth.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
             this.radioMonth.UncheckedState.Parent = this.radioMonth;
             // 
-            // turnoverChart
+            // salesChart
             // 
-            this.turnoverChart.Location = new System.Drawing.Point(39, 126);
-            this.turnoverChart.Margin = new System.Windows.Forms.Padding(2);
-            this.turnoverChart.Name = "turnoverChart";
-            this.turnoverChart.Size = new System.Drawing.Size(599, 348);
-            this.turnoverChart.TabIndex = 28;
-            this.turnoverChart.Text = "cartesianChart1";
+            this.salesChart.Location = new System.Drawing.Point(39, 126);
+            this.salesChart.Margin = new System.Windows.Forms.Padding(2);
+            this.salesChart.Name = "salesChart";
+            this.salesChart.Size = new System.Drawing.Size(599, 348);
+            this.salesChart.TabIndex = 28;
+            this.salesChart.Text = "cartesianChart1";
             // 
             // iconPictureBox1
             // 
@@ -497,7 +497,7 @@ namespace GUI
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ComboBox cbbNgay;
         private System.Windows.Forms.ComboBox cbbThang;
-        private LiveCharts.WinForms.CartesianChart turnoverChart;
+        private LiveCharts.WinForms.CartesianChart salesChart;
         private Guna.UI2.WinForms.Guna2CustomRadioButton radioYear;
         private Guna.UI2.WinForms.Guna2CustomRadioButton radioMonth;
         private System.Windows.Forms.Label lblMonth;
