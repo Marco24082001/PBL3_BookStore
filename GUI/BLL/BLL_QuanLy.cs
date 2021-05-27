@@ -6,12 +6,13 @@ using System.Data.Entity.Core.Objects;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 namespace GUI.BLL
 {
     class BLL_QuanLy
     {
         QuanLyEntities db = new QuanLyEntities();
-        public static BLL_QuanLy _Instance;
+        public static BLL_QuanLy _Instance; 
         public static BLL_QuanLy Instance
         {
             get
@@ -93,6 +94,10 @@ namespace GUI.BLL
             List<SACH> lSach = list;
             return lSach;
         }
+        public List<SACH> Bll_GetAllSachByTrangThai()
+        {
+            return db.SACHes.Where(p => p.TrangThai == true).ToList();
+        }
         public List<DOANH_SO_BAN_HANG> BLL_GetAllDoanhSoBanHang()
         {
             return db.DOANH_SO_BAN_HANG.ToList();
@@ -111,6 +116,11 @@ namespace GUI.BLL
             List<String> list = new List<string>();
             list = db.SACHes.Select(p => p.MaSach).ToList();
             return list;
+        }
+
+        public List<string> Bll_GetAllMaSachByTrangThai()
+        {
+            return db.SACHes.Where(p => p.TrangThai).Select(a => a.MaSach).ToList();
         }
 
         public List<string> Bll_GetAllMaDonNhap()
@@ -491,7 +501,7 @@ namespace GUI.BLL
         {
             return db.DOANH_SO_BAN_HANG.Where(p => p.ThoiGian.Value.Year == nam && p.ThoiGian.Value.Month == thang && p.ThoiGian.Value.Day == ngay).ToList();
         }
-
+                
         public SeriesCollection Bll_GetValueChart(int num1, int num2, int num3 = -1)
         {
             SeriesCollection series = new SeriesCollection();
