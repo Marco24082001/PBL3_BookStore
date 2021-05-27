@@ -256,7 +256,7 @@ namespace GUI.BLL
         public void Bll_EditSLByMaSach(string masach, int sl)
         {
             var tmp = db.SACHes.Find(masach);
-            tmp.SoLuong = sl;
+            tmp.SoLuong = sl;   
             db.SaveChanges();
         }
         public void Bll_EditNhanVien(NHAN_VIEN nv)
