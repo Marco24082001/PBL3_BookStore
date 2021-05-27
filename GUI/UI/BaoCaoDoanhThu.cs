@@ -100,6 +100,7 @@ namespace GUI
                 if (info.Name == "SACH") break;
                 cbbSort.Items.Add(info.Name);
             }
+            cbbSort.SelectedIndex = 0;
         }
 
         private void setBackground()

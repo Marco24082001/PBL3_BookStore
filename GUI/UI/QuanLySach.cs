@@ -80,6 +80,7 @@ namespace GUI
                 if (info.Name == "TrangThai") break;
                 cbbSort.Items.Add(info.Name);
             }
+            cbbSort.SelectedIndex = 0;
         }
 
         private void Them_Click(object sender, EventArgs e)

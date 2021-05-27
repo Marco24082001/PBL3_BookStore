@@ -127,6 +127,7 @@ namespace GUI
                 if (info.Name == "NHAN_VIEN") break;
                 cbbSort.Items.Add(info.Name);
             }
+            cbbSort.SelectedIndex = 0;
         }
 
         private void setBestSeller()
