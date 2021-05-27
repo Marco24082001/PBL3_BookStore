@@ -99,9 +99,6 @@
     <Compile Include="SACH.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="TK_NHANVIEN.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -283,6 +280,9 @@
     </PackageReference>
     <PackageReference Include="Guna.UI2.WinForms">
       <Version>2.0.1.4</Version>
+    </PackageReference>
+    <PackageReference Include="LiveCharts">
+      <Version>0.9.7</Version>
     </PackageReference>
     <PackageReference Include="LiveCharts.WinForms">
       <Version>0.9.7.1</Version>
