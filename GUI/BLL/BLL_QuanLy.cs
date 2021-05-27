@@ -266,7 +266,7 @@ namespace GUI.BLL
         public void Bll_EditSLByMaSach(string masach, int sl)
         {
             var tmp = db.SACHes.Find(masach);
-            tmp.SoLuong = sl;
+            tmp.SoLuong = sl;   
             db.SaveChanges();
         }
         public void Bll_EditNhanVien(NHAN_VIEN nv)
@@ -377,7 +377,7 @@ namespace GUI.BLL
             return listNhanVien;
         }
 
-        public List<DOANH_SO_BAN_HANG> Bll_GetTurnoverBySTT(List<int> LSTT)
+        public List<DOANH_SO_BAN_HANG> Bll_GetSalesBySTT(List<int> LSTT)
         {
             List<DOANH_SO_BAN_HANG> listTurnOver = new List<DOANH_SO_BAN_HANG>();
             foreach (int STT in LSTT)
@@ -441,18 +441,18 @@ namespace GUI.BLL
             }
         }
 
-        public List<DOANH_SO_BAN_HANG> Bll_Sort_TurnOver(List<int> LSTT, string CategorySort)
+        public List<DOANH_SO_BAN_HANG> Bll_Sort_Sales(List<int> LSTT, string CategorySort)
         {
             switch (CategorySort)
             {
                 case "STT":
-                    return Bll_GetTurnoverBySTT(LSTT).OrderBy(s => s.STT).ToList();
+                    return Bll_GetSalesBySTT(LSTT).OrderBy(s => s.STT).ToList();
                 case "MaNhanVien":
-                    return Bll_GetTurnoverBySTT(LSTT).OrderBy(s => s.MaNhanVien).ToList();
+                    return Bll_GetSalesBySTT(LSTT).OrderBy(s => s.MaNhanVien).ToList();
                 case "DoanhSoBan":
-                    return Bll_GetTurnoverBySTT(LSTT).OrderBy(s => s.DoanhSoBan).ToList();
+                    return Bll_GetSalesBySTT(LSTT).OrderBy(s => s.DoanhSoBan).ToList();
                 default:
-                    return Bll_GetTurnoverBySTT(LSTT).OrderByDescending(s => s.ThoiGian).ToList();
+                    return Bll_GetSalesBySTT(LSTT).OrderByDescending(s => s.ThoiGian).ToList();
             }
         }
 
@@ -502,7 +502,7 @@ namespace GUI.BLL
             return db.DOANH_SO_BAN_HANG.Where(p => p.ThoiGian.Value.Year == nam && p.ThoiGian.Value.Month == thang && p.ThoiGian.Value.Day == ngay).ToList();
         }
                 
-        public SeriesCollection Bll_GetValueChart(int num1, int num2, int num3 = -1)
+        public SeriesCollection Bll_GetValueChart_Sales(int num1, int num2, int num3 = -1)
         {
             SeriesCollection series = new SeriesCollection();
             if (num3 != -1)
@@ -540,15 +540,47 @@ namespace GUI.BLL
                         var data = db.DOANH_SO_BAN_HANG.Where(p => p.ThoiGian.Value.Year.Equals(year.Year) && p.ThoiGian.Value.Month.Equals(month))
                                                        .Select(p => new { p.DoanhSoBan, p.ThoiGian.Value.Month })
                                                        .GroupBy(p => p.Month)
-                                                       .Select(p => new { Month = p.Key, SumTurnover = p.Sum(i => i.DoanhSoBan) });
+                                                       .Select(p => new { Month = p.Key, SumSales = p.Sum(i => i.DoanhSoBan) });
                         if (data.SingleOrDefault() != null)
-                            value = (int)data.SingleOrDefault().SumTurnover;
+                            value = (int)data.SingleOrDefault().SumSales;
                         values.Add(value);
                     }
                     series.Add(new LineSeries() { Title = year.Year.ToString(), Values = new ChartValues<int>(values) });
                 }
                 return series;
             }
+        }
+
+        public List<DateTime> Bll_GetListDate(int numDay)
+        {
+            List<DateTime> listDate = new List<DateTime>();
+            listDate.Add(DateTime.Now);
+            for(int i = 0; i <= numDay; i++)
+            {
+                listDate.Add(listDate[i].AddDays(-1));
+            }
+            listDate.Reverse();
+            return listDate;
+        }
+
+        public SeriesCollection Bll_GetValueChart_Turnover(int numDay)
+        {
+            List<int> values = new List<int>();
+            SeriesCollection series = new SeriesCollection();
+            
+            foreach (DateTime date in Bll_GetListDate(numDay))
+            {
+                int value = 0;
+                var data = db.BAO_CAO_DOANH_THU.Where(p => p.ThoiGian.Value.Year.Equals(date.Year) && p.ThoiGian.Value.Month.Equals(date.Month) && p.ThoiGian.Value.Day.Equals(date.Day))
+                                               .Select(p => new { p.DoanhThu, Day = p.ThoiGian.Value.Day })
+                                               .GroupBy(p => p.Day)
+                                               .Select(p => new { Day = p.Key, sumTurnover = p.Sum(i => i.DoanhThu) });
+                if (data.SingleOrDefault() != null)
+                    value = (int)data.SingleOrDefault().sumTurnover;
+                values.Add(value);
+            }
+            series.Add(new LineSeries() {Values = new ChartValues<int>(values) });
+            return series;
         }
     }   
 }

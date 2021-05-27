@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GUI.BLL;
+using LiveCharts;
 
 namespace GUI
 {
@@ -22,6 +23,7 @@ namespace GUI
             setData();
             setcbbNam();
             setcbbSort();
+            setNumbericDayUpdown();
         }
 
         public void setData()
@@ -100,6 +102,14 @@ namespace GUI
                 if (info.Name == "SACH") break;
                 cbbSort.Items.Add(info.Name);
             }
+            cbbSort.SelectedIndex = 0;
+        }
+
+        public void setNumbericDayUpdown()
+        {
+            numDay.Maximum = 365;
+            numDay.Minimum = 1;
+            numDay.Value = 6;
         }
 
         private void setBackground()
@@ -149,6 +159,48 @@ namespace GUI
             }
             string CategorySort = cbbSort.SelectedItem.ToString();
             dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_Sort_DoanhThu(LSTT, CategorySort);
+        }
+
+        private void setChart(int numDay)
+        {
+            turnoverChart.AxisX.Clear();
+            turnoverChart.AxisY.Clear();
+            List<string> Lb = new List<string>();
+            foreach(DateTime date in BLL_QuanLy.Instance.Bll_GetListDate(numDay))
+            {
+                Lb.Add(date.ToShortDateString());
+            }
+
+            turnoverChart.AxisX.Add(new LiveCharts.Wpf.Axis
+            {
+                Title = "Date",
+                Labels = Lb
+            });
+            turnoverChart.AxisY.Add(new LiveCharts.Wpf.Axis
+            {
+                Title = "Turnover",
+                LabelFormatter = value => value.ToString("C")
+            });
+            turnoverChart.LegendLocation = LiveCharts.LegendLocation.Right;
+           
+        }
+
+        private void loadChart(int numDay)
+        {
+            turnoverChart.Series.Clear();
+            setChart(numDay);
+            SeriesCollection series = new SeriesCollection();
+            turnoverChart.Series = BLL_QuanLy.Instance.Bll_GetValueChart_Turnover(numDay);
+        }
+
+        private void loadBtn_Click(object sender, EventArgs e)
+        {
+            loadChart((int)numDay.Value);
+        }
+
+        private void numDay_ValueChanged(object sender, EventArgs e)
+        {
+            loadChart((int)numDay.Value);
         }
     }
 }

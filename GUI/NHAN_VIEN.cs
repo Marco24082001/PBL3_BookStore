@@ -37,6 +37,5 @@ namespace GUI
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HOA_DON_BAN> HOA_DON_BAN { get; set; }
         public virtual TK_NHANVIEN TK_NHANVIEN { get; set; }
-
     }
 }

@@ -91,6 +91,7 @@ namespace GUI
                     cbbSort.Items.Add(info.Name);
                 }
             }
+            cbbSort.SelectedIndex = 0;
         }
 
         private void NhanVien_Load(object sender, EventArgs e)

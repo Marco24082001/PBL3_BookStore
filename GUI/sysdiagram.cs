@@ -12,15 +12,12 @@ namespace GUI
     using System;
     using System.Collections.Generic;
     
-    public partial class CHI_TIET_HOA_DON_NHAP
+    public partial class sysdiagram
     {
-        public int ID { get; set; }
-        public string MaDonNhap { get; set; }
-        public string MaSach { get; set; }
-        public Nullable<int> SoLuong { get; set; }
-        public Nullable<int> ThanhTien { get; set; }
-    
-        public virtual HOA_DON_NHAP HOA_DON_NHAP { get; set; }
-        public virtual SACH SACH { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

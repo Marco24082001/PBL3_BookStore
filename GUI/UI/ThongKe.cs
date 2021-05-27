@@ -127,6 +127,7 @@ namespace GUI
                 if (info.Name == "NHAN_VIEN") break;
                 cbbSort.Items.Add(info.Name);
             }
+            cbbSort.SelectedIndex = 0;
         }
 
         private void setBestSeller()
@@ -139,6 +140,7 @@ namespace GUI
             List<string> lMaNV = new List<string>();
             List<int> money = new List<int>();
             int tong = 0;
+
             foreach (DataGridViewRow i in dataGridView1.Rows)
             {
                 if(lMaNV.Count == 0)
@@ -156,6 +158,7 @@ namespace GUI
                     }
                 }
             }
+
             for(int i = 0; i < lMaNV.Count; i++)
             {
                 foreach (DataGridViewRow dg in dataGridView1.Rows)
@@ -168,6 +171,7 @@ namespace GUI
                 money.Add(tong);
                 tong = 0;
             }
+
             List<string> listMa = new List<string>();
             int max = money[0];
             for(int i = 0; i < money.Count; i++)
@@ -183,7 +187,7 @@ namespace GUI
             }
             foreach(string i in listMa)
             {
-                lbBestSeller.Text += BLL_QuanLy.Instance.Bll_GetNameNVByMaNV(i);
+                lbBestSeller.Text = BLL_QuanLy.Instance.Bll_GetNameNVByMaNV(i);
             }
         }
         private void setBackground()
@@ -233,43 +237,43 @@ namespace GUI
 
         private void setChart(string Category)
         {
-            turnoverChart.AxisX.Clear();
-            turnoverChart.AxisY.Clear();
+            salesChart.AxisX.Clear();
+            salesChart.AxisY.Clear();
             if(Category == "Year")
             {
-                turnoverChart.AxisX.Add(new LiveCharts.Wpf.Axis
+                salesChart.AxisX.Add(new LiveCharts.Wpf.Axis
                 {
                     Title = "Month",
                     Labels = new[] { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" }
                 });
-                turnoverChart.AxisY.Add(new LiveCharts.Wpf.Axis
+                salesChart.AxisY.Add(new LiveCharts.Wpf.Axis
                 {
-                    Title = "Turn over",
+                    Title = "Sales",
                     LabelFormatter = value => value.ToString("C")
                 });
-                turnoverChart.LegendLocation = LiveCharts.LegendLocation.Right;
+                salesChart.LegendLocation = LiveCharts.LegendLocation.Right;
             }
             else
             {
-                turnoverChart.AxisX.Add(new LiveCharts.Wpf.Axis
+                salesChart.AxisX.Add(new LiveCharts.Wpf.Axis
                 {
                     Title = "Date",
                     Labels = new[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }
                 });
-                turnoverChart.AxisY.Add(new LiveCharts.Wpf.Axis
+                salesChart.AxisY.Add(new LiveCharts.Wpf.Axis
                 {
-                    Title = "Turn over",
+                    Title = "Sales",
                     LabelFormatter = value => value.ToString("C")
                 });
-                turnoverChart.LegendLocation = LiveCharts.LegendLocation.Right;
+                salesChart.LegendLocation = LiveCharts.LegendLocation.Right;
             }
         }
 
         private void loadChart(int num1, int num2, int num3 = -1)
         {
-            turnoverChart.Series.Clear();
+            salesChart.Series.Clear();
             SeriesCollection series = new SeriesCollection();
-            turnoverChart.Series = BLL_QuanLy.Instance.Bll_GetValueChart(num1, num2, num3);
+            salesChart.Series = BLL_QuanLy.Instance.Bll_GetValueChart_Sales(num1, num2, num3);
         }
 
         private void radioYear_CheckedChanged(object sender, EventArgs e)
@@ -309,7 +313,7 @@ namespace GUI
                 LSTT.Add((int)dataGridView1.Rows[i].Cells[0].Value);
             }
             string CategorySort = cbbSort.SelectedItem.ToString();
-            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_Sort_TurnOver(LSTT, CategorySort);
+            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_Sort_Sales(LSTT, CategorySort);
         }
     }
 }
