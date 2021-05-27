@@ -38,7 +38,7 @@ namespace GUI
 
         public void setData1()
         {
-            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetAllSach();
+            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetAllSachByTrangThai();
             dataGridView1.Columns[6].Visible = false;
             dataGridView1.Columns[7].Visible = false;
             dataGridView1.Columns[8].Visible = false;
@@ -62,7 +62,7 @@ namespace GUI
         }
         public void setCbbMaSach()
         {
-            foreach(string i in BLL_QuanLy.Instance.Bll_GetAllMaSach())
+            foreach(string i in BLL_QuanLy.Instance.Bll_GetAllMaSachByTrangThai())
             {
                 cbbMaSach.Items.Add(i);
             }

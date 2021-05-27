@@ -269,7 +269,7 @@ namespace GUI
         {
             turnoverChart.Series.Clear();
             SeriesCollection series = new SeriesCollection();
-            turnoverChart.Series = BLL_QuanLy.Instance.Bll_GetValueChart(num1, num2, num3);
+            //turnoverChart.Series = BLL_QuanLy.Instance.Bll_GetValueChart(num1, num2, num3);
         }
 
         private void radioYear_CheckedChanged(object sender, EventArgs e)
