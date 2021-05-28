@@ -202,5 +202,29 @@ namespace GUI
         {
             loadChart((int)numDay.Value);
         }
+
+        private void cbbNam_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            cbbThang.Items.Clear();
+            cbbNgay.Items.Clear();
+            cbbThang.Text = "";
+            cbbNgay.Text = "";
+            setcbbThang();
+            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetBaoCaoDoanhThuFolowNam(Convert.ToInt32(cbbNam.SelectedItem.ToString()));
+            setBackground();
+        }
+
+        private void cbbThang_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            setcbbNgay();
+            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetBaoCaoDoanhThuFolowNamThang(Convert.ToInt32(cbbNam.SelectedItem.ToString()), Convert.ToInt32(cbbThang.SelectedItem.ToString()));
+            setBackground();
+        }
+
+        private void cbbNgay_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetBaoCaoDoanhThuFolowNamThangNgay(Convert.ToInt32(cbbNam.SelectedItem.ToString()), Convert.ToInt32(cbbThang.SelectedItem.ToString()), Convert.ToInt32(cbbNgay.SelectedItem.ToString()));
+            setBackground();
+        }
     }
 }

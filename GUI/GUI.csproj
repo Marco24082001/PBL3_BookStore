@@ -99,6 +99,9 @@
     <Compile Include="SACH.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="TK_NHANVIEN.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -115,12 +118,6 @@
     </Compile>
     <Compile Include="UI\NguoiDung.Designer.cs">
       <DependentUpon>NguoiDung.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\ThemHoaDon.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\ThemHoaDon.Designer.cs">
-      <DependentUpon>ThemHoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\ThemNXB.cs">
       <SubType>Form</SubType>
@@ -201,9 +198,6 @@
     <EmbeddedResource Include="UI\NguoiDung.resx">
       <DependentUpon>NguoiDung.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\ThemHoaDon.resx">
-      <DependentUpon>ThemHoaDon.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UI\ThemNXB.resx">
       <DependentUpon>ThemNXB.cs</DependentUpon>
     </EmbeddedResource>
@@ -244,11 +238,11 @@
     <EmbeddedResource Include="UI\ThongKe.resx">
       <DependentUpon>ThongKe.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="App.Config" />
     <EntityDeploy Include="Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="App.Config" />
     <None Include="Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </None>

@@ -37,36 +37,37 @@ namespace GUI
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
-            this.cbbNgay = new System.Windows.Forms.ComboBox();
-            this.cbbThang = new System.Windows.Forms.ComboBox();
-            this.cbbNam = new System.Windows.Forms.ComboBox();
-            this.TongDoanhSo = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.sortBtn = new FontAwesome.Sharp.IconButton();
-            this.cbbSort = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.loadBtn = new Guna.UI2.WinForms.Guna2Button();
-            this.num3 = new System.Windows.Forms.NumericUpDown();
-            this.num2 = new System.Windows.Forms.NumericUpDown();
-            this.num1 = new System.Windows.Forms.NumericUpDown();
             this.lblYear = new System.Windows.Forms.Label();
             this.lblMonth = new System.Windows.Forms.Label();
             this.radioYear = new Guna.UI2.WinForms.Guna2CustomRadioButton();
             this.radioMonth = new Guna.UI2.WinForms.Guna2CustomRadioButton();
             this.salesChart = new LiveCharts.WinForms.CartesianChart();
-            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.NextPage = new FontAwesome.Sharp.IconButton();
+            this.entityCommand1 = new System.Data.Entity.Core.EntityClient.EntityCommand();
+            this.cbbNam = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cbbThang = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cbbNgay = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.TongDoanhSo = new Guna.UI2.WinForms.Guna2TextBox();
+            this.cbbSort = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            this.num1 = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.num2 = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.num3 = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.dOANHSOBANHANGBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.num3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dOANHSOBANHANGBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -114,15 +115,15 @@ namespace GUI
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Controls.Add(this.iconPictureBox2);
+            this.groupBox1.Controls.Add(this.cbbSort);
+            this.groupBox1.Controls.Add(this.TongDoanhSo);
             this.groupBox1.Controls.Add(this.cbbNgay);
             this.groupBox1.Controls.Add(this.cbbThang);
             this.groupBox1.Controls.Add(this.cbbNam);
-            this.groupBox1.Controls.Add(this.TongDoanhSo);
+            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.iconPictureBox2);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.sortBtn);
-            this.groupBox1.Controls.Add(this.cbbSort);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(49, 128);
@@ -150,58 +151,18 @@ namespace GUI
             // 
             // iconPictureBox2
             // 
-            this.iconPictureBox2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.iconPictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.iconPictureBox2.ForeColor = System.Drawing.Color.Black;
             this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.Sort;
             this.iconPictureBox2.IconColor = System.Drawing.Color.Black;
             this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox2.IconSize = 29;
-            this.iconPictureBox2.Location = new System.Drawing.Point(31, 59);
+            this.iconPictureBox2.IconSize = 35;
+            this.iconPictureBox2.Location = new System.Drawing.Point(31, 58);
             this.iconPictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.iconPictureBox2.Name = "iconPictureBox2";
             this.iconPictureBox2.Size = new System.Drawing.Size(32, 29);
             this.iconPictureBox2.TabIndex = 35;
             this.iconPictureBox2.TabStop = false;
-            // 
-            // cbbNgay
-            // 
-            this.cbbNgay.FormattingEnabled = true;
-            this.cbbNgay.Location = new System.Drawing.Point(378, 59);
-            this.cbbNgay.Margin = new System.Windows.Forms.Padding(2);
-            this.cbbNgay.Name = "cbbNgay";
-            this.cbbNgay.Size = new System.Drawing.Size(122, 28);
-            this.cbbNgay.TabIndex = 34;
-            this.cbbNgay.SelectedIndexChanged += new System.EventHandler(this.cbbNgay_SelectedIndexChanged);
-            // 
-            // cbbThang
-            // 
-            this.cbbThang.FormattingEnabled = true;
-            this.cbbThang.Location = new System.Drawing.Point(218, 59);
-            this.cbbThang.Margin = new System.Windows.Forms.Padding(2);
-            this.cbbThang.Name = "cbbThang";
-            this.cbbThang.Size = new System.Drawing.Size(122, 28);
-            this.cbbThang.TabIndex = 34;
-            this.cbbThang.SelectedIndexChanged += new System.EventHandler(this.cbbThang_SelectedIndexChanged);
-            // 
-            // cbbNam
-            // 
-            this.cbbNam.FormattingEnabled = true;
-            this.cbbNam.Location = new System.Drawing.Point(69, 59);
-            this.cbbNam.Margin = new System.Windows.Forms.Padding(2);
-            this.cbbNam.Name = "cbbNam";
-            this.cbbNam.Size = new System.Drawing.Size(122, 28);
-            this.cbbNam.TabIndex = 34;
-            this.cbbNam.SelectedIndexChanged += new System.EventHandler(this.cbbNam_SelectedIndexChanged);
-            // 
-            // TongDoanhSo
-            // 
-            this.TongDoanhSo.Enabled = false;
-            this.TongDoanhSo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TongDoanhSo.Location = new System.Drawing.Point(455, 479);
-            this.TongDoanhSo.Margin = new System.Windows.Forms.Padding(2);
-            this.TongDoanhSo.Name = "TongDoanhSo";
-            this.TongDoanhSo.Size = new System.Drawing.Size(150, 27);
-            this.TongDoanhSo.TabIndex = 33;
             // 
             // label8
             // 
@@ -224,7 +185,7 @@ namespace GUI
             this.sortBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.sortBtn.IconSize = 20;
             this.sortBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.sortBtn.Location = new System.Drawing.Point(34, 476);
+            this.sortBtn.Location = new System.Drawing.Point(31, 477);
             this.sortBtn.Margin = new System.Windows.Forms.Padding(2);
             this.sortBtn.Name = "sortBtn";
             this.sortBtn.Size = new System.Drawing.Size(100, 34);
@@ -234,16 +195,6 @@ namespace GUI
             this.sortBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.sortBtn.UseVisualStyleBackColor = false;
             this.sortBtn.Click += new System.EventHandler(this.sortBtn_Click);
-            // 
-            // cbbSort
-            // 
-            this.cbbSort.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbbSort.FormattingEnabled = true;
-            this.cbbSort.Location = new System.Drawing.Point(140, 480);
-            this.cbbSort.Margin = new System.Windows.Forms.Padding(2);
-            this.cbbSort.Name = "cbbSort";
-            this.cbbSort.Size = new System.Drawing.Size(110, 28);
-            this.cbbSort.TabIndex = 30;
             // 
             // label10
             // 
@@ -258,16 +209,16 @@ namespace GUI
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.loadBtn);
             this.groupBox2.Controls.Add(this.num3);
             this.groupBox2.Controls.Add(this.num2);
             this.groupBox2.Controls.Add(this.num1);
+            this.groupBox2.Controls.Add(this.iconPictureBox1);
+            this.groupBox2.Controls.Add(this.loadBtn);
             this.groupBox2.Controls.Add(this.lblYear);
             this.groupBox2.Controls.Add(this.lblMonth);
             this.groupBox2.Controls.Add(this.radioYear);
             this.groupBox2.Controls.Add(this.radioMonth);
             this.groupBox2.Controls.Add(this.salesChart);
-            this.groupBox2.Controls.Add(this.iconPictureBox1);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Location = new System.Drawing.Point(688, 131);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
@@ -294,30 +245,6 @@ namespace GUI
             this.loadBtn.Text = "Load";
             this.loadBtn.Click += new System.EventHandler(this.loadBtn_Click);
             // 
-            // num3
-            // 
-            this.num3.Location = new System.Drawing.Point(288, 61);
-            this.num3.Margin = new System.Windows.Forms.Padding(2);
-            this.num3.Name = "num3";
-            this.num3.Size = new System.Drawing.Size(95, 22);
-            this.num3.TabIndex = 35;
-            // 
-            // num2
-            // 
-            this.num2.Location = new System.Drawing.Point(176, 61);
-            this.num2.Margin = new System.Windows.Forms.Padding(2);
-            this.num2.Name = "num2";
-            this.num2.Size = new System.Drawing.Size(95, 22);
-            this.num2.TabIndex = 34;
-            // 
-            // num1
-            // 
-            this.num1.Location = new System.Drawing.Point(65, 61);
-            this.num1.Margin = new System.Windows.Forms.Padding(2);
-            this.num1.Name = "num1";
-            this.num1.Size = new System.Drawing.Size(95, 22);
-            this.num1.TabIndex = 33;
-            // 
             // lblYear
             // 
             this.lblYear.AutoSize = true;
@@ -340,7 +267,7 @@ namespace GUI
             // 
             // radioYear
             // 
-            this.radioYear.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.radioYear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.radioYear.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.radioYear.CheckedState.BorderThickness = 0;
             this.radioYear.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -362,7 +289,7 @@ namespace GUI
             // 
             // radioMonth
             // 
-            this.radioMonth.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.radioMonth.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.radioMonth.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.radioMonth.CheckedState.BorderThickness = 0;
             this.radioMonth.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -389,21 +316,6 @@ namespace GUI
             this.salesChart.Size = new System.Drawing.Size(599, 348);
             this.salesChart.TabIndex = 28;
             this.salesChart.Text = "cartesianChart1";
-            // 
-            // iconPictureBox1
-            // 
-            this.iconPictureBox1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.iconPictureBox1.ForeColor = System.Drawing.Color.Black;
-            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Sort;
-            this.iconPictureBox1.IconColor = System.Drawing.Color.Black;
-            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.IconSize = 29;
-            this.iconPictureBox1.Location = new System.Drawing.Point(11, 58);
-            this.iconPictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Size = new System.Drawing.Size(32, 29);
-            this.iconPictureBox1.TabIndex = 27;
-            this.iconPictureBox1.TabStop = false;
             // 
             // label3
             // 
@@ -437,6 +349,192 @@ namespace GUI
             this.NextPage.UseVisualStyleBackColor = false;
             this.NextPage.Click += new System.EventHandler(this.NextPage_Click);
             // 
+            // entityCommand1
+            // 
+            this.entityCommand1.CommandTimeout = 0;
+            this.entityCommand1.CommandTree = null;
+            this.entityCommand1.Connection = null;
+            this.entityCommand1.EnablePlanCaching = true;
+            this.entityCommand1.Transaction = null;
+            // 
+            // cbbNam
+            // 
+            this.cbbNam.BackColor = System.Drawing.Color.Transparent;
+            this.cbbNam.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbNam.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbNam.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbNam.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbNam.FocusedState.Parent = this.cbbNam;
+            this.cbbNam.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbNam.ForeColor = System.Drawing.Color.Black;
+            this.cbbNam.HoverState.Parent = this.cbbNam;
+            this.cbbNam.ItemHeight = 30;
+            this.cbbNam.ItemsAppearance.Parent = this.cbbNam;
+            this.cbbNam.Location = new System.Drawing.Point(68, 55);
+            this.cbbNam.Name = "cbbNam";
+            this.cbbNam.ShadowDecoration.Parent = this.cbbNam;
+            this.cbbNam.Size = new System.Drawing.Size(145, 36);
+            this.cbbNam.TabIndex = 70;
+            this.cbbNam.SelectedIndexChanged += new System.EventHandler(this.cbbNam_SelectedIndexChanged_1);
+            // 
+            // cbbThang
+            // 
+            this.cbbThang.BackColor = System.Drawing.Color.Transparent;
+            this.cbbThang.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbThang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbThang.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbThang.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbThang.FocusedState.Parent = this.cbbThang;
+            this.cbbThang.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbThang.ForeColor = System.Drawing.Color.Black;
+            this.cbbThang.HoverState.Parent = this.cbbThang;
+            this.cbbThang.ItemHeight = 30;
+            this.cbbThang.ItemsAppearance.Parent = this.cbbThang;
+            this.cbbThang.Location = new System.Drawing.Point(228, 55);
+            this.cbbThang.Name = "cbbThang";
+            this.cbbThang.ShadowDecoration.Parent = this.cbbThang;
+            this.cbbThang.Size = new System.Drawing.Size(145, 36);
+            this.cbbThang.TabIndex = 71;
+            this.cbbThang.SelectedIndexChanged += new System.EventHandler(this.cbbThang_SelectedIndexChanged_1);
+            // 
+            // cbbNgay
+            // 
+            this.cbbNgay.BackColor = System.Drawing.Color.Transparent;
+            this.cbbNgay.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbNgay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbNgay.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbNgay.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbNgay.FocusedState.Parent = this.cbbNgay;
+            this.cbbNgay.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbNgay.ForeColor = System.Drawing.Color.Black;
+            this.cbbNgay.HoverState.Parent = this.cbbNgay;
+            this.cbbNgay.ItemHeight = 30;
+            this.cbbNgay.ItemsAppearance.Parent = this.cbbNgay;
+            this.cbbNgay.Location = new System.Drawing.Point(387, 55);
+            this.cbbNgay.Name = "cbbNgay";
+            this.cbbNgay.ShadowDecoration.Parent = this.cbbNgay;
+            this.cbbNgay.Size = new System.Drawing.Size(145, 36);
+            this.cbbNgay.TabIndex = 72;
+            this.cbbNgay.SelectedIndexChanged += new System.EventHandler(this.cbbNgay_SelectedIndexChanged_1);
+            // 
+            // TongDoanhSo
+            // 
+            this.TongDoanhSo.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TongDoanhSo.DefaultText = "";
+            this.TongDoanhSo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.TongDoanhSo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.TongDoanhSo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TongDoanhSo.DisabledState.Parent = this.TongDoanhSo;
+            this.TongDoanhSo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TongDoanhSo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TongDoanhSo.FocusedState.Parent = this.TongDoanhSo;
+            this.TongDoanhSo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TongDoanhSo.ForeColor = System.Drawing.Color.Black;
+            this.TongDoanhSo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TongDoanhSo.HoverState.Parent = this.TongDoanhSo;
+            this.TongDoanhSo.Location = new System.Drawing.Point(458, 476);
+            this.TongDoanhSo.Name = "TongDoanhSo";
+            this.TongDoanhSo.PasswordChar = '\0';
+            this.TongDoanhSo.PlaceholderText = "";
+            this.TongDoanhSo.SelectedText = "";
+            this.TongDoanhSo.ShadowDecoration.Parent = this.TongDoanhSo;
+            this.TongDoanhSo.Size = new System.Drawing.Size(147, 36);
+            this.TongDoanhSo.TabIndex = 74;
+            // 
+            // cbbSort
+            // 
+            this.cbbSort.BackColor = System.Drawing.Color.Transparent;
+            this.cbbSort.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbSort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbSort.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbSort.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbSort.FocusedState.Parent = this.cbbSort;
+            this.cbbSort.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbSort.ForeColor = System.Drawing.Color.Black;
+            this.cbbSort.HoverState.Parent = this.cbbSort;
+            this.cbbSort.ItemHeight = 30;
+            this.cbbSort.ItemsAppearance.Parent = this.cbbSort;
+            this.cbbSort.Location = new System.Drawing.Point(139, 476);
+            this.cbbSort.Name = "cbbSort";
+            this.cbbSort.ShadowDecoration.Parent = this.cbbSort;
+            this.cbbSort.Size = new System.Drawing.Size(122, 36);
+            this.cbbSort.TabIndex = 71;
+            // 
+            // iconPictureBox1
+            // 
+            this.iconPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.iconPictureBox1.ForeColor = System.Drawing.Color.Black;
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Sort;
+            this.iconPictureBox1.IconColor = System.Drawing.Color.Black;
+            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox1.IconSize = 35;
+            this.iconPictureBox1.Location = new System.Drawing.Point(29, 55);
+            this.iconPictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.iconPictureBox1.Name = "iconPictureBox1";
+            this.iconPictureBox1.Size = new System.Drawing.Size(32, 29);
+            this.iconPictureBox1.TabIndex = 53;
+            this.iconPictureBox1.TabStop = false;
+            // 
+            // num1
+            // 
+            this.num1.BackColor = System.Drawing.Color.Transparent;
+            this.num1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.num1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.num1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.num1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.num1.DisabledState.Parent = this.num1;
+            this.num1.DisabledState.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
+            this.num1.DisabledState.UpDownButtonForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(203)))), ((int)(((byte)(203)))));
+            this.num1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.num1.FocusedState.Parent = this.num1;
+            this.num1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.num1.ForeColor = System.Drawing.Color.Black;
+            this.num1.Location = new System.Drawing.Point(66, 52);
+            this.num1.Name = "num1";
+            this.num1.ShadowDecoration.Parent = this.num1;
+            this.num1.Size = new System.Drawing.Size(83, 36);
+            this.num1.TabIndex = 72;
+            // 
+            // num2
+            // 
+            this.num2.BackColor = System.Drawing.Color.Transparent;
+            this.num2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.num2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.num2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.num2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.num2.DisabledState.Parent = this.num2;
+            this.num2.DisabledState.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
+            this.num2.DisabledState.UpDownButtonForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(203)))), ((int)(((byte)(203)))));
+            this.num2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.num2.FocusedState.Parent = this.num2;
+            this.num2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.num2.ForeColor = System.Drawing.Color.Black;
+            this.num2.Location = new System.Drawing.Point(165, 52);
+            this.num2.Name = "num2";
+            this.num2.ShadowDecoration.Parent = this.num2;
+            this.num2.Size = new System.Drawing.Size(83, 36);
+            this.num2.TabIndex = 73;
+            // 
+            // num3
+            // 
+            this.num3.BackColor = System.Drawing.Color.Transparent;
+            this.num3.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.num3.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.num3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.num3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.num3.DisabledState.Parent = this.num3;
+            this.num3.DisabledState.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
+            this.num3.DisabledState.UpDownButtonForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(203)))), ((int)(((byte)(203)))));
+            this.num3.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.num3.FocusedState.Parent = this.num3;
+            this.num3.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.num3.ForeColor = System.Drawing.Color.Black;
+            this.num3.Location = new System.Drawing.Point(263, 52);
+            this.num3.Name = "num3";
+            this.num3.ShadowDecoration.Parent = this.num3;
+            this.num3.Size = new System.Drawing.Size(83, 36);
+            this.num3.TabIndex = 74;
+            // 
             // dOANHSOBANHANGBindingSource
             // 
             this.dOANHSOBANHANGBindingSource.DataSource = typeof(GUI.DOANH_SO_BAN_HANG);
@@ -445,7 +543,7 @@ namespace GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1444, 752);
             this.Controls.Add(this.NextPage);
             this.Controls.Add(this.groupBox2);
@@ -467,10 +565,10 @@ namespace GUI
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.num3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dOANHSOBANHANGBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -484,28 +582,29 @@ namespace GUI
         private System.Windows.Forms.Label lb1;
         private System.Windows.Forms.GroupBox groupBox1;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
-        private System.Windows.Forms.ComboBox cbbNam;
-        private System.Windows.Forms.TextBox TongDoanhSo;
         private System.Windows.Forms.Label label8;
         private FontAwesome.Sharp.IconButton sortBtn;
-        private System.Windows.Forms.ComboBox cbbSort;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.GroupBox groupBox2;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private System.Windows.Forms.Label label3;
         private FontAwesome.Sharp.IconButton NextPage;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ComboBox cbbNgay;
-        private System.Windows.Forms.ComboBox cbbThang;
         private LiveCharts.WinForms.CartesianChart salesChart;
         private Guna.UI2.WinForms.Guna2CustomRadioButton radioYear;
         private Guna.UI2.WinForms.Guna2CustomRadioButton radioMonth;
         private System.Windows.Forms.Label lblMonth;
         private System.Windows.Forms.Label lblYear;
-        private System.Windows.Forms.NumericUpDown num2;
-        private System.Windows.Forms.NumericUpDown num1;
-        private System.Windows.Forms.NumericUpDown num3;
         private Guna.UI2.WinForms.Guna2Button loadBtn;
         private System.Windows.Forms.BindingSource dOANHSOBANHANGBindingSource;
+        private System.Data.Entity.Core.EntityClient.EntityCommand entityCommand1;
+        private Guna.UI2.WinForms.Guna2ComboBox cbbNgay;
+        private Guna.UI2.WinForms.Guna2ComboBox cbbThang;
+        private Guna.UI2.WinForms.Guna2ComboBox cbbNam;
+        private Guna.UI2.WinForms.Guna2ComboBox cbbSort;
+        private Guna.UI2.WinForms.Guna2TextBox TongDoanhSo;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private Guna.UI2.WinForms.Guna2NumericUpDown num3;
+        private Guna.UI2.WinForms.Guna2NumericUpDown num2;
+        private Guna.UI2.WinForms.Guna2NumericUpDown num1;
     }
 }
