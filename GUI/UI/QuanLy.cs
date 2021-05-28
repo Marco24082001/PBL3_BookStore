@@ -41,9 +41,9 @@ namespace GUI
         //Structs
         private struct RGBColors
         {
-            public static Color color1 = Color.FromArgb(172, 126, 241);
-            public static Color color2 = Color.FromArgb(249, 118, 176);
-            public static Color color3 = Color.FromArgb(253, 138, 114);
+            public static Color color1 = Color.FromArgb(250, 212, 53);
+            public static Color color2 = Color.FromArgb(124, 65, 245);
+            public static Color color3 = Color.FromArgb(135, 206, 250);
             public static Color color4 = Color.FromArgb(24, 161, 251);
         }
         //Method
@@ -103,10 +103,12 @@ namespace GUI
             lblTitleChildForm.Text = childForm.Text;
         }
 
-        private void btnQLNV_Click(object sender, EventArgs e)
+        private void btnQLDT_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
-            OpenChildForm(new QLNV());
+            Thongke f = new Thongke();
+            Thongke.Sender = new Thongke.MyDel(OpenChildForm);
+            OpenChildForm(f);
         }
 
         private void btnQLKS_Click(object sender, EventArgs e)
@@ -115,12 +117,10 @@ namespace GUI
             OpenChildForm(new QuanLySach());
         }
 
-        private void btnQLDT_Click(object sender, EventArgs e)
+        private void btnQLNV_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color3);
-            Thongke f = new Thongke();
-            Thongke.Sender = new Thongke.MyDel(OpenChildForm);
-            OpenChildForm(f);
+            OpenChildForm(new QLNV());
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -186,5 +186,7 @@ namespace GUI
         {
             this.Dispose();
         }
+
+        
     }
 }

@@ -119,12 +119,6 @@
     <Compile Include="UI\NguoiDung.Designer.cs">
       <DependentUpon>NguoiDung.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\ThemHoaDon.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\ThemHoaDon.Designer.cs">
-      <DependentUpon>ThemHoaDon.cs</DependentUpon>
-    </Compile>
     <Compile Include="UI\ThemNXB.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,9 +197,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\NguoiDung.resx">
       <DependentUpon>NguoiDung.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\ThemHoaDon.resx">
-      <DependentUpon>ThemHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ThemNXB.resx">
       <DependentUpon>ThemNXB.cs</DependentUpon>
