@@ -217,9 +217,13 @@ namespace GUI
             }
             setData2();
             if(list.Count == 0)
-            {
-                txtHoTen.Enabled = true;
+            {               
                 txtSDT.Enabled = true;
+                txtHoTen.Text = "";
+                txtSDT.Text = "";
+                txtMaDonBan.Text = "";
+                numericUpDown1.Value = 0;
+                cbbMaSach.SelectedIndex = 0;
             }
         }
 
@@ -320,7 +324,7 @@ namespace GUI
             }
             else
             {
-                dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetSachByLS(cbbTheLoai.SelectedItem.ToString());
+                dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetSachByLSAndTT(cbbTheLoai.SelectedItem.ToString());
             }
         }
 
@@ -333,7 +337,7 @@ namespace GUI
             }
             string theloai = cbbTheLoai.SelectedItem.ToString();
             string name = txtTenSach.Text;
-            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetSachByNameAndLS(name, theloai);
+            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetSachByNameLSAndTT(name, theloai);
         }
 
         private void DangXuat_Click(object sender, EventArgs e)

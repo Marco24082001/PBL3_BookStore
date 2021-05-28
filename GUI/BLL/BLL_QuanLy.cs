@@ -198,7 +198,12 @@ namespace GUI.BLL
         }
         public List<SACH> Bll_GetSachByLS(string ls)
         {
-            return db.SACHes.Where(p => p.MaLoaiSach == ls).ToList();
+            return db.SACHes.Where(p => p.MaLoaiSach == ls ).ToList();
+        }
+
+        public List<SACH> Bll_GetSachByLSAndTT(string ls)
+        {
+            return db.SACHes.Where(p => p.MaLoaiSach == ls && p.TrangThai).ToList();
         }
 
         public List<NHAN_VIEN> Bll_GetAllNhanVien()
@@ -350,6 +355,28 @@ namespace GUI.BLL
             foreach(SACH i in listSach)
             {
                 if(i.TenSach.ToLower().Contains(name.ToLower()))
+                {
+                    list.Add(i);
+                }
+            }
+            return list;
+        }
+
+        public List<SACH> Bll_GetSachByNameLSAndTT(string name, string ls)
+        {
+            List<SACH> listSach = new List<SACH>();
+            List<SACH> list = new List<SACH>();
+            if (ls == "All")
+            {
+                listSach = Bll_GetAllSachByTrangThai();
+            }
+            else
+            {
+                listSach = Bll_GetSachByLSAndTT(ls);
+            }
+            foreach (SACH i in listSach)
+            {
+                if (i.TenSach.ToLower().Contains(name.ToLower()))
                 {
                     list.Add(i);
                 }
