@@ -36,7 +36,6 @@ namespace GUI
         public virtual DbSet<NHA_XUAT_BAN> NHA_XUAT_BAN { get; set; }
         public virtual DbSet<NHAN_VIEN> NHAN_VIEN { get; set; }
         public virtual DbSet<SACH> SACHes { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TK_NHANVIEN> TK_NHANVIEN { get; set; }
     }
 }

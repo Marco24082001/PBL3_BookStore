@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="5e22640416cb4bf19024fb2c08a4cd30" Name="Diagram1">
+      <Diagram DiagramId="c5147cf2bb314c31a984a5fa20676890" Name="Diagram1">
         <EntityTypeShape EntityType="QUAN_LY_HIEU_SACHModel.BAO_CAO_DOANH_THU" Width="1.5" PointX="5.25" PointY="4.625" IsExpanded="true" />
         <EntityTypeShape EntityType="QUAN_LY_HIEU_SACHModel.CHI_TIET_HOA_DON_BAN" Width="1.5" PointX="8.25" PointY="4.625" IsExpanded="true" />
         <EntityTypeShape EntityType="QUAN_LY_HIEU_SACHModel.CHI_TIET_HOA_DON_NHAP" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
@@ -16,7 +16,6 @@
         <EntityTypeShape EntityType="QUAN_LY_HIEU_SACHModel.NHA_XUAT_BAN" Width="1.5" PointX="0.75" PointY="2.125" IsExpanded="true" />
         <EntityTypeShape EntityType="QUAN_LY_HIEU_SACHModel.NHAN_VIEN" Width="1.5" PointX="3.75" PointY="12.375" IsExpanded="true" />
         <EntityTypeShape EntityType="QUAN_LY_HIEU_SACHModel.SACH" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="QUAN_LY_HIEU_SACHModel.sysdiagram" Width="1.5" PointX="7.75" PointY="0.875" IsExpanded="true" />
         <EntityTypeShape EntityType="QUAN_LY_HIEU_SACHModel.TK_NHANVIEN" Width="1.5" PointX="6" PointY="17.625" IsExpanded="true" />
         <AssociationConnector Association="QUAN_LY_HIEU_SACHModel.FK__BAO_CAO_D__MaSac__4222D4EF" ManuallyRouted="false" />
         <AssociationConnector Association="QUAN_LY_HIEU_SACHModel.FK__CHI_TIET___MaDon__3F466844" ManuallyRouted="false" />
