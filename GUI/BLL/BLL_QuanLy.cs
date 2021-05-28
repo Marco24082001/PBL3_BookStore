@@ -606,7 +606,7 @@ namespace GUI.BLL
                     value = (int)data.SingleOrDefault().sumTurnover;
                 values.Add(value);
             }
-            series.Add(new LineSeries() {Values = new ChartValues<int>(values) });
+            series.Add(new ColumnSeries() { Title = "", Values = new ChartValues<int>(values) });
             return series;
         }
     }   

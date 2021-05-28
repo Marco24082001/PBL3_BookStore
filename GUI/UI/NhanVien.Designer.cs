@@ -83,11 +83,11 @@ namespace GUI
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Century", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.LightSkyBlue;
             this.label1.Location = new System.Drawing.Point(667, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(267, 33);
+            this.label1.Size = new System.Drawing.Size(283, 35);
             this.label1.TabIndex = 0;
             this.label1.Text = "Book Store Happy";
             // 
@@ -160,7 +160,7 @@ namespace GUI
             this.iconPictureBox1.IconColor = System.Drawing.Color.Blue;
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox1.IconSize = 26;
-            this.iconPictureBox1.Location = new System.Drawing.Point(358, 41);
+            this.iconPictureBox1.Location = new System.Drawing.Point(633, 41);
             this.iconPictureBox1.Name = "iconPictureBox1";
             this.iconPictureBox1.Size = new System.Drawing.Size(27, 26);
             this.iconPictureBox1.TabIndex = 23;
@@ -188,7 +188,7 @@ namespace GUI
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(382, 46);
+            this.label4.Location = new System.Drawing.Point(657, 46);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(88, 20);
             this.label4.TabIndex = 5;
@@ -205,7 +205,7 @@ namespace GUI
             // 
             // txtTenSach
             // 
-            this.txtTenSach.Location = new System.Drawing.Point(476, 44);
+            this.txtTenSach.Location = new System.Drawing.Point(751, 44);
             this.txtTenSach.Name = "txtTenSach";
             this.txtTenSach.Size = new System.Drawing.Size(108, 27);
             this.txtTenSach.TabIndex = 4;
