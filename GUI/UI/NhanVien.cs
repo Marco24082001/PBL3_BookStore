@@ -11,7 +11,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GUI.BLL;
-using GUI.DTO;
 using GUI.UI;
 
 namespace GUI
