@@ -315,30 +315,6 @@ namespace GUI
             }
         }
 
-        private void cbbTheLoai_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if(cbbTheLoai.SelectedItem.ToString() == "All")
-            {
-                setData1();
-            }
-            else
-            {
-                dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetSachByLSAndTT(cbbTheLoai.SelectedItem.ToString());
-            }
-        }
-
-        private void TenSach_TextChanged(object sender, EventArgs e)
-        {
-            if (cbbTheLoai.SelectedIndex == -1)
-            {
-                MessageBox.Show("Vui long chon The Loai");
-                return;
-            }
-            string theloai = cbbTheLoai.SelectedItem.ToString();
-            string name = txtTenSach.Text;
-            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetSachByNameLSAndTT(name, theloai);
-        }
-
         private void DangXuat_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -398,6 +374,30 @@ namespace GUI
             }
             string CategorySort = cbbSort.SelectedItem.ToString();
             dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_Sort_Sach(LMS, CategorySort);
+        }
+
+        private void cbbTheLoai_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbbTheLoai.SelectedItem.ToString() == "All")
+            {
+                setData1();
+            }
+            else
+            {
+                dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetSachByLSAndTT(cbbTheLoai.SelectedItem.ToString());
+            }
+        }
+
+        private void txtTenSach_TextChanged(object sender, EventArgs e)
+        {
+            if (cbbTheLoai.SelectedIndex == -1)
+            {
+                MessageBox.Show("Vui long chon The Loai");
+                return;
+            }
+            string theloai = cbbTheLoai.SelectedItem.ToString();
+            string name = txtTenSach.Text;
+            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetSachByNameLSAndTT(name, theloai);
         }
     }
 }

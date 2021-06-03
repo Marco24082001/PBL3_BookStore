@@ -315,5 +315,31 @@ namespace GUI
             string CategorySort = cbbSort.SelectedItem.ToString();
             dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_Sort_Sales(LSTT, CategorySort);
         }
+
+        private void cbbNam_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            cbbThang.Items.Clear();
+            cbbNgay.Items.Clear();
+            cbbThang.Text = "";
+            cbbNgay.Text = "";
+            setcbbThang();
+            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetDoanhSoBanHangFolowNam(Convert.ToInt32(cbbNam.SelectedItem.ToString()));
+            setBackground();
+        }
+
+        private void cbbThang_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            setcbbNgay();
+            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetDoanhSoBanHangFolowNamThang(Convert.ToInt32(cbbNam.SelectedItem.ToString()), Convert.ToInt32(cbbThang.SelectedItem.ToString()));
+            setBackground();
+        }
+
+        private void cbbNgay_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetDoanhSoBanHangFolowNamThangNgay(Convert.ToInt32(cbbNam.SelectedItem.ToString()),
+                Convert.ToInt32(cbbThang.SelectedItem.ToString()),
+                Convert.ToInt32(cbbNgay.SelectedItem.ToString()));
+            setBackground();
+        }
     }
 }

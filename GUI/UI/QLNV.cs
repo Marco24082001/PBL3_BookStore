@@ -92,12 +92,6 @@ namespace GUI
             this.Dispose();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            string a = textBox1.Text;
-            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetNhanVienByName(a);
-        }
-
         private void sortBtn_Click(object sender, EventArgs e)
         {
             List<string> LMNV = new List<string>();
@@ -107,6 +101,12 @@ namespace GUI
             }
             string CategorySort = cbbSort.SelectedItem.ToString();
             dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_Sort_NhanVien(LMNV, CategorySort);
+        }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+            string a = txtName.Text;
+            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetNhanVienByName(a);
         }
     }
 }

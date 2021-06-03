@@ -267,5 +267,22 @@ namespace GUI
             string CategorySort = cbbSort.SelectedItem.ToString();
             dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_Sort_Sach(LMS, CategorySort);
         }
+
+        private void cbbTheLoai_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            setData1();
+        }
+
+        private void txtTenSach_TextChanged_1(object sender, EventArgs e)
+        {
+            if (cbbTheLoai.SelectedIndex == -1)
+            {
+                MessageBox.Show("Vui long chon The Loai");
+                return;
+            }
+            string theloai = cbbTheLoai.SelectedItem.ToString();
+            string name = txtTenSach.Text;
+            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetSachByNameAndLS(name, theloai);
+        }
     }
 }
