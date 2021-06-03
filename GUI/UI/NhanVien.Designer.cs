@@ -122,7 +122,7 @@ namespace GUI
             this.cbbSort.HoverState.Parent = this.cbbSort;
             this.cbbSort.ItemHeight = 30;
             this.cbbSort.ItemsAppearance.Parent = this.cbbSort;
-            this.cbbSort.Location = new System.Drawing.Point(721, 481);
+            this.cbbSort.Location = new System.Drawing.Point(756, 489);
             this.cbbSort.Name = "cbbSort";
             this.cbbSort.ShadowDecoration.Parent = this.cbbSort;
             this.cbbSort.Size = new System.Drawing.Size(138, 36);
@@ -143,7 +143,7 @@ namespace GUI
             this.txtTenSach.ForeColor = System.Drawing.Color.Black;
             this.txtTenSach.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTenSach.HoverState.Parent = this.txtTenSach;
-            this.txtTenSach.Location = new System.Drawing.Point(725, 37);
+            this.txtTenSach.Location = new System.Drawing.Point(759, 37);
             this.txtTenSach.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtTenSach.Name = "txtTenSach";
             this.txtTenSach.PasswordChar = '\0';
@@ -167,7 +167,7 @@ namespace GUI
             this.cbbTheLoai.HoverState.Parent = this.cbbTheLoai;
             this.cbbTheLoai.ItemHeight = 30;
             this.cbbTheLoai.ItemsAppearance.Parent = this.cbbTheLoai;
-            this.cbbTheLoai.Location = new System.Drawing.Point(140, 37);
+            this.cbbTheLoai.Location = new System.Drawing.Point(105, 37);
             this.cbbTheLoai.Name = "cbbTheLoai";
             this.cbbTheLoai.ShadowDecoration.Parent = this.cbbTheLoai;
             this.cbbTheLoai.Size = new System.Drawing.Size(138, 36);
@@ -183,7 +183,7 @@ namespace GUI
             this.sortBtn.IconColor = System.Drawing.Color.Blue;
             this.sortBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.sortBtn.IconSize = 20;
-            this.sortBtn.Location = new System.Drawing.Point(605, 481);
+            this.sortBtn.Location = new System.Drawing.Point(640, 489);
             this.sortBtn.Name = "sortBtn";
             this.sortBtn.Size = new System.Drawing.Size(100, 36);
             this.sortBtn.TabIndex = 46;
@@ -197,13 +197,13 @@ namespace GUI
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(60, 84);
+            this.dataGridView1.Location = new System.Drawing.Point(25, 84);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(799, 386);
+            this.dataGridView1.Size = new System.Drawing.Size(868, 386);
             this.dataGridView1.TabIndex = 24;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
@@ -216,7 +216,7 @@ namespace GUI
             this.iconPictureBox1.IconColor = System.Drawing.Color.Blue;
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox1.IconSize = 26;
-            this.iconPictureBox1.Location = new System.Drawing.Point(610, 41);
+            this.iconPictureBox1.Location = new System.Drawing.Point(644, 41);
             this.iconPictureBox1.Name = "iconPictureBox1";
             this.iconPictureBox1.Size = new System.Drawing.Size(27, 26);
             this.iconPictureBox1.TabIndex = 23;
@@ -235,7 +235,7 @@ namespace GUI
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(634, 46);
+            this.label4.Location = new System.Drawing.Point(668, 46);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(88, 20);
             this.label4.TabIndex = 5;
@@ -244,7 +244,7 @@ namespace GUI
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(56, 46);
+            this.label5.Location = new System.Drawing.Point(21, 46);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(78, 20);
             this.label5.TabIndex = 5;

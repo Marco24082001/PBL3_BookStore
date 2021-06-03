@@ -38,7 +38,6 @@ namespace GUI
             this.txtSdt = new System.Windows.Forms.TextBox();
             this.txtCMND = new System.Windows.Forms.TextBox();
             this.txtMaNV = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label13 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -52,6 +51,7 @@ namespace GUI
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Thoat = new FontAwesome.Sharp.IconButton();
+            this.dateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -148,14 +148,6 @@ namespace GUI
             this.txtMaNV.Name = "txtMaNV";
             this.txtMaNV.Size = new System.Drawing.Size(98, 27);
             this.txtMaNV.TabIndex = 7;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(204, 293);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(303, 27);
-            this.dateTimePicker1.TabIndex = 6;
             // 
             // label13
             // 
@@ -273,6 +265,7 @@ namespace GUI
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.Thoat);
             this.groupBox1.Controls.Add(this.LamMoi);
             this.groupBox1.Controls.Add(this.txtMatKhau);
@@ -283,7 +276,6 @@ namespace GUI
             this.groupBox1.Controls.Add(this.txtSdt);
             this.groupBox1.Controls.Add(this.txtCMND);
             this.groupBox1.Controls.Add(this.txtMaNV);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label11);
@@ -318,6 +310,24 @@ namespace GUI
             this.Thoat.UseVisualStyleBackColor = false;
             this.Thoat.Click += new System.EventHandler(this.Thoat_Click_1);
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.BorderColor = System.Drawing.Color.Gray;
+            this.dateTimePicker1.BorderThickness = 1;
+            this.dateTimePicker1.CheckedState.Parent = this.dateTimePicker1;
+            this.dateTimePicker1.FillColor = System.Drawing.SystemColors.Window;
+            this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.dateTimePicker1.HoverState.Parent = this.dateTimePicker1;
+            this.dateTimePicker1.Location = new System.Drawing.Point(204, 291);
+            this.dateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.ShadowDecoration.Parent = this.dateTimePicker1;
+            this.dateTimePicker1.Size = new System.Drawing.Size(303, 36);
+            this.dateTimePicker1.TabIndex = 31;
+            this.dateTimePicker1.Value = new System.DateTime(2021, 6, 3, 18, 1, 17, 368);
+            // 
             // ThemNhanViens
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -347,7 +357,6 @@ namespace GUI
         private System.Windows.Forms.TextBox txtSdt;
         private System.Windows.Forms.TextBox txtCMND;
         private System.Windows.Forms.TextBox txtMaNV;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
@@ -361,5 +370,6 @@ namespace GUI
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox1;
         private FontAwesome.Sharp.IconButton Thoat;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dateTimePicker1;
     }
 }
