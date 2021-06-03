@@ -272,7 +272,6 @@ namespace GUI
         private void loadChart(int num1, int num2, int num3 = -1)
         {
             salesChart.Series.Clear();
-            SeriesCollection series = new SeriesCollection();
             salesChart.Series = BLL_QuanLy.Instance.Bll_GetValueChart_Sales(num1, num2, num3);
         }
 

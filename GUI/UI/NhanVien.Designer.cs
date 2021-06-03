@@ -394,6 +394,7 @@ namespace GUI
             this.TongCong.Name = "TongCong";
             this.TongCong.PasswordChar = '\0';
             this.TongCong.PlaceholderText = "";
+            this.TongCong.ReadOnly = true;
             this.TongCong.SelectedText = "";
             this.TongCong.ShadowDecoration.Parent = this.TongCong;
             this.TongCong.Size = new System.Drawing.Size(191, 36);

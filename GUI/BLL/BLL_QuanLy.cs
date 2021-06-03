@@ -3,9 +3,11 @@ using LiveCharts.Wpf;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Core.Objects;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 
 namespace GUI.BLL
 {
@@ -590,10 +592,10 @@ namespace GUI.BLL
             return listDate;
         }
 
-        public SeriesCollection Bll_GetValueChart_Turnover(int numDay)
+        public ColumnSeries Bll_GetValueChart_Turnover(int numDay)
         {
             List<int> values = new List<int>();
-            SeriesCollection series = new SeriesCollection();
+            
             
             foreach (DateTime date in Bll_GetListDate(numDay))
             {
@@ -606,8 +608,77 @@ namespace GUI.BLL
                     value = (int)data.SingleOrDefault().sumTurnover;
                 values.Add(value);
             }
-            series.Add(new ColumnSeries() { Title = "", Values = new ChartValues<int>(values) });
+            ColumnSeries col = new ColumnSeries() { DataLabels = false, Values = new ChartValues<int>(values)};
+            return col;
+        }
+
+        Func<ChartPoint, string> labelPoint = chartpoint => string.Format("{0} ({1:P})", chartpoint.Y, chartpoint.Participation);
+        Func<ChartPoint, string> labelPoint1 = chartpoint => string.Format("{0}", chartpoint.X);
+
+        public SeriesCollection Bll_GetValueChart_Products()
+        {
+            SeriesCollection series = new SeriesCollection();
+            
+            var data = db.BAO_CAO_DOANH_THU.Where(p => p.ThoiGian.Value.Year.Equals(DateTime.Now.Year))
+                                           .Select(p => new { p.SACH, p.SoLuongBan })
+                                           .GroupBy(p => p.SACH)
+                                           .Select(p => new { Sach = p.Key, sumNumber = p.Sum(i => i.SoLuongBan) })
+                                           .OrderByDescending(p => p.sumNumber);
+            var books = data.Take(5);
+            foreach(var book in books)
+            {
+                series.Add(new PieSeries() { Title = book.Sach.TenSach.ToString(), Values = new ChartValues<int> { book.sumNumber }, DataLabels = true, LabelPoint = labelPoint, Foreground = new SolidColorBrush(Colors.White) });
+            }
+
             return series;
+        }
+
+        public SeriesCollection Bll_GetValueChart_Remain_Products()
+        {
+            SeriesCollection series = new SeriesCollection();
+            var books = db.SACHes.Where(p => p.SoLuong > 0 && p.TrangThai.Equals(true))
+                                .Select(p => new { p.TenSach, p.SoLuong })
+                                .OrderBy(p => p.SoLuong);
+            foreach(var book in books)
+            {
+                series.Add(new RowSeries() { Title = book.TenSach.ToString(), Values = new ChartValues<int> { book.SoLuong }, DataLabels = true, LabelPoint = labelPoint1, Foreground = new SolidColorBrush(Colors.White) });
+            }
+            return series;
+        }
+
+        public int Bll_getTotal_Sales()
+        {
+            return db.HOA_DON_BAN.Count();
+        }
+
+        public int Bll_getTotal_Customers()
+        {
+            return db.KHACH_HANG.Count();
+        }
+
+        public int Bll_getTotal_Categorys()
+        {
+            return db.LOAI_SACH.Count();
+        }
+
+        public int Bll_getTotal_TurnOver()
+        {
+            int TurnOver = 0;
+            foreach(var dt in db.BAO_CAO_DOANH_THU)
+            {
+                TurnOver += (int)dt.DoanhThu;
+            }
+            return TurnOver;
+        }
+
+        public int Bll_getTotal_Books()
+        {
+            return db.SACHes.Where(p => p.SoLuong > 0 && p.TrangThai.Equals(true)).Count();
+        }
+
+        public int Bll_getTotal_Employees()
+        {
+            return db.NHAN_VIEN.Where(p => p.TrangThai.Equals(true)).Count();
         }
     }   
 }
