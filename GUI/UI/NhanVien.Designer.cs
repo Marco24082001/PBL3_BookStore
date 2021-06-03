@@ -32,6 +32,7 @@ namespace GUI
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NhanVien));
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbbSort = new Guna.UI2.WinForms.Guna2ComboBox();
             this.txtTenSach = new Guna.UI2.WinForms.Guna2TextBox();
             this.cbbTheLoai = new Guna.UI2.WinForms.Guna2ComboBox();
             this.sortBtn = new FontAwesome.Sharp.IconButton();
@@ -68,7 +69,6 @@ namespace GUI
             this.DangXuat = new FontAwesome.Sharp.IconButton();
             this.infoNhanVien = new FontAwesome.Sharp.IconPictureBox();
             this.ThanhToan = new FontAwesome.Sharp.IconButton();
-            this.cbbSort = new Guna.UI2.WinForms.Guna2ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
@@ -109,6 +109,25 @@ namespace GUI
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             // 
+            // cbbSort
+            // 
+            this.cbbSort.BackColor = System.Drawing.Color.Transparent;
+            this.cbbSort.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbSort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbSort.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbSort.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbSort.FocusedState.Parent = this.cbbSort;
+            this.cbbSort.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbSort.ForeColor = System.Drawing.Color.Black;
+            this.cbbSort.HoverState.Parent = this.cbbSort;
+            this.cbbSort.ItemHeight = 30;
+            this.cbbSort.ItemsAppearance.Parent = this.cbbSort;
+            this.cbbSort.Location = new System.Drawing.Point(721, 481);
+            this.cbbSort.Name = "cbbSort";
+            this.cbbSort.ShadowDecoration.Parent = this.cbbSort;
+            this.cbbSort.Size = new System.Drawing.Size(138, 36);
+            this.cbbSort.TabIndex = 83;
+            // 
             // txtTenSach
             // 
             this.txtTenSach.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -125,6 +144,7 @@ namespace GUI
             this.txtTenSach.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTenSach.HoverState.Parent = this.txtTenSach;
             this.txtTenSach.Location = new System.Drawing.Point(725, 37);
+            this.txtTenSach.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtTenSach.Name = "txtTenSach";
             this.txtTenSach.PasswordChar = '\0';
             this.txtTenSach.PlaceholderText = "";
@@ -276,7 +296,7 @@ namespace GUI
             this.cbbMaSach.Location = new System.Drawing.Point(253, 189);
             this.cbbMaSach.Name = "cbbMaSach";
             this.cbbMaSach.ShadowDecoration.Parent = this.cbbMaSach;
-            this.cbbMaSach.Size = new System.Drawing.Size(186, 36);
+            this.cbbMaSach.Size = new System.Drawing.Size(196, 36);
             this.cbbMaSach.TabIndex = 80;
             // 
             // txtHoTen
@@ -295,12 +315,13 @@ namespace GUI
             this.txtHoTen.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtHoTen.HoverState.Parent = this.txtHoTen;
             this.txtHoTen.Location = new System.Drawing.Point(253, 147);
+            this.txtHoTen.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.PasswordChar = '\0';
             this.txtHoTen.PlaceholderText = "";
             this.txtHoTen.SelectedText = "";
             this.txtHoTen.ShadowDecoration.Parent = this.txtHoTen;
-            this.txtHoTen.Size = new System.Drawing.Size(186, 36);
+            this.txtHoTen.Size = new System.Drawing.Size(196, 36);
             this.txtHoTen.TabIndex = 79;
             // 
             // txtSDT
@@ -319,12 +340,13 @@ namespace GUI
             this.txtSDT.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSDT.HoverState.Parent = this.txtSDT;
             this.txtSDT.Location = new System.Drawing.Point(253, 105);
+            this.txtSDT.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.PasswordChar = '\0';
             this.txtSDT.PlaceholderText = "";
             this.txtSDT.SelectedText = "";
             this.txtSDT.ShadowDecoration.Parent = this.txtSDT;
-            this.txtSDT.Size = new System.Drawing.Size(186, 36);
+            this.txtSDT.Size = new System.Drawing.Size(196, 36);
             this.txtSDT.TabIndex = 78;
             // 
             // txtMaNhanVien
@@ -343,12 +365,13 @@ namespace GUI
             this.txtMaNhanVien.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtMaNhanVien.HoverState.Parent = this.txtMaNhanVien;
             this.txtMaNhanVien.Location = new System.Drawing.Point(253, 63);
+            this.txtMaNhanVien.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtMaNhanVien.Name = "txtMaNhanVien";
             this.txtMaNhanVien.PasswordChar = '\0';
             this.txtMaNhanVien.PlaceholderText = "";
             this.txtMaNhanVien.SelectedText = "";
             this.txtMaNhanVien.ShadowDecoration.Parent = this.txtMaNhanVien;
-            this.txtMaNhanVien.Size = new System.Drawing.Size(186, 36);
+            this.txtMaNhanVien.Size = new System.Drawing.Size(196, 36);
             this.txtMaNhanVien.TabIndex = 77;
             // 
             // txtMaDonBan
@@ -367,12 +390,13 @@ namespace GUI
             this.txtMaDonBan.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtMaDonBan.HoverState.Parent = this.txtMaDonBan;
             this.txtMaDonBan.Location = new System.Drawing.Point(253, 21);
+            this.txtMaDonBan.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtMaDonBan.Name = "txtMaDonBan";
             this.txtMaDonBan.PasswordChar = '\0';
             this.txtMaDonBan.PlaceholderText = "";
             this.txtMaDonBan.SelectedText = "";
             this.txtMaDonBan.ShadowDecoration.Parent = this.txtMaDonBan;
-            this.txtMaDonBan.Size = new System.Drawing.Size(186, 36);
+            this.txtMaDonBan.Size = new System.Drawing.Size(196, 36);
             this.txtMaDonBan.TabIndex = 76;
             // 
             // TongCong
@@ -390,7 +414,8 @@ namespace GUI
             this.TongCong.ForeColor = System.Drawing.Color.Black;
             this.TongCong.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TongCong.HoverState.Parent = this.TongCong;
-            this.TongCong.Location = new System.Drawing.Point(389, 521);
+            this.TongCong.Location = new System.Drawing.Point(400, 521);
+            this.TongCong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TongCong.Name = "TongCong";
             this.TongCong.PasswordChar = '\0';
             this.TongCong.PlaceholderText = "";
@@ -415,9 +440,10 @@ namespace GUI
             this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDown1.ForeColor = System.Drawing.Color.Black;
             this.numericUpDown1.Location = new System.Drawing.Point(253, 231);
+            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.ShadowDecoration.Parent = this.numericUpDown1;
-            this.numericUpDown1.Size = new System.Drawing.Size(186, 36);
+            this.numericUpDown1.Size = new System.Drawing.Size(196, 36);
             this.numericUpDown1.TabIndex = 73;
             // 
             // AddHoaDon
@@ -427,7 +453,7 @@ namespace GUI
             this.AddHoaDon.IconColor = System.Drawing.Color.Blue;
             this.AddHoaDon.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.AddHoaDon.IconSize = 30;
-            this.AddHoaDon.Location = new System.Drawing.Point(463, 21);
+            this.AddHoaDon.Location = new System.Drawing.Point(474, 21);
             this.AddHoaDon.Name = "AddHoaDon";
             this.AddHoaDon.Size = new System.Drawing.Size(117, 36);
             this.AddHoaDon.TabIndex = 28;
@@ -446,7 +472,7 @@ namespace GUI
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 24;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(554, 190);
+            this.dataGridView2.Size = new System.Drawing.Size(565, 190);
             this.dataGridView2.TabIndex = 25;
             // 
             // Xoa
@@ -491,7 +517,7 @@ namespace GUI
             this.Them.IconColor = System.Drawing.Color.Blue;
             this.Them.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Them.IconSize = 25;
-            this.Them.Location = new System.Drawing.Point(463, 231);
+            this.Them.Location = new System.Drawing.Point(474, 231);
             this.Them.Name = "Them";
             this.Them.Size = new System.Drawing.Size(117, 36);
             this.Them.TabIndex = 20;
@@ -504,7 +530,7 @@ namespace GUI
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(285, 531);
+            this.label11.Location = new System.Drawing.Point(296, 531);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(87, 20);
             this.label11.TabIndex = 15;
@@ -682,25 +708,6 @@ namespace GUI
             this.ThanhToan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ThanhToan.UseVisualStyleBackColor = false;
             this.ThanhToan.Click += new System.EventHandler(this.ThanhToan_Click);
-            // 
-            // cbbSort
-            // 
-            this.cbbSort.BackColor = System.Drawing.Color.Transparent;
-            this.cbbSort.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbbSort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbSort.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbbSort.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbbSort.FocusedState.Parent = this.cbbSort;
-            this.cbbSort.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbbSort.ForeColor = System.Drawing.Color.Black;
-            this.cbbSort.HoverState.Parent = this.cbbSort;
-            this.cbbSort.ItemHeight = 30;
-            this.cbbSort.ItemsAppearance.Parent = this.cbbSort;
-            this.cbbSort.Location = new System.Drawing.Point(721, 481);
-            this.cbbSort.Name = "cbbSort";
-            this.cbbSort.ShadowDecoration.Parent = this.cbbSort;
-            this.cbbSort.Size = new System.Drawing.Size(138, 36);
-            this.cbbSort.TabIndex = 83;
             // 
             // NhanVien
             // 

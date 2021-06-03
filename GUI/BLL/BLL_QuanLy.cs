@@ -615,14 +615,29 @@ namespace GUI.BLL
         public SeriesCollection Bll_GetValueChart_Remain_Products()
         {
             SeriesCollection series = new SeriesCollection();
+            List<int> values = new List<int>();
             var books = db.SACHes.Where(p => p.SoLuong > 0 && p.TrangThai.Equals(true))
                                 .Select(p => new { p.TenSach, p.SoLuong })
-                                .OrderBy(p => p.SoLuong);
+                                .OrderByDescending(p => p.SoLuong);
             foreach(var book in books)
             {
-                series.Add(new RowSeries() { Title = book.TenSach.ToString(), Values = new ChartValues<int> { book.SoLuong }, DataLabels = true, LabelPoint = labelPoint1, Foreground = new SolidColorBrush(Colors.White) });
+                values.Add(book.SoLuong);
             }
+            series.Add(new RowSeries() { Title = "Số lượng: ", Values = new ChartValues<int>(values), LabelPoint = labelPoint1, Foreground = new SolidColorBrush(Colors.White), Fill = new SolidColorBrush(Colors.Khaki) });
             return series;
+        }
+
+        public List<string> Bll_GetLabel_Remain_Products()
+        {
+            List<string> label = new List<string>();
+            var books = db.SACHes.Where(p => p.SoLuong > 0 && p.TrangThai.Equals(true))
+                                .Select(p => new { p.TenSach, p.SoLuong })
+                                .OrderByDescending(p => p.SoLuong);
+            foreach(var book in books)
+            {
+                label.Add(book.TenSach.ToString());
+            }
+            return label;
         }
 
         public int Bll_getTotal_Sales()

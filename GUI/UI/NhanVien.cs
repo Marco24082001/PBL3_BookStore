@@ -37,11 +37,7 @@ namespace GUI
 
         public void setData1()
         {
-            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetAllSachByTrangThai();
-            dataGridView1.Columns[6].Visible = false;
-            dataGridView1.Columns[7].Visible = false;
-            dataGridView1.Columns[8].Visible = false;
-            dataGridView1.Columns[9].Visible = false;
+            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetAllSachByTrangThai().Select(p => new { p.MaSach, p.TenSach, p.GiaBan, p.SoLuong, p.NHA_XUAT_BAN.TenNXB, p.LOAI_SACH.TenLoaiSach, p.TrangThai }).ToList();
         }
         public void setData2()
         {
@@ -372,7 +368,7 @@ namespace GUI
                 LMS.Add(dataGridView1.Rows[i].Cells[0].Value.ToString());
             }
             string CategorySort = cbbSort.SelectedItem.ToString();
-            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_Sort_Sach(LMS, CategorySort);
+            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_Sort_Sach(LMS, CategorySort).Select(p => new { p.MaSach, p.TenSach, p.GiaBan, p.SoLuong, p.NHA_XUAT_BAN.TenNXB, p.LOAI_SACH.TenLoaiSach, p.TrangThai }).ToList();
         }
 
         private void cbbTheLoai_SelectedIndexChanged(object sender, EventArgs e)
@@ -396,7 +392,7 @@ namespace GUI
             }
             string theloai = cbbTheLoai.SelectedItem.ToString();
             string name = txtTenSach.Text;
-            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetSachByNameLSAndTT(name, theloai);
+            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetSachByNameLSAndTT(name, theloai).Select(p => new { p.MaSach, p.TenSach, p.GiaBan, p.SoLuong, p.NHA_XUAT_BAN.TenNXB, p.LOAI_SACH.TenLoaiSach, p.TrangThai }).ToList();
         }
     }
 }

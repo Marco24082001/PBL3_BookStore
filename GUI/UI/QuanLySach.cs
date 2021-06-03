@@ -31,18 +31,13 @@ namespace GUI
             }
             if (cbbTheLoai.SelectedIndex == 0)
             {
-                dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetAllSach();
+                dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetAllSach().Select(p => new { p.MaSach, p.TenSach, p.GiaBan, p.SoLuong, p.NHA_XUAT_BAN.TenNXB, p.LOAI_SACH.TenLoaiSach, p.TrangThai }).ToList();
             }
             else
             {
                 string ls = cbbTheLoai.SelectedItem.ToString();
-                dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetSachByLS(ls);
+                dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetSachByLS(ls).Select(p => new { p.MaSach, p.TenSach, p.GiaBan, p.SoLuong, p.NHA_XUAT_BAN.TenNXB, p.LOAI_SACH.TenLoaiSach, p.TrangThai }).ToList();
             }            
-            dataGridView1.Columns[8].Visible = false;
-            dataGridView1.Columns[9].Visible = false;
-            dataGridView1.Columns[10].Visible = false;
-            dataGridView1.Columns[11].Visible = false;
-            dataGridView1.Columns[12].Visible = false;
         }
         public void setData2()
         {
@@ -208,7 +203,7 @@ namespace GUI
             }
             string theloai = cbbTheLoai.SelectedItem.ToString();
             string name = txtTenSach.Text;
-            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetSachByNameAndLS(name, theloai);
+            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetSachByNameAndLS(name, theloai).Select(p => new { p.MaSach, p.TenSach, p.GiaBan, p.SoLuong, p.NHA_XUAT_BAN.TenNXB, p.LOAI_SACH.TenLoaiSach, p.TrangThai }).ToList();
         }
 
         private void Edit_Click(object sender, EventArgs e)
@@ -265,7 +260,7 @@ namespace GUI
                 LMS.Add(dataGridView1.Rows[i].Cells[0].Value.ToString());
             }
             string CategorySort = cbbSort.SelectedItem.ToString();
-            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_Sort_Sach(LMS, CategorySort);
+            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_Sort_Sach(LMS, CategorySort).Select(p => new { p.MaSach, p.TenSach, p.GiaBan, p.SoLuong, p.NHA_XUAT_BAN.TenNXB, p.LOAI_SACH.TenLoaiSach, p.TrangThai }).ToList();
         }
 
         private void cbbTheLoai_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -282,7 +277,7 @@ namespace GUI
             }
             string theloai = cbbTheLoai.SelectedItem.ToString();
             string name = txtTenSach.Text;
-            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetSachByNameAndLS(name, theloai);
+            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetSachByNameAndLS(name, theloai).Select(p => new { p.MaSach, p.TenSach, p.GiaBan, p.SoLuong, p.NHA_XUAT_BAN.TenNXB, p.LOAI_SACH.TenLoaiSach, p.TrangThai }).ToList();
         }
     }
 }

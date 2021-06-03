@@ -103,7 +103,7 @@ namespace GUI
             this.txtTenSach.ForeColor = System.Drawing.Color.Black;
             this.txtTenSach.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTenSach.HoverState.Parent = this.txtTenSach;
-            this.txtTenSach.Location = new System.Drawing.Point(619, 35);
+            this.txtTenSach.Location = new System.Drawing.Point(634, 33);
             this.txtTenSach.Name = "txtTenSach";
             this.txtTenSach.PasswordChar = '\0';
             this.txtTenSach.PlaceholderText = "";
@@ -126,7 +126,7 @@ namespace GUI
             this.cbbTheLoai.HoverState.Parent = this.cbbTheLoai;
             this.cbbTheLoai.ItemHeight = 30;
             this.cbbTheLoai.ItemsAppearance.Parent = this.cbbTheLoai;
-            this.cbbTheLoai.Location = new System.Drawing.Point(104, 38);
+            this.cbbTheLoai.Location = new System.Drawing.Point(86, 33);
             this.cbbTheLoai.Name = "cbbTheLoai";
             this.cbbTheLoai.ShadowDecoration.Parent = this.cbbTheLoai;
             this.cbbTheLoai.Size = new System.Drawing.Size(140, 36);
@@ -136,7 +136,7 @@ namespace GUI
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 48);
+            this.label1.Location = new System.Drawing.Point(2, 43);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 20);
             this.label1.TabIndex = 49;
@@ -146,13 +146,13 @@ namespace GUI
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(24, 80);
+            this.dataGridView1.Location = new System.Drawing.Point(6, 80);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(744, 351);
+            this.dataGridView1.Size = new System.Drawing.Size(777, 351);
             this.dataGridView1.TabIndex = 41;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
@@ -166,7 +166,7 @@ namespace GUI
             this.iconPictureBox1.IconColor = System.Drawing.Color.Blue;
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox1.IconSize = 26;
-            this.iconPictureBox1.Location = new System.Drawing.Point(493, 43);
+            this.iconPictureBox1.Location = new System.Drawing.Point(508, 41);
             this.iconPictureBox1.Name = "iconPictureBox1";
             this.iconPictureBox1.Size = new System.Drawing.Size(27, 26);
             this.iconPictureBox1.TabIndex = 40;
@@ -175,7 +175,7 @@ namespace GUI
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(517, 48);
+            this.label9.Location = new System.Drawing.Point(532, 46);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(88, 20);
             this.label9.TabIndex = 39;
@@ -520,7 +520,7 @@ namespace GUI
             this.ThemSach.IconColor = System.Drawing.Color.Blue;
             this.ThemSach.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ThemSach.IconSize = 20;
-            this.ThemSach.Location = new System.Drawing.Point(667, 522);
+            this.ThemSach.Location = new System.Drawing.Point(643, 523);
             this.ThemSach.Name = "ThemSach";
             this.ThemSach.Size = new System.Drawing.Size(164, 34);
             this.ThemSach.TabIndex = 39;
@@ -557,7 +557,7 @@ namespace GUI
             this.XoaSach.IconColor = System.Drawing.Color.Red;
             this.XoaSach.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.XoaSach.IconSize = 20;
-            this.XoaSach.Location = new System.Drawing.Point(991, 522);
+            this.XoaSach.Location = new System.Drawing.Point(967, 523);
             this.XoaSach.Name = "XoaSach";
             this.XoaSach.Size = new System.Drawing.Size(78, 34);
             this.XoaSach.TabIndex = 36;
@@ -595,7 +595,7 @@ namespace GUI
             this.Edit.IconColor = System.Drawing.Color.Blue;
             this.Edit.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Edit.IconSize = 20;
-            this.Edit.Location = new System.Drawing.Point(853, 522);
+            this.Edit.Location = new System.Drawing.Point(829, 523);
             this.Edit.Name = "Edit";
             this.Edit.Size = new System.Drawing.Size(121, 34);
             this.Edit.TabIndex = 38;

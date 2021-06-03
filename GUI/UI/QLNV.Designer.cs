@@ -51,9 +51,9 @@ namespace GUI
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(188, 112);
+            this.groupBox3.Location = new System.Drawing.Point(154, 112);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1083, 490);
+            this.groupBox3.Size = new System.Drawing.Size(1153, 490);
             this.groupBox3.TabIndex = 15;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "`";
@@ -93,7 +93,7 @@ namespace GUI
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1021, 363);
+            this.dataGridView1.Size = new System.Drawing.Size(1089, 363);
             this.dataGridView1.TabIndex = 25;
             // 
             // label10
@@ -136,7 +136,7 @@ namespace GUI
             this.Xoa.IconColor = System.Drawing.Color.Red;
             this.Xoa.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Xoa.IconSize = 25;
-            this.Xoa.Location = new System.Drawing.Point(510, 627);
+            this.Xoa.Location = new System.Drawing.Point(476, 627);
             this.Xoa.Name = "Xoa";
             this.Xoa.Size = new System.Drawing.Size(85, 36);
             this.Xoa.TabIndex = 25;
@@ -155,7 +155,7 @@ namespace GUI
             this.ChinhSua.IconColor = System.Drawing.Color.Blue;
             this.ChinhSua.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ChinhSua.IconSize = 25;
-            this.ChinhSua.Location = new System.Drawing.Point(347, 627);
+            this.ChinhSua.Location = new System.Drawing.Point(313, 627);
             this.ChinhSua.Name = "ChinhSua";
             this.ChinhSua.Size = new System.Drawing.Size(131, 36);
             this.ChinhSua.TabIndex = 25;
@@ -174,7 +174,7 @@ namespace GUI
             this.Them.IconColor = System.Drawing.Color.Blue;
             this.Them.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Them.IconSize = 25;
-            this.Them.Location = new System.Drawing.Point(220, 627);
+            this.Them.Location = new System.Drawing.Point(186, 627);
             this.Them.Name = "Them";
             this.Them.Size = new System.Drawing.Size(100, 36);
             this.Them.TabIndex = 25;
@@ -193,7 +193,7 @@ namespace GUI
             this.sortBtn.IconColor = System.Drawing.Color.Blue;
             this.sortBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.sortBtn.IconSize = 20;
-            this.sortBtn.Location = new System.Drawing.Point(989, 627);
+            this.sortBtn.Location = new System.Drawing.Point(1023, 627);
             this.sortBtn.Name = "sortBtn";
             this.sortBtn.Size = new System.Drawing.Size(100, 36);
             this.sortBtn.TabIndex = 46;
@@ -216,7 +216,7 @@ namespace GUI
             this.cbbSort.HoverState.Parent = this.cbbSort;
             this.cbbSort.ItemHeight = 30;
             this.cbbSort.ItemsAppearance.Parent = this.cbbSort;
-            this.cbbSort.Location = new System.Drawing.Point(1111, 627);
+            this.cbbSort.Location = new System.Drawing.Point(1145, 627);
             this.cbbSort.Name = "cbbSort";
             this.cbbSort.ShadowDecoration.Parent = this.cbbSort;
             this.cbbSort.Size = new System.Drawing.Size(130, 36);
