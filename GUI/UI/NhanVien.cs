@@ -285,7 +285,6 @@ namespace GUI
             dataGridView2.DataSource = null;
             txtHoTen.Enabled = true;
             txtSDT.Enabled = true;
-            txtMaDonBan.Enabled = true;
             checkKhachHang = false;
             txtMaDonBan.Text = "";
             txtSDT.Text = "";
