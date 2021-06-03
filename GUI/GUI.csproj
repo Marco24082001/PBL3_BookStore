@@ -109,7 +109,6 @@
       <DependentUpon>BaoCaoDoanhThu.cs</DependentUpon>
     </Compile>
     <Compile Include="BLL\BLL_QuanLy.cs" />
-    <Compile Include="DAL\DAL_QuanLy.cs" />
     <Compile Include="UI\NguoiDung.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,17 +139,6 @@
     <Compile Include="UI\ThemTLSach.Designer.cs">
       <DependentUpon>ThemTLSach.cs</DependentUpon>
     </Compile>
-    <Compile Include="DTO\CHI_TIET_HOA_DON_BAN.cs" />
-    <Compile Include="DTO\CHI_TIET_HOA_DON_NHAP.cs" />
-    <Compile Include="DTO\GioHang.cs" />
-    <Compile Include="DTO\HOA_DON_BAN.cs" />
-    <Compile Include="DTO\HOA_DON_NHAP.cs" />
-    <Compile Include="DTO\KHACH_HANG.cs" />
-    <Compile Include="DTO\LOAI_SACH.cs" />
-    <Compile Include="DTO\NHAN_VIEN.cs" />
-    <Compile Include="DTO\NHA_XUAT_BAN.cs" />
-    <Compile Include="DTO\SACH.cs" />
-    <Compile Include="DTO\TK_NHANVIEN.cs" />
     <Compile Include="UI\ThemNhanViens.cs">
       <SubType>Form</SubType>
     </Compile>

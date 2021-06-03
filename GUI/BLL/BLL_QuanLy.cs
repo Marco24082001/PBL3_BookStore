@@ -12,7 +12,7 @@ namespace GUI.BLL
     class BLL_QuanLy
     {
         QuanLyEntities db = new QuanLyEntities();
-        public static BLL_QuanLy _Instance; 
+        public static BLL_QuanLy _Instance;
         public static BLL_QuanLy Instance
         {
             get
@@ -41,7 +41,7 @@ namespace GUI.BLL
                 s = "HDB" + so.ToString();
                 return s;
             }
-            catch(InvalidOperationException)
+            catch (InvalidOperationException)
             {
                 return "HDB1";
             }
@@ -60,15 +60,14 @@ namespace GUI.BLL
                 s = "HDN" + so.ToString();
                 return s;
             }
-            catch(InvalidOperationException)
+            catch (InvalidOperationException)
             {
                 return "HDN1";
-            }            
+            }
         }
 
         public bool Bll_CheckTKMK(string tk, string mk)
         {
-            //QuanLyEntities db = new QuanLyEntities();
             List<TK_NHANVIEN> list = db.TK_NHANVIEN.ToList();
             foreach (TK_NHANVIEN i in list)
             {
@@ -82,17 +81,12 @@ namespace GUI.BLL
 
         public bool Bll_CheckAdmin(string tk)
         {
-            //QuanLyEntities db = new QuanLyEntities();
-            bool a = db.NHAN_VIEN.Find(tk).isAdmin;
-            return a;
+            return db.NHAN_VIEN.Find(tk).isAdmin;
         }
 
         public List<SACH> Bll_GetAllSach()
         {
-            //QuanLyEntities db = new QuanLyEntities();
-            var list = db.SACHes.ToList();
-            List<SACH> lSach = list;
-            return lSach;
+            return db.SACHes.ToList();
         }
         public List<SACH> Bll_GetAllSachByTrangThai()
         {
@@ -108,14 +102,11 @@ namespace GUI.BLL
         }
         public List<CHI_TIET_HOA_DON_NHAP> Bll_GetAllChiTietHoaDonNhap()
         {
-            List<CHI_TIET_HOA_DON_NHAP> l = db.CHI_TIET_HOA_DON_NHAP.ToList();
-            return l;
+            return db.CHI_TIET_HOA_DON_NHAP.ToList();
         }
         public List<string> Bll_GetAllMaSach()
         {
-            List<String> list = new List<string>();
-            list = db.SACHes.Select(p => p.MaSach).ToList();
-            return list;
+            return db.SACHes.Select(p => p.MaSach).ToList();
         }
 
         public List<string> Bll_GetAllMaSachByTrangThai()
@@ -125,9 +116,7 @@ namespace GUI.BLL
 
         public List<string> Bll_GetAllMaDonNhap()
         {
-            List<String> list = new List<string>();
-            list = db.HOA_DON_NHAP.Select(p => p.MaDonNhap).ToList();
-            return list;
+            return db.HOA_DON_NHAP.Select(p => p.MaDonNhap).ToList();
         }
 
         public List<string> Bll_GetAllMaNV()
@@ -137,15 +126,11 @@ namespace GUI.BLL
 
         public List<string> Bll_GetAllMaNXB()
         {
-            List<string> list = new List<string>();
-            list = db.NHA_XUAT_BAN.Select(p => p.MaNXB).ToList();
-            return list;
+            return db.NHA_XUAT_BAN.Select(p => p.MaNXB).ToList();
         }
         public List<string> Bll_GetAllMaLS()
         {
-            List<string> list = new List<string>();
-            list = db.LOAI_SACH.Select(p => p.MaLoaiSach).ToList();
-            return list;
+            return db.LOAI_SACH.Select(p => p.MaLoaiSach).ToList();
         }
 
         public string Bll_GetNameNVByMaNV(string manv)
@@ -186,19 +171,15 @@ namespace GUI.BLL
 
         public List<string> Bll_GetAllMaDonBan()
         {
-            List<string> list = new List<string>();
-            list = db.HOA_DON_BAN.Select(p => p.MaDonBan).ToList();
-            return list;
+            return db.HOA_DON_BAN.Select(p => p.MaDonBan).ToList();
         }
         public List<string> Bll_GetAllSDT()
         {
-            List<string> list = new List<string>();
-            list = db.KHACH_HANG.Select(p => p.SDT).ToList();
-            return list;
+            return db.KHACH_HANG.Select(p => p.SDT).ToList();
         }
         public List<SACH> Bll_GetSachByLS(string ls)
         {
-            return db.SACHes.Where(p => p.MaLoaiSach == ls ).ToList();
+            return db.SACHes.Where(p => p.MaLoaiSach == ls).ToList();
         }
 
         public List<SACH> Bll_GetSachByLSAndTT(string ls)
@@ -207,17 +188,15 @@ namespace GUI.BLL
         }
 
         public List<NHAN_VIEN> Bll_GetAllNhanVien()
-        { 
-            List<NHAN_VIEN> list = new List<NHAN_VIEN>();
-            list = db.NHAN_VIEN.ToList();
-            return list;
+        {
+            return db.NHAN_VIEN.ToList();
         }
         public List<NHAN_VIEN> Bll_GetNhanVienByName(string a)
         {
             List<NHAN_VIEN> list = new List<NHAN_VIEN>();
-            foreach(NHAN_VIEN i in Bll_GetAllNhanVien())
+            foreach (NHAN_VIEN i in Bll_GetAllNhanVien())
             {
-                if(i.HoTen.ToLower().Contains(a.ToLower()))
+                if (i.HoTen.ToLower().Contains(a.ToLower()))
                 {
                     list.Add(i);
                 }
@@ -271,7 +250,7 @@ namespace GUI.BLL
         public void Bll_EditSLByMaSach(string masach, int sl)
         {
             var tmp = db.SACHes.Find(masach);
-            tmp.SoLuong = sl;   
+            tmp.SoLuong = sl;
             db.SaveChanges();
         }
         public void Bll_EditNhanVien(NHAN_VIEN nv)
@@ -339,7 +318,7 @@ namespace GUI.BLL
             db.NHA_XUAT_BAN.Add(nxb);
             db.SaveChanges();
         }
-        
+
         public List<SACH> Bll_GetSachByNameAndLS(string name, string ls)
         {
             List<SACH> listSach = new List<SACH>();
@@ -352,9 +331,9 @@ namespace GUI.BLL
             {
                 listSach = Bll_GetSachByLS(ls);
             }
-            foreach(SACH i in listSach)
+            foreach (SACH i in listSach)
             {
-                if(i.TenSach.ToLower().Contains(name.ToLower()))
+                if (i.TenSach.ToLower().Contains(name.ToLower()))
                 {
                     list.Add(i);
                 }
@@ -387,7 +366,7 @@ namespace GUI.BLL
         public List<SACH> Bll_GetSachByMS(List<string> LMS)
         {
             List<SACH> listSach = new List<SACH>();
-            foreach(string MS in LMS)
+            foreach (string MS in LMS)
             {
                 listSach.Add(db.SACHes.Find(MS));
             }
@@ -397,7 +376,7 @@ namespace GUI.BLL
         public List<NHAN_VIEN> Bll_GetSachByMNV(List<string> LMNV)
         {
             List<NHAN_VIEN> listNhanVien = new List<NHAN_VIEN>();
-            foreach(string MNV in LMNV)
+            foreach (string MNV in LMNV)
             {
                 listNhanVien.Add(db.NHAN_VIEN.Find(MNV));
             }
@@ -426,7 +405,7 @@ namespace GUI.BLL
 
         public List<SACH> Bll_Sort_Sach(List<string> LMS, string CategorySort)
         {
-            switch(CategorySort)
+            switch (CategorySort)
             {
                 case "TenSach":
                     return Bll_GetSachByMS(LMS).OrderBy(s => s.TenSach).ToList();
@@ -528,7 +507,7 @@ namespace GUI.BLL
         {
             return db.DOANH_SO_BAN_HANG.Where(p => p.ThoiGian.Value.Year == nam && p.ThoiGian.Value.Month == thang && p.ThoiGian.Value.Day == ngay).ToList();
         }
-                
+
         public SeriesCollection Bll_GetValueChart_Sales(int num1, int num2, int num3 = -1)
         {
             SeriesCollection series = new SeriesCollection();
@@ -536,7 +515,7 @@ namespace GUI.BLL
             {
                 var months = db.DOANH_SO_BAN_HANG.Where(p => p.ThoiGian.Value.Year.Equals(num3) && p.ThoiGian.Value.Month.Equals(num1) || p.ThoiGian.Value.Month.Equals(num2))
                                                  .Select(p => new { Month = p.ThoiGian.Value.Month }).Distinct();
-                foreach(var month in months)
+                foreach (var month in months)
                 {
                     List<int> values = new List<int>();
                     for (int day = 1; day <= 31; day++)
@@ -558,7 +537,7 @@ namespace GUI.BLL
             {
                 var years = db.DOANH_SO_BAN_HANG.Where(p => p.ThoiGian.Value.Year.Equals(num1) || p.ThoiGian.Value.Year.Equals(num2))
                                                 .Select(p => new { Year = p.ThoiGian.Value.Year }).Distinct();
-                foreach(var year in years)
+                foreach (var year in years)
                 {
                     List<int> values = new List<int>();
                     for (int month = 1; month <= 12; month++)
@@ -582,7 +561,7 @@ namespace GUI.BLL
         {
             List<DateTime> listDate = new List<DateTime>();
             listDate.Add(DateTime.Now);
-            for(int i = 0; i <= numDay; i++)
+            for (int i = 0; i <= numDay; i++)
             {
                 listDate.Add(listDate[i].AddDays(-1));
             }
@@ -594,7 +573,7 @@ namespace GUI.BLL
         {
             List<int> values = new List<int>();
             SeriesCollection series = new SeriesCollection();
-            
+
             foreach (DateTime date in Bll_GetListDate(numDay))
             {
                 int value = 0;
@@ -606,8 +585,8 @@ namespace GUI.BLL
                     value = (int)data.SingleOrDefault().sumTurnover;
                 values.Add(value);
             }
-            series.Add(new LineSeries() {Values = new ChartValues<int>(values) });
+            series.Add(new LineSeries() { Values = new ChartValues<int>(values) });
             return series;
         }
-    }   
+    }
 }
