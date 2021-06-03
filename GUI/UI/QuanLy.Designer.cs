@@ -703,9 +703,9 @@ namespace GUI
             this.guna2HtmlLabel1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.guna2HtmlLabel1.Location = new System.Drawing.Point(15, 6);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(152, 44);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(168, 44);
             this.guna2HtmlLabel1.TabIndex = 0;
-            this.guna2HtmlLabel1.Text = "Overview";
+            this.guna2HtmlLabel1.Text = "Tổng quát";
             // 
             // QuanLy
             // 

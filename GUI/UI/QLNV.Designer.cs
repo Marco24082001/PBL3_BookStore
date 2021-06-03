@@ -34,7 +34,6 @@ namespace GUI
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label10 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.Xoa = new FontAwesome.Sharp.IconButton();
             this.ChinhSua = new FontAwesome.Sharp.IconButton();
             this.Them = new FontAwesome.Sharp.IconButton();
@@ -51,9 +50,9 @@ namespace GUI
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(154, 112);
+            this.groupBox3.Location = new System.Drawing.Point(154, 84);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1153, 490);
+            this.groupBox3.Size = new System.Drawing.Size(1153, 518);
             this.groupBox3.TabIndex = 15;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "`";
@@ -115,17 +114,6 @@ namespace GUI
             this.label2.Size = new System.Drawing.Size(95, 24);
             this.label2.TabIndex = 16;
             this.label2.Text = "Họ và tên:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Snap ITC", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(590, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(265, 51);
-            this.label1.TabIndex = 26;
-            this.label1.Text = "Hiệu Sách ";
             // 
             // Xoa
             // 
@@ -230,7 +218,6 @@ namespace GUI
             this.ClientSize = new System.Drawing.Size(1444, 753);
             this.Controls.Add(this.cbbSort);
             this.Controls.Add(this.sortBtn);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.Xoa);
             this.Controls.Add(this.ChinhSua);
             this.Controls.Add(this.Them);
@@ -242,7 +229,6 @@ namespace GUI
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -254,7 +240,6 @@ namespace GUI
         private FontAwesome.Sharp.IconButton ChinhSua;
         private FontAwesome.Sharp.IconButton Xoa;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label1;
         private FontAwesome.Sharp.IconButton sortBtn;
         private Guna.UI2.WinForms.Guna2TextBox txtName;
         private Guna.UI2.WinForms.Guna2ComboBox cbbSort;
