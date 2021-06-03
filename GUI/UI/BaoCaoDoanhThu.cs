@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using GUI.BLL;
 using LiveCharts;
+using LiveCharts.Wpf;
 
 namespace GUI
 {
@@ -28,7 +29,7 @@ namespace GUI
 
         public void setData()
         {
-            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetAllBaoCaoDT();
+            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetAllBaoCaoDT().Select(p => new { p.STT, p.SACH.TenSach, p.GiaNhap, p.GiaBan, p.DoanhThu, p.ThoiGian }).ToList();
         }
 
         private void backPage_Click(object sender, EventArgs e)
@@ -128,20 +129,23 @@ namespace GUI
             cbbThang.Text = "";
             cbbNgay.Text = "";
             setcbbThang();
-            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetBaoCaoDoanhThuFolowNam(Convert.ToInt32(cbbNam.SelectedItem.ToString()));
+            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetBaoCaoDoanhThuFolowNam(Convert.ToInt32(cbbNam.SelectedItem.ToString()))
+                                                          .Select(p => new { p.STT, p.SACH.TenSach, p.GiaNhap, p.GiaBan, p.DoanhThu, p.ThoiGian }).ToList(); ;
             setBackground();
         }
 
         private void cbbThang_SelectedIndexChanged(object sender, EventArgs e)
         {
             setcbbNgay();
-            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetBaoCaoDoanhThuFolowNamThang(Convert.ToInt32(cbbNam.SelectedItem.ToString()), Convert.ToInt32(cbbThang.SelectedItem.ToString()));
+            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetBaoCaoDoanhThuFolowNamThang(Convert.ToInt32(cbbNam.SelectedItem.ToString()), Convert.ToInt32(cbbThang.SelectedItem.ToString()))
+                                                          .Select(p => new { p.STT, p.SACH.TenSach, p.GiaNhap, p.GiaBan, p.DoanhThu, p.ThoiGian }).ToList();
             setBackground();
         }
 
         private void cbbNgay_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetBaoCaoDoanhThuFolowNamThangNgay(Convert.ToInt32(cbbNam.SelectedItem.ToString()), Convert.ToInt32(cbbThang.SelectedItem.ToString()), Convert.ToInt32(cbbNgay.SelectedItem.ToString()));
+            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetBaoCaoDoanhThuFolowNamThangNgay(Convert.ToInt32(cbbNam.SelectedItem.ToString()), Convert.ToInt32(cbbThang.SelectedItem.ToString()), Convert.ToInt32(cbbNgay.SelectedItem.ToString()))
+                                                          .Select(p => new { p.STT, p.SACH.TenSach, p.GiaNhap, p.GiaBan, p.DoanhThu, p.ThoiGian }).ToList();
             setBackground();
         }
 
@@ -181,16 +185,13 @@ namespace GUI
                 Title = "Turnover",
                 LabelFormatter = value => value.ToString("C")
             });
-            turnoverChart.LegendLocation = LiveCharts.LegendLocation.Right;
-           
         }
 
         private void loadChart(int numDay)
         {
             turnoverChart.Series.Clear();
             setChart(numDay);
-            SeriesCollection series = new SeriesCollection();
-            turnoverChart.Series = BLL_QuanLy.Instance.Bll_GetValueChart_Turnover(numDay);
+            turnoverChart.Series.Add(BLL_QuanLy.Instance.Bll_GetValueChart_Turnover(numDay));
         }
 
         private void loadBtn_Click(object sender, EventArgs e)
@@ -210,20 +211,23 @@ namespace GUI
             cbbThang.Text = "";
             cbbNgay.Text = "";
             setcbbThang();
-            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetBaoCaoDoanhThuFolowNam(Convert.ToInt32(cbbNam.SelectedItem.ToString()));
+            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetBaoCaoDoanhThuFolowNam(Convert.ToInt32(cbbNam.SelectedItem.ToString()))
+                                                 .Select(p => new { p.STT, p.SACH.TenSach, p.GiaNhap, p.GiaBan, p.DoanhThu, p.ThoiGian }).ToList();
             setBackground();
         }
 
         private void cbbThang_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             setcbbNgay();
-            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetBaoCaoDoanhThuFolowNamThang(Convert.ToInt32(cbbNam.SelectedItem.ToString()), Convert.ToInt32(cbbThang.SelectedItem.ToString()));
+            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetBaoCaoDoanhThuFolowNamThang(Convert.ToInt32(cbbNam.SelectedItem.ToString()), Convert.ToInt32(cbbThang.SelectedItem.ToString()))
+                                                          .Select(p => new { p.STT, p.SACH.TenSach, p.GiaNhap, p.GiaBan, p.DoanhThu, p.ThoiGian }).ToList();
             setBackground();
         }
 
         private void cbbNgay_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetBaoCaoDoanhThuFolowNamThangNgay(Convert.ToInt32(cbbNam.SelectedItem.ToString()), Convert.ToInt32(cbbThang.SelectedItem.ToString()), Convert.ToInt32(cbbNgay.SelectedItem.ToString()));
+            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetBaoCaoDoanhThuFolowNamThangNgay(Convert.ToInt32(cbbNam.SelectedItem.ToString()), Convert.ToInt32(cbbThang.SelectedItem.ToString()), Convert.ToInt32(cbbNgay.SelectedItem.ToString()))
+                                                          .Select(p => new { p.STT, p.SACH.TenSach, p.GiaNhap, p.GiaBan, p.DoanhThu, p.ThoiGian }).ToList();
             setBackground();
         }
     }

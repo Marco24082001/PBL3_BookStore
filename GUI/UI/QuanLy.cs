@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using FontAwesome.Sharp;
 using GUI.BLL;
 using GUI.UI;
+using LiveCharts;
 
 namespace GUI
 {
@@ -138,7 +139,7 @@ namespace GUI
             DisableButton();
             leftBorderBtn.Visible = false;
             iconCurrentChildForm.IconChar = IconChar.Home;
-            iconCurrentChildForm.IconColor = Color.MediumPurple;
+            iconCurrentChildForm.IconColor = Color.HotPink;
             lblTitleChildForm.Text = "Home";
         }
 
@@ -166,6 +167,9 @@ namespace GUI
         private void QuanLy_Load(object sender, EventArgs e)
         {
             txtTen.Text = BLL_QuanLy.Instance.Bll_GetNameNVByMaNV(maNV);
+            set_TopProduct();
+            set_RemainProduct();
+            set_AllNum();
         }
 
         private void DangXuat_Click(object sender, EventArgs e)
@@ -187,6 +191,29 @@ namespace GUI
             this.Dispose();
         }
 
-        
+        private void set_TopProduct()
+        {
+            chartTopProducts.InnerRadius = 50;
+            chartTopProducts.Series = BLL_QuanLy.Instance.Bll_GetValueChart_Products();
+            chartTopProducts.DefaultLegend.Foreground = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Colors.White);
+            chartTopProducts.LegendLocation = LegendLocation.Right;    
+        }
+
+        private void set_RemainProduct()
+        {
+            chartRemainProduct.Series = BLL_QuanLy.Instance.Bll_GetValueChart_Remain_Products();
+            chartRemainProduct.DefaultLegend.Foreground = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Colors.White);
+            chartRemainProduct.LegendLocation = LegendLocation.Right;
+        }
+
+        private void set_AllNum()
+        {
+            numDonHang.Text = Convert.ToString(BLL_QuanLy.Instance.Bll_getTotal_Sales());
+            numDoanhThu.Text = Convert.ToString(BLL_QuanLy.Instance.Bll_getTotal_TurnOver());
+            numNhanVien.Text = Convert.ToString(BLL_QuanLy.Instance.Bll_getTotal_Employees());
+            numSach.Text = Convert.ToString(BLL_QuanLy.Instance.Bll_getTotal_Books());
+            numTheLoai.Text = Convert.ToString(BLL_QuanLy.Instance.Bll_getTotal_Categorys());
+            numKhachHang.Text = Convert.ToString(BLL_QuanLy.Instance.Bll_getTotal_Customers());
+        }
     }
 }
