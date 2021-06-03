@@ -30,6 +30,7 @@ namespace GUI
         private void InitializeComponent()
         {
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtName = new Guna.UI2.WinForms.Guna2TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label10 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -38,7 +39,6 @@ namespace GUI
             this.ChinhSua = new FontAwesome.Sharp.IconButton();
             this.Them = new FontAwesome.Sharp.IconButton();
             this.sortBtn = new FontAwesome.Sharp.IconButton();
-            this.txtName = new Guna.UI2.WinForms.Guna2TextBox();
             this.cbbSort = new Guna.UI2.WinForms.Guna2ComboBox();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -50,12 +50,38 @@ namespace GUI
             this.groupBox3.Controls.Add(this.dataGridView1);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.label2);
-            this.groupBox3.Location = new System.Drawing.Point(277, 112);
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(188, 112);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(907, 490);
+            this.groupBox3.Size = new System.Drawing.Size(1083, 490);
             this.groupBox3.TabIndex = 15;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "`";
+            // 
+            // txtName
+            // 
+            this.txtName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtName.DefaultText = "";
+            this.txtName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtName.DisabledState.Parent = this.txtName;
+            this.txtName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtName.FocusedState.Parent = this.txtName;
+            this.txtName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.ForeColor = System.Drawing.Color.Black;
+            this.txtName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtName.HoverState.Parent = this.txtName;
+            this.txtName.Location = new System.Drawing.Point(132, 61);
+            this.txtName.Name = "txtName";
+            this.txtName.PasswordChar = '\0';
+            this.txtName.PlaceholderText = "";
+            this.txtName.SelectedText = "";
+            this.txtName.ShadowDecoration.Parent = this.txtName;
+            this.txtName.Size = new System.Drawing.Size(149, 36);
+            this.txtName.TabIndex = 52;
+            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // dataGridView1
             // 
@@ -67,7 +93,7 @@ namespace GUI
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(843, 363);
+            this.dataGridView1.Size = new System.Drawing.Size(1021, 363);
             this.dataGridView1.TabIndex = 25;
             // 
             // label10
@@ -110,7 +136,7 @@ namespace GUI
             this.Xoa.IconColor = System.Drawing.Color.Red;
             this.Xoa.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Xoa.IconSize = 25;
-            this.Xoa.Location = new System.Drawing.Point(599, 627);
+            this.Xoa.Location = new System.Drawing.Point(510, 627);
             this.Xoa.Name = "Xoa";
             this.Xoa.Size = new System.Drawing.Size(85, 36);
             this.Xoa.TabIndex = 25;
@@ -129,7 +155,7 @@ namespace GUI
             this.ChinhSua.IconColor = System.Drawing.Color.Blue;
             this.ChinhSua.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ChinhSua.IconSize = 25;
-            this.ChinhSua.Location = new System.Drawing.Point(436, 627);
+            this.ChinhSua.Location = new System.Drawing.Point(347, 627);
             this.ChinhSua.Name = "ChinhSua";
             this.ChinhSua.Size = new System.Drawing.Size(131, 36);
             this.ChinhSua.TabIndex = 25;
@@ -148,7 +174,7 @@ namespace GUI
             this.Them.IconColor = System.Drawing.Color.Blue;
             this.Them.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Them.IconSize = 25;
-            this.Them.Location = new System.Drawing.Point(309, 627);
+            this.Them.Location = new System.Drawing.Point(220, 627);
             this.Them.Name = "Them";
             this.Them.Size = new System.Drawing.Size(100, 36);
             this.Them.TabIndex = 25;
@@ -167,7 +193,7 @@ namespace GUI
             this.sortBtn.IconColor = System.Drawing.Color.Blue;
             this.sortBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.sortBtn.IconSize = 20;
-            this.sortBtn.Location = new System.Drawing.Point(900, 627);
+            this.sortBtn.Location = new System.Drawing.Point(989, 627);
             this.sortBtn.Name = "sortBtn";
             this.sortBtn.Size = new System.Drawing.Size(100, 36);
             this.sortBtn.TabIndex = 46;
@@ -176,31 +202,6 @@ namespace GUI
             this.sortBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.sortBtn.UseVisualStyleBackColor = false;
             this.sortBtn.Click += new System.EventHandler(this.sortBtn_Click);
-            // 
-            // txtName
-            // 
-            this.txtName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtName.DefaultText = "";
-            this.txtName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtName.DisabledState.Parent = this.txtName;
-            this.txtName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtName.FocusedState.Parent = this.txtName;
-            this.txtName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.ForeColor = System.Drawing.Color.Black;
-            this.txtName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtName.HoverState.Parent = this.txtName;
-            this.txtName.Location = new System.Drawing.Point(132, 61);
-            this.txtName.Name = "txtName";
-            this.txtName.PasswordChar = '\0';
-            this.txtName.PlaceholderText = "";
-            this.txtName.SelectedText = "";
-            this.txtName.ShadowDecoration.Parent = this.txtName;
-            this.txtName.Size = new System.Drawing.Size(149, 36);
-            this.txtName.TabIndex = 52;
-            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // cbbSort
             // 
@@ -215,7 +216,7 @@ namespace GUI
             this.cbbSort.HoverState.Parent = this.cbbSort;
             this.cbbSort.ItemHeight = 30;
             this.cbbSort.ItemsAppearance.Parent = this.cbbSort;
-            this.cbbSort.Location = new System.Drawing.Point(1022, 627);
+            this.cbbSort.Location = new System.Drawing.Point(1111, 627);
             this.cbbSort.Name = "cbbSort";
             this.cbbSort.ShadowDecoration.Parent = this.cbbSort;
             this.cbbSort.Size = new System.Drawing.Size(130, 36);
