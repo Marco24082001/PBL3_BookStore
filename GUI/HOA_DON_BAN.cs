@@ -20,7 +20,7 @@ namespace GUI
             this.CHI_TIET_HOA_DON_BAN = new HashSet<CHI_TIET_HOA_DON_BAN>();
         }
     
-        public int MaDonBan { get; set; }
+        public string MaDonBan { get; set; }
         public string SDT_KH { get; set; }
         public string MaNhanVien { get; set; }
         public Nullable<System.DateTime> NgayBan { get; set; }

@@ -19,7 +19,7 @@ namespace GUI
         public int GiaNhap { get; set; }
         public int GiaBan { get; set; }
         public int SoLuongBan { get; set; }
-        public int DoanhThu { get; set; }
+        public Nullable<int> DoanhThu { get; set; }
         public Nullable<System.DateTime> ThoiGian { get; set; }
     
         public virtual SACH SACH { get; set; }
