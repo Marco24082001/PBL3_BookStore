@@ -733,5 +733,10 @@ namespace GUI.BLL
         {
             return db.NHAN_VIEN.Where(p => p.TrangThai.Equals(true)).Count();
         }
+
+        public string Bll_GetMKByTK(string tk)
+        {
+            return db.TK_NHANVIEN.Find(tk).Pass;
+        }
     }   
 }

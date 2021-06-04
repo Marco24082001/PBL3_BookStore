@@ -33,9 +33,9 @@ namespace GUI.UI
             //txtHoTen = 
             txtTenDN.Enabled = false;
             isChange.Checked = false;
-            txtMkc.Enabled = false;
-            txtMkm.Enabled = false;
-            txtNl.Enabled = false;
+            txtMKcu.Enabled = false;
+            txtMKmoi.Enabled = false;
+            txtReMK.Enabled = false;
             Save.Enabled = false;
 
             NHAN_VIEN nv = BLL_QuanLy.Instance.Bll_GetNVByMaNV(MaNhanVien);
@@ -48,51 +48,58 @@ namespace GUI.UI
         {
             if (isChange.Checked)
             {
-                txtMkc.Enabled = true;
-                txtMkm.Enabled = true;
-                txtNl.Enabled = true;
+                txtMKcu.Enabled = true;
+                txtMKmoi.Enabled = true;
+                txtReMK.Enabled = true;
                 Save.Enabled = true;
             }
             else
             {
-                txtMkc.Text = string.Empty;
-                txtMkm.Text = string.Empty;
-                txtNl.Text = string.Empty;
-                txtMkc.Enabled = false;
-                txtMkm.Enabled = false;
-                txtNl.Enabled = false;
+                txtMKcu.Text = string.Empty;
+                txtMKmoi.Text = string.Empty;
+                txtReMK.Text = string.Empty;
+                txtMKcu.Enabled = false;
+                txtMKmoi.Enabled = false;
+                txtReMK.Enabled = false;
             }
         }
 
-        private bool checkPass(string mkc, string mk, string rmk)
+        private bool checkPass()
         {
-            TK_NHANVIEN tk = BLL_QuanLy.Instance.Bll_GetTKByMaNV(MaNhanVien);
-            if (mk.Length > 10)
+            if (txtMKcu.Text != BLL_QuanLy.Instance.Bll_GetMKByTK(MaNhanVien))
             {
-                MessageBox.Show("Mật khẩu tối đa 10 ký tự");
+                MessageBox.Show("Mật khẩu cũ sai");
                 return false;
             }
-            if(mkc == tk.Pass && mk != "" && rmk != "")
+            if (txtMKmoi.Text == "")
             {
-                if (mk == rmk) return true;
-                else return false;
+                MessageBox.Show("Vui lòng nhập mật khẩu");
+                return false;
             }
-            return false;
+            if (txtMKmoi.Text.Length > 10)
+            {
+                MessageBox.Show("Không nhập quá 10 kí tự");
+                return false;
+            }
+            if (txtReMK.Text != txtMKmoi.Text)
+            {
+                MessageBox.Show("Mật khẩu mới không khớp");
+                return false;
+            }
+            return true;
         }
           
         private void Save_Click(object sender, EventArgs e)
         {
-            if (isChange.Checked)
+            if(checkPass())
             {
-                if (checkPass(txtMkc.Text, txtMkm.Text, txtNl.Text))
+                TK_NHANVIEN tk = new TK_NHANVIEN()
                 {
-                    TK_NHANVIEN tk = new TK_NHANVIEN();
-                    tk.TKNV = MaNhanVien;
-                    tk.Pass = txtMkm.Text;
-                    BLL_QuanLy.Instance.BLL_EditMatKhau(tk);
-                    this.Hide();
-                }
-                else MessageBox.Show("Ban nhap sai: vui long nhap lai !");
+                    TKNV = MaNhanVien,
+                    Pass = txtMKmoi.Text
+                };
+                BLL_QuanLy.Instance.BLL_EditMatKhau(tk);
+                this.Hide();
             }
         }
     }

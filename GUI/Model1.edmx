@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="QUAN_LY_HIEU_SACH_1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="QUAN_LY_HIEU_SACHModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="BAO_CAO_DOANH_THU">
           <Key>
             <PropertyRef Name="STT" />
@@ -252,7 +252,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="QUAN_LY_HIEU_SACH_1ModelStoreContainer">
+        <EntityContainer Name="QUAN_LY_HIEU_SACHModelStoreContainer">
           <EntitySet Name="BAO_CAO_DOANH_THU" EntityType="Self.BAO_CAO_DOANH_THU" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CHI_TIET_HOA_DON_BAN" EntityType="Self.CHI_TIET_HOA_DON_BAN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CHI_TIET_HOA_DON_NHAP" EntityType="Self.CHI_TIET_HOA_DON_NHAP" Schema="dbo" store:Type="Tables" />
@@ -314,7 +314,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="QUAN_LY_HIEU_SACH_1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="QUAN_LY_HIEU_SACHModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="BAO_CAO_DOANH_THU">
           <Key>
             <PropertyRef Name="STT" />
@@ -647,9 +647,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="QUAN_LY_HIEU_SACH_1ModelStoreContainer" CdmEntityContainer="QuanLyEntities">
+        <EntityContainerMapping StorageEntityContainer="QUAN_LY_HIEU_SACHModelStoreContainer" CdmEntityContainer="QuanLyEntities">
           <EntitySetMapping Name="BAO_CAO_DOANH_THU">
-            <EntityTypeMapping TypeName="QUAN_LY_HIEU_SACH_1Model.BAO_CAO_DOANH_THU">
+            <EntityTypeMapping TypeName="QUAN_LY_HIEU_SACHModel.BAO_CAO_DOANH_THU">
               <MappingFragment StoreEntitySet="BAO_CAO_DOANH_THU">
                 <ScalarProperty Name="STT" ColumnName="STT" />
                 <ScalarProperty Name="MaSach" ColumnName="MaSach" />
@@ -662,7 +662,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CHI_TIET_HOA_DON_BAN">
-            <EntityTypeMapping TypeName="QUAN_LY_HIEU_SACH_1Model.CHI_TIET_HOA_DON_BAN">
+            <EntityTypeMapping TypeName="QUAN_LY_HIEU_SACHModel.CHI_TIET_HOA_DON_BAN">
               <MappingFragment StoreEntitySet="CHI_TIET_HOA_DON_BAN">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="MaDonBan" ColumnName="MaDonBan" />
@@ -674,7 +674,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CHI_TIET_HOA_DON_NHAP">
-            <EntityTypeMapping TypeName="QUAN_LY_HIEU_SACH_1Model.CHI_TIET_HOA_DON_NHAP">
+            <EntityTypeMapping TypeName="QUAN_LY_HIEU_SACHModel.CHI_TIET_HOA_DON_NHAP">
               <MappingFragment StoreEntitySet="CHI_TIET_HOA_DON_NHAP">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="MaDonNhap" ColumnName="MaDonNhap" />
@@ -685,7 +685,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DOANH_SO_BAN_HANG">
-            <EntityTypeMapping TypeName="QUAN_LY_HIEU_SACH_1Model.DOANH_SO_BAN_HANG">
+            <EntityTypeMapping TypeName="QUAN_LY_HIEU_SACHModel.DOANH_SO_BAN_HANG">
               <MappingFragment StoreEntitySet="DOANH_SO_BAN_HANG">
                 <ScalarProperty Name="STT" ColumnName="STT" />
                 <ScalarProperty Name="MaNhanVien" ColumnName="MaNhanVien" />
@@ -695,7 +695,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="HOA_DON_BAN">
-            <EntityTypeMapping TypeName="QUAN_LY_HIEU_SACH_1Model.HOA_DON_BAN">
+            <EntityTypeMapping TypeName="QUAN_LY_HIEU_SACHModel.HOA_DON_BAN">
               <MappingFragment StoreEntitySet="HOA_DON_BAN">
                 <ScalarProperty Name="MaDonBan" ColumnName="MaDonBan" />
                 <ScalarProperty Name="SDT_KH" ColumnName="SDT_KH" />
@@ -705,7 +705,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="HOA_DON_NHAP">
-            <EntityTypeMapping TypeName="QUAN_LY_HIEU_SACH_1Model.HOA_DON_NHAP">
+            <EntityTypeMapping TypeName="QUAN_LY_HIEU_SACHModel.HOA_DON_NHAP">
               <MappingFragment StoreEntitySet="HOA_DON_NHAP">
                 <ScalarProperty Name="MaDonNhap" ColumnName="MaDonNhap" />
                 <ScalarProperty Name="NgayNhap" ColumnName="NgayNhap" />
@@ -714,7 +714,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="KHACH_HANG">
-            <EntityTypeMapping TypeName="QUAN_LY_HIEU_SACH_1Model.KHACH_HANG">
+            <EntityTypeMapping TypeName="QUAN_LY_HIEU_SACHModel.KHACH_HANG">
               <MappingFragment StoreEntitySet="KHACH_HANG">
                 <ScalarProperty Name="SDT" ColumnName="SDT" />
                 <ScalarProperty Name="HoTen" ColumnName="HoTen" />
@@ -722,7 +722,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="LOAI_SACH">
-            <EntityTypeMapping TypeName="QUAN_LY_HIEU_SACH_1Model.LOAI_SACH">
+            <EntityTypeMapping TypeName="QUAN_LY_HIEU_SACHModel.LOAI_SACH">
               <MappingFragment StoreEntitySet="LOAI_SACH">
                 <ScalarProperty Name="MaLoaiSach" ColumnName="MaLoaiSach" />
                 <ScalarProperty Name="TenLoaiSach" ColumnName="TenLoaiSach" />
@@ -730,7 +730,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NHA_XUAT_BAN">
-            <EntityTypeMapping TypeName="QUAN_LY_HIEU_SACH_1Model.NHA_XUAT_BAN">
+            <EntityTypeMapping TypeName="QUAN_LY_HIEU_SACHModel.NHA_XUAT_BAN">
               <MappingFragment StoreEntitySet="NHA_XUAT_BAN">
                 <ScalarProperty Name="MaNXB" ColumnName="MaNXB" />
                 <ScalarProperty Name="TenNXB" ColumnName="TenNXB" />
@@ -738,7 +738,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NHAN_VIEN">
-            <EntityTypeMapping TypeName="QUAN_LY_HIEU_SACH_1Model.NHAN_VIEN">
+            <EntityTypeMapping TypeName="QUAN_LY_HIEU_SACHModel.NHAN_VIEN">
               <MappingFragment StoreEntitySet="NHAN_VIEN">
                 <ScalarProperty Name="MaNhanVien" ColumnName="MaNhanVien" />
                 <ScalarProperty Name="HoTen" ColumnName="HoTen" />
@@ -754,7 +754,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="SACHes">
-            <EntityTypeMapping TypeName="QUAN_LY_HIEU_SACH_1Model.SACH">
+            <EntityTypeMapping TypeName="QUAN_LY_HIEU_SACHModel.SACH">
               <MappingFragment StoreEntitySet="SACH">
                 <ScalarProperty Name="MaSach" ColumnName="MaSach" />
                 <ScalarProperty Name="TenSach" ColumnName="TenSach" />
@@ -768,7 +768,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TK_NHANVIEN">
-            <EntityTypeMapping TypeName="QUAN_LY_HIEU_SACH_1Model.TK_NHANVIEN">
+            <EntityTypeMapping TypeName="QUAN_LY_HIEU_SACHModel.TK_NHANVIEN">
               <MappingFragment StoreEntitySet="TK_NHANVIEN">
                 <ScalarProperty Name="TKNV" ColumnName="TKNV" />
                 <ScalarProperty Name="Pass" ColumnName="Pass" />
