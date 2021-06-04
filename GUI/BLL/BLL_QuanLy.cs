@@ -532,7 +532,7 @@ namespace GUI.BLL
                     GiaNhap = i.GiaNhap,
                     GiaBan = i.GiaBan,
                     SoLuong = i.SoLuongBan,
-                    DoanhThu = i.DoanhThu,
+                    DoanhThu = (int)i.DoanhThu,
                     ThoiGian = (DateTime)i.ThoiGian
                 };
                 listview.Add(obj);

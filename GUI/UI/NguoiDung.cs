@@ -67,6 +67,11 @@ namespace GUI.UI
         private bool checkPass(string mkc, string mk, string rmk)
         {
             TK_NHANVIEN tk = BLL_QuanLy.Instance.Bll_GetTKByMaNV(MaNhanVien);
+            if (mk.Length > 10)
+            {
+                MessageBox.Show("Mật khẩu tối đa 10 ký tự");
+                return false;
+            }
             if(mkc == tk.Pass && mk != "" && rmk != "")
             {
                 if (mk == rmk) return true;
@@ -74,7 +79,7 @@ namespace GUI.UI
             }
             return false;
         }
-
+          
         private void Save_Click(object sender, EventArgs e)
         {
             if (isChange.Checked)
