@@ -15,7 +15,7 @@ namespace GUI
     public partial class CHI_TIET_HOA_DON_NHAP
     {
         public int ID { get; set; }
-        public string MaDonNhap { get; set; }
+        public int MaDonNhap { get; set; }
         public string MaSach { get; set; }
         public Nullable<int> SoLuong { get; set; }
         public Nullable<int> ThanhTien { get; set; }

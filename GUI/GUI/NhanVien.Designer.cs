@@ -348,6 +348,7 @@ namespace GUI
             this.txtSDT.ShadowDecoration.Parent = this.txtSDT;
             this.txtSDT.Size = new System.Drawing.Size(196, 36);
             this.txtSDT.TabIndex = 78;
+            this.txtSDT.TextChanged += new System.EventHandler(this.SDT_TextChanged);
             // 
             // txtMaNhanVien
             // 

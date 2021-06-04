@@ -243,13 +243,13 @@ namespace GUI
             {
                 salesChart.AxisX.Add(new LiveCharts.Wpf.Axis
                 {
-                    Title = "Month",
+                    Title = "Thang",
                     Labels = new[] { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" }
                 });
                 salesChart.AxisY.Add(new LiveCharts.Wpf.Axis
                 {
-                    Title = "Sales",
-                    LabelFormatter = value => value.ToString("N")
+                    Title = "Doanh So",
+                    LabelFormatter = value => value.ToString("N0") + " VND"
                 });
                 salesChart.LegendLocation = LiveCharts.LegendLocation.Right;
             }
@@ -257,13 +257,13 @@ namespace GUI
             {
                 salesChart.AxisX.Add(new LiveCharts.Wpf.Axis
                 {
-                    Title = "Date",
+                    Title = "Ngay",
                     Labels = new[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }
                 });
                 salesChart.AxisY.Add(new LiveCharts.Wpf.Axis
                 {
-                    Title = "Sales",
-                    LabelFormatter = value => value.ToString("N")
+                    Title = "Doanh So",
+                    LabelFormatter = value => value.ToString("N0") + " VND"
                 });
                 salesChart.LegendLocation = LiveCharts.LegendLocation.Right;
             }

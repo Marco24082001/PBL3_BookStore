@@ -46,19 +46,19 @@ namespace GUI
             this.sortBtn = new FontAwesome.Sharp.IconButton();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblMonth = new System.Windows.Forms.Label();
             this.num3 = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.num2 = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.num1 = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.loadBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.radioYear = new Guna.UI2.WinForms.Guna2CustomRadioButton();
+            this.radioMonth = new Guna.UI2.WinForms.Guna2CustomRadioButton();
             this.salesChart = new LiveCharts.WinForms.CartesianChart();
             this.label3 = new System.Windows.Forms.Label();
             this.NextPage = new FontAwesome.Sharp.IconButton();
             this.entityCommand1 = new System.Data.Entity.Core.EntityClient.EntityCommand();
-            this.radioMonth = new Guna.UI2.WinForms.Guna2CustomRadioButton();
-            this.radioYear = new Guna.UI2.WinForms.Guna2CustomRadioButton();
-            this.lblMonth = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.dOANHSOBANHANGBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -333,6 +333,26 @@ namespace GUI
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Doanh thu";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(596, 492);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(40, 18);
+            this.label2.TabIndex = 76;
+            this.label2.Text = "Năm";
+            // 
+            // lblMonth
+            // 
+            this.lblMonth.AutoSize = true;
+            this.lblMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMonth.Location = new System.Drawing.Point(496, 492);
+            this.lblMonth.Name = "lblMonth";
+            this.lblMonth.Size = new System.Drawing.Size(49, 18);
+            this.lblMonth.TabIndex = 75;
+            this.lblMonth.Text = "Tháng";
+            // 
             // num3
             // 
             this.num3.BackColor = System.Drawing.Color.Transparent;
@@ -424,6 +444,49 @@ namespace GUI
             this.loadBtn.Text = "Load";
             this.loadBtn.Click += new System.EventHandler(this.loadBtn_Click);
             // 
+            // radioYear
+            // 
+            this.radioYear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.radioYear.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.radioYear.CheckedState.BorderThickness = 0;
+            this.radioYear.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.radioYear.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.radioYear.CheckedState.Parent = this.radioYear;
+            this.radioYear.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.radioYear.Location = new System.Drawing.Point(564, 488);
+            this.radioYear.Margin = new System.Windows.Forms.Padding(4);
+            this.radioYear.Name = "radioYear";
+            this.radioYear.ShadowDecoration.Parent = this.radioYear;
+            this.radioYear.Size = new System.Drawing.Size(25, 25);
+            this.radioYear.TabIndex = 30;
+            this.radioYear.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.radioYear.UncheckedState.BorderThickness = 2;
+            this.radioYear.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.radioYear.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.radioYear.UncheckedState.Parent = this.radioYear;
+            this.radioYear.CheckedChanged += new System.EventHandler(this.radioYear_CheckedChanged);
+            // 
+            // radioMonth
+            // 
+            this.radioMonth.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.radioMonth.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.radioMonth.CheckedState.BorderThickness = 0;
+            this.radioMonth.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.radioMonth.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.radioMonth.CheckedState.Parent = this.radioMonth;
+            this.radioMonth.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.radioMonth.Location = new System.Drawing.Point(464, 488);
+            this.radioMonth.Margin = new System.Windows.Forms.Padding(4);
+            this.radioMonth.Name = "radioMonth";
+            this.radioMonth.ShadowDecoration.Parent = this.radioMonth;
+            this.radioMonth.Size = new System.Drawing.Size(25, 25);
+            this.radioMonth.TabIndex = 29;
+            this.radioMonth.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.radioMonth.UncheckedState.BorderThickness = 2;
+            this.radioMonth.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.radioMonth.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.radioMonth.UncheckedState.Parent = this.radioMonth;
+            // 
             // salesChart
             // 
             this.salesChart.Location = new System.Drawing.Point(39, 126);
@@ -472,69 +535,6 @@ namespace GUI
             this.entityCommand1.Connection = null;
             this.entityCommand1.EnablePlanCaching = true;
             this.entityCommand1.Transaction = null;
-            // 
-            // radioMonth
-            // 
-            this.radioMonth.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.radioMonth.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.radioMonth.CheckedState.BorderThickness = 0;
-            this.radioMonth.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.radioMonth.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.radioMonth.CheckedState.Parent = this.radioMonth;
-            this.radioMonth.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.radioMonth.Location = new System.Drawing.Point(464, 488);
-            this.radioMonth.Margin = new System.Windows.Forms.Padding(4);
-            this.radioMonth.Name = "radioMonth";
-            this.radioMonth.ShadowDecoration.Parent = this.radioMonth;
-            this.radioMonth.Size = new System.Drawing.Size(25, 25);
-            this.radioMonth.TabIndex = 29;
-            this.radioMonth.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.radioMonth.UncheckedState.BorderThickness = 2;
-            this.radioMonth.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.radioMonth.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.radioMonth.UncheckedState.Parent = this.radioMonth;
-            // 
-            // radioYear
-            // 
-            this.radioYear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.radioYear.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.radioYear.CheckedState.BorderThickness = 0;
-            this.radioYear.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.radioYear.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.radioYear.CheckedState.Parent = this.radioYear;
-            this.radioYear.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.radioYear.Location = new System.Drawing.Point(564, 488);
-            this.radioYear.Margin = new System.Windows.Forms.Padding(4);
-            this.radioYear.Name = "radioYear";
-            this.radioYear.ShadowDecoration.Parent = this.radioYear;
-            this.radioYear.Size = new System.Drawing.Size(25, 25);
-            this.radioYear.TabIndex = 30;
-            this.radioYear.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.radioYear.UncheckedState.BorderThickness = 2;
-            this.radioYear.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.radioYear.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.radioYear.UncheckedState.Parent = this.radioYear;
-            this.radioYear.CheckedChanged += new System.EventHandler(this.radioYear_CheckedChanged);
-            // 
-            // lblMonth
-            // 
-            this.lblMonth.AutoSize = true;
-            this.lblMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMonth.Location = new System.Drawing.Point(496, 492);
-            this.lblMonth.Name = "lblMonth";
-            this.lblMonth.Size = new System.Drawing.Size(50, 18);
-            this.lblMonth.TabIndex = 75;
-            this.lblMonth.Text = "Month";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(596, 492);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 18);
-            this.label2.TabIndex = 76;
-            this.label2.Text = "Year";
             // 
             // dOANHSOBANHANGBindingSource
             // 

@@ -37,7 +37,7 @@ namespace GUI
 
         public void setData1()
         {
-            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetAllSachByTrangThai().Select(p => new { p.MaSach, p.TenSach, p.GiaBan, p.SoLuong, p.NHA_XUAT_BAN.TenNXB, p.LOAI_SACH.TenLoaiSach, p.TrangThai }).ToList();
+            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetAllViewSachByTrangThai().ToList();
         }
         public void setData2()
         {
@@ -75,17 +75,9 @@ namespace GUI
 
         public void setcbbSort()
         {
-            //cbbSort.Items.Add()
-            Type type = typeof(SACH);
-            PropertyInfo[] propertyinfo = type.GetProperties();
-            foreach (PropertyInfo info in propertyinfo)
-            {
-                if (info.Name == "TrangThai") break;
-                if(info.Name != "GiaNhap")
-                {
-                    cbbSort.Items.Add(info.Name);
-                }
-            }
+            cbbSort.Items.AddRange(new String[] {
+                "Ten Sach", "Gia Ban", "So Luong"
+            });
             cbbSort.SelectedIndex = 0;
         }
 
@@ -104,9 +96,9 @@ namespace GUI
                 MessageBox.Show("Vui long nhap số điện thoại");
                 return false;
             }
-            if(txtSDT.Text.Length > 10)
+            if(txtSDT.Text.Length != 10)
             {
-                MessageBox.Show("Khong Nhap qua 10 so");
+                MessageBox.Show("10 so");
                 return false;
             }
             string a = txtSDT.Text;
@@ -175,7 +167,7 @@ namespace GUI
             int soLuong = Convert.ToInt32(numericUpDown1.Value.ToString());
             CHI_TIET_HOA_DON_BAN chitiet = new CHI_TIET_HOA_DON_BAN()
             {
-                MaDonBan = txtMaDonBan.Text,
+                MaDonBan = Convert.ToInt32(txtMaDonBan.Text),
                 MaSach = cbbMaSach.SelectedItem.ToString(),
                 SoLuong = soLuong,
                 DonGia = donGia,
@@ -214,11 +206,13 @@ namespace GUI
             if(list.Count == 0)
             {               
                 txtSDT.Enabled = true;
+                txtHoTen.Enabled = true;
                 txtHoTen.Text = "";
                 txtSDT.Text = "";
                 txtMaDonBan.Text = "";
                 numericUpDown1.Value = 0;
                 cbbMaSach.SelectedIndex = 0;
+                TongCong.Text = "0";
             }
         }
 
@@ -238,7 +232,7 @@ namespace GUI
             }
             HOA_DON_BAN hdb = new HOA_DON_BAN()
             {
-                MaDonBan = txtMaDonBan.Text,
+                MaDonBan = Convert.ToInt32(txtMaDonBan.Text),
                 SDT_KH = txtSDT.Text, 
                 MaNhanVien = maNV,
                 NgayBan = DateTime.Now,
@@ -288,6 +282,7 @@ namespace GUI
             cbbMaSach.SelectedIndex = 0;
             numericUpDown1.Value = 0;
             setData1();
+            MessageBox.Show("ThanhToanThanhCong");
         }
 
         private void SDT_TextChanged(object sender, EventArgs e)
@@ -368,7 +363,7 @@ namespace GUI
                 LMS.Add(dataGridView1.Rows[i].Cells[0].Value.ToString());
             }
             string CategorySort = cbbSort.SelectedItem.ToString();
-            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_Sort_Sach(LMS, CategorySort).Select(p => new { p.MaSach, p.TenSach, p.GiaBan, p.SoLuong, p.NHA_XUAT_BAN.TenNXB, p.LOAI_SACH.TenLoaiSach, p.TrangThai }).ToList();
+            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_SapXepViewSach(LMS, CategorySort);
         }
 
         private void cbbTheLoai_SelectedIndexChanged(object sender, EventArgs e)
@@ -379,7 +374,7 @@ namespace GUI
             }
             else
             {
-                dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetSachByLSAndTT(cbbTheLoai.SelectedItem.ToString());
+                dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetViewSachByLSAndTT(cbbTheLoai.SelectedItem.ToString());
             }
         }
 
@@ -392,7 +387,7 @@ namespace GUI
             }
             string theloai = cbbTheLoai.SelectedItem.ToString();
             string name = txtTenSach.Text;
-            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetSachByNameLSAndTT(name, theloai).Select(p => new { p.MaSach, p.TenSach, p.GiaBan, p.SoLuong, p.NHA_XUAT_BAN.TenNXB, p.LOAI_SACH.TenLoaiSach, p.TrangThai }).ToList();
+            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetSachByNameLSAndTT(name, theloai);
         }
     }
 }
