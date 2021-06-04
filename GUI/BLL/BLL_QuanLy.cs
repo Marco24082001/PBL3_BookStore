@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media;
+using GUI.DTO;
 
 namespace GUI.BLL
 {
@@ -33,38 +34,24 @@ namespace GUI.BLL
         {
             try
             {
-                string a = db.HOA_DON_BAN.OrderByDescending(x => x.MaDonBan).Take(1).Single().MaDonBan;
-                string s = "";
-                for (int i = 3; i < a.Length; i++)
-                {
-                    s += a[i];
-                }
-                int so = Convert.ToInt32(s) + 1;
-                s = "HDB" + so.ToString();
-                return s;
+                int a = db.HOA_DON_BAN.OrderByDescending(x => x.MaDonBan).Take(1).Single().MaDonBan;                
+                return (a+1).ToString();
             }
             catch (InvalidOperationException)
             {
-                return "HDB1";
+                return "1001";
             }
         }
         public string Bll_CreateHDN()
         {
             try
             {
-                string a = db.HOA_DON_NHAP.OrderByDescending(x => x.MaDonNhap).Take(1).Single().MaDonNhap;
-                string s = "";
-                for (int i = 3; i < a.Length; i++)
-                {
-                    s += a[i];
-                }
-                int so = Convert.ToInt32(s) + 1;
-                s = "HDN" + so.ToString();
-                return s;
+                int a = db.HOA_DON_NHAP.OrderByDescending(x => x.MaDonNhap).Take(1).Single().MaDonNhap;                
+                return (a+1).ToString();
             }
             catch (InvalidOperationException)
             {
-                return "HDN1";
+                return "1001";
             }
         }
 
@@ -86,6 +73,25 @@ namespace GUI.BLL
             return db.NHAN_VIEN.Find(tk).isAdmin;
         }
 
+
+        public List<View_Sach> ChangeViewSach(List<SACH> list)
+        {
+            List<View_Sach> listSach = new List<View_Sach>();
+            foreach (SACH i in list)
+            {
+                View_Sach obj = new View_Sach()
+                {
+                    MaSach = i.MaSach,
+                    TenSach = i.TenSach,
+                    GiaBan = i.GiaBan,
+                    SoLuong = i.SoLuong,
+                    TenNXB = i.NHA_XUAT_BAN.TenNXB,
+                    TenLS = i.LOAI_SACH.TenLoaiSach,                   
+                };
+                listSach.Add(obj);
+            }
+            return listSach;
+        }
         public List<SACH> Bll_GetAllSach()
         {
             return db.SACHes.ToList();
@@ -94,13 +100,19 @@ namespace GUI.BLL
         {
             return db.SACHes.Where(p => p.TrangThai == true).ToList();
         }
+        public List<View_Sach> Bll_GetAllViewSachByTrangThai()
+        {
+            List<SACH> list =  db.SACHes.Where(p => p.TrangThai == true).ToList();
+            return ChangeViewSach(list);
+        }
         public List<DOANH_SO_BAN_HANG> BLL_GetAllDoanhSoBanHang()
         {
             return db.DOANH_SO_BAN_HANG.ToList();
         }
-        public List<BAO_CAO_DOANH_THU> Bll_GetAllBaoCaoDT()
+        public List<View_BCDT> Bll_GetViewBaoCaoDT()
         {
-            return db.BAO_CAO_DOANH_THU.ToList();
+            List<BAO_CAO_DOANH_THU> list = db.BAO_CAO_DOANH_THU.ToList();
+            return ChangeViewBCDT(list);
         }
         public List<CHI_TIET_HOA_DON_NHAP> Bll_GetAllChiTietHoaDonNhap()
         {
@@ -116,7 +128,7 @@ namespace GUI.BLL
             return db.SACHes.Where(p => p.TrangThai).Select(a => a.MaSach).ToList();
         }
 
-        public List<string> Bll_GetAllMaDonNhap()
+        public List<int> Bll_GetAllMaDonNhap()
         {
             return db.HOA_DON_NHAP.Select(p => p.MaDonNhap).ToList();
         }
@@ -171,7 +183,7 @@ namespace GUI.BLL
             return db.KHACH_HANG.Find(sdt).HoTen;
         }
 
-        public List<string> Bll_GetAllMaDonBan()
+        public List<int> Bll_GetAllMaDonBan()
         {
             return db.HOA_DON_BAN.Select(p => p.MaDonBan).ToList();
         }
@@ -183,27 +195,60 @@ namespace GUI.BLL
         {
             return db.SACHes.Where(p => p.MaLoaiSach == ls).ToList();
         }
+        public List<View_Sach> Bll_GetViewSachByLS(string ls)
+        {
+            List<SACH> list = db.SACHes.Where(p => p.MaLoaiSach == ls).ToList();
+            return ChangeViewSach(list);
+        }
 
         public List<SACH> Bll_GetSachByLSAndTT(string ls)
         {
             return db.SACHes.Where(p => p.MaLoaiSach == ls && p.TrangThai).ToList();
         }
-
-        public List<NHAN_VIEN> Bll_GetAllNhanVien()
+        public List<View_Sach> Bll_GetViewSachByLSAndTT(string ls)
         {
-            return db.NHAN_VIEN.ToList();
+            List<SACH> list = db.SACHes.Where(p => p.MaLoaiSach == ls && p.TrangThai).ToList();
+            return ChangeViewSach(list);
         }
-        public List<NHAN_VIEN> Bll_GetNhanVienByName(string a)
+        public List<View_NhanVien> ChangeViewNV(List<NHAN_VIEN> list)
+        {
+            List<View_NhanVien> listview = new List<View_NhanVien>();
+            foreach (NHAN_VIEN i in list)
+            {
+                View_NhanVien obj = new View_NhanVien()
+                {
+                    MaNhanVien = i.MaNhanVien,
+                    HoTen = i.HoTen,
+                    TKNV = i.TK_NHANVIEN.TKNV,
+                    DanToc = i.DanToc,
+                    GioiTinh = i.GioiTinh,
+                    CMND = i.CMND,
+                    SoDienThoai = i.SoDienThoai,
+                    QueQuan = i.QueQuan,
+                    NgaySinh = i.NgaySinh,
+                    TrangThai = i.TrangThai,
+                    isAdim = i.isAdmin
+                };
+                listview.Add(obj);
+            }
+            return listview;
+        }
+        public List<View_NhanVien> Bll_GetAllViewNhanVien()
+        {
+            List<NHAN_VIEN> list = db.NHAN_VIEN.ToList();
+            return ChangeViewNV(list);
+        }
+        public List<View_NhanVien> Bll_GetViewNhanVienByName(string a)
         {
             List<NHAN_VIEN> list = new List<NHAN_VIEN>();
-            foreach (NHAN_VIEN i in Bll_GetAllNhanVien())
+            foreach (NHAN_VIEN i in db.NHAN_VIEN.ToList())
             {
                 if (i.HoTen.ToLower().Contains(a.ToLower()))
                 {
                     list.Add(i);
                 }
             }
-            return list;
+            return ChangeViewNV(list);
         }
 
         public void Bll_AddNhanVien(NHAN_VIEN nv)
@@ -343,7 +388,7 @@ namespace GUI.BLL
             return list;
         }
 
-        public List<SACH> Bll_GetSachByNameLSAndTT(string name, string ls)
+        public List<View_Sach> Bll_GetSachByNameLSAndTT(string name, string ls)
         {
             List<SACH> listSach = new List<SACH>();
             List<SACH> list = new List<SACH>();
@@ -362,7 +407,7 @@ namespace GUI.BLL
                     list.Add(i);
                 }
             }
-            return list;
+            return ChangeViewSach(list);
         }
 
         public List<SACH> Bll_GetSachByMS(List<string> LMS)
@@ -405,47 +450,38 @@ namespace GUI.BLL
             return listDoanhThu;
         }
 
-        public List<SACH> Bll_Sort_Sach(List<string> LMS, string CategorySort)
+        public List<SACH> Bll_SapXepSach(List<string> LMS, string CategorySort)
         {
             switch (CategorySort)
             {
-                case "TenSach":
-                    return Bll_GetSachByMS(LMS).OrderBy(s => s.TenSach).ToList();
-                case "GiaBan":
-                    return Bll_GetSachByMS(LMS).OrderBy(s => s.GiaBan).ToList();
-                case "GiaNhap":
-                    return Bll_GetSachByMS(LMS).OrderBy(s => s.GiaNhap).ToList();
-                case "SoLuong":
-                    return Bll_GetSachByMS(LMS).OrderBy(s => s.SoLuong).ToList();
-                case "MaLoaiSach":
-                    return Bll_GetSachByMS(LMS).OrderBy(s => s.MaLoaiSach).ToList();
-                case "MaNXB":
-                    return Bll_GetSachByMS(LMS).OrderBy(s => s.MaNXB).ToList();
+                case "Ten Sach":
+                    return (Bll_GetSachByMS(LMS).OrderBy(s => s.TenSach).ToList());
+                case "Gia Ban":
+                    return (Bll_GetSachByMS(LMS).OrderBy(s => s.GiaBan).ToList());
+                case "So Luong":
+                    return (Bll_GetSachByMS(LMS).OrderBy(s => s.SoLuong).ToList());
                 default:
-                    return Bll_GetSachByMS(LMS).OrderBy(s => s.MaSach).ToList();
+                    return (Bll_GetSachByMS(LMS).OrderBy(s => s.MaSach).ToList());
             }
         }
 
-        public List<NHAN_VIEN> Bll_Sort_NhanVien(List<string> LMNV, string CategorySort)
+        public List<View_Sach> Bll_SapXepViewSach(List<string> LMS, string CategorySort)
+        {
+            return ChangeViewSach(Bll_SapXepSach(LMS, CategorySort));
+        }
+
+        public List<View_NhanVien> Bll_SapXepNV(List<string> LMNV, string CategorySort)
         {
             switch (CategorySort)
             {
                 case "HoTen":
-                    return Bll_GetSachByMNV(LMNV).OrderBy(s => s.HoTen).ToList();
-                case "DanToc":
-                    return Bll_GetSachByMNV(LMNV).OrderBy(s => s.DanToc).ToList();
+                    return ChangeViewNV(Bll_GetSachByMNV(LMNV).OrderBy(s => s.HoTen).ToList());
                 case "GioiTinh":
-                    return Bll_GetSachByMNV(LMNV).OrderBy(s => s.GioiTinh).ToList();
-                case "CMND":
-                    return Bll_GetSachByMNV(LMNV).OrderBy(s => s.CMND).ToList();
-                case "SoDienThoai":
-                    return Bll_GetSachByMNV(LMNV).OrderBy(s => s.SoDienThoai).ToList();
-                case "QueQuan":
-                    return Bll_GetSachByMNV(LMNV).OrderBy(s => s.QueQuan).ToList();
-                case "NgaySinh":
-                    return Bll_GetSachByMNV(LMNV).OrderBy(s => s.NgaySinh).ToList();
+                    return ChangeViewNV(Bll_GetSachByMNV(LMNV).OrderBy(s => s.GioiTinh).ToList());              
+                case "Ngay Sinh":
+                    return ChangeViewNV(Bll_GetSachByMNV(LMNV).OrderBy(s => s.NgaySinh).ToList());
                 default:
-                    return Bll_GetSachByMNV(LMNV).OrderBy(s => s.MaNhanVien).ToList();
+                    return ChangeViewNV(Bll_GetSachByMNV(LMNV).OrderBy(s => s.MaNhanVien).ToList());
             }
         }
 
@@ -484,17 +520,40 @@ namespace GUI.BLL
                     return Bll_GetDoanhThuBySTT(LSTT).OrderByDescending(s => s.ThoiGian).ToList();
             }
         }
-        public List<BAO_CAO_DOANH_THU> Bll_GetBaoCaoDoanhThuFolowNam(int nam)
+        public List<View_BCDT> ChangeViewBCDT(List<BAO_CAO_DOANH_THU> list)
         {
-            return db.BAO_CAO_DOANH_THU.Where(p => p.ThoiGian.Value.Year == nam).ToList();
+            List<View_BCDT> listview = new List<View_BCDT>();
+            foreach (BAO_CAO_DOANH_THU i in list)
+            {
+                View_BCDT obj = new View_BCDT()
+                {
+                    STT = i.STT,
+                    TenSach = i.SACH.TenSach,
+                    GiaNhap = i.GiaNhap,
+                    GiaBan = i.GiaBan,
+                    SoLuong = i.SoLuongBan,
+                    DoanhThu = i.DoanhThu,
+                    ThoiGian = (DateTime)i.ThoiGian
+                };
+                listview.Add(obj);
+            }
+            return listview;
         }
-        public List<BAO_CAO_DOANH_THU> Bll_GetBaoCaoDoanhThuFolowNamThang(int nam, int thang)
+
+        public List<View_BCDT> Bll_GetViewBCDTFolowNam(int nam)
         {
-            return db.BAO_CAO_DOANH_THU.Where(p => p.ThoiGian.Value.Year == nam && p.ThoiGian.Value.Month == thang).ToList();
+            List<BAO_CAO_DOANH_THU> list = db.BAO_CAO_DOANH_THU.Where(p => p.ThoiGian.Value.Year == nam).ToList();
+            return ChangeViewBCDT(list);
         }
-        public List<BAO_CAO_DOANH_THU> Bll_GetBaoCaoDoanhThuFolowNamThangNgay(int nam, int thang, int ngay)
+        public List<View_BCDT> Bll_GetViewBCDTFolowNamThang(int nam, int thang)
         {
-            return db.BAO_CAO_DOANH_THU.Where(p => p.ThoiGian.Value.Year == nam && p.ThoiGian.Value.Month == thang && p.ThoiGian.Value.Day == ngay).ToList();
+            List<BAO_CAO_DOANH_THU> list = db.BAO_CAO_DOANH_THU.Where(p => p.ThoiGian.Value.Year == nam && p.ThoiGian.Value.Month == thang).ToList();
+            return ChangeViewBCDT(list);
+        }
+        public List<View_BCDT> Bll_GetViewBCDTFolowNamThangNgay(int nam, int thang, int ngay)
+        {
+            List<BAO_CAO_DOANH_THU> list = db.BAO_CAO_DOANH_THU.Where(p => p.ThoiGian.Value.Year == nam && p.ThoiGian.Value.Month == thang && p.ThoiGian.Value.Day == ngay).ToList();
+            return ChangeViewBCDT(list);
         }
 
         public List<DOANH_SO_BAN_HANG> Bll_GetDoanhSoBanHangFolowNam(int nam)

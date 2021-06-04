@@ -58,7 +58,7 @@ CREATE TABLE KHACH_HANG
 
 CREATE TABLE HOA_DON_NHAP
 (
-	MaDonNhap VARCHAR(5) Primary key not null,
+	MaDonNhap int Primary key not null,
 	NgayNhap DATE,
 	GhiChu VARCHAR(60),
 )
@@ -66,7 +66,7 @@ CREATE TABLE HOA_DON_NHAP
 CREATE TABLE CHI_TIET_HOA_DON_NHAP
 ( 
 	ID INT IDENTITY(1,1) PRIMARY KEY not null,
-	MaDonNhap VARCHAR(5) not null,
+	MaDonNhap int not null,
 	MaSach VARCHAR(5) not null,
     FOREIGN KEY (MaSach)  REFERENCES SACH (MaSach),
 	FOREIGN KEY (MaDonNhap) REFERENCES HOA_DON_NHAP (MaDonNhap),
@@ -78,7 +78,7 @@ CREATE TABLE CHI_TIET_HOA_DON_NHAP
 
 CREATE TABLE HOA_DON_BAN
 (
-	MaDonBan VARCHAR(10) PRIMARY KEY not null,
+	MaDonBan int PRIMARY KEY not null,
 	SDT_KH VARCHAR(10) not null,
 	MaNhanVien VARCHAR(5) not null,
 	FOREIGN KEY(MaNhanVien) REFERENCES NHAN_VIEN(MaNhanVien) ,
@@ -89,7 +89,7 @@ CREATE TABLE HOA_DON_BAN
 CREATE TABLE CHI_TIET_HOA_DON_BAN
 (
 	ID INT IDENTITY(1,1) PRIMARY KEY not null,
-	MaDonBan VARCHAR(10) not null,
+	MaDonBan int not null,
 	MaSach VARCHAR(5) not null,
 	FOREIGN KEY (MaSach) REFERENCES SACH (MaSach),
 	FOREIGN KEY (MaDonBan) REFERENCES HOA_DON_BAN(MaDonBan),

@@ -20,7 +20,7 @@ namespace GUI
             this.CHI_TIET_HOA_DON_NHAP = new HashSet<CHI_TIET_HOA_DON_NHAP>();
         }
     
-        public string MaDonNhap { get; set; }
+        public int MaDonNhap { get; set; }
         public Nullable<System.DateTime> NgayNhap { get; set; }
         public string GhiChu { get; set; }
     
