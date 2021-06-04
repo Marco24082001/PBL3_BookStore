@@ -32,9 +32,9 @@ namespace GUI.UI
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NguoiDung));
             this.txtTenDN = new System.Windows.Forms.TextBox();
             this.txtHoTen = new System.Windows.Forms.TextBox();
-            this.txtMkc = new System.Windows.Forms.TextBox();
-            this.txtMkm = new System.Windows.Forms.TextBox();
-            this.txtNl = new System.Windows.Forms.TextBox();
+            this.txtMKcu = new System.Windows.Forms.TextBox();
+            this.txtMKmoi = new System.Windows.Forms.TextBox();
+            this.txtReMK = new System.Windows.Forms.TextBox();
             this.Save = new Guna.UI2.WinForms.Guna2Button();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.isChange = new System.Windows.Forms.CheckBox();
@@ -67,32 +67,32 @@ namespace GUI.UI
             this.txtHoTen.Size = new System.Drawing.Size(193, 27);
             this.txtHoTen.TabIndex = 50;
             // 
-            // txtMkc
+            // txtMKcu
             // 
-            this.txtMkc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMkc.Location = new System.Drawing.Point(225, 303);
-            this.txtMkc.Name = "txtMkc";
-            this.txtMkc.PasswordChar = '*';
-            this.txtMkc.Size = new System.Drawing.Size(193, 27);
-            this.txtMkc.TabIndex = 50;
+            this.txtMKcu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMKcu.Location = new System.Drawing.Point(225, 303);
+            this.txtMKcu.Name = "txtMKcu";
+            this.txtMKcu.PasswordChar = '*';
+            this.txtMKcu.Size = new System.Drawing.Size(193, 27);
+            this.txtMKcu.TabIndex = 50;
             // 
-            // txtMkm
+            // txtMKmoi
             // 
-            this.txtMkm.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMkm.Location = new System.Drawing.Point(225, 353);
-            this.txtMkm.Name = "txtMkm";
-            this.txtMkm.PasswordChar = '*';
-            this.txtMkm.Size = new System.Drawing.Size(193, 27);
-            this.txtMkm.TabIndex = 50;
+            this.txtMKmoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMKmoi.Location = new System.Drawing.Point(225, 353);
+            this.txtMKmoi.Name = "txtMKmoi";
+            this.txtMKmoi.PasswordChar = '*';
+            this.txtMKmoi.Size = new System.Drawing.Size(193, 27);
+            this.txtMKmoi.TabIndex = 50;
             // 
-            // txtNl
+            // txtReMK
             // 
-            this.txtNl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNl.Location = new System.Drawing.Point(225, 403);
-            this.txtNl.Name = "txtNl";
-            this.txtNl.PasswordChar = '*';
-            this.txtNl.Size = new System.Drawing.Size(193, 27);
-            this.txtNl.TabIndex = 50;
+            this.txtReMK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReMK.Location = new System.Drawing.Point(225, 403);
+            this.txtReMK.Name = "txtReMK";
+            this.txtReMK.PasswordChar = '*';
+            this.txtReMK.Size = new System.Drawing.Size(193, 27);
+            this.txtReMK.TabIndex = 50;
             // 
             // Save
             // 
@@ -241,9 +241,9 @@ namespace GUI.UI
             this.Controls.Add(this.isChange);
             this.Controls.Add(this.guna2HtmlLabel1);
             this.Controls.Add(this.Save);
-            this.Controls.Add(this.txtNl);
-            this.Controls.Add(this.txtMkm);
-            this.Controls.Add(this.txtMkc);
+            this.Controls.Add(this.txtReMK);
+            this.Controls.Add(this.txtMKmoi);
+            this.Controls.Add(this.txtMKcu);
             this.Controls.Add(this.txtChucVu);
             this.Controls.Add(this.txtHoTen);
             this.Controls.Add(this.txtTenDN);
@@ -262,9 +262,9 @@ namespace GUI.UI
 
         private System.Windows.Forms.TextBox txtTenDN;
         private System.Windows.Forms.TextBox txtHoTen;
-        private System.Windows.Forms.TextBox txtMkc;
-        private System.Windows.Forms.TextBox txtMkm;
-        private System.Windows.Forms.TextBox txtNl;
+        private System.Windows.Forms.TextBox txtMKcu;
+        private System.Windows.Forms.TextBox txtMKmoi;
+        private System.Windows.Forms.TextBox txtReMK;
         private Guna.UI2.WinForms.Guna2Button Save;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private System.Windows.Forms.CheckBox isChange;
