@@ -15,7 +15,7 @@ namespace GUI
     public partial class CHI_TIET_HOA_DON_BAN
     {
         public int ID { get; set; }
-        public string MaDonBan { get; set; }
+        public int MaDonBan { get; set; }
         public string MaSach { get; set; }
         public int SoLuong { get; set; }
         public int DonGia { get; set; }

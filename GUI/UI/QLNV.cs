@@ -17,29 +17,21 @@ namespace GUI
         public QLNV()
         {
             InitializeComponent();
+            setcbbSort();
         }
 
         public void setData()
         {
-            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetAllNhanVien().Select(p => new { p.MaNhanVien, p.HoTen, p.TK_NHANVIEN.TKNV, p.DanToc, p.GioiTinh, p.CMND, p.SoDienThoai, p.QueQuan, p.NgaySinh, p.TrangThai, p.isAdmin }).ToList();
+            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetAllViewNhanVien();
         }
 
         public void setcbbSort()
         {
-            //cbbSort.Items.Add()
-            Type type = typeof(NHAN_VIEN);
-            PropertyInfo[] propertyinfo = type.GetProperties();
-            foreach (PropertyInfo info in propertyinfo)
+            cbbSort.Items.AddRange(new String[]
             {
-                if (info.Name == "TrangThai") break;
-                cbbSort.Items.Add(info.Name);
-            }
+                "Ho Ten", "Gioi Tinh", "Ngay Sinh"
+            });
             cbbSort.SelectedIndex = 0;
-        }
-
-        private void Xem_Click(object sender, EventArgs e)
-        {
-            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetAllNhanVien().Select(p => new { p.MaNhanVien, p.HoTen, p.TK_NHANVIEN.TKNV, p.DanToc, p.GioiTinh, p.CMND, p.SoDienThoai, p.QueQuan, p.NgaySinh, p.TrangThai, p.isAdmin }).ToList();
         }
 
         private void Them_Click(object sender, EventArgs e)
@@ -98,13 +90,13 @@ namespace GUI
                 LMNV.Add(dataGridView1.Rows[i].Cells[0].Value.ToString());
             }
             string CategorySort = cbbSort.SelectedItem.ToString();
-            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_Sort_NhanVien(LMNV, CategorySort).Select(p => new { p.MaNhanVien, p.HoTen, p.TK_NHANVIEN.TKNV, p.DanToc, p.GioiTinh, p.CMND, p.SoDienThoai, p.QueQuan, p.NgaySinh, p.TrangThai, p.isAdmin }).ToList();
+            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_SapXepNV(LMNV, CategorySort);
         }
 
         private void txtName_TextChanged(object sender, EventArgs e)
         {
             string a = txtName.Text;
-            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetNhanVienByName(a).Select(p => new { p.MaNhanVien, p.HoTen, p.TK_NHANVIEN.TKNV, p.DanToc, p.GioiTinh, p.CMND, p.SoDienThoai, p.QueQuan, p.NgaySinh, p.TrangThai, p.isAdmin }).ToList();
+            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetViewNhanVienByName(a);
         }
     }
 }
