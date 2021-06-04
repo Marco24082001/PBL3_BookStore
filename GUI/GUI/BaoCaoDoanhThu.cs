@@ -183,7 +183,7 @@ namespace GUI
             turnoverChart.AxisY.Add(new LiveCharts.Wpf.Axis
             {
                 Title = "Turnover",
-                LabelFormatter = value => value.ToString("C")
+                LabelFormatter = value => value.ToString("N")
             });
         }
 

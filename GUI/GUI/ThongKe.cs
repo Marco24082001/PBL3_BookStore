@@ -249,7 +249,7 @@ namespace GUI
                 salesChart.AxisY.Add(new LiveCharts.Wpf.Axis
                 {
                     Title = "Sales",
-                    LabelFormatter = value => value.ToString("C")
+                    LabelFormatter = value => value.ToString("N")
                 });
                 salesChart.LegendLocation = LiveCharts.LegendLocation.Right;
             }
@@ -263,7 +263,7 @@ namespace GUI
                 salesChart.AxisY.Add(new LiveCharts.Wpf.Axis
                 {
                     Title = "Sales",
-                    LabelFormatter = value => value.ToString("C")
+                    LabelFormatter = value => value.ToString("N")
                 });
                 salesChart.LegendLocation = LiveCharts.LegendLocation.Right;
             }

@@ -355,7 +355,7 @@ namespace GUI
             this.chartRemainProduct.Location = new System.Drawing.Point(0, 0);
             this.chartRemainProduct.Name = "chartRemainProduct";
             this.chartRemainProduct.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.chartRemainProduct.Size = new System.Drawing.Size(685, 571);
+            this.chartRemainProduct.Size = new System.Drawing.Size(685, 581);
             this.chartRemainProduct.TabIndex = 15;
             this.chartRemainProduct.Text = "cartesianChart1";
             // 
