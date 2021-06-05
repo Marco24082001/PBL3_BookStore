@@ -233,12 +233,11 @@ namespace GUI.BLL
             }
             return listview;
         }
-        public List<View_NhanVien> Bll_GetAllViewNhanVien()
+        public List<NHAN_VIEN> Bll_GetAllNhanVien()
         {
-            List<NHAN_VIEN> list = db.NHAN_VIEN.ToList();
-            return ChangeViewNV(list);
+            return db.NHAN_VIEN.ToList();
         }
-        public List<View_NhanVien> Bll_GetViewNhanVienByName(string a)
+        public List<NHAN_VIEN> Bll_GetNhanVienByName(string a)
         {
             List<NHAN_VIEN> list = new List<NHAN_VIEN>();
             foreach (NHAN_VIEN i in db.NHAN_VIEN.ToList())
@@ -248,7 +247,7 @@ namespace GUI.BLL
                     list.Add(i);
                 }
             }
-            return ChangeViewNV(list);
+            return list;
         }
 
         public void Bll_AddNhanVien(NHAN_VIEN nv)
@@ -470,18 +469,18 @@ namespace GUI.BLL
             return ChangeViewSach(Bll_SapXepSach(LMS, CategorySort));
         }
 
-        public List<View_NhanVien> Bll_SapXepNV(List<string> LMNV, string CategorySort)
+        public List<NHAN_VIEN> Bll_SapXepNV(List<string> LMNV, string CategorySort)
         {
             switch (CategorySort)
             {
                 case "HoTen":
-                    return ChangeViewNV(Bll_GetSachByMNV(LMNV).OrderBy(s => s.HoTen).ToList());
+                    return (Bll_GetSachByMNV(LMNV).OrderBy(s => s.HoTen).ToList());
                 case "GioiTinh":
-                    return ChangeViewNV(Bll_GetSachByMNV(LMNV).OrderBy(s => s.GioiTinh).ToList());              
+                    return (Bll_GetSachByMNV(LMNV).OrderBy(s => s.GioiTinh).ToList());              
                 case "Ngay Sinh":
-                    return ChangeViewNV(Bll_GetSachByMNV(LMNV).OrderBy(s => s.NgaySinh).ToList());
+                    return (Bll_GetSachByMNV(LMNV).OrderBy(s => s.NgaySinh).ToList());
                 default:
-                    return ChangeViewNV(Bll_GetSachByMNV(LMNV).OrderBy(s => s.MaNhanVien).ToList());
+                    return (Bll_GetSachByMNV(LMNV).OrderBy(s => s.MaNhanVien).ToList());
             }
         }
 

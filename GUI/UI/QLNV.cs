@@ -22,7 +22,20 @@ namespace GUI
 
         public void setData()
         {
-            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetAllViewNhanVien();
+            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetAllNhanVien();
+            dataGridView1.Columns["MaNhanVien"].HeaderText = "Mã nhân viên";
+            dataGridView1.Columns["HoTen"].HeaderText = "Họ tên";
+            dataGridView1.Columns["DanToc"].HeaderText = "Dân tộc";
+            dataGridView1.Columns["GioiTinh"].HeaderText = "Giới tính";
+            dataGridView1.Columns["CMND"].HeaderText = "CMND";
+            dataGridView1.Columns["SoDienThoai"].HeaderText = "Số điện thoại";
+            dataGridView1.Columns["QueQuan"].HeaderText = "Quê quán";
+            dataGridView1.Columns["NgaySinh"].HeaderText = "Ngày sinh";
+            dataGridView1.Columns["TrangThai"].HeaderText = "Trạng thái";
+            dataGridView1.Columns["isAdmin"].HeaderText = "Admin";
+            dataGridView1.Columns[10].Visible = false;
+            dataGridView1.Columns[11].Visible = false;
+            dataGridView1.Columns[12].Visible = false;
         }
 
         public void setcbbSort()
@@ -96,7 +109,7 @@ namespace GUI
         private void txtName_TextChanged(object sender, EventArgs e)
         {
             string a = txtName.Text;
-            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetViewNhanVienByName(a);
+            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetNhanVienByName(a);
         }
     }
 }

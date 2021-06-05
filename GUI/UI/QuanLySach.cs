@@ -38,6 +38,14 @@ namespace GUI
                 string ls = cbbTheLoai.SelectedItem.ToString();
                 dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetSachByLS(ls);
             }
+            dataGridView1.Columns["MaSach"].HeaderText = "Mã sách";
+            dataGridView1.Columns["TenSach"].HeaderText = "Tên sách";
+            dataGridView1.Columns["GiaBan"].HeaderText = "Giá bán";
+            dataGridView1.Columns["GiaNhap"].HeaderText = "Giá nhập";
+            dataGridView1.Columns["SoLuong"].HeaderText = "Số lượng";
+            dataGridView1.Columns["MaNXB"].HeaderText = "Nhà xuất bản";
+            dataGridView1.Columns["MaLoaiSach"].HeaderText = "Thể loại";
+            dataGridView1.Columns["TrangThai"].HeaderText = "Trạng thái";
             dataGridView1.Columns[8].Visible = false;
             dataGridView1.Columns[9].Visible = false;
             dataGridView1.Columns[10].Visible = false;
@@ -48,6 +56,10 @@ namespace GUI
         {
             dataGridView2.DataSource = null;
             dataGridView2.DataSource = list;
+            dataGridView2.Columns["MaDonNhap"].HeaderText = "Mã đơn nhập";
+            dataGridView2.Columns["MaSach"].HeaderText = "Mã sách";
+            dataGridView2.Columns["SoLuong"].HeaderText = "Số lượng";
+            dataGridView2.Columns["ThanhTien"].HeaderText = "Thành tiền";
             dataGridView2.Columns[0].Visible = false;
             dataGridView2.Columns[5].Visible = false;
             dataGridView2.Columns[6].Visible = false;

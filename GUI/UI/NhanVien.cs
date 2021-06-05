@@ -38,6 +38,12 @@ namespace GUI
         public void setData1()
         {
             dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetAllViewSachByTrangThai().ToList();
+            dataGridView1.Columns["MaSach"].HeaderText = "Mã sách";
+            dataGridView1.Columns["TenSach"].HeaderText = "Tên sách";
+            dataGridView1.Columns["GiaBan"].HeaderText = "Giá";
+            dataGridView1.Columns["SoLuong"].HeaderText = "Số lượng";
+            dataGridView1.Columns["TenNXB"].HeaderText = "Nhà xuất bản";
+            dataGridView1.Columns["TenLS"].HeaderText = "Thể loại";
         }
         public void setData2()
         {
@@ -49,6 +55,11 @@ namespace GUI
             else
             {
                 dataGridView2.DataSource = list;
+                dataGridView2.Columns["MaDonBan"].HeaderText = "Mã đơn bán";
+                dataGridView2.Columns["MaSach"].HeaderText = "Mã sách";
+                dataGridView2.Columns["SoLuong"].HeaderText = "Số lượng";
+                dataGridView2.Columns["DonGia"].HeaderText = "Đơn giá";
+                dataGridView2.Columns["ThanhTien"].HeaderText = "Thành tiền";
                 dataGridView2.Columns[0].Visible = false;
                 dataGridView2.Columns[6].Visible = false;
                 dataGridView2.Columns[7].Visible = false;
