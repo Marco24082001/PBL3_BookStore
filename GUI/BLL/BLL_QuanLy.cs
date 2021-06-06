@@ -676,7 +676,7 @@ namespace GUI.BLL
             List<int> values = new List<int>();
             var books = db.SACHes.Where(p => p.SoLuong > 0 && p.TrangThai.Equals(true))
                                 .Select(p => new { p.TenSach, p.SoLuong })
-                                .OrderByDescending(p => p.SoLuong);
+                                .OrderBy(p => p.SoLuong);
             foreach(var book in books)
             {
                 values.Add(book.SoLuong);
@@ -690,7 +690,7 @@ namespace GUI.BLL
             List<string> label = new List<string>();
             var books = db.SACHes.Where(p => p.SoLuong > 0 && p.TrangThai.Equals(true))
                                 .Select(p => new { p.TenSach, p.SoLuong })
-                                .OrderByDescending(p => p.SoLuong);
+                                .OrderBy(p => p.SoLuong);
             foreach(var book in books)
             {
                 label.Add(book.TenSach.ToString());

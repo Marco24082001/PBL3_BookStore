@@ -203,11 +203,13 @@ namespace GUI
         {
             chartRemainProduct.AxisY.Add(new LiveCharts.Wpf.Axis
             {
+                Title = "Sách",
                 Labels = BLL_QuanLy.Instance.Bll_GetLabel_Remain_Products()
             });
 
             chartRemainProduct.AxisX.Add(new LiveCharts.Wpf.Axis
             {
+                Title = "Số lượng",
                 LabelFormatter = value => value.ToString("N")
             });
             chartRemainProduct.Series = BLL_QuanLy.Instance.Bll_GetValueChart_Remain_Products();
