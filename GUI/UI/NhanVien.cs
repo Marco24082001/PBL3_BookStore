@@ -201,11 +201,6 @@ namespace GUI
             return;
         }
 
-        private void ChinhSua_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void Xoa_Click(object sender, EventArgs e)
         {
             DataGridViewSelectedRowCollection r = dataGridView2.SelectedRows;

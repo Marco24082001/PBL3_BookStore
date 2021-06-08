@@ -52,7 +52,6 @@ namespace GUI
             this.AddHoaDon = new FontAwesome.Sharp.IconButton();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.Xoa = new FontAwesome.Sharp.IconButton();
-            this.ChinhSua = new FontAwesome.Sharp.IconButton();
             this.Them = new FontAwesome.Sharp.IconButton();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -262,7 +261,6 @@ namespace GUI
             this.groupBox2.Controls.Add(this.AddHoaDon);
             this.groupBox2.Controls.Add(this.dataGridView2);
             this.groupBox2.Controls.Add(this.Xoa);
-            this.groupBox2.Controls.Add(this.ChinhSua);
             this.groupBox2.Controls.Add(this.Them);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label12);
@@ -484,7 +482,7 @@ namespace GUI
             this.Xoa.IconColor = System.Drawing.Color.Red;
             this.Xoa.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Xoa.IconSize = 25;
-            this.Xoa.Location = new System.Drawing.Point(157, 521);
+            this.Xoa.Location = new System.Drawing.Point(26, 521);
             this.Xoa.Name = "Xoa";
             this.Xoa.Size = new System.Drawing.Size(106, 34);
             this.Xoa.TabIndex = 22;
@@ -492,23 +490,6 @@ namespace GUI
             this.Xoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Xoa.UseVisualStyleBackColor = false;
             this.Xoa.Click += new System.EventHandler(this.Xoa_Click);
-            // 
-            // ChinhSua
-            // 
-            this.ChinhSua.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.ChinhSua.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ChinhSua.IconChar = FontAwesome.Sharp.IconChar.Edit;
-            this.ChinhSua.IconColor = System.Drawing.Color.Blue;
-            this.ChinhSua.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ChinhSua.IconSize = 25;
-            this.ChinhSua.Location = new System.Drawing.Point(26, 521);
-            this.ChinhSua.Name = "ChinhSua";
-            this.ChinhSua.Size = new System.Drawing.Size(124, 34);
-            this.ChinhSua.TabIndex = 21;
-            this.ChinhSua.Text = "Chỉnh sửa";
-            this.ChinhSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ChinhSua.UseVisualStyleBackColor = false;
-            this.ChinhSua.Click += new System.EventHandler(this.ChinhSua_Click);
             // 
             // Them
             // 
@@ -758,7 +739,6 @@ namespace GUI
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private System.Windows.Forms.Label label4;
         private FontAwesome.Sharp.IconButton Xoa;
-        private FontAwesome.Sharp.IconButton ChinhSua;
         private FontAwesome.Sharp.IconButton Them;
         private FontAwesome.Sharp.IconButton ThanhToan;
         private FontAwesome.Sharp.IconButton DangXuat;

@@ -53,7 +53,6 @@ namespace GUI
             this.label2 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.XoaChiTiet = new FontAwesome.Sharp.IconButton();
-            this.ChinhSua = new FontAwesome.Sharp.IconButton();
             this.label11 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -208,7 +207,6 @@ namespace GUI
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.label27);
             this.groupBox3.Controls.Add(this.XoaChiTiet);
-            this.groupBox3.Controls.Add(this.ChinhSua);
             this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Controls.Add(this.label13);
             this.groupBox3.Controls.Add(this.label14);
@@ -455,7 +453,7 @@ namespace GUI
             this.XoaChiTiet.IconColor = System.Drawing.Color.Red;
             this.XoaChiTiet.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.XoaChiTiet.IconSize = 25;
-            this.XoaChiTiet.Location = new System.Drawing.Point(158, 546);
+            this.XoaChiTiet.Location = new System.Drawing.Point(29, 546);
             this.XoaChiTiet.Name = "XoaChiTiet";
             this.XoaChiTiet.Size = new System.Drawing.Size(106, 34);
             this.XoaChiTiet.TabIndex = 22;
@@ -463,23 +461,6 @@ namespace GUI
             this.XoaChiTiet.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.XoaChiTiet.UseVisualStyleBackColor = false;
             this.XoaChiTiet.Click += new System.EventHandler(this.XoaChiTiet_Click);
-            // 
-            // ChinhSua
-            // 
-            this.ChinhSua.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.ChinhSua.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ChinhSua.IconChar = FontAwesome.Sharp.IconChar.Edit;
-            this.ChinhSua.IconColor = System.Drawing.Color.Blue;
-            this.ChinhSua.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ChinhSua.IconSize = 25;
-            this.ChinhSua.Location = new System.Drawing.Point(27, 546);
-            this.ChinhSua.Name = "ChinhSua";
-            this.ChinhSua.Size = new System.Drawing.Size(124, 34);
-            this.ChinhSua.TabIndex = 21;
-            this.ChinhSua.Text = "Chỉnh sửa";
-            this.ChinhSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ChinhSua.UseVisualStyleBackColor = false;
-            this.ChinhSua.Click += new System.EventHandler(this.ChinhSua_Click);
             // 
             // label11
             // 
@@ -675,7 +656,6 @@ namespace GUI
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private FontAwesome.Sharp.IconButton ChinhSua;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private FontAwesome.Sharp.IconButton AddHoaDon;

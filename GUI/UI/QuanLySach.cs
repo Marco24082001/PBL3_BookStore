@@ -248,11 +248,6 @@ namespace GUI
             setData1();
         }
 
-        private void ChinhSua_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void AddHoaDon_Click(object sender, EventArgs e)
         {
             txtMaDN.Text = BLL_QuanLy.Instance.Bll_CreateHDN();
