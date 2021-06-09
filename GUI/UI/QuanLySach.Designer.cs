@@ -42,15 +42,12 @@ namespace GUI
             this.textBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.dateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.numericUpDown4 = new Guna.UI2.WinForms.Guna2NumericUpDown();
-            this.txtMaDN = new Guna.UI2.WinForms.Guna2TextBox();
             this.cbbMaSach = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.AddHoaDon = new FontAwesome.Sharp.IconButton();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.ThemChiTiet = new FontAwesome.Sharp.IconButton();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label25 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.XoaChiTiet = new FontAwesome.Sharp.IconButton();
             this.label11 = new System.Windows.Forms.Label();
@@ -196,15 +193,12 @@ namespace GUI
             this.groupBox3.Controls.Add(this.textBox1);
             this.groupBox3.Controls.Add(this.dateTimePicker1);
             this.groupBox3.Controls.Add(this.numericUpDown4);
-            this.groupBox3.Controls.Add(this.txtMaDN);
             this.groupBox3.Controls.Add(this.cbbMaSach);
-            this.groupBox3.Controls.Add(this.AddHoaDon);
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.ThemChiTiet);
             this.groupBox3.Controls.Add(this.dataGridView2);
             this.groupBox3.Controls.Add(this.label25);
-            this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.label27);
             this.groupBox3.Controls.Add(this.XoaChiTiet);
             this.groupBox3.Controls.Add(this.label11);
@@ -303,30 +297,6 @@ namespace GUI
             this.numericUpDown4.Size = new System.Drawing.Size(150, 36);
             this.numericUpDown4.TabIndex = 71;
             // 
-            // txtMaDN
-            // 
-            this.txtMaDN.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtMaDN.DefaultText = "";
-            this.txtMaDN.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtMaDN.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtMaDN.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMaDN.DisabledState.Parent = this.txtMaDN;
-            this.txtMaDN.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMaDN.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMaDN.FocusedState.Parent = this.txtMaDN;
-            this.txtMaDN.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtMaDN.ForeColor = System.Drawing.Color.Black;
-            this.txtMaDN.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMaDN.HoverState.Parent = this.txtMaDN;
-            this.txtMaDN.Location = new System.Drawing.Point(147, 48);
-            this.txtMaDN.Name = "txtMaDN";
-            this.txtMaDN.PasswordChar = '\0';
-            this.txtMaDN.PlaceholderText = "";
-            this.txtMaDN.SelectedText = "";
-            this.txtMaDN.ShadowDecoration.Parent = this.txtMaDN;
-            this.txtMaDN.Size = new System.Drawing.Size(150, 36);
-            this.txtMaDN.TabIndex = 70;
-            // 
             // cbbMaSach
             // 
             this.cbbMaSach.BackColor = System.Drawing.Color.Transparent;
@@ -345,23 +315,6 @@ namespace GUI
             this.cbbMaSach.ShadowDecoration.Parent = this.cbbMaSach;
             this.cbbMaSach.Size = new System.Drawing.Size(150, 36);
             this.cbbMaSach.TabIndex = 69;
-            // 
-            // AddHoaDon
-            // 
-            this.AddHoaDon.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.AddHoaDon.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.AddHoaDon.IconChar = FontAwesome.Sharp.IconChar.FileMedical;
-            this.AddHoaDon.IconColor = System.Drawing.Color.Blue;
-            this.AddHoaDon.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.AddHoaDon.IconSize = 30;
-            this.AddHoaDon.Location = new System.Drawing.Point(326, 48);
-            this.AddHoaDon.Name = "AddHoaDon";
-            this.AddHoaDon.Size = new System.Drawing.Size(117, 36);
-            this.AddHoaDon.TabIndex = 68;
-            this.AddHoaDon.Text = "Hóa đơn";
-            this.AddHoaDon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.AddHoaDon.UseVisualStyleBackColor = false;
-            this.AddHoaDon.Click += new System.EventHandler(this.AddHoaDon_Click);
             // 
             // label4
             // 
@@ -424,16 +377,6 @@ namespace GUI
             this.label25.Size = new System.Drawing.Size(84, 20);
             this.label25.TabIndex = 49;
             this.label25.Text = "Số lượng :";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(26, 64);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(115, 20);
-            this.label2.TabIndex = 51;
-            this.label2.Text = "Mã đơn nhập :";
             // 
             // label27
             // 
@@ -654,11 +597,9 @@ namespace GUI
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private FontAwesome.Sharp.IconButton AddHoaDon;
         private Guna.UI2.WinForms.Guna2ComboBox cbbSort;
         private Guna.UI2.WinForms.Guna2TextBox txtTenSach;
         private Guna.UI2.WinForms.Guna2ComboBox cbbTheLoai;
@@ -666,7 +607,6 @@ namespace GUI
         private Guna.UI2.WinForms.Guna2TextBox textBox1;
         private Guna.UI2.WinForms.Guna2DateTimePicker dateTimePicker1;
         private Guna.UI2.WinForms.Guna2NumericUpDown numericUpDown4;
-        private Guna.UI2.WinForms.Guna2TextBox txtMaDN;
         private Guna.UI2.WinForms.Guna2ComboBox cbbMaSach;
     }
 }

@@ -106,11 +106,6 @@ namespace GUI
         }
         private void ThemChiTiet_Click(object sender, EventArgs e)
         {
-            if(txtMaDN.Text == "")
-            {
-                MessageBox.Show("Nhap ma hoa don");
-                return;
-            }
             if(cbbMaSach.SelectedIndex == -1)
             {
                 MessageBox.Show("Vui lòng chọn mã sách");
@@ -118,7 +113,6 @@ namespace GUI
             }
             CHI_TIET_HOA_DON_NHAP ct = new CHI_TIET_HOA_DON_NHAP()
             {
-                MaDonNhap = Convert.ToInt32(txtMaDN.Text),
                 MaSach = cbbMaSach.SelectedItem.ToString(),
                 SoLuong = Convert.ToInt32(numericUpDown4.Value.ToString()),
                 ThanhTien = Convert.ToInt32(numericUpDown4.Value.ToString())
@@ -150,7 +144,6 @@ namespace GUI
             }
             HOA_DON_NHAP hdn = new HOA_DON_NHAP()
             {
-                MaDonNhap = Convert.ToInt32(txtMaDN.Text),
                 NgayNhap = DateTime.Now,
                 GhiChu = "",
             };
@@ -165,7 +158,6 @@ namespace GUI
             }
             list.Clear();
             dataGridView2.DataSource = null;
-            txtMaDN.Text = "";
             cbbMaSach.SelectedIndex = 0;
             numericUpDown4.Value = 0;
             txtTong.Text = "0";
@@ -175,7 +167,6 @@ namespace GUI
         private void QuanLySach_Load(object sender, EventArgs e)
         {
             txtTong.Text = "0";
-            txtMaDN.Enabled = false;
         }
 
         private void XoaChiTiet_Click(object sender, EventArgs e)
@@ -246,11 +237,6 @@ namespace GUI
                 BLL_QuanLy.Instance.Bll_ChaneTrangThaiSach(maSach);
             }
             setData1();
-        }
-
-        private void AddHoaDon_Click(object sender, EventArgs e)
-        {
-            txtMaDN.Text = BLL_QuanLy.Instance.Bll_CreateHDN();
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
