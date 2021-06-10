@@ -51,7 +51,7 @@
           <Key>
             <PropertyRef Name="MaDonBan" />
           </Key>
-          <Property Name="MaDonBan" Type="int" Nullable="false" />
+          <Property Name="MaDonBan" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="SDT_KH" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="MaNhanVien" Type="varchar" MaxLength="5" Nullable="false" />
           <Property Name="NgayBan" Type="date" />
@@ -60,7 +60,7 @@
           <Key>
             <PropertyRef Name="MaDonNhap" />
           </Key>
-          <Property Name="MaDonNhap" Type="int" Nullable="false" />
+          <Property Name="MaDonNhap" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NgayNhap" Type="date" />
           <Property Name="GhiChu" Type="nvarchar" MaxLength="60" />
         </EntityType>
@@ -120,7 +120,7 @@
           <Property Name="TKNV" Type="varchar" MaxLength="5" Nullable="false" />
           <Property Name="Pass" Type="varchar" MaxLength="10" Nullable="false" />
         </EntityType>
-        <Association Name="FK__BAO_CAO_D__MaSac__5441852A">
+        <Association Name="FK__BAO_CAO_D__MaSac__4222D4EF">
           <End Role="SACH" Type="Self.SACH" Multiplicity="1" />
           <End Role="BAO_CAO_DOANH_THU" Type="Self.BAO_CAO_DOANH_THU" Multiplicity="*" />
           <ReferentialConstraint>
@@ -132,7 +132,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CHI_TIET___MaDon__48CFD27E">
+        <Association Name="FK__CHI_TIET___MaDon__36B12243">
           <End Role="HOA_DON_NHAP" Type="Self.HOA_DON_NHAP" Multiplicity="1" />
           <End Role="CHI_TIET_HOA_DON_NHAP" Type="Self.CHI_TIET_HOA_DON_NHAP" Multiplicity="*" />
           <ReferentialConstraint>
@@ -144,7 +144,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CHI_TIET___MaDon__5165187F">
+        <Association Name="FK__CHI_TIET___MaDon__3F466844">
           <End Role="HOA_DON_BAN" Type="Self.HOA_DON_BAN" Multiplicity="1" />
           <End Role="CHI_TIET_HOA_DON_BAN" Type="Self.CHI_TIET_HOA_DON_BAN" Multiplicity="*" />
           <ReferentialConstraint>
@@ -156,7 +156,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CHI_TIET___MaSac__47DBAE45">
+        <Association Name="FK__CHI_TIET___MaSac__35BCFE0A">
           <End Role="SACH" Type="Self.SACH" Multiplicity="1" />
           <End Role="CHI_TIET_HOA_DON_NHAP" Type="Self.CHI_TIET_HOA_DON_NHAP" Multiplicity="*" />
           <ReferentialConstraint>
@@ -168,7 +168,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CHI_TIET___MaSac__5070F446">
+        <Association Name="FK__CHI_TIET___MaSac__3E52440B">
           <End Role="SACH" Type="Self.SACH" Multiplicity="1" />
           <End Role="CHI_TIET_HOA_DON_BAN" Type="Self.CHI_TIET_HOA_DON_BAN" Multiplicity="*" />
           <ReferentialConstraint>
@@ -180,7 +180,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DOANH_SO___MaNha__571DF1D5">
+        <Association Name="FK__DOANH_SO___MaNha__44FF419A">
           <End Role="NHAN_VIEN" Type="Self.NHAN_VIEN" Multiplicity="0..1" />
           <End Role="DOANH_SO_BAN_HANG" Type="Self.DOANH_SO_BAN_HANG" Multiplicity="*" />
           <ReferentialConstraint>
@@ -192,7 +192,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__HOA_DON_B__MaNha__4BAC3F29">
+        <Association Name="FK__HOA_DON_B__MaNha__398D8EEE">
           <End Role="NHAN_VIEN" Type="Self.NHAN_VIEN" Multiplicity="1" />
           <End Role="HOA_DON_BAN" Type="Self.HOA_DON_BAN" Multiplicity="*" />
           <ReferentialConstraint>
@@ -204,7 +204,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__HOA_DON_B__SDT_K__4CA06362">
+        <Association Name="FK__HOA_DON_B__SDT_K__3A81B327">
           <End Role="KHACH_HANG" Type="Self.KHACH_HANG" Multiplicity="1" />
           <End Role="HOA_DON_BAN" Type="Self.HOA_DON_BAN" Multiplicity="*" />
           <ReferentialConstraint>
@@ -216,7 +216,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SACH__MaLoaiSach__3B75D760">
+        <Association Name="FK__SACH__MaLoaiSach__29572725">
           <End Role="LOAI_SACH" Type="Self.LOAI_SACH" Multiplicity="1" />
           <End Role="SACH" Type="Self.SACH" Multiplicity="*" />
           <ReferentialConstraint>
@@ -228,7 +228,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SACH__MaNXB__3A81B327">
+        <Association Name="FK__SACH__MaNXB__286302EC">
           <End Role="NHA_XUAT_BAN" Type="Self.NHA_XUAT_BAN" Multiplicity="1" />
           <End Role="SACH" Type="Self.SACH" Multiplicity="*" />
           <ReferentialConstraint>
@@ -240,7 +240,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__TK_NHANVIE__TKNV__403A8C7D">
+        <Association Name="FK__TK_NHANVIE__TKNV__2E1BDC42">
           <End Role="NHAN_VIEN" Type="Self.NHAN_VIEN" Multiplicity="1" />
           <End Role="TK_NHANVIEN" Type="Self.TK_NHANVIEN" Multiplicity="0..1" />
           <ReferentialConstraint>
@@ -265,47 +265,47 @@
           <EntitySet Name="NHAN_VIEN" EntityType="Self.NHAN_VIEN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SACH" EntityType="Self.SACH" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TK_NHANVIEN" EntityType="Self.TK_NHANVIEN" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__BAO_CAO_D__MaSac__5441852A" Association="Self.FK__BAO_CAO_D__MaSac__5441852A">
+          <AssociationSet Name="FK__BAO_CAO_D__MaSac__4222D4EF" Association="Self.FK__BAO_CAO_D__MaSac__4222D4EF">
             <End Role="SACH" EntitySet="SACH" />
             <End Role="BAO_CAO_DOANH_THU" EntitySet="BAO_CAO_DOANH_THU" />
           </AssociationSet>
-          <AssociationSet Name="FK__CHI_TIET___MaDon__48CFD27E" Association="Self.FK__CHI_TIET___MaDon__48CFD27E">
+          <AssociationSet Name="FK__CHI_TIET___MaDon__36B12243" Association="Self.FK__CHI_TIET___MaDon__36B12243">
             <End Role="HOA_DON_NHAP" EntitySet="HOA_DON_NHAP" />
             <End Role="CHI_TIET_HOA_DON_NHAP" EntitySet="CHI_TIET_HOA_DON_NHAP" />
           </AssociationSet>
-          <AssociationSet Name="FK__CHI_TIET___MaDon__5165187F" Association="Self.FK__CHI_TIET___MaDon__5165187F">
+          <AssociationSet Name="FK__CHI_TIET___MaDon__3F466844" Association="Self.FK__CHI_TIET___MaDon__3F466844">
             <End Role="HOA_DON_BAN" EntitySet="HOA_DON_BAN" />
             <End Role="CHI_TIET_HOA_DON_BAN" EntitySet="CHI_TIET_HOA_DON_BAN" />
           </AssociationSet>
-          <AssociationSet Name="FK__CHI_TIET___MaSac__47DBAE45" Association="Self.FK__CHI_TIET___MaSac__47DBAE45">
+          <AssociationSet Name="FK__CHI_TIET___MaSac__35BCFE0A" Association="Self.FK__CHI_TIET___MaSac__35BCFE0A">
             <End Role="SACH" EntitySet="SACH" />
             <End Role="CHI_TIET_HOA_DON_NHAP" EntitySet="CHI_TIET_HOA_DON_NHAP" />
           </AssociationSet>
-          <AssociationSet Name="FK__CHI_TIET___MaSac__5070F446" Association="Self.FK__CHI_TIET___MaSac__5070F446">
+          <AssociationSet Name="FK__CHI_TIET___MaSac__3E52440B" Association="Self.FK__CHI_TIET___MaSac__3E52440B">
             <End Role="SACH" EntitySet="SACH" />
             <End Role="CHI_TIET_HOA_DON_BAN" EntitySet="CHI_TIET_HOA_DON_BAN" />
           </AssociationSet>
-          <AssociationSet Name="FK__DOANH_SO___MaNha__571DF1D5" Association="Self.FK__DOANH_SO___MaNha__571DF1D5">
+          <AssociationSet Name="FK__DOANH_SO___MaNha__44FF419A" Association="Self.FK__DOANH_SO___MaNha__44FF419A">
             <End Role="NHAN_VIEN" EntitySet="NHAN_VIEN" />
             <End Role="DOANH_SO_BAN_HANG" EntitySet="DOANH_SO_BAN_HANG" />
           </AssociationSet>
-          <AssociationSet Name="FK__HOA_DON_B__MaNha__4BAC3F29" Association="Self.FK__HOA_DON_B__MaNha__4BAC3F29">
+          <AssociationSet Name="FK__HOA_DON_B__MaNha__398D8EEE" Association="Self.FK__HOA_DON_B__MaNha__398D8EEE">
             <End Role="NHAN_VIEN" EntitySet="NHAN_VIEN" />
             <End Role="HOA_DON_BAN" EntitySet="HOA_DON_BAN" />
           </AssociationSet>
-          <AssociationSet Name="FK__HOA_DON_B__SDT_K__4CA06362" Association="Self.FK__HOA_DON_B__SDT_K__4CA06362">
+          <AssociationSet Name="FK__HOA_DON_B__SDT_K__3A81B327" Association="Self.FK__HOA_DON_B__SDT_K__3A81B327">
             <End Role="KHACH_HANG" EntitySet="KHACH_HANG" />
             <End Role="HOA_DON_BAN" EntitySet="HOA_DON_BAN" />
           </AssociationSet>
-          <AssociationSet Name="FK__SACH__MaLoaiSach__3B75D760" Association="Self.FK__SACH__MaLoaiSach__3B75D760">
+          <AssociationSet Name="FK__SACH__MaLoaiSach__29572725" Association="Self.FK__SACH__MaLoaiSach__29572725">
             <End Role="LOAI_SACH" EntitySet="LOAI_SACH" />
             <End Role="SACH" EntitySet="SACH" />
           </AssociationSet>
-          <AssociationSet Name="FK__SACH__MaNXB__3A81B327" Association="Self.FK__SACH__MaNXB__3A81B327">
+          <AssociationSet Name="FK__SACH__MaNXB__286302EC" Association="Self.FK__SACH__MaNXB__286302EC">
             <End Role="NHA_XUAT_BAN" EntitySet="NHA_XUAT_BAN" />
             <End Role="SACH" EntitySet="SACH" />
           </AssociationSet>
-          <AssociationSet Name="FK__TK_NHANVIE__TKNV__403A8C7D" Association="Self.FK__TK_NHANVIE__TKNV__403A8C7D">
+          <AssociationSet Name="FK__TK_NHANVIE__TKNV__2E1BDC42" Association="Self.FK__TK_NHANVIE__TKNV__2E1BDC42">
             <End Role="NHAN_VIEN" EntitySet="NHAN_VIEN" />
             <End Role="TK_NHANVIEN" EntitySet="TK_NHANVIEN" />
           </AssociationSet>
@@ -326,7 +326,7 @@
           <Property Name="SoLuongBan" Type="Int32" Nullable="false" />
           <Property Name="DoanhThu" Type="Int32" />
           <Property Name="ThoiGian" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="SACH" Relationship="Self.FK__BAO_CAO_D__MaSac__5441852A" FromRole="BAO_CAO_DOANH_THU" ToRole="SACH" />
+          <NavigationProperty Name="SACH" Relationship="Self.FK__BAO_CAO_D__MaSac__4222D4EF" FromRole="BAO_CAO_DOANH_THU" ToRole="SACH" />
         </EntityType>
         <EntityType Name="CHI_TIET_HOA_DON_BAN">
           <Key>
@@ -338,8 +338,8 @@
           <Property Name="SoLuong" Type="Int32" Nullable="false" />
           <Property Name="DonGia" Type="Int32" Nullable="false" />
           <Property Name="ThanhTien" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="HOA_DON_BAN" Relationship="Self.FK__CHI_TIET___MaDon__5165187F" FromRole="CHI_TIET_HOA_DON_BAN" ToRole="HOA_DON_BAN" />
-          <NavigationProperty Name="SACH" Relationship="Self.FK__CHI_TIET___MaSac__5070F446" FromRole="CHI_TIET_HOA_DON_BAN" ToRole="SACH" />
+          <NavigationProperty Name="HOA_DON_BAN" Relationship="Self.FK__CHI_TIET___MaDon__3F466844" FromRole="CHI_TIET_HOA_DON_BAN" ToRole="HOA_DON_BAN" />
+          <NavigationProperty Name="SACH" Relationship="Self.FK__CHI_TIET___MaSac__3E52440B" FromRole="CHI_TIET_HOA_DON_BAN" ToRole="SACH" />
         </EntityType>
         <EntityType Name="CHI_TIET_HOA_DON_NHAP">
           <Key>
@@ -350,8 +350,8 @@
           <Property Name="MaSach" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="SoLuong" Type="Int32" />
           <Property Name="ThanhTien" Type="Int32" />
-          <NavigationProperty Name="HOA_DON_NHAP" Relationship="Self.FK__CHI_TIET___MaDon__48CFD27E" FromRole="CHI_TIET_HOA_DON_NHAP" ToRole="HOA_DON_NHAP" />
-          <NavigationProperty Name="SACH" Relationship="Self.FK__CHI_TIET___MaSac__47DBAE45" FromRole="CHI_TIET_HOA_DON_NHAP" ToRole="SACH" />
+          <NavigationProperty Name="HOA_DON_NHAP" Relationship="Self.FK__CHI_TIET___MaDon__36B12243" FromRole="CHI_TIET_HOA_DON_NHAP" ToRole="HOA_DON_NHAP" />
+          <NavigationProperty Name="SACH" Relationship="Self.FK__CHI_TIET___MaSac__35BCFE0A" FromRole="CHI_TIET_HOA_DON_NHAP" ToRole="SACH" />
         </EntityType>
         <EntityType Name="DOANH_SO_BAN_HANG">
           <Key>
@@ -361,28 +361,28 @@
           <Property Name="MaNhanVien" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
           <Property Name="DoanhSoBan" Type="Int32" />
           <Property Name="ThoiGian" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="NHAN_VIEN" Relationship="Self.FK__DOANH_SO___MaNha__571DF1D5" FromRole="DOANH_SO_BAN_HANG" ToRole="NHAN_VIEN" />
+          <NavigationProperty Name="NHAN_VIEN" Relationship="Self.FK__DOANH_SO___MaNha__44FF419A" FromRole="DOANH_SO_BAN_HANG" ToRole="NHAN_VIEN" />
         </EntityType>
         <EntityType Name="HOA_DON_BAN">
           <Key>
             <PropertyRef Name="MaDonBan" />
           </Key>
-          <Property Name="MaDonBan" Type="Int32" Nullable="false" />
+          <Property Name="MaDonBan" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="SDT_KH" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="MaNhanVien" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="NgayBan" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="CHI_TIET_HOA_DON_BAN" Relationship="Self.FK__CHI_TIET___MaDon__5165187F" FromRole="HOA_DON_BAN" ToRole="CHI_TIET_HOA_DON_BAN" />
-          <NavigationProperty Name="NHAN_VIEN" Relationship="Self.FK__HOA_DON_B__MaNha__4BAC3F29" FromRole="HOA_DON_BAN" ToRole="NHAN_VIEN" />
-          <NavigationProperty Name="KHACH_HANG" Relationship="Self.FK__HOA_DON_B__SDT_K__4CA06362" FromRole="HOA_DON_BAN" ToRole="KHACH_HANG" />
+          <NavigationProperty Name="CHI_TIET_HOA_DON_BAN" Relationship="Self.FK__CHI_TIET___MaDon__3F466844" FromRole="HOA_DON_BAN" ToRole="CHI_TIET_HOA_DON_BAN" />
+          <NavigationProperty Name="NHAN_VIEN" Relationship="Self.FK__HOA_DON_B__MaNha__398D8EEE" FromRole="HOA_DON_BAN" ToRole="NHAN_VIEN" />
+          <NavigationProperty Name="KHACH_HANG" Relationship="Self.FK__HOA_DON_B__SDT_K__3A81B327" FromRole="HOA_DON_BAN" ToRole="KHACH_HANG" />
         </EntityType>
         <EntityType Name="HOA_DON_NHAP">
           <Key>
             <PropertyRef Name="MaDonNhap" />
           </Key>
-          <Property Name="MaDonNhap" Type="Int32" Nullable="false" />
+          <Property Name="MaDonNhap" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NgayNhap" Type="DateTime" Precision="0" />
           <Property Name="GhiChu" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="CHI_TIET_HOA_DON_NHAP" Relationship="Self.FK__CHI_TIET___MaDon__48CFD27E" FromRole="HOA_DON_NHAP" ToRole="CHI_TIET_HOA_DON_NHAP" />
+          <NavigationProperty Name="CHI_TIET_HOA_DON_NHAP" Relationship="Self.FK__CHI_TIET___MaDon__36B12243" FromRole="HOA_DON_NHAP" ToRole="CHI_TIET_HOA_DON_NHAP" />
         </EntityType>
         <EntityType Name="KHACH_HANG">
           <Key>
@@ -390,7 +390,7 @@
           </Key>
           <Property Name="SDT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="HoTen" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="HOA_DON_BAN" Relationship="Self.FK__HOA_DON_B__SDT_K__4CA06362" FromRole="KHACH_HANG" ToRole="HOA_DON_BAN" />
+          <NavigationProperty Name="HOA_DON_BAN" Relationship="Self.FK__HOA_DON_B__SDT_K__3A81B327" FromRole="KHACH_HANG" ToRole="HOA_DON_BAN" />
         </EntityType>
         <EntityType Name="LOAI_SACH">
           <Key>
@@ -398,7 +398,7 @@
           </Key>
           <Property Name="MaLoaiSach" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="TenLoaiSach" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="SACHes" Relationship="Self.FK__SACH__MaLoaiSach__3B75D760" FromRole="LOAI_SACH" ToRole="SACH" />
+          <NavigationProperty Name="SACHes" Relationship="Self.FK__SACH__MaLoaiSach__29572725" FromRole="LOAI_SACH" ToRole="SACH" />
         </EntityType>
         <EntityType Name="NHA_XUAT_BAN">
           <Key>
@@ -406,7 +406,7 @@
           </Key>
           <Property Name="MaNXB" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="TenNXB" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="SACHes" Relationship="Self.FK__SACH__MaNXB__3A81B327" FromRole="NHA_XUAT_BAN" ToRole="SACH" />
+          <NavigationProperty Name="SACHes" Relationship="Self.FK__SACH__MaNXB__286302EC" FromRole="NHA_XUAT_BAN" ToRole="SACH" />
         </EntityType>
         <EntityType Name="NHAN_VIEN">
           <Key>
@@ -422,9 +422,9 @@
           <Property Name="NgaySinh" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="TrangThai" Type="Boolean" Nullable="false" />
           <Property Name="isAdmin" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="DOANH_SO_BAN_HANG" Relationship="Self.FK__DOANH_SO___MaNha__571DF1D5" FromRole="NHAN_VIEN" ToRole="DOANH_SO_BAN_HANG" />
-          <NavigationProperty Name="HOA_DON_BAN" Relationship="Self.FK__HOA_DON_B__MaNha__4BAC3F29" FromRole="NHAN_VIEN" ToRole="HOA_DON_BAN" />
-          <NavigationProperty Name="TK_NHANVIEN" Relationship="Self.FK__TK_NHANVIE__TKNV__403A8C7D" FromRole="NHAN_VIEN" ToRole="TK_NHANVIEN" />
+          <NavigationProperty Name="DOANH_SO_BAN_HANG" Relationship="Self.FK__DOANH_SO___MaNha__44FF419A" FromRole="NHAN_VIEN" ToRole="DOANH_SO_BAN_HANG" />
+          <NavigationProperty Name="HOA_DON_BAN" Relationship="Self.FK__HOA_DON_B__MaNha__398D8EEE" FromRole="NHAN_VIEN" ToRole="HOA_DON_BAN" />
+          <NavigationProperty Name="TK_NHANVIEN" Relationship="Self.FK__TK_NHANVIE__TKNV__2E1BDC42" FromRole="NHAN_VIEN" ToRole="TK_NHANVIEN" />
         </EntityType>
         <EntityType Name="SACH">
           <Key>
@@ -438,11 +438,11 @@
           <Property Name="MaNXB" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="MaLoaiSach" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="TrangThai" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="BAO_CAO_DOANH_THU" Relationship="Self.FK__BAO_CAO_D__MaSac__5441852A" FromRole="SACH" ToRole="BAO_CAO_DOANH_THU" />
-          <NavigationProperty Name="CHI_TIET_HOA_DON_BAN" Relationship="Self.FK__CHI_TIET___MaSac__5070F446" FromRole="SACH" ToRole="CHI_TIET_HOA_DON_BAN" />
-          <NavigationProperty Name="CHI_TIET_HOA_DON_NHAP" Relationship="Self.FK__CHI_TIET___MaSac__47DBAE45" FromRole="SACH" ToRole="CHI_TIET_HOA_DON_NHAP" />
-          <NavigationProperty Name="LOAI_SACH" Relationship="Self.FK__SACH__MaLoaiSach__3B75D760" FromRole="SACH" ToRole="LOAI_SACH" />
-          <NavigationProperty Name="NHA_XUAT_BAN" Relationship="Self.FK__SACH__MaNXB__3A81B327" FromRole="SACH" ToRole="NHA_XUAT_BAN" />
+          <NavigationProperty Name="BAO_CAO_DOANH_THU" Relationship="Self.FK__BAO_CAO_D__MaSac__4222D4EF" FromRole="SACH" ToRole="BAO_CAO_DOANH_THU" />
+          <NavigationProperty Name="CHI_TIET_HOA_DON_BAN" Relationship="Self.FK__CHI_TIET___MaSac__3E52440B" FromRole="SACH" ToRole="CHI_TIET_HOA_DON_BAN" />
+          <NavigationProperty Name="CHI_TIET_HOA_DON_NHAP" Relationship="Self.FK__CHI_TIET___MaSac__35BCFE0A" FromRole="SACH" ToRole="CHI_TIET_HOA_DON_NHAP" />
+          <NavigationProperty Name="LOAI_SACH" Relationship="Self.FK__SACH__MaLoaiSach__29572725" FromRole="SACH" ToRole="LOAI_SACH" />
+          <NavigationProperty Name="NHA_XUAT_BAN" Relationship="Self.FK__SACH__MaNXB__286302EC" FromRole="SACH" ToRole="NHA_XUAT_BAN" />
         </EntityType>
         <EntityType Name="TK_NHANVIEN">
           <Key>
@@ -450,9 +450,9 @@
           </Key>
           <Property Name="TKNV" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Pass" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="NHAN_VIEN" Relationship="Self.FK__TK_NHANVIE__TKNV__403A8C7D" FromRole="TK_NHANVIEN" ToRole="NHAN_VIEN" />
+          <NavigationProperty Name="NHAN_VIEN" Relationship="Self.FK__TK_NHANVIE__TKNV__2E1BDC42" FromRole="TK_NHANVIEN" ToRole="NHAN_VIEN" />
         </EntityType>
-        <Association Name="FK__BAO_CAO_D__MaSac__5441852A">
+        <Association Name="FK__BAO_CAO_D__MaSac__4222D4EF">
           <End Role="SACH" Type="Self.SACH" Multiplicity="1" />
           <End Role="BAO_CAO_DOANH_THU" Type="Self.BAO_CAO_DOANH_THU" Multiplicity="*" />
           <ReferentialConstraint>
@@ -464,7 +464,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CHI_TIET___MaDon__5165187F">
+        <Association Name="FK__CHI_TIET___MaDon__3F466844">
           <End Role="HOA_DON_BAN" Type="Self.HOA_DON_BAN" Multiplicity="1" />
           <End Role="CHI_TIET_HOA_DON_BAN" Type="Self.CHI_TIET_HOA_DON_BAN" Multiplicity="*" />
           <ReferentialConstraint>
@@ -476,7 +476,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CHI_TIET___MaSac__5070F446">
+        <Association Name="FK__CHI_TIET___MaSac__3E52440B">
           <End Role="SACH" Type="Self.SACH" Multiplicity="1" />
           <End Role="CHI_TIET_HOA_DON_BAN" Type="Self.CHI_TIET_HOA_DON_BAN" Multiplicity="*" />
           <ReferentialConstraint>
@@ -488,7 +488,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CHI_TIET___MaDon__48CFD27E">
+        <Association Name="FK__CHI_TIET___MaDon__36B12243">
           <End Role="HOA_DON_NHAP" Type="Self.HOA_DON_NHAP" Multiplicity="1" />
           <End Role="CHI_TIET_HOA_DON_NHAP" Type="Self.CHI_TIET_HOA_DON_NHAP" Multiplicity="*" />
           <ReferentialConstraint>
@@ -500,7 +500,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CHI_TIET___MaSac__47DBAE45">
+        <Association Name="FK__CHI_TIET___MaSac__35BCFE0A">
           <End Role="SACH" Type="Self.SACH" Multiplicity="1" />
           <End Role="CHI_TIET_HOA_DON_NHAP" Type="Self.CHI_TIET_HOA_DON_NHAP" Multiplicity="*" />
           <ReferentialConstraint>
@@ -512,7 +512,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DOANH_SO___MaNha__571DF1D5">
+        <Association Name="FK__DOANH_SO___MaNha__44FF419A">
           <End Role="NHAN_VIEN" Type="Self.NHAN_VIEN" Multiplicity="0..1" />
           <End Role="DOANH_SO_BAN_HANG" Type="Self.DOANH_SO_BAN_HANG" Multiplicity="*" />
           <ReferentialConstraint>
@@ -524,7 +524,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__HOA_DON_B__MaNha__4BAC3F29">
+        <Association Name="FK__HOA_DON_B__MaNha__398D8EEE">
           <End Role="NHAN_VIEN" Type="Self.NHAN_VIEN" Multiplicity="1" />
           <End Role="HOA_DON_BAN" Type="Self.HOA_DON_BAN" Multiplicity="*" />
           <ReferentialConstraint>
@@ -536,7 +536,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__HOA_DON_B__SDT_K__4CA06362">
+        <Association Name="FK__HOA_DON_B__SDT_K__3A81B327">
           <End Role="KHACH_HANG" Type="Self.KHACH_HANG" Multiplicity="1" />
           <End Role="HOA_DON_BAN" Type="Self.HOA_DON_BAN" Multiplicity="*" />
           <ReferentialConstraint>
@@ -548,7 +548,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SACH__MaLoaiSach__3B75D760">
+        <Association Name="FK__SACH__MaLoaiSach__29572725">
           <End Role="LOAI_SACH" Type="Self.LOAI_SACH" Multiplicity="1" />
           <End Role="SACH" Type="Self.SACH" Multiplicity="*" />
           <ReferentialConstraint>
@@ -560,7 +560,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SACH__MaNXB__3A81B327">
+        <Association Name="FK__SACH__MaNXB__286302EC">
           <End Role="NHA_XUAT_BAN" Type="Self.NHA_XUAT_BAN" Multiplicity="1" />
           <End Role="SACH" Type="Self.SACH" Multiplicity="*" />
           <ReferentialConstraint>
@@ -572,7 +572,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__TK_NHANVIE__TKNV__403A8C7D">
+        <Association Name="FK__TK_NHANVIE__TKNV__2E1BDC42">
           <End Role="NHAN_VIEN" Type="Self.NHAN_VIEN" Multiplicity="1" />
           <End Role="TK_NHANVIEN" Type="Self.TK_NHANVIEN" Multiplicity="0..1" />
           <ReferentialConstraint>
@@ -597,47 +597,47 @@
           <EntitySet Name="NHAN_VIEN" EntityType="Self.NHAN_VIEN" />
           <EntitySet Name="SACHes" EntityType="Self.SACH" />
           <EntitySet Name="TK_NHANVIEN" EntityType="Self.TK_NHANVIEN" />
-          <AssociationSet Name="FK__BAO_CAO_D__MaSac__5441852A" Association="Self.FK__BAO_CAO_D__MaSac__5441852A">
+          <AssociationSet Name="FK__BAO_CAO_D__MaSac__4222D4EF" Association="Self.FK__BAO_CAO_D__MaSac__4222D4EF">
             <End Role="SACH" EntitySet="SACHes" />
             <End Role="BAO_CAO_DOANH_THU" EntitySet="BAO_CAO_DOANH_THU" />
           </AssociationSet>
-          <AssociationSet Name="FK__CHI_TIET___MaDon__5165187F" Association="Self.FK__CHI_TIET___MaDon__5165187F">
+          <AssociationSet Name="FK__CHI_TIET___MaDon__3F466844" Association="Self.FK__CHI_TIET___MaDon__3F466844">
             <End Role="HOA_DON_BAN" EntitySet="HOA_DON_BAN" />
             <End Role="CHI_TIET_HOA_DON_BAN" EntitySet="CHI_TIET_HOA_DON_BAN" />
           </AssociationSet>
-          <AssociationSet Name="FK__CHI_TIET___MaSac__5070F446" Association="Self.FK__CHI_TIET___MaSac__5070F446">
+          <AssociationSet Name="FK__CHI_TIET___MaSac__3E52440B" Association="Self.FK__CHI_TIET___MaSac__3E52440B">
             <End Role="SACH" EntitySet="SACHes" />
             <End Role="CHI_TIET_HOA_DON_BAN" EntitySet="CHI_TIET_HOA_DON_BAN" />
           </AssociationSet>
-          <AssociationSet Name="FK__CHI_TIET___MaDon__48CFD27E" Association="Self.FK__CHI_TIET___MaDon__48CFD27E">
+          <AssociationSet Name="FK__CHI_TIET___MaDon__36B12243" Association="Self.FK__CHI_TIET___MaDon__36B12243">
             <End Role="HOA_DON_NHAP" EntitySet="HOA_DON_NHAP" />
             <End Role="CHI_TIET_HOA_DON_NHAP" EntitySet="CHI_TIET_HOA_DON_NHAP" />
           </AssociationSet>
-          <AssociationSet Name="FK__CHI_TIET___MaSac__47DBAE45" Association="Self.FK__CHI_TIET___MaSac__47DBAE45">
+          <AssociationSet Name="FK__CHI_TIET___MaSac__35BCFE0A" Association="Self.FK__CHI_TIET___MaSac__35BCFE0A">
             <End Role="SACH" EntitySet="SACHes" />
             <End Role="CHI_TIET_HOA_DON_NHAP" EntitySet="CHI_TIET_HOA_DON_NHAP" />
           </AssociationSet>
-          <AssociationSet Name="FK__DOANH_SO___MaNha__571DF1D5" Association="Self.FK__DOANH_SO___MaNha__571DF1D5">
+          <AssociationSet Name="FK__DOANH_SO___MaNha__44FF419A" Association="Self.FK__DOANH_SO___MaNha__44FF419A">
             <End Role="NHAN_VIEN" EntitySet="NHAN_VIEN" />
             <End Role="DOANH_SO_BAN_HANG" EntitySet="DOANH_SO_BAN_HANG" />
           </AssociationSet>
-          <AssociationSet Name="FK__HOA_DON_B__MaNha__4BAC3F29" Association="Self.FK__HOA_DON_B__MaNha__4BAC3F29">
+          <AssociationSet Name="FK__HOA_DON_B__MaNha__398D8EEE" Association="Self.FK__HOA_DON_B__MaNha__398D8EEE">
             <End Role="NHAN_VIEN" EntitySet="NHAN_VIEN" />
             <End Role="HOA_DON_BAN" EntitySet="HOA_DON_BAN" />
           </AssociationSet>
-          <AssociationSet Name="FK__HOA_DON_B__SDT_K__4CA06362" Association="Self.FK__HOA_DON_B__SDT_K__4CA06362">
+          <AssociationSet Name="FK__HOA_DON_B__SDT_K__3A81B327" Association="Self.FK__HOA_DON_B__SDT_K__3A81B327">
             <End Role="KHACH_HANG" EntitySet="KHACH_HANG" />
             <End Role="HOA_DON_BAN" EntitySet="HOA_DON_BAN" />
           </AssociationSet>
-          <AssociationSet Name="FK__SACH__MaLoaiSach__3B75D760" Association="Self.FK__SACH__MaLoaiSach__3B75D760">
+          <AssociationSet Name="FK__SACH__MaLoaiSach__29572725" Association="Self.FK__SACH__MaLoaiSach__29572725">
             <End Role="LOAI_SACH" EntitySet="LOAI_SACH" />
             <End Role="SACH" EntitySet="SACHes" />
           </AssociationSet>
-          <AssociationSet Name="FK__SACH__MaNXB__3A81B327" Association="Self.FK__SACH__MaNXB__3A81B327">
+          <AssociationSet Name="FK__SACH__MaNXB__286302EC" Association="Self.FK__SACH__MaNXB__286302EC">
             <End Role="NHA_XUAT_BAN" EntitySet="NHA_XUAT_BAN" />
             <End Role="SACH" EntitySet="SACHes" />
           </AssociationSet>
-          <AssociationSet Name="FK__TK_NHANVIE__TKNV__403A8C7D" Association="Self.FK__TK_NHANVIE__TKNV__403A8C7D">
+          <AssociationSet Name="FK__TK_NHANVIE__TKNV__2E1BDC42" Association="Self.FK__TK_NHANVIE__TKNV__2E1BDC42">
             <End Role="NHAN_VIEN" EntitySet="NHAN_VIEN" />
             <End Role="TK_NHANVIEN" EntitySet="TK_NHANVIEN" />
           </AssociationSet>
