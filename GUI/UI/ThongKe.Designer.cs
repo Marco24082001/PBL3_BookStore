@@ -138,6 +138,7 @@ namespace GUI
             // cbbSort
             // 
             this.cbbSort.BackColor = System.Drawing.Color.Transparent;
+            this.cbbSort.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbbSort.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbbSort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbSort.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -182,6 +183,7 @@ namespace GUI
             // cbbNgay
             // 
             this.cbbNgay.BackColor = System.Drawing.Color.Transparent;
+            this.cbbNgay.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbbNgay.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbbNgay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbNgay.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -202,6 +204,7 @@ namespace GUI
             // cbbThang
             // 
             this.cbbThang.BackColor = System.Drawing.Color.Transparent;
+            this.cbbThang.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbbThang.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbbThang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbThang.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -222,6 +225,7 @@ namespace GUI
             // cbbNam
             // 
             this.cbbNam.BackColor = System.Drawing.Color.Transparent;
+            this.cbbNam.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbbNam.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbbNam.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbNam.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -356,7 +360,7 @@ namespace GUI
             // num3
             // 
             this.num3.BackColor = System.Drawing.Color.Transparent;
-            this.num3.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.num3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.num3.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.num3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.num3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -376,7 +380,7 @@ namespace GUI
             // num2
             // 
             this.num2.BackColor = System.Drawing.Color.Transparent;
-            this.num2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.num2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.num2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.num2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.num2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -396,7 +400,7 @@ namespace GUI
             // num1
             // 
             this.num1.BackColor = System.Drawing.Color.Transparent;
-            this.num1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.num1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.num1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.num1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.num1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -432,7 +436,9 @@ namespace GUI
             // 
             this.loadBtn.BorderRadius = 15;
             this.loadBtn.CheckedState.Parent = this.loadBtn;
+            this.loadBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.loadBtn.CustomImages.Parent = this.loadBtn;
+            this.loadBtn.DisabledState.Parent = this.loadBtn;
             this.loadBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loadBtn.ForeColor = System.Drawing.Color.White;
             this.loadBtn.HoverState.Parent = this.loadBtn;
@@ -452,6 +458,7 @@ namespace GUI
             this.radioYear.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.radioYear.CheckedState.InnerColor = System.Drawing.Color.White;
             this.radioYear.CheckedState.Parent = this.radioYear;
+            this.radioYear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.radioYear.ImeMode = System.Windows.Forms.ImeMode.On;
             this.radioYear.Location = new System.Drawing.Point(564, 488);
             this.radioYear.Margin = new System.Windows.Forms.Padding(4);
@@ -474,6 +481,7 @@ namespace GUI
             this.radioMonth.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.radioMonth.CheckedState.InnerColor = System.Drawing.Color.White;
             this.radioMonth.CheckedState.Parent = this.radioMonth;
+            this.radioMonth.Cursor = System.Windows.Forms.Cursors.Hand;
             this.radioMonth.ImeMode = System.Windows.Forms.ImeMode.On;
             this.radioMonth.Location = new System.Drawing.Point(464, 488);
             this.radioMonth.Margin = new System.Windows.Forms.Padding(4);

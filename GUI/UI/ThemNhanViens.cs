@@ -15,6 +15,7 @@ namespace GUI
         public delegate void MyDel();
         public MyDel d;
         public string maNV { get; set; }
+        string boxTitle = "Thông báo";
         public ThemNhanViens()
         {
             InitializeComponent();
@@ -67,20 +68,20 @@ namespace GUI
         {
             if(txtMaNV.Text == "")
             {
-                MessageBox.Show("Nhap ma NV");
+                MessageBox.Show("Vui lòng nhập 'Mã nhân viên'", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             foreach(string ma in BLL_QuanLy.Instance.Bll_GetAllMaNV())
             {
                 if(ma == txtMaNV.Text)
                 {
-                    MessageBox.Show("Ma Nhan vien da ton tai");
+                    MessageBox.Show("'Mã nhân viên' đã tồn tại", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return false;
                 }
             }
             if (txtMaNV.Text.Length > 5)
             {
-                MessageBox.Show("MaNV không quá 5 kí tự");
+                MessageBox.Show("'Mã nhân viên' không quá 5 kí tự", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             return true;
@@ -89,12 +90,12 @@ namespace GUI
         {
             if(txtHoTen.Text == "")
             {
-                MessageBox.Show("Nhap ho ten");
+                MessageBox.Show("Vui lòng nhập 'Họ và tên'", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             if(txtHoTen.Text.Length > 30)
             {
-                MessageBox.Show("Tên không quá 30 kí tự");
+                MessageBox.Show("'Họ và tên' không quá 30 kí tự", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             return true;
@@ -103,12 +104,12 @@ namespace GUI
         {
             if(txtDanToc.Text == "")
             {
-                MessageBox.Show("Nhap Dan toc");
+                MessageBox.Show("Vui lòng nhập 'Dân tộc'", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             if(txtDanToc.TextLength > 10)
             {
-                MessageBox.Show("Dan toc khong qua 10 ki tu");
+                MessageBox.Show("'Dân tộc' không được quá 10 kí tự", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             return true;
@@ -117,20 +118,20 @@ namespace GUI
         {
             if(txtCMND.Text == "")
             {
-                MessageBox.Show("Nhap CMND");
+                MessageBox.Show("Vui lòng nhập 'CMND'", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             string a = txtCMND.Text;
             if (txtCMND.TextLength > 12)
             {
-                MessageBox.Show("CMND không quá 12 số");
+                MessageBox.Show("'CMND' không được quá 12 số", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             for (int i = 0; i < txtCMND.TextLength; i++)
             {
                 if ((int)a[i] < 48 || (int)a[i] > 57)
                 {
-                    MessageBox.Show("CMND ko hợp lệ");
+                    MessageBox.Show("'CMND' không hợp lệ", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return false;
                 }
             }
@@ -141,20 +142,20 @@ namespace GUI
         {
             if(txtSdt.Text == "")
             {
-                MessageBox.Show("Nhap SDT");
+                MessageBox.Show("Vui lòng nhâp 'Số điện thoại'", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             string a = txtSdt.Text;
             if(txtSdt.TextLength > 10)
             {
-                MessageBox.Show("SDT không quá 10 số");
+                MessageBox.Show("'Số điện thoại' không được quá 10 số", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             for (int i = 0; i < txtSdt.TextLength; i++)
             {
                 if ((int)a[i] < 48 || (int)a[i] > 57)
                 {
-                    MessageBox.Show("Số điện thoại ko hợp lệ");
+                    MessageBox.Show("'Số điện thoại' không hợp lệ", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return false;
                 }
             }
@@ -164,12 +165,12 @@ namespace GUI
         {
             if(txtQueQuan.Text == "")
             {
-                MessageBox.Show("Nhap Que Quan");
+                MessageBox.Show("Vui lòng nhập 'Quê quán'", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             if (txtQueQuan.Text.Length > 50)
             {
-                MessageBox.Show("Tên không quá 50 kí tự");
+                MessageBox.Show("'Quê quán' không được quá 50 kí tự", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             return true;
@@ -178,12 +179,12 @@ namespace GUI
         {
             if (txtMatKhau.Text == "")
             {
-                MessageBox.Show("Nhap Mat Khau");
+                MessageBox.Show("Vui lòng nhập 'Mật khẩu'", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             if (txtQueQuan.Text.Length > 10)
             {
-                MessageBox.Show("Tên không quá 10 kí tự");
+                MessageBox.Show("'Mật khẩu' không được quá 10 kí tự", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             return true;

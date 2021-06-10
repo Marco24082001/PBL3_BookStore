@@ -42,6 +42,9 @@ namespace GUI
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtMaDonBan = new Guna.UI2.WinForms.Guna2TextBox();
+            this.AddHoaDon = new FontAwesome.Sharp.IconButton();
+            this.label13 = new System.Windows.Forms.Label();
             this.cbbMaSach = new Guna.UI2.WinForms.Guna2ComboBox();
             this.txtHoTen = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtSDT = new Guna.UI2.WinForms.Guna2TextBox();
@@ -65,9 +68,6 @@ namespace GUI
             this.DangXuat = new FontAwesome.Sharp.IconButton();
             this.infoNhanVien = new FontAwesome.Sharp.IconPictureBox();
             this.ThanhToan = new FontAwesome.Sharp.IconButton();
-            this.txtMaDonBan = new Guna.UI2.WinForms.Guna2TextBox();
-            this.AddHoaDon = new FontAwesome.Sharp.IconButton();
-            this.label13 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
@@ -111,6 +111,7 @@ namespace GUI
             // cbbSort
             // 
             this.cbbSort.BackColor = System.Drawing.Color.Transparent;
+            this.cbbSort.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbbSort.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbbSort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbSort.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -156,6 +157,7 @@ namespace GUI
             // cbbTheLoai
             // 
             this.cbbTheLoai.BackColor = System.Drawing.Color.Transparent;
+            this.cbbTheLoai.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbbTheLoai.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbbTheLoai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbTheLoai.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -277,6 +279,58 @@ namespace GUI
             this.groupBox2.Size = new System.Drawing.Size(614, 580);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
+            // 
+            // txtMaDonBan
+            // 
+            this.txtMaDonBan.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMaDonBan.DefaultText = "";
+            this.txtMaDonBan.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtMaDonBan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtMaDonBan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMaDonBan.DisabledState.Parent = this.txtMaDonBan;
+            this.txtMaDonBan.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMaDonBan.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMaDonBan.FocusedState.Parent = this.txtMaDonBan;
+            this.txtMaDonBan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaDonBan.ForeColor = System.Drawing.Color.Black;
+            this.txtMaDonBan.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMaDonBan.HoverState.Parent = this.txtMaDonBan;
+            this.txtMaDonBan.Location = new System.Drawing.Point(251, 37);
+            this.txtMaDonBan.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtMaDonBan.Name = "txtMaDonBan";
+            this.txtMaDonBan.PasswordChar = '\0';
+            this.txtMaDonBan.PlaceholderText = "";
+            this.txtMaDonBan.SelectedText = "";
+            this.txtMaDonBan.ShadowDecoration.Parent = this.txtMaDonBan;
+            this.txtMaDonBan.Size = new System.Drawing.Size(196, 36);
+            this.txtMaDonBan.TabIndex = 83;
+            // 
+            // AddHoaDon
+            // 
+            this.AddHoaDon.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.AddHoaDon.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AddHoaDon.IconChar = FontAwesome.Sharp.IconChar.FileMedical;
+            this.AddHoaDon.IconColor = System.Drawing.Color.Blue;
+            this.AddHoaDon.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.AddHoaDon.IconSize = 30;
+            this.AddHoaDon.Location = new System.Drawing.Point(472, 37);
+            this.AddHoaDon.Name = "AddHoaDon";
+            this.AddHoaDon.Size = new System.Drawing.Size(117, 36);
+            this.AddHoaDon.TabIndex = 82;
+            this.AddHoaDon.Text = "Hóa đơn";
+            this.AddHoaDon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.AddHoaDon.UseVisualStyleBackColor = false;
+            this.AddHoaDon.Click += new System.EventHandler(this.AddHoaDon_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(25, 53);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(106, 20);
+            this.label13.TabIndex = 81;
+            this.label13.Text = "Mã đơn bán :";
             // 
             // cbbMaSach
             // 
@@ -402,7 +456,7 @@ namespace GUI
             // numericUpDown1
             // 
             this.numericUpDown1.BackColor = System.Drawing.Color.Transparent;
-            this.numericUpDown1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.numericUpDown1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.numericUpDown1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.numericUpDown1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.numericUpDown1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -639,57 +693,6 @@ namespace GUI
             this.ThanhToan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ThanhToan.UseVisualStyleBackColor = false;
             this.ThanhToan.Click += new System.EventHandler(this.ThanhToan_Click);
-            // 
-            // txtMaDonBan
-            // 
-            this.txtMaDonBan.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtMaDonBan.DefaultText = "";
-            this.txtMaDonBan.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtMaDonBan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtMaDonBan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMaDonBan.DisabledState.Parent = this.txtMaDonBan;
-            this.txtMaDonBan.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMaDonBan.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMaDonBan.FocusedState.Parent = this.txtMaDonBan;
-            this.txtMaDonBan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaDonBan.ForeColor = System.Drawing.Color.Black;
-            this.txtMaDonBan.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMaDonBan.HoverState.Parent = this.txtMaDonBan;
-            this.txtMaDonBan.Location = new System.Drawing.Point(251, 37);
-            this.txtMaDonBan.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtMaDonBan.Name = "txtMaDonBan";
-            this.txtMaDonBan.PasswordChar = '\0';
-            this.txtMaDonBan.PlaceholderText = "";
-            this.txtMaDonBan.SelectedText = "";
-            this.txtMaDonBan.ShadowDecoration.Parent = this.txtMaDonBan;
-            this.txtMaDonBan.Size = new System.Drawing.Size(196, 36);
-            this.txtMaDonBan.TabIndex = 83;
-            // 
-            // AddHoaDon
-            // 
-            this.AddHoaDon.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.AddHoaDon.IconChar = FontAwesome.Sharp.IconChar.FileMedical;
-            this.AddHoaDon.IconColor = System.Drawing.Color.Blue;
-            this.AddHoaDon.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.AddHoaDon.IconSize = 30;
-            this.AddHoaDon.Location = new System.Drawing.Point(472, 37);
-            this.AddHoaDon.Name = "AddHoaDon";
-            this.AddHoaDon.Size = new System.Drawing.Size(117, 36);
-            this.AddHoaDon.TabIndex = 82;
-            this.AddHoaDon.Text = "Hóa đơn";
-            this.AddHoaDon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.AddHoaDon.UseVisualStyleBackColor = false;
-            this.AddHoaDon.Click += new System.EventHandler(this.AddHoaDon_Click);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(25, 53);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(106, 20);
-            this.label13.TabIndex = 81;
-            this.label13.Text = "Mã đơn bán :";
             // 
             // NhanVien
             // 

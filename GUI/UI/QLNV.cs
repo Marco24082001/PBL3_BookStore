@@ -14,6 +14,7 @@ namespace GUI
 {
     public partial class QLNV : Form
     {
+        string boxTitle = "Thông báo";
         public QLNV()
         {
             InitializeComponent();
@@ -60,7 +61,7 @@ namespace GUI
             DataGridViewSelectedRowCollection r = dataGridView1.SelectedRows;
             if(r.Count > 1)
             {
-                MessageBox.Show("Chi duoc phep Edit 1 Row");
+                MessageBox.Show("Chỉ được phép chỉnh sửa 1 hàng", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             ThemNhanViens f = new ThemNhanViens();
@@ -74,7 +75,7 @@ namespace GUI
             DataGridViewSelectedRowCollection r = dataGridView1.SelectedRows;
             if (r.Count == 0)
             {
-                MessageBox.Show("Chon Row can xoa");
+                MessageBox.Show("Vui lòng chọn hàng cần xóa", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             foreach (DataGridViewRow i in r)

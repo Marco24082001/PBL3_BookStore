@@ -30,30 +30,30 @@ namespace GUI
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbbNgay = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cbbThang = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cbbNam = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
+            this.cbbSort = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.TongDoanhThu = new Guna.UI2.WinForms.Guna2TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label8 = new System.Windows.Forms.Label();
             this.sortBtn = new FontAwesome.Sharp.IconButton();
             this.label10 = new System.Windows.Forms.Label();
             this.backPage = new FontAwesome.Sharp.IconButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
             this.numDay = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.loadBtn = new Guna.UI2.WinForms.Guna2Button();
             this.turnoverChart = new LiveCharts.WinForms.CartesianChart();
             this.label3 = new System.Windows.Forms.Label();
-            this.TongDoanhThu = new Guna.UI2.WinForms.Guna2TextBox();
-            this.cbbSort = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.cbbNgay = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.cbbThang = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.cbbNam = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
-            this.iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numDay)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDay)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -75,6 +75,128 @@ namespace GUI
             this.groupBox1.TabIndex = 54;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Doanh thu";
+            // 
+            // cbbNgay
+            // 
+            this.cbbNgay.BackColor = System.Drawing.Color.Transparent;
+            this.cbbNgay.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbbNgay.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbNgay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbNgay.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbNgay.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbNgay.FocusedState.Parent = this.cbbNgay;
+            this.cbbNgay.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbNgay.ForeColor = System.Drawing.Color.Black;
+            this.cbbNgay.HoverState.Parent = this.cbbNgay;
+            this.cbbNgay.ItemHeight = 30;
+            this.cbbNgay.ItemsAppearance.Parent = this.cbbNgay;
+            this.cbbNgay.Location = new System.Drawing.Point(392, 43);
+            this.cbbNgay.Name = "cbbNgay";
+            this.cbbNgay.ShadowDecoration.Parent = this.cbbNgay;
+            this.cbbNgay.Size = new System.Drawing.Size(145, 36);
+            this.cbbNgay.TabIndex = 79;
+            this.cbbNgay.SelectedIndexChanged += new System.EventHandler(this.cbbNgay_SelectedIndexChanged_1);
+            // 
+            // cbbThang
+            // 
+            this.cbbThang.BackColor = System.Drawing.Color.Transparent;
+            this.cbbThang.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbbThang.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbThang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbThang.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbThang.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbThang.FocusedState.Parent = this.cbbThang;
+            this.cbbThang.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbThang.ForeColor = System.Drawing.Color.Black;
+            this.cbbThang.HoverState.Parent = this.cbbThang;
+            this.cbbThang.ItemHeight = 30;
+            this.cbbThang.ItemsAppearance.Parent = this.cbbThang;
+            this.cbbThang.Location = new System.Drawing.Point(233, 43);
+            this.cbbThang.Name = "cbbThang";
+            this.cbbThang.ShadowDecoration.Parent = this.cbbThang;
+            this.cbbThang.Size = new System.Drawing.Size(145, 36);
+            this.cbbThang.TabIndex = 78;
+            this.cbbThang.SelectedIndexChanged += new System.EventHandler(this.cbbThang_SelectedIndexChanged_1);
+            // 
+            // cbbNam
+            // 
+            this.cbbNam.BackColor = System.Drawing.Color.Transparent;
+            this.cbbNam.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbbNam.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbNam.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbNam.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbNam.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbNam.FocusedState.Parent = this.cbbNam;
+            this.cbbNam.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbNam.ForeColor = System.Drawing.Color.Black;
+            this.cbbNam.HoverState.Parent = this.cbbNam;
+            this.cbbNam.ItemHeight = 30;
+            this.cbbNam.ItemsAppearance.Parent = this.cbbNam;
+            this.cbbNam.Location = new System.Drawing.Point(73, 43);
+            this.cbbNam.Name = "cbbNam";
+            this.cbbNam.ShadowDecoration.Parent = this.cbbNam;
+            this.cbbNam.Size = new System.Drawing.Size(145, 36);
+            this.cbbNam.TabIndex = 77;
+            this.cbbNam.SelectedIndexChanged += new System.EventHandler(this.cbbNam_SelectedIndexChanged_1);
+            // 
+            // iconPictureBox2
+            // 
+            this.iconPictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.iconPictureBox2.ForeColor = System.Drawing.Color.Black;
+            this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.Sort;
+            this.iconPictureBox2.IconColor = System.Drawing.Color.Black;
+            this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox2.IconSize = 29;
+            this.iconPictureBox2.Location = new System.Drawing.Point(36, 46);
+            this.iconPictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.iconPictureBox2.Name = "iconPictureBox2";
+            this.iconPictureBox2.Size = new System.Drawing.Size(32, 29);
+            this.iconPictureBox2.TabIndex = 76;
+            this.iconPictureBox2.TabStop = false;
+            // 
+            // cbbSort
+            // 
+            this.cbbSort.BackColor = System.Drawing.Color.Transparent;
+            this.cbbSort.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbbSort.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbSort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbSort.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbSort.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbSort.FocusedState.Parent = this.cbbSort;
+            this.cbbSort.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbSort.ForeColor = System.Drawing.Color.Black;
+            this.cbbSort.HoverState.Parent = this.cbbSort;
+            this.cbbSort.ItemHeight = 30;
+            this.cbbSort.ItemsAppearance.Parent = this.cbbSort;
+            this.cbbSort.Location = new System.Drawing.Point(152, 469);
+            this.cbbSort.Name = "cbbSort";
+            this.cbbSort.ShadowDecoration.Parent = this.cbbSort;
+            this.cbbSort.Size = new System.Drawing.Size(122, 36);
+            this.cbbSort.TabIndex = 72;
+            // 
+            // TongDoanhThu
+            // 
+            this.TongDoanhThu.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TongDoanhThu.DefaultText = "";
+            this.TongDoanhThu.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.TongDoanhThu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.TongDoanhThu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TongDoanhThu.DisabledState.Parent = this.TongDoanhThu;
+            this.TongDoanhThu.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TongDoanhThu.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TongDoanhThu.FocusedState.Parent = this.TongDoanhThu;
+            this.TongDoanhThu.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TongDoanhThu.ForeColor = System.Drawing.Color.Black;
+            this.TongDoanhThu.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TongDoanhThu.HoverState.Parent = this.TongDoanhThu;
+            this.TongDoanhThu.Location = new System.Drawing.Point(551, 469);
+            this.TongDoanhThu.Name = "TongDoanhThu";
+            this.TongDoanhThu.PasswordChar = '\0';
+            this.TongDoanhThu.PlaceholderText = "";
+            this.TongDoanhThu.SelectedText = "";
+            this.TongDoanhThu.ShadowDecoration.Parent = this.TongDoanhThu;
+            this.TongDoanhThu.Size = new System.Drawing.Size(147, 36);
+            this.TongDoanhThu.TabIndex = 75;
             // 
             // dataGridView1
             // 
@@ -166,10 +288,25 @@ namespace GUI
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Doanh thu";
             // 
+            // iconPictureBox3
+            // 
+            this.iconPictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.iconPictureBox3.ForeColor = System.Drawing.Color.Black;
+            this.iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.Sort;
+            this.iconPictureBox3.IconColor = System.Drawing.Color.Black;
+            this.iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox3.IconSize = 29;
+            this.iconPictureBox3.Location = new System.Drawing.Point(29, 59);
+            this.iconPictureBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.iconPictureBox3.Name = "iconPictureBox3";
+            this.iconPictureBox3.Size = new System.Drawing.Size(32, 29);
+            this.iconPictureBox3.TabIndex = 77;
+            this.iconPictureBox3.TabStop = false;
+            // 
             // numDay
             // 
             this.numDay.BackColor = System.Drawing.Color.Transparent;
-            this.numDay.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.numDay.Cursor = System.Windows.Forms.Cursors.Hand;
             this.numDay.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.numDay.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.numDay.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -201,7 +338,9 @@ namespace GUI
             // 
             this.loadBtn.BorderRadius = 15;
             this.loadBtn.CheckedState.Parent = this.loadBtn;
+            this.loadBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.loadBtn.CustomImages.Parent = this.loadBtn;
+            this.loadBtn.DisabledState.Parent = this.loadBtn;
             this.loadBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loadBtn.ForeColor = System.Drawing.Color.White;
             this.loadBtn.HoverState.Parent = this.loadBtn;
@@ -233,139 +372,6 @@ namespace GUI
             this.label3.TabIndex = 25;
             this.label3.Text = "Biểu đồ doanh thu";
             // 
-            // TongDoanhThu
-            // 
-            this.TongDoanhThu.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TongDoanhThu.DefaultText = "";
-            this.TongDoanhThu.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.TongDoanhThu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.TongDoanhThu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.TongDoanhThu.DisabledState.Parent = this.TongDoanhThu;
-            this.TongDoanhThu.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.TongDoanhThu.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TongDoanhThu.FocusedState.Parent = this.TongDoanhThu;
-            this.TongDoanhThu.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.TongDoanhThu.ForeColor = System.Drawing.Color.Black;
-            this.TongDoanhThu.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TongDoanhThu.HoverState.Parent = this.TongDoanhThu;
-            this.TongDoanhThu.Location = new System.Drawing.Point(551, 469);
-            this.TongDoanhThu.Name = "TongDoanhThu";
-            this.TongDoanhThu.PasswordChar = '\0';
-            this.TongDoanhThu.PlaceholderText = "";
-            this.TongDoanhThu.SelectedText = "";
-            this.TongDoanhThu.ShadowDecoration.Parent = this.TongDoanhThu;
-            this.TongDoanhThu.Size = new System.Drawing.Size(147, 36);
-            this.TongDoanhThu.TabIndex = 75;
-            // 
-            // cbbSort
-            // 
-            this.cbbSort.BackColor = System.Drawing.Color.Transparent;
-            this.cbbSort.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbbSort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbSort.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbbSort.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbbSort.FocusedState.Parent = this.cbbSort;
-            this.cbbSort.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbbSort.ForeColor = System.Drawing.Color.Black;
-            this.cbbSort.HoverState.Parent = this.cbbSort;
-            this.cbbSort.ItemHeight = 30;
-            this.cbbSort.ItemsAppearance.Parent = this.cbbSort;
-            this.cbbSort.Location = new System.Drawing.Point(152, 469);
-            this.cbbSort.Name = "cbbSort";
-            this.cbbSort.ShadowDecoration.Parent = this.cbbSort;
-            this.cbbSort.Size = new System.Drawing.Size(122, 36);
-            this.cbbSort.TabIndex = 72;
-            // 
-            // cbbNgay
-            // 
-            this.cbbNgay.BackColor = System.Drawing.Color.Transparent;
-            this.cbbNgay.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbbNgay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbNgay.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbbNgay.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbbNgay.FocusedState.Parent = this.cbbNgay;
-            this.cbbNgay.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbbNgay.ForeColor = System.Drawing.Color.Black;
-            this.cbbNgay.HoverState.Parent = this.cbbNgay;
-            this.cbbNgay.ItemHeight = 30;
-            this.cbbNgay.ItemsAppearance.Parent = this.cbbNgay;
-            this.cbbNgay.Location = new System.Drawing.Point(392, 43);
-            this.cbbNgay.Name = "cbbNgay";
-            this.cbbNgay.ShadowDecoration.Parent = this.cbbNgay;
-            this.cbbNgay.Size = new System.Drawing.Size(145, 36);
-            this.cbbNgay.TabIndex = 79;
-            this.cbbNgay.SelectedIndexChanged += new System.EventHandler(this.cbbNgay_SelectedIndexChanged_1);
-            // 
-            // cbbThang
-            // 
-            this.cbbThang.BackColor = System.Drawing.Color.Transparent;
-            this.cbbThang.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbbThang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbThang.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbbThang.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbbThang.FocusedState.Parent = this.cbbThang;
-            this.cbbThang.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbbThang.ForeColor = System.Drawing.Color.Black;
-            this.cbbThang.HoverState.Parent = this.cbbThang;
-            this.cbbThang.ItemHeight = 30;
-            this.cbbThang.ItemsAppearance.Parent = this.cbbThang;
-            this.cbbThang.Location = new System.Drawing.Point(233, 43);
-            this.cbbThang.Name = "cbbThang";
-            this.cbbThang.ShadowDecoration.Parent = this.cbbThang;
-            this.cbbThang.Size = new System.Drawing.Size(145, 36);
-            this.cbbThang.TabIndex = 78;
-            this.cbbThang.SelectedIndexChanged += new System.EventHandler(this.cbbThang_SelectedIndexChanged_1);
-            // 
-            // cbbNam
-            // 
-            this.cbbNam.BackColor = System.Drawing.Color.Transparent;
-            this.cbbNam.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbbNam.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbNam.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbbNam.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbbNam.FocusedState.Parent = this.cbbNam;
-            this.cbbNam.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbbNam.ForeColor = System.Drawing.Color.Black;
-            this.cbbNam.HoverState.Parent = this.cbbNam;
-            this.cbbNam.ItemHeight = 30;
-            this.cbbNam.ItemsAppearance.Parent = this.cbbNam;
-            this.cbbNam.Location = new System.Drawing.Point(73, 43);
-            this.cbbNam.Name = "cbbNam";
-            this.cbbNam.ShadowDecoration.Parent = this.cbbNam;
-            this.cbbNam.Size = new System.Drawing.Size(145, 36);
-            this.cbbNam.TabIndex = 77;
-            this.cbbNam.SelectedIndexChanged += new System.EventHandler(this.cbbNam_SelectedIndexChanged_1);
-            // 
-            // iconPictureBox2
-            // 
-            this.iconPictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.iconPictureBox2.ForeColor = System.Drawing.Color.Black;
-            this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.Sort;
-            this.iconPictureBox2.IconColor = System.Drawing.Color.Black;
-            this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox2.IconSize = 35;
-            this.iconPictureBox2.Location = new System.Drawing.Point(36, 46);
-            this.iconPictureBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.iconPictureBox2.Name = "iconPictureBox2";
-            this.iconPictureBox2.Size = new System.Drawing.Size(32, 29);
-            this.iconPictureBox2.TabIndex = 76;
-            this.iconPictureBox2.TabStop = false;
-            // 
-            // iconPictureBox3
-            // 
-            this.iconPictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.iconPictureBox3.ForeColor = System.Drawing.Color.Black;
-            this.iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.Sort;
-            this.iconPictureBox3.IconColor = System.Drawing.Color.Black;
-            this.iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox3.IconSize = 35;
-            this.iconPictureBox3.Location = new System.Drawing.Point(29, 59);
-            this.iconPictureBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.iconPictureBox3.Name = "iconPictureBox3";
-            this.iconPictureBox3.Size = new System.Drawing.Size(32, 29);
-            this.iconPictureBox3.TabIndex = 77;
-            this.iconPictureBox3.TabStop = false;
-            // 
             // BaoCaoDoanhThu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -375,17 +381,18 @@ namespace GUI
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.backPage);
             this.Controls.Add(this.groupBox1);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "BaoCaoDoanhThu";
             this.Text = "Quản lý doanh thu";
             this.Load += new System.EventHandler(this.BaoCaoDoanhThu_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numDay)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDay)).EndInit();
             this.ResumeLayout(false);
 
         }

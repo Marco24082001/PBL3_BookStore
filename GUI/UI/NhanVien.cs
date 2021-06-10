@@ -22,6 +22,7 @@ namespace GUI
         public string maNV { get; set; }
         bool checkKhachHang = false;
         NguoiDung user;
+        string boxTitle = "Thông báo";
         public NhanVien()
         {
             InitializeComponent();
@@ -104,12 +105,12 @@ namespace GUI
         {
             if (txtSDT.Text == "")
             {
-                MessageBox.Show("Vui long nhap số điện thoại");
+                MessageBox.Show("Vui lòng nhập 'Số điện thoại'", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             if (txtSDT.Text.Length != 10)
             {
-                MessageBox.Show("10 so");
+                MessageBox.Show("'Số điện thoại' không được quá 10 số", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             string a = txtSDT.Text;
@@ -117,7 +118,7 @@ namespace GUI
             {
                 if ((int)a[i] < 48 || (int)a[i] > 57)
                 {
-                    MessageBox.Show("Số điện thoại ko hợp lệ");
+                    MessageBox.Show("'Số điện thoại' không hợp lệ", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return false;
                 }
             }
@@ -128,12 +129,12 @@ namespace GUI
         {
             if (txtHoTen.Text == "")
             {
-                MessageBox.Show("Vui long nhap họ tên");
+                MessageBox.Show("Vui lòng nhập 'Họ và tên'", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             if (txtHoTen.Text.Length > 30)
             {
-                MessageBox.Show("Không nhập quá 30 kí tự");
+                MessageBox.Show("'Họ và tên' không được quá 30 kí tự", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             return true;
@@ -143,7 +144,7 @@ namespace GUI
         {
             if (numericUpDown1.Value == 0)
             {
-                MessageBox.Show("Vui lòng chọn số lượng sách");
+                MessageBox.Show("Vui lòng chọn 'Số lượng'", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             return true;
@@ -155,7 +156,7 @@ namespace GUI
             if (!CheckSoLuong()) return;
             if (txtMaDonBan.Text == "")
             {
-                MessageBox.Show("Vui lòng tạo mã hóa đơn");
+                MessageBox.Show("Vui lòng tạo 'Mã hóa đơn'", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             int soSachinList = 0;
@@ -168,7 +169,7 @@ namespace GUI
             }
             if (numericUpDown1.Value + soSachinList > BLL_QuanLy.Instance.Bll_GetSLByMaSach(cbbMaSach.SelectedItem.ToString()))
             {
-                MessageBox.Show("Số lượng sách trong kho không đủ");
+                MessageBox.Show("Số lượng sách trong kho không đủ", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             txtHoTen.Enabled = false;
@@ -231,7 +232,7 @@ namespace GUI
         {
             if (list.Count == 0)
             {
-                MessageBox.Show("Gio Hang rỗng");
+                MessageBox.Show("Giỏ hàng rỗng", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (checkKhachHang == false)
@@ -293,7 +294,7 @@ namespace GUI
             cbbMaSach.SelectedIndex = 0;
             numericUpDown1.Value = 0;
             setData1();
-            MessageBox.Show("ThanhToanThanhCong");
+            MessageBox.Show("Thanh Toán thành công", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void SDT_TextChanged(object sender, EventArgs e)
@@ -393,7 +394,7 @@ namespace GUI
         {
             if (cbbTheLoai.SelectedIndex == -1)
             {
-                MessageBox.Show("Vui long chon The Loai");
+                MessageBox.Show("Vui lòng chọn Thể loại sách", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             string theloai = cbbTheLoai.SelectedItem.ToString();

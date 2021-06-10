@@ -38,6 +38,9 @@ namespace GUI
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtMaDN = new Guna.UI2.WinForms.Guna2TextBox();
+            this.AddHoaDon = new FontAwesome.Sharp.IconButton();
+            this.label2 = new System.Windows.Forms.Label();
             this.txtTong = new Guna.UI2.WinForms.Guna2TextBox();
             this.textBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.dateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
@@ -59,9 +62,6 @@ namespace GUI
             this.sortBtn = new FontAwesome.Sharp.IconButton();
             this.Edit = new FontAwesome.Sharp.IconButton();
             this.cbbSort = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.txtMaDN = new Guna.UI2.WinForms.Guna2TextBox();
-            this.AddHoaDon = new FontAwesome.Sharp.IconButton();
-            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
@@ -115,6 +115,7 @@ namespace GUI
             // cbbTheLoai
             // 
             this.cbbTheLoai.BackColor = System.Drawing.Color.Transparent;
+            this.cbbTheLoai.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbbTheLoai.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbbTheLoai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbTheLoai.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -217,6 +218,57 @@ namespace GUI
             this.groupBox3.TabIndex = 48;
             this.groupBox3.TabStop = false;
             // 
+            // txtMaDN
+            // 
+            this.txtMaDN.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMaDN.DefaultText = "";
+            this.txtMaDN.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtMaDN.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtMaDN.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMaDN.DisabledState.Parent = this.txtMaDN;
+            this.txtMaDN.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMaDN.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMaDN.FocusedState.Parent = this.txtMaDN;
+            this.txtMaDN.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtMaDN.ForeColor = System.Drawing.Color.Black;
+            this.txtMaDN.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMaDN.HoverState.Parent = this.txtMaDN;
+            this.txtMaDN.Location = new System.Drawing.Point(147, 43);
+            this.txtMaDN.Name = "txtMaDN";
+            this.txtMaDN.PasswordChar = '\0';
+            this.txtMaDN.PlaceholderText = "";
+            this.txtMaDN.SelectedText = "";
+            this.txtMaDN.ShadowDecoration.Parent = this.txtMaDN;
+            this.txtMaDN.Size = new System.Drawing.Size(130, 36);
+            this.txtMaDN.TabIndex = 77;
+            // 
+            // AddHoaDon
+            // 
+            this.AddHoaDon.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.AddHoaDon.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AddHoaDon.IconChar = FontAwesome.Sharp.IconChar.FileMedical;
+            this.AddHoaDon.IconColor = System.Drawing.Color.Blue;
+            this.AddHoaDon.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.AddHoaDon.IconSize = 30;
+            this.AddHoaDon.Location = new System.Drawing.Point(305, 43);
+            this.AddHoaDon.Name = "AddHoaDon";
+            this.AddHoaDon.Size = new System.Drawing.Size(117, 36);
+            this.AddHoaDon.TabIndex = 76;
+            this.AddHoaDon.Text = "Hóa đơn";
+            this.AddHoaDon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.AddHoaDon.UseVisualStyleBackColor = false;
+            this.AddHoaDon.Click += new System.EventHandler(this.AddHoaDon_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(26, 59);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(115, 20);
+            this.label2.TabIndex = 75;
+            this.label2.Text = "Mã đơn nhập :";
+            // 
             // txtTong
             // 
             this.txtTong.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -258,35 +310,36 @@ namespace GUI
             this.textBox1.ForeColor = System.Drawing.Color.Black;
             this.textBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.textBox1.HoverState.Parent = this.textBox1;
-            this.textBox1.Location = new System.Drawing.Point(426, 172);
+            this.textBox1.Location = new System.Drawing.Point(405, 172);
             this.textBox1.Name = "textBox1";
             this.textBox1.PasswordChar = '\0';
             this.textBox1.PlaceholderText = "";
             this.textBox1.SelectedText = "";
             this.textBox1.ShadowDecoration.Parent = this.textBox1;
-            this.textBox1.Size = new System.Drawing.Size(166, 36);
+            this.textBox1.Size = new System.Drawing.Size(187, 36);
             this.textBox1.TabIndex = 73;
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.CheckedState.Parent = this.dateTimePicker1;
+            this.dateTimePicker1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dateTimePicker1.FillColor = System.Drawing.Color.DodgerBlue;
             this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.dateTimePicker1.HoverState.Parent = this.dateTimePicker1;
-            this.dateTimePicker1.Location = new System.Drawing.Point(426, 109);
+            this.dateTimePicker1.Location = new System.Drawing.Point(405, 109);
             this.dateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.ShadowDecoration.Parent = this.dateTimePicker1;
-            this.dateTimePicker1.Size = new System.Drawing.Size(166, 36);
+            this.dateTimePicker1.Size = new System.Drawing.Size(187, 36);
             this.dateTimePicker1.TabIndex = 72;
             this.dateTimePicker1.Value = new System.DateTime(2021, 5, 28, 17, 40, 50, 901);
             // 
             // numericUpDown4
             // 
             this.numericUpDown4.BackColor = System.Drawing.Color.Transparent;
-            this.numericUpDown4.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.numericUpDown4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.numericUpDown4.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.numericUpDown4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.numericUpDown4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -300,12 +353,13 @@ namespace GUI
             this.numericUpDown4.Location = new System.Drawing.Point(147, 172);
             this.numericUpDown4.Name = "numericUpDown4";
             this.numericUpDown4.ShadowDecoration.Parent = this.numericUpDown4;
-            this.numericUpDown4.Size = new System.Drawing.Size(150, 36);
+            this.numericUpDown4.Size = new System.Drawing.Size(130, 36);
             this.numericUpDown4.TabIndex = 71;
             // 
             // cbbMaSach
             // 
             this.cbbMaSach.BackColor = System.Drawing.Color.Transparent;
+            this.cbbMaSach.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbbMaSach.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbbMaSach.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbMaSach.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -319,14 +373,14 @@ namespace GUI
             this.cbbMaSach.Location = new System.Drawing.Point(147, 109);
             this.cbbMaSach.Name = "cbbMaSach";
             this.cbbMaSach.ShadowDecoration.Parent = this.cbbMaSach;
-            this.cbbMaSach.Size = new System.Drawing.Size(150, 36);
+            this.cbbMaSach.Size = new System.Drawing.Size(130, 36);
             this.cbbMaSach.TabIndex = 69;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(322, 120);
+            this.label4.Location = new System.Drawing.Point(301, 120);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(98, 20);
             this.label4.TabIndex = 66;
@@ -336,7 +390,7 @@ namespace GUI
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(322, 188);
+            this.label3.Location = new System.Drawing.Point(301, 188);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(77, 20);
             this.label3.TabIndex = 64;
@@ -538,6 +592,7 @@ namespace GUI
             // cbbSort
             // 
             this.cbbSort.BackColor = System.Drawing.Color.Transparent;
+            this.cbbSort.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbbSort.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbbSort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbSort.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -553,57 +608,6 @@ namespace GUI
             this.cbbSort.ShadowDecoration.Parent = this.cbbSort;
             this.cbbSort.Size = new System.Drawing.Size(140, 36);
             this.cbbSort.TabIndex = 50;
-            // 
-            // txtMaDN
-            // 
-            this.txtMaDN.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtMaDN.DefaultText = "";
-            this.txtMaDN.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtMaDN.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtMaDN.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMaDN.DisabledState.Parent = this.txtMaDN;
-            this.txtMaDN.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMaDN.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMaDN.FocusedState.Parent = this.txtMaDN;
-            this.txtMaDN.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtMaDN.ForeColor = System.Drawing.Color.Black;
-            this.txtMaDN.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMaDN.HoverState.Parent = this.txtMaDN;
-            this.txtMaDN.Location = new System.Drawing.Point(147, 43);
-            this.txtMaDN.Name = "txtMaDN";
-            this.txtMaDN.PasswordChar = '\0';
-            this.txtMaDN.PlaceholderText = "";
-            this.txtMaDN.SelectedText = "";
-            this.txtMaDN.ShadowDecoration.Parent = this.txtMaDN;
-            this.txtMaDN.Size = new System.Drawing.Size(150, 36);
-            this.txtMaDN.TabIndex = 77;
-            // 
-            // AddHoaDon
-            // 
-            this.AddHoaDon.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.AddHoaDon.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.AddHoaDon.IconChar = FontAwesome.Sharp.IconChar.FileMedical;
-            this.AddHoaDon.IconColor = System.Drawing.Color.Blue;
-            this.AddHoaDon.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.AddHoaDon.IconSize = 30;
-            this.AddHoaDon.Location = new System.Drawing.Point(326, 43);
-            this.AddHoaDon.Name = "AddHoaDon";
-            this.AddHoaDon.Size = new System.Drawing.Size(117, 36);
-            this.AddHoaDon.TabIndex = 76;
-            this.AddHoaDon.Text = "Hóa đơn";
-            this.AddHoaDon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.AddHoaDon.UseVisualStyleBackColor = false;
-            this.AddHoaDon.Click += new System.EventHandler(this.AddHoaDon_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(26, 59);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(115, 20);
-            this.label2.TabIndex = 75;
-            this.label2.Text = "Mã đơn nhập :";
             // 
             // QuanLySach
             // 

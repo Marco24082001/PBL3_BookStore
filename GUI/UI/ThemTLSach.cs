@@ -15,6 +15,7 @@ namespace GUI
     {
         public delegate void MyDel();
         public MyDel d;
+        string boxTitle = "Thống báo";
         public ThemTLSach()
         {
             InitializeComponent();
@@ -26,7 +27,7 @@ namespace GUI
             {
                 if (txtMaLS.Text == a)
                 {
-                    MessageBox.Show("Loai sach da ton tai");
+                    MessageBox.Show("'Loại sách' đã tồn tại", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
             }
@@ -37,9 +38,9 @@ namespace GUI
             {
                 BLL_QuanLy.Instance.Bll_AddLoaiSach(ls);
             }
-            catch(DbEntityValidationException)
+            catch(DbEntityValidationException ex)
             {
-                MessageBox.Show("Error");
+                MessageBox.Show(ex.ToString(), boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
             d();

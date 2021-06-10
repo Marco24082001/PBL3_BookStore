@@ -59,6 +59,7 @@ namespace GUI
             // LamMoi
             // 
             this.LamMoi.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.LamMoi.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LamMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LamMoi.IconChar = FontAwesome.Sharp.IconChar.Sync;
             this.LamMoi.IconColor = System.Drawing.Color.Blue;
@@ -85,6 +86,7 @@ namespace GUI
             // XacNhan
             // 
             this.XacNhan.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.XacNhan.Cursor = System.Windows.Forms.Cursors.Hand;
             this.XacNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.XacNhan.IconChar = FontAwesome.Sharp.IconChar.Check;
             this.XacNhan.IconColor = System.Drawing.Color.Blue;
@@ -182,6 +184,7 @@ namespace GUI
             // Nu
             // 
             this.Nu.AutoSize = true;
+            this.Nu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Nu.Location = new System.Drawing.Point(94, 38);
             this.Nu.Name = "Nu";
             this.Nu.Size = new System.Drawing.Size(51, 24);
@@ -193,6 +196,7 @@ namespace GUI
             // 
             this.Nam.AutoSize = true;
             this.Nam.Checked = true;
+            this.Nam.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Nam.Location = new System.Drawing.Point(6, 37);
             this.Nam.Name = "Nam";
             this.Nam.Size = new System.Drawing.Size(65, 24);
@@ -298,6 +302,7 @@ namespace GUI
             this.dateTimePicker1.BorderColor = System.Drawing.Color.Gray;
             this.dateTimePicker1.BorderThickness = 1;
             this.dateTimePicker1.CheckedState.Parent = this.dateTimePicker1;
+            this.dateTimePicker1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dateTimePicker1.FillColor = System.Drawing.SystemColors.Window;
             this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
@@ -314,6 +319,7 @@ namespace GUI
             // Thoat
             // 
             this.Thoat.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.Thoat.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Thoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Thoat.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
             this.Thoat.IconColor = System.Drawing.Color.Red;

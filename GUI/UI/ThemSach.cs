@@ -16,6 +16,7 @@ namespace GUI
         public string masach { get; set; }
         public delegate void MyDel();
         public MyDel d;
+        string boxTitle = "Thông báo";
         public bool check { get; set; }
         public ThemSach()
         {
@@ -65,20 +66,20 @@ namespace GUI
         {
             if(txtMaSach.Text == "")
             {
-                MessageBox.Show("Nhap ma sach");
+                MessageBox.Show("Vui lòng nhập 'Mã sách'", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             foreach(string i in BLL_QuanLy.Instance.Bll_GetAllMaSach())
             {
                 if(txtMaSach.Text == i)
                 {
-                    MessageBox.Show("Mã sách đã tồn tại");
+                    MessageBox.Show("'Mã sách' đã tồn tại", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return false;
                 }
             }
             if(txtMaSach.Text.Length > 5)
             {
-                MessageBox.Show("Mã sách không quá 5 kí tự");
+                MessageBox.Show("'Mã sách' không được quá 5 kí tự", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             return true;
@@ -87,12 +88,12 @@ namespace GUI
         {
             if(txtTenSach.Text == "")
             {
-                MessageBox.Show("Nhap ten sach");
+                MessageBox.Show("Vui lòng nhập 'Tên sách'", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             if(txtTenSach.TextLength > 30)
             {
-                MessageBox.Show("Tên sách không quá 30 kí tự");
+                MessageBox.Show("'Tên sách không được quá 30 kí tự", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             return true;
@@ -101,14 +102,14 @@ namespace GUI
         {
             if(a == "")
             {
-                MessageBox.Show("Nhap gia");
+                MessageBox.Show("Vui lòng nhập 'Giá'", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             for (int i = 0; i < a.Length; i++)
             {
                 if ((int)a[i] < 48 || (int)a[i] > 57)
                 {
-                    MessageBox.Show("Giá bán không hợp lệ");
+                    MessageBox.Show("'Giá' không hợp lệ", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return false;
                 }
             }
@@ -122,12 +123,12 @@ namespace GUI
             if (CheckGia(txtGiaBan.Text) == false) return;
             if (cbbNXB.SelectedIndex == -1)
             {
-                MessageBox.Show("Vui lòng chọn NXB");
+                MessageBox.Show("Vui lòng chọn 'Nhà xuất bản'", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (cbbTL.SelectedIndex == -1)
             {
-                MessageBox.Show("Vui lòng chọn Thể loại sách");
+                MessageBox.Show("Vui lòng chọn 'Thể loại sách's", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             SACH a = new SACH();
@@ -148,12 +149,12 @@ namespace GUI
             if (CheckGia(txtGiaBan.Text) == false) return;
             if (cbbNXB.SelectedIndex == -1)
             {
-                MessageBox.Show("Vui lòng chọn NXB");
+                MessageBox.Show("Vui lòng chọn 'Nhà xuất bản'", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (cbbTL.SelectedIndex == -1)
             {
-                MessageBox.Show("Vui lòng chọn Thể loại sách");
+                MessageBox.Show("Vui lòng chọn 'Thể loại sách'", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             SACH a = new SACH();

@@ -92,6 +92,7 @@ namespace GUI
             // OK
             // 
             this.OK.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.OK.Cursor = System.Windows.Forms.Cursors.Hand;
             this.OK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OK.IconChar = FontAwesome.Sharp.IconChar.Check;
             this.OK.IconColor = System.Drawing.Color.Blue;
@@ -120,6 +121,7 @@ namespace GUI
             // Thoat
             // 
             this.Thoat.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.Thoat.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Thoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Thoat.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
             this.Thoat.IconColor = System.Drawing.Color.Red;

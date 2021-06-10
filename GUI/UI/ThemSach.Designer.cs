@@ -80,6 +80,7 @@ namespace GUI
             // ThemTheLoai
             // 
             this.ThemTheLoai.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.ThemTheLoai.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ThemTheLoai.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ThemTheLoai.IconChar = FontAwesome.Sharp.IconChar.Plus;
             this.ThemTheLoai.IconColor = System.Drawing.Color.Blue;
@@ -98,6 +99,7 @@ namespace GUI
             // ThemNXB
             // 
             this.ThemNXB.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.ThemNXB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ThemNXB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ThemNXB.IconChar = FontAwesome.Sharp.IconChar.Plus;
             this.ThemNXB.IconColor = System.Drawing.Color.Blue;
@@ -116,6 +118,7 @@ namespace GUI
             // Thoat
             // 
             this.Thoat.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.Thoat.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Thoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Thoat.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
             this.Thoat.IconColor = System.Drawing.Color.Red;
@@ -132,6 +135,7 @@ namespace GUI
             // 
             // cbbTL
             // 
+            this.cbbTL.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbbTL.FormattingEnabled = true;
             this.cbbTL.Location = new System.Drawing.Point(168, 286);
             this.cbbTL.Name = "cbbTL";
@@ -140,6 +144,7 @@ namespace GUI
             // 
             // cbbNXB
             // 
+            this.cbbNXB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbbNXB.FormattingEnabled = true;
             this.cbbNXB.Location = new System.Drawing.Point(167, 238);
             this.cbbNXB.Name = "cbbNXB";
@@ -149,6 +154,7 @@ namespace GUI
             // XacNhan
             // 
             this.XacNhan.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.XacNhan.Cursor = System.Windows.Forms.Cursors.Hand;
             this.XacNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.XacNhan.IconChar = FontAwesome.Sharp.IconChar.Check;
             this.XacNhan.IconColor = System.Drawing.Color.Blue;

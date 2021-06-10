@@ -50,9 +50,9 @@ namespace GUI
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(123, 84);
+            this.groupBox3.Location = new System.Drawing.Point(63, 84);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1201, 518);
+            this.groupBox3.Size = new System.Drawing.Size(1312, 518);
             this.groupBox3.TabIndex = 15;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "`";
@@ -92,7 +92,7 @@ namespace GUI
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1134, 363);
+            this.dataGridView1.Size = new System.Drawing.Size(1247, 363);
             this.dataGridView1.TabIndex = 25;
             // 
             // label10
@@ -124,7 +124,7 @@ namespace GUI
             this.Xoa.IconColor = System.Drawing.Color.Red;
             this.Xoa.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Xoa.IconSize = 25;
-            this.Xoa.Location = new System.Drawing.Point(445, 627);
+            this.Xoa.Location = new System.Drawing.Point(385, 627);
             this.Xoa.Name = "Xoa";
             this.Xoa.Size = new System.Drawing.Size(85, 36);
             this.Xoa.TabIndex = 25;
@@ -143,7 +143,7 @@ namespace GUI
             this.ChinhSua.IconColor = System.Drawing.Color.Blue;
             this.ChinhSua.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ChinhSua.IconSize = 25;
-            this.ChinhSua.Location = new System.Drawing.Point(282, 627);
+            this.ChinhSua.Location = new System.Drawing.Point(222, 627);
             this.ChinhSua.Name = "ChinhSua";
             this.ChinhSua.Size = new System.Drawing.Size(131, 36);
             this.ChinhSua.TabIndex = 25;
@@ -162,7 +162,7 @@ namespace GUI
             this.Them.IconColor = System.Drawing.Color.Blue;
             this.Them.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Them.IconSize = 25;
-            this.Them.Location = new System.Drawing.Point(155, 627);
+            this.Them.Location = new System.Drawing.Point(95, 627);
             this.Them.Name = "Them";
             this.Them.Size = new System.Drawing.Size(100, 36);
             this.Them.TabIndex = 25;
@@ -181,7 +181,7 @@ namespace GUI
             this.sortBtn.IconColor = System.Drawing.Color.Blue;
             this.sortBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.sortBtn.IconSize = 20;
-            this.sortBtn.Location = new System.Drawing.Point(1039, 627);
+            this.sortBtn.Location = new System.Drawing.Point(1092, 627);
             this.sortBtn.Name = "sortBtn";
             this.sortBtn.Size = new System.Drawing.Size(100, 36);
             this.sortBtn.TabIndex = 46;
@@ -194,6 +194,7 @@ namespace GUI
             // cbbSort
             // 
             this.cbbSort.BackColor = System.Drawing.Color.Transparent;
+            this.cbbSort.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbbSort.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbbSort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbSort.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -204,7 +205,7 @@ namespace GUI
             this.cbbSort.HoverState.Parent = this.cbbSort;
             this.cbbSort.ItemHeight = 30;
             this.cbbSort.ItemsAppearance.Parent = this.cbbSort;
-            this.cbbSort.Location = new System.Drawing.Point(1161, 627);
+            this.cbbSort.Location = new System.Drawing.Point(1214, 627);
             this.cbbSort.Name = "cbbSort";
             this.cbbSort.ShadowDecoration.Parent = this.cbbSort;
             this.cbbSort.Size = new System.Drawing.Size(130, 36);

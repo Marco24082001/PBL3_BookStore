@@ -16,6 +16,7 @@ namespace GUI
     {
         public delegate void MyDel();
         public MyDel d;
+        string boxTitle = "Thông báo";
         public ThemNXB()
         {
             InitializeComponent();
@@ -26,7 +27,7 @@ namespace GUI
             foreach (string a in BLL_QuanLy.Instance.Bll_GetAllMaNXB()) {
                 if(txtMaNXB.Text == a)
                 {
-                    MessageBox.Show("Nha Xuat Ban da ton tai");
+                    MessageBox.Show("Nhà xuất bản đã tồn tại", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
             }
@@ -37,9 +38,9 @@ namespace GUI
             {
                 BLL_QuanLy.Instance.Bll_AddNXB(nxb);
             }
-            catch(DbEntityValidationException)
+            catch(DbEntityValidationException ex)
             {
-                MessageBox.Show("Error");
+                MessageBox.Show(ex.ToString(), boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }              
             d();
