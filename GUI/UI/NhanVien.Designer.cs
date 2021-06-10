@@ -65,6 +65,9 @@ namespace GUI
             this.DangXuat = new FontAwesome.Sharp.IconButton();
             this.infoNhanVien = new FontAwesome.Sharp.IconPictureBox();
             this.ThanhToan = new FontAwesome.Sharp.IconButton();
+            this.txtMaDonBan = new Guna.UI2.WinForms.Guna2TextBox();
+            this.AddHoaDon = new FontAwesome.Sharp.IconButton();
+            this.label13 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
@@ -248,6 +251,9 @@ namespace GUI
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txtMaDonBan);
+            this.groupBox2.Controls.Add(this.AddHoaDon);
+            this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.cbbMaSach);
             this.groupBox2.Controls.Add(this.txtHoTen);
             this.groupBox2.Controls.Add(this.txtSDT);
@@ -285,7 +291,7 @@ namespace GUI
             this.cbbMaSach.HoverState.Parent = this.cbbMaSach;
             this.cbbMaSach.ItemHeight = 30;
             this.cbbMaSach.ItemsAppearance.Parent = this.cbbMaSach;
-            this.cbbMaSach.Location = new System.Drawing.Point(253, 189);
+            this.cbbMaSach.Location = new System.Drawing.Point(251, 210);
             this.cbbMaSach.Name = "cbbMaSach";
             this.cbbMaSach.ShadowDecoration.Parent = this.cbbMaSach;
             this.cbbMaSach.Size = new System.Drawing.Size(196, 36);
@@ -306,7 +312,7 @@ namespace GUI
             this.txtHoTen.ForeColor = System.Drawing.Color.Black;
             this.txtHoTen.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtHoTen.HoverState.Parent = this.txtHoTen;
-            this.txtHoTen.Location = new System.Drawing.Point(253, 147);
+            this.txtHoTen.Location = new System.Drawing.Point(251, 168);
             this.txtHoTen.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.PasswordChar = '\0';
@@ -331,7 +337,7 @@ namespace GUI
             this.txtSDT.ForeColor = System.Drawing.Color.Black;
             this.txtSDT.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSDT.HoverState.Parent = this.txtSDT;
-            this.txtSDT.Location = new System.Drawing.Point(253, 105);
+            this.txtSDT.Location = new System.Drawing.Point(251, 126);
             this.txtSDT.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.PasswordChar = '\0';
@@ -357,7 +363,7 @@ namespace GUI
             this.txtMaNhanVien.ForeColor = System.Drawing.Color.Black;
             this.txtMaNhanVien.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtMaNhanVien.HoverState.Parent = this.txtMaNhanVien;
-            this.txtMaNhanVien.Location = new System.Drawing.Point(253, 63);
+            this.txtMaNhanVien.Location = new System.Drawing.Point(251, 84);
             this.txtMaNhanVien.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtMaNhanVien.Name = "txtMaNhanVien";
             this.txtMaNhanVien.PasswordChar = '\0';
@@ -407,7 +413,7 @@ namespace GUI
             this.numericUpDown1.FocusedState.Parent = this.numericUpDown1;
             this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDown1.ForeColor = System.Drawing.Color.Black;
-            this.numericUpDown1.Location = new System.Drawing.Point(253, 231);
+            this.numericUpDown1.Location = new System.Drawing.Point(251, 252);
             this.numericUpDown1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.ShadowDecoration.Parent = this.numericUpDown1;
@@ -452,7 +458,7 @@ namespace GUI
             this.Them.IconColor = System.Drawing.Color.Blue;
             this.Them.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Them.IconSize = 25;
-            this.Them.Location = new System.Drawing.Point(474, 231);
+            this.Them.Location = new System.Drawing.Point(472, 252);
             this.Them.Name = "Them";
             this.Them.Size = new System.Drawing.Size(117, 36);
             this.Them.TabIndex = 20;
@@ -475,7 +481,7 @@ namespace GUI
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(28, 163);
+            this.label12.Location = new System.Drawing.Point(26, 184);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(74, 20);
             this.label12.TabIndex = 13;
@@ -485,7 +491,7 @@ namespace GUI
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(27, 121);
+            this.label10.Location = new System.Drawing.Point(25, 142);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(206, 20);
             this.label10.TabIndex = 13;
@@ -495,7 +501,7 @@ namespace GUI
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(27, 79);
+            this.label9.Location = new System.Drawing.Point(25, 100);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(176, 20);
             this.label9.TabIndex = 12;
@@ -525,7 +531,7 @@ namespace GUI
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(28, 247);
+            this.label3.Location = new System.Drawing.Point(26, 268);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 20);
             this.label3.TabIndex = 2;
@@ -535,7 +541,7 @@ namespace GUI
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(28, 205);
+            this.label2.Location = new System.Drawing.Point(26, 226);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(83, 20);
             this.label2.TabIndex = 1;
@@ -634,6 +640,57 @@ namespace GUI
             this.ThanhToan.UseVisualStyleBackColor = false;
             this.ThanhToan.Click += new System.EventHandler(this.ThanhToan_Click);
             // 
+            // txtMaDonBan
+            // 
+            this.txtMaDonBan.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMaDonBan.DefaultText = "";
+            this.txtMaDonBan.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtMaDonBan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtMaDonBan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMaDonBan.DisabledState.Parent = this.txtMaDonBan;
+            this.txtMaDonBan.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMaDonBan.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMaDonBan.FocusedState.Parent = this.txtMaDonBan;
+            this.txtMaDonBan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaDonBan.ForeColor = System.Drawing.Color.Black;
+            this.txtMaDonBan.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMaDonBan.HoverState.Parent = this.txtMaDonBan;
+            this.txtMaDonBan.Location = new System.Drawing.Point(251, 37);
+            this.txtMaDonBan.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtMaDonBan.Name = "txtMaDonBan";
+            this.txtMaDonBan.PasswordChar = '\0';
+            this.txtMaDonBan.PlaceholderText = "";
+            this.txtMaDonBan.SelectedText = "";
+            this.txtMaDonBan.ShadowDecoration.Parent = this.txtMaDonBan;
+            this.txtMaDonBan.Size = new System.Drawing.Size(196, 36);
+            this.txtMaDonBan.TabIndex = 83;
+            // 
+            // AddHoaDon
+            // 
+            this.AddHoaDon.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.AddHoaDon.IconChar = FontAwesome.Sharp.IconChar.FileMedical;
+            this.AddHoaDon.IconColor = System.Drawing.Color.Blue;
+            this.AddHoaDon.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.AddHoaDon.IconSize = 30;
+            this.AddHoaDon.Location = new System.Drawing.Point(472, 37);
+            this.AddHoaDon.Name = "AddHoaDon";
+            this.AddHoaDon.Size = new System.Drawing.Size(117, 36);
+            this.AddHoaDon.TabIndex = 82;
+            this.AddHoaDon.Text = "Hóa đơn";
+            this.AddHoaDon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.AddHoaDon.UseVisualStyleBackColor = false;
+            this.AddHoaDon.Click += new System.EventHandler(this.AddHoaDon_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(25, 53);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(106, 20);
+            this.label13.TabIndex = 81;
+            this.label13.Text = "Mã đơn bán :";
+            // 
             // NhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -702,5 +759,8 @@ namespace GUI
         private Guna.UI2.WinForms.Guna2ComboBox cbbTheLoai;
         private Guna.UI2.WinForms.Guna2TextBox txtTenSach;
         private Guna.UI2.WinForms.Guna2ComboBox cbbSort;
+        private Guna.UI2.WinForms.Guna2TextBox txtMaDonBan;
+        private FontAwesome.Sharp.IconButton AddHoaDon;
+        private System.Windows.Forms.Label label13;
     }
 }
