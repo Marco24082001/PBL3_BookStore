@@ -67,7 +67,7 @@ namespace GUI
         }
         public void setcbbMaSach()
         {
-            foreach(string i in BLL_QuanLy.Instance.Bll_GetAllMaSach())
+            foreach (string i in BLL_QuanLy.Instance.Bll_GetAllMaSach())
             {
                 cbbMaSach.Items.Add(i);
             }
@@ -92,7 +92,7 @@ namespace GUI
 
         private void Them_Click(object sender, EventArgs e)
         {
-            foreach(CHI_TIET_HOA_DON_NHAP i in list)
+            foreach (CHI_TIET_HOA_DON_NHAP i in list)
             {
                 BLL_QuanLy.Instance.Bll_AddChiTietHoaDonNhap(i);
             }
@@ -106,13 +106,19 @@ namespace GUI
         }
         private void ThemChiTiet_Click(object sender, EventArgs e)
         {
-            if(cbbMaSach.SelectedIndex == -1)
+            if (txtMaDN.Text == "")
+            {
+                MessageBox.Show("Nhap ma hoa don");
+                return;
+            }
+            if (cbbMaSach.SelectedIndex == -1)
             {
                 MessageBox.Show("Vui lòng chọn mã sách");
                 return;
             }
             CHI_TIET_HOA_DON_NHAP ct = new CHI_TIET_HOA_DON_NHAP()
             {
+                MaDonNhap = Convert.ToInt32(txtMaDN.Text),
                 MaSach = cbbMaSach.SelectedItem.ToString(),
                 SoLuong = Convert.ToInt32(numericUpDown4.Value.ToString()),
                 ThanhTien = Convert.ToInt32(numericUpDown4.Value.ToString())
@@ -136,14 +142,15 @@ namespace GUI
         }
 
         private void XacNhan_Click(object sender, EventArgs e)
-        {   
-            if(list.Count == 0)
+        {
+            if (list.Count == 0)
             {
                 MessageBox.Show("Gio Hang rỗng");
                 return;
             }
             HOA_DON_NHAP hdn = new HOA_DON_NHAP()
             {
+                MaDonNhap = Convert.ToInt32(txtMaDN.Text),
                 NgayNhap = DateTime.Now,
                 GhiChu = "",
             };
@@ -158,6 +165,7 @@ namespace GUI
             }
             list.Clear();
             dataGridView2.DataSource = null;
+            txtMaDN.Text = "";
             cbbMaSach.SelectedIndex = 0;
             numericUpDown4.Value = 0;
             txtTong.Text = "0";
@@ -167,11 +175,12 @@ namespace GUI
         private void QuanLySach_Load(object sender, EventArgs e)
         {
             txtTong.Text = "0";
+            txtMaDN.Enabled = false;
         }
 
         private void XoaChiTiet_Click(object sender, EventArgs e)
-        {            
-            if(list.Count == 0)
+        {
+            if (list.Count == 0)
             {
                 MessageBox.Show("Gio hang rong");
                 return;
@@ -181,7 +190,7 @@ namespace GUI
             {
                 list.RemoveAt(i.Index);
             }
-            if(list.Count != 0)
+            if (list.Count != 0)
             {
                 setData2();
             }
@@ -199,7 +208,7 @@ namespace GUI
 
         private void txtTenSach_TextChanged(object sender, EventArgs e)
         {
-            if(cbbTheLoai.SelectedIndex == -1)
+            if (cbbTheLoai.SelectedIndex == -1)
             {
                 MessageBox.Show("Vui long chon The Loai");
                 return;
@@ -239,6 +248,16 @@ namespace GUI
             setData1();
         }
 
+        private void ChinhSua_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddHoaDon_Click(object sender, EventArgs e)
+        {
+            txtMaDN.Text = BLL_QuanLy.Instance.Bll_CreateHDN();
+        }
+
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             cbbMaSach.SelectedItem = dataGridView1.CurrentRow.Cells[0].Value.ToString();
@@ -248,7 +267,7 @@ namespace GUI
         private void sortBtn_Click(object sender, EventArgs e)
         {
             List<string> LMS = new List<string>();
-            for(int i = 0; i < dataGridView1.Rows.Count; i++)
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
                 LMS.Add(dataGridView1.Rows[i].Cells["MaSach"].Value.ToString());
             }

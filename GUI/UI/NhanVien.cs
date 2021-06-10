@@ -48,7 +48,7 @@ namespace GUI
         public void setData2()
         {
             dataGridView2.DataSource = null;
-            if(list.Count == 0)
+            if (list.Count == 0)
             {
                 return;
             }
@@ -68,7 +68,7 @@ namespace GUI
         }
         public void setCbbMaSach()
         {
-            foreach(string i in BLL_QuanLy.Instance.Bll_GetAllMaSachByTrangThai())
+            foreach (string i in BLL_QuanLy.Instance.Bll_GetAllMaSachByTrangThai())
             {
                 cbbMaSach.Items.Add(i);
             }
@@ -96,6 +96,7 @@ namespace GUI
         {
             txtMaNhanVien.Text = txtTen.Text = BLL_QuanLy.Instance.Bll_GetNameNVByMaNV(maNV);
             txtMaNhanVien.Enabled = false;
+            txtMaDonBan.Enabled = false;
             TongCong.Text = "0";
         }
 
@@ -106,7 +107,7 @@ namespace GUI
                 MessageBox.Show("Vui long nhap số điện thoại");
                 return false;
             }
-            if(txtSDT.Text.Length != 10)
+            if (txtSDT.Text.Length != 10)
             {
                 MessageBox.Show("10 so");
                 return false;
@@ -130,7 +131,7 @@ namespace GUI
                 MessageBox.Show("Vui long nhap họ tên");
                 return false;
             }
-            if(txtHoTen.Text.Length > 30)
+            if (txtHoTen.Text.Length > 30)
             {
                 MessageBox.Show("Không nhập quá 30 kí tự");
                 return false;
@@ -152,25 +153,32 @@ namespace GUI
             if (!ChecktxtSDT()) return;
             if (!ChecktxtHoTen()) return;
             if (!CheckSoLuong()) return;
-            int soSachinList = 0;
-            foreach(CHI_TIET_HOA_DON_BAN i in list)
+            if (txtMaDonBan.Text == "")
             {
-                if(i.MaSach == cbbMaSach.SelectedItem.ToString())
+                MessageBox.Show("Vui lòng tạo mã hóa đơn");
+                return;
+            }
+            int soSachinList = 0;
+            foreach (CHI_TIET_HOA_DON_BAN i in list)
+            {
+                if (i.MaSach == cbbMaSach.SelectedItem.ToString())
                 {
                     soSachinList += i.SoLuong;
                 }
             }
-            if(numericUpDown1.Value + soSachinList > BLL_QuanLy.Instance.Bll_GetSLByMaSach(cbbMaSach.SelectedItem.ToString()))
+            if (numericUpDown1.Value + soSachinList > BLL_QuanLy.Instance.Bll_GetSLByMaSach(cbbMaSach.SelectedItem.ToString()))
             {
                 MessageBox.Show("Số lượng sách trong kho không đủ");
                 return;
             }
             txtHoTen.Enabled = false;
             txtSDT.Enabled = false;
+            txtMaDonBan.Enabled = false;
             int donGia = BLL_QuanLy.Instance.Bll_GetGiaBanByMaSach(cbbMaSach.SelectedItem.ToString());
             int soLuong = Convert.ToInt32(numericUpDown1.Value.ToString());
             CHI_TIET_HOA_DON_BAN chitiet = new CHI_TIET_HOA_DON_BAN()
             {
+                MaDonBan = Convert.ToInt32(txtMaDonBan.Text),
                 MaSach = cbbMaSach.SelectedItem.ToString(),
                 SoLuong = soLuong,
                 DonGia = donGia,
@@ -178,9 +186,9 @@ namespace GUI
             };
             int tong = Convert.ToInt32(TongCong.Text);
             TongCong.Text = (tong + chitiet.ThanhTien).ToString();
-            foreach(CHI_TIET_HOA_DON_BAN p in list)
+            foreach (CHI_TIET_HOA_DON_BAN p in list)
             {
-                if(chitiet.MaSach == p.MaSach)
+                if (chitiet.MaSach == p.MaSach)
                 {
                     p.SoLuong += chitiet.SoLuong;
                     p.ThanhTien = p.SoLuong * p.DonGia;
@@ -193,20 +201,26 @@ namespace GUI
             return;
         }
 
+        private void ChinhSua_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void Xoa_Click(object sender, EventArgs e)
         {
             DataGridViewSelectedRowCollection r = dataGridView2.SelectedRows;
-            foreach(DataGridViewRow i in r)
+            foreach (DataGridViewRow i in r)
             {
-                list.RemoveAt(i.Index); 
+                list.RemoveAt(i.Index);
             }
             setData2();
-            if(list.Count == 0)
-            {               
+            if (list.Count == 0)
+            {
                 txtSDT.Enabled = true;
                 txtHoTen.Enabled = true;
                 txtHoTen.Text = "";
                 txtSDT.Text = "";
+                txtMaDonBan.Text = "";
                 numericUpDown1.Value = 0;
                 cbbMaSach.SelectedIndex = 0;
                 TongCong.Text = "0";
@@ -229,12 +243,13 @@ namespace GUI
             }
             HOA_DON_BAN hdb = new HOA_DON_BAN()
             {
-                SDT_KH = txtSDT.Text, 
+                MaDonBan = Convert.ToInt32(txtMaDonBan.Text),
+                SDT_KH = txtSDT.Text,
                 MaNhanVien = maNV,
                 NgayBan = DateTime.Now,
             };
             BLL_QuanLy.Instance.Bll_AddHoaDonBan(hdb);
-            foreach(CHI_TIET_HOA_DON_BAN a in list)
+            foreach (CHI_TIET_HOA_DON_BAN a in list)
             {
                 BLL_QuanLy.Instance.Bll_AddChiTietHoaDonBan(a);
                 string maSach = a.MaSach;
@@ -256,7 +271,7 @@ namespace GUI
                 BLL_QuanLy.Instance.Bll_AddBaoCaoDoanhThu(bcdt);
             }
             int tong = 0;
-            foreach(CHI_TIET_HOA_DON_BAN a in list)
+            foreach (CHI_TIET_HOA_DON_BAN a in list)
             {
                 tong += a.SoLuong * (BLL_QuanLy.Instance.Bll_GetGiaBanByMaSach(a.MaSach) - BLL_QuanLy.Instance.Bll_GetGiaNhapByMaSach(a.MaSach));
             }
@@ -272,6 +287,7 @@ namespace GUI
             txtHoTen.Enabled = true;
             txtSDT.Enabled = true;
             checkKhachHang = false;
+            txtMaDonBan.Text = "";
             txtSDT.Text = "";
             txtHoTen.Text = "";
             cbbMaSach.SelectedIndex = 0;
@@ -282,9 +298,9 @@ namespace GUI
 
         private void SDT_TextChanged(object sender, EventArgs e)
         {
-            foreach(string i in BLL_QuanLy.Instance.Bll_GetAllSDT())
+            foreach (string i in BLL_QuanLy.Instance.Bll_GetAllSDT())
             {
-                if(txtSDT.Text == i)
+                if (txtSDT.Text == i)
                 {
                     checkKhachHang = true;
                     txtHoTen.Text = BLL_QuanLy.Instance.Bll_GetKHBySDT(txtSDT.Text);
@@ -332,11 +348,16 @@ namespace GUI
 
         private void infoNhanVien_Click(object sender, EventArgs e)
         {
-            if(user == null)
+            if (user == null)
             {
                 user = new NguoiDung(maNV);
             }
             user.Show();
+        }
+
+        private void AddHoaDon_Click(object sender, EventArgs e)
+        {
+            txtMaDonBan.Text = BLL_QuanLy.Instance.Bll_CreateHDB();
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
