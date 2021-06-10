@@ -46,17 +46,14 @@ namespace GUI
             this.txtHoTen = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtSDT = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtMaNhanVien = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtMaDonBan = new Guna.UI2.WinForms.Guna2TextBox();
             this.TongCong = new Guna.UI2.WinForms.Guna2TextBox();
             this.numericUpDown1 = new Guna.UI2.WinForms.Guna2NumericUpDown();
-            this.AddHoaDon = new FontAwesome.Sharp.IconButton();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.Xoa = new FontAwesome.Sharp.IconButton();
             this.Them = new FontAwesome.Sharp.IconButton();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -255,17 +252,14 @@ namespace GUI
             this.groupBox2.Controls.Add(this.txtHoTen);
             this.groupBox2.Controls.Add(this.txtSDT);
             this.groupBox2.Controls.Add(this.txtMaNhanVien);
-            this.groupBox2.Controls.Add(this.txtMaDonBan);
             this.groupBox2.Controls.Add(this.TongCong);
             this.groupBox2.Controls.Add(this.numericUpDown1);
-            this.groupBox2.Controls.Add(this.AddHoaDon);
             this.groupBox2.Controls.Add(this.dataGridView2);
             this.groupBox2.Controls.Add(this.Xoa);
             this.groupBox2.Controls.Add(this.Them);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label8);
@@ -373,31 +367,6 @@ namespace GUI
             this.txtMaNhanVien.Size = new System.Drawing.Size(196, 36);
             this.txtMaNhanVien.TabIndex = 77;
             // 
-            // txtMaDonBan
-            // 
-            this.txtMaDonBan.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtMaDonBan.DefaultText = "";
-            this.txtMaDonBan.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtMaDonBan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtMaDonBan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMaDonBan.DisabledState.Parent = this.txtMaDonBan;
-            this.txtMaDonBan.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMaDonBan.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMaDonBan.FocusedState.Parent = this.txtMaDonBan;
-            this.txtMaDonBan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaDonBan.ForeColor = System.Drawing.Color.Black;
-            this.txtMaDonBan.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMaDonBan.HoverState.Parent = this.txtMaDonBan;
-            this.txtMaDonBan.Location = new System.Drawing.Point(253, 21);
-            this.txtMaDonBan.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtMaDonBan.Name = "txtMaDonBan";
-            this.txtMaDonBan.PasswordChar = '\0';
-            this.txtMaDonBan.PlaceholderText = "";
-            this.txtMaDonBan.SelectedText = "";
-            this.txtMaDonBan.ShadowDecoration.Parent = this.txtMaDonBan;
-            this.txtMaDonBan.Size = new System.Drawing.Size(196, 36);
-            this.txtMaDonBan.TabIndex = 76;
-            // 
             // TongCong
             // 
             this.TongCong.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -444,22 +413,6 @@ namespace GUI
             this.numericUpDown1.ShadowDecoration.Parent = this.numericUpDown1;
             this.numericUpDown1.Size = new System.Drawing.Size(196, 36);
             this.numericUpDown1.TabIndex = 73;
-            // 
-            // AddHoaDon
-            // 
-            this.AddHoaDon.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.AddHoaDon.IconChar = FontAwesome.Sharp.IconChar.FileMedical;
-            this.AddHoaDon.IconColor = System.Drawing.Color.Blue;
-            this.AddHoaDon.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.AddHoaDon.IconSize = 30;
-            this.AddHoaDon.Location = new System.Drawing.Point(474, 21);
-            this.AddHoaDon.Name = "AddHoaDon";
-            this.AddHoaDon.Size = new System.Drawing.Size(117, 36);
-            this.AddHoaDon.TabIndex = 28;
-            this.AddHoaDon.Text = "Hóa đơn";
-            this.AddHoaDon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.AddHoaDon.UseVisualStyleBackColor = false;
-            this.AddHoaDon.Click += new System.EventHandler(this.AddHoaDon_Click);
             // 
             // dataGridView2
             // 
@@ -537,16 +490,6 @@ namespace GUI
             this.label10.Size = new System.Drawing.Size(206, 20);
             this.label10.TabIndex = 13;
             this.label10.Text = "Số điện thoại khách hàng :";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(27, 37);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(106, 20);
-            this.label13.TabIndex = 12;
-            this.label13.Text = "Mã đơn bán :";
             // 
             // label9
             // 
@@ -744,20 +687,17 @@ namespace GUI
         private FontAwesome.Sharp.IconButton DangXuat;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Panel panelTitleBar;
         private System.Windows.Forms.Label txtTen;
         private FontAwesome.Sharp.IconPictureBox infoNhanVien;
         private System.Windows.Forms.PictureBox Thoat;
-        private FontAwesome.Sharp.IconButton AddHoaDon;
         private FontAwesome.Sharp.IconButton sortBtn;
         private Guna.UI2.WinForms.Guna2NumericUpDown numericUpDown1;
         private Guna.UI2.WinForms.Guna2TextBox TongCong;
         private Guna.UI2.WinForms.Guna2TextBox txtHoTen;
         private Guna.UI2.WinForms.Guna2TextBox txtSDT;
         private Guna.UI2.WinForms.Guna2TextBox txtMaNhanVien;
-        private Guna.UI2.WinForms.Guna2TextBox txtMaDonBan;
         private Guna.UI2.WinForms.Guna2ComboBox cbbMaSach;
         private Guna.UI2.WinForms.Guna2ComboBox cbbTheLoai;
         private Guna.UI2.WinForms.Guna2TextBox txtTenSach;

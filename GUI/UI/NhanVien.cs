@@ -96,7 +96,6 @@ namespace GUI
         {
             txtMaNhanVien.Text = txtTen.Text = BLL_QuanLy.Instance.Bll_GetNameNVByMaNV(maNV);
             txtMaNhanVien.Enabled = false;
-            txtMaDonBan.Enabled = false;
             TongCong.Text = "0";
         }
 
@@ -153,11 +152,6 @@ namespace GUI
             if (!ChecktxtSDT()) return;
             if (!ChecktxtHoTen()) return;
             if (!CheckSoLuong()) return;
-            if (txtMaDonBan.Text == "")
-            {
-                MessageBox.Show("Vui lòng tạo mã hóa đơn");
-                return;
-            }
             int soSachinList = 0;
             foreach(CHI_TIET_HOA_DON_BAN i in list)
             {
@@ -173,12 +167,10 @@ namespace GUI
             }
             txtHoTen.Enabled = false;
             txtSDT.Enabled = false;
-            txtMaDonBan.Enabled = false;
             int donGia = BLL_QuanLy.Instance.Bll_GetGiaBanByMaSach(cbbMaSach.SelectedItem.ToString());
             int soLuong = Convert.ToInt32(numericUpDown1.Value.ToString());
             CHI_TIET_HOA_DON_BAN chitiet = new CHI_TIET_HOA_DON_BAN()
             {
-                MaDonBan = Convert.ToInt32(txtMaDonBan.Text),
                 MaSach = cbbMaSach.SelectedItem.ToString(),
                 SoLuong = soLuong,
                 DonGia = donGia,
@@ -215,7 +207,6 @@ namespace GUI
                 txtHoTen.Enabled = true;
                 txtHoTen.Text = "";
                 txtSDT.Text = "";
-                txtMaDonBan.Text = "";
                 numericUpDown1.Value = 0;
                 cbbMaSach.SelectedIndex = 0;
                 TongCong.Text = "0";
@@ -238,7 +229,6 @@ namespace GUI
             }
             HOA_DON_BAN hdb = new HOA_DON_BAN()
             {
-                MaDonBan = Convert.ToInt32(txtMaDonBan.Text),
                 SDT_KH = txtSDT.Text, 
                 MaNhanVien = maNV,
                 NgayBan = DateTime.Now,
@@ -282,7 +272,6 @@ namespace GUI
             txtHoTen.Enabled = true;
             txtSDT.Enabled = true;
             checkKhachHang = false;
-            txtMaDonBan.Text = "";
             txtSDT.Text = "";
             txtHoTen.Text = "";
             cbbMaSach.SelectedIndex = 0;
@@ -348,11 +337,6 @@ namespace GUI
                 user = new NguoiDung(maNV);
             }
             user.Show();
-        }
-
-        private void AddHoaDon_Click(object sender, EventArgs e)
-        {
-            txtMaDonBan.Text = BLL_QuanLy.Instance.Bll_CreateHDB();
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
