@@ -111,6 +111,7 @@ namespace GUI
             // cbbSort
             // 
             this.cbbSort.BackColor = System.Drawing.Color.Transparent;
+            this.cbbSort.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbbSort.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbbSort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbSort.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -156,6 +157,7 @@ namespace GUI
             // cbbTheLoai
             // 
             this.cbbTheLoai.BackColor = System.Drawing.Color.Transparent;
+            this.cbbTheLoai.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbbTheLoai.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbbTheLoai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbTheLoai.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -427,7 +429,7 @@ namespace GUI
             // numericUpDown1
             // 
             this.numericUpDown1.BackColor = System.Drawing.Color.Transparent;
-            this.numericUpDown1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.numericUpDown1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.numericUpDown1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.numericUpDown1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.numericUpDown1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -448,6 +450,7 @@ namespace GUI
             // AddHoaDon
             // 
             this.AddHoaDon.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.AddHoaDon.Cursor = System.Windows.Forms.Cursors.Hand;
             this.AddHoaDon.IconChar = FontAwesome.Sharp.IconChar.FileMedical;
             this.AddHoaDon.IconColor = System.Drawing.Color.Blue;
             this.AddHoaDon.IconFont = FontAwesome.Sharp.IconFont.Auto;
