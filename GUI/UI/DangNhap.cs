@@ -47,7 +47,7 @@ namespace GUI
             }
             else
             {
-                MessageBox.Show("Sai");
+                MessageBox.Show("Đăng nhập sai");
             }
         }
 
