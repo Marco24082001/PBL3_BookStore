@@ -147,6 +147,11 @@ namespace GUI.BLL
             return db.LOAI_SACH.Select(p => p.MaLoaiSach).ToList();
         }
 
+        public List<string> Bll_GetAllLoaiSach()
+        {
+            return db.LOAI_SACH.Select(p => p.TenLoaiSach).ToList();
+        }
+
         public string Bll_GetNameNVByMaNV(string manv)
         {
             return db.NHAN_VIEN.Find(manv).HoTen.ToString();
@@ -329,7 +334,18 @@ namespace GUI.BLL
             tmp.Pass = tk.Pass;
             db.SaveChanges();
         }
-
+        public void Bll_ChangeAdmin(string maNV)
+        {
+            NHAN_VIEN admin = db.NHAN_VIEN.Where(p => p.isAdmin == true).Single();
+            admin.isAdmin = false;
+            NHAN_VIEN tmp = db.NHAN_VIEN.Find(maNV);
+            tmp.isAdmin = true;
+            db.SaveChanges();
+        }
+        public string Bll_SearchAdim()
+        {
+            return db.NHAN_VIEN.Where(p => p.isAdmin == true).Single().MaNhanVien;
+        }
         public void Bll_ChangeTrangThaiNV(string manv)
         {
             var a = db.NHAN_VIEN.Find(manv);

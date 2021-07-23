@@ -209,9 +209,11 @@ namespace GUI
         private void Xoa_Click(object sender, EventArgs e)
         {
             DataGridViewSelectedRowCollection r = dataGridView2.SelectedRows;
+            int tong = Convert.ToInt32(TongCong.Text);
             foreach (DataGridViewRow i in r)
             {
-                list.RemoveAt(i.Index);
+                TongCong.Text = (tong - Convert.ToInt32(i.Cells[5].Value.ToString())).ToString();
+                list.RemoveAt(i.Index);          
             }
             setData2();
             if (list.Count == 0)

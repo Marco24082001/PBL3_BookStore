@@ -116,6 +116,11 @@ namespace GUI
                 MessageBox.Show("Vui lòng chọn mã sách");
                 return;
             }
+            if (numericUpDown4.Value == 0)
+            {
+                MessageBox.Show("Vui lòng chọn số lượng sách");
+                return;
+            }
             CHI_TIET_HOA_DON_NHAP ct = new CHI_TIET_HOA_DON_NHAP()
             {
                 MaDonNhap = Convert.ToInt32(txtMaDN.Text),
@@ -186,8 +191,10 @@ namespace GUI
                 return;
             }
             DataGridViewSelectedRowCollection r = dataGridView2.SelectedRows;
+            int tong = Convert.ToInt32(txtTong.Text);
             foreach (DataGridViewRow i in r)
             {
+                txtTong.Text = (tong - Convert.ToInt32(i.Cells[4].Value.ToString())).ToString();
                 list.RemoveAt(i.Index);
             }
             if (list.Count != 0)
@@ -197,8 +204,9 @@ namespace GUI
             else
             {
                 dataGridView2.DataSource = null;
+                txtTong.Text = "0";
             }
-            txtTong.Text = "0";
+            
         }
 
         private void cbbTheLoai_SelectedIndexChanged(object sender, EventArgs e)
@@ -295,6 +303,11 @@ namespace GUI
             dataGridView1.Columns[10].Visible = false;
             dataGridView1.Columns[11].Visible = false;
             dataGridView1.Columns[12].Visible = false;
+        }
+
+        private void txtTong_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

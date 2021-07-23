@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="9655d581f2294976964f1b44d29d28de" Name="Diagram1">
+      <Diagram DiagramId="f20f03928105432f9cefd3879af3dfb3" Name="Diagram1">
         <EntityTypeShape EntityType="QUAN_LY_HIEU_SACHModel.BAO_CAO_DOANH_THU" Width="1.5" PointX="5.25" PointY="4.625" IsExpanded="true" />
         <EntityTypeShape EntityType="QUAN_LY_HIEU_SACHModel.CHI_TIET_HOA_DON_BAN" Width="1.5" PointX="8.25" PointY="4.625" IsExpanded="true" />
         <EntityTypeShape EntityType="QUAN_LY_HIEU_SACHModel.CHI_TIET_HOA_DON_NHAP" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
@@ -17,17 +17,17 @@
         <EntityTypeShape EntityType="QUAN_LY_HIEU_SACHModel.NHAN_VIEN" Width="1.5" PointX="3.75" PointY="12.375" IsExpanded="true" />
         <EntityTypeShape EntityType="QUAN_LY_HIEU_SACHModel.SACH" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
         <EntityTypeShape EntityType="QUAN_LY_HIEU_SACHModel.TK_NHANVIEN" Width="1.5" PointX="6" PointY="17.625" IsExpanded="true" />
-        <AssociationConnector Association="QUAN_LY_HIEU_SACHModel.FK__BAO_CAO_D__MaSac__5441852A" ManuallyRouted="false" />
-        <AssociationConnector Association="QUAN_LY_HIEU_SACHModel.FK__CHI_TIET___MaDon__5165187F" ManuallyRouted="false" />
-        <AssociationConnector Association="QUAN_LY_HIEU_SACHModel.FK__CHI_TIET___MaSac__5070F446" ManuallyRouted="false" />
-        <AssociationConnector Association="QUAN_LY_HIEU_SACHModel.FK__CHI_TIET___MaDon__48CFD27E" ManuallyRouted="false" />
-        <AssociationConnector Association="QUAN_LY_HIEU_SACHModel.FK__CHI_TIET___MaSac__47DBAE45" ManuallyRouted="false" />
-        <AssociationConnector Association="QUAN_LY_HIEU_SACHModel.FK__DOANH_SO___MaNha__571DF1D5" ManuallyRouted="false" />
-        <AssociationConnector Association="QUAN_LY_HIEU_SACHModel.FK__HOA_DON_B__MaNha__4BAC3F29" ManuallyRouted="false" />
-        <AssociationConnector Association="QUAN_LY_HIEU_SACHModel.FK__HOA_DON_B__SDT_K__4CA06362" ManuallyRouted="false" />
-        <AssociationConnector Association="QUAN_LY_HIEU_SACHModel.FK__SACH__MaLoaiSach__3B75D760" ManuallyRouted="false" />
-        <AssociationConnector Association="QUAN_LY_HIEU_SACHModel.FK__SACH__MaNXB__3A81B327" ManuallyRouted="false" />
-        <AssociationConnector Association="QUAN_LY_HIEU_SACHModel.FK__TK_NHANVIE__TKNV__403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="QUAN_LY_HIEU_SACHModel.FK__BAO_CAO_D__MaSac__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="QUAN_LY_HIEU_SACHModel.FK__CHI_TIET___MaDon__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="QUAN_LY_HIEU_SACHModel.FK__CHI_TIET___MaSac__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="QUAN_LY_HIEU_SACHModel.FK__CHI_TIET___MaDon__36B12243" ManuallyRouted="false" />
+        <AssociationConnector Association="QUAN_LY_HIEU_SACHModel.FK__CHI_TIET___MaSac__35BCFE0A" ManuallyRouted="false" />
+        <AssociationConnector Association="QUAN_LY_HIEU_SACHModel.FK__DOANH_SO___MaNha__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="QUAN_LY_HIEU_SACHModel.FK__HOA_DON_B__MaNha__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="QUAN_LY_HIEU_SACHModel.FK__HOA_DON_B__SDT_K__3A81B327" ManuallyRouted="false" />
+        <AssociationConnector Association="QUAN_LY_HIEU_SACHModel.FK__SACH__MaLoaiSach__29572725" ManuallyRouted="false" />
+        <AssociationConnector Association="QUAN_LY_HIEU_SACHModel.FK__SACH__MaNXB__286302EC" ManuallyRouted="false" />
+        <AssociationConnector Association="QUAN_LY_HIEU_SACHModel.FK__TK_NHANVIE__TKNV__2E1BDC42" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -38,6 +38,9 @@ namespace GUI
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtMaDN = new Guna.UI2.WinForms.Guna2TextBox();
+            this.AddHoaDon = new FontAwesome.Sharp.IconButton();
+            this.label2 = new System.Windows.Forms.Label();
             this.txtTong = new Guna.UI2.WinForms.Guna2TextBox();
             this.textBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.dateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
@@ -59,9 +62,6 @@ namespace GUI
             this.sortBtn = new FontAwesome.Sharp.IconButton();
             this.Edit = new FontAwesome.Sharp.IconButton();
             this.cbbSort = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.txtMaDN = new Guna.UI2.WinForms.Guna2TextBox();
-            this.AddHoaDon = new FontAwesome.Sharp.IconButton();
-            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
@@ -217,6 +217,57 @@ namespace GUI
             this.groupBox3.TabIndex = 48;
             this.groupBox3.TabStop = false;
             // 
+            // txtMaDN
+            // 
+            this.txtMaDN.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMaDN.DefaultText = "";
+            this.txtMaDN.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtMaDN.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtMaDN.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMaDN.DisabledState.Parent = this.txtMaDN;
+            this.txtMaDN.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMaDN.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMaDN.FocusedState.Parent = this.txtMaDN;
+            this.txtMaDN.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtMaDN.ForeColor = System.Drawing.Color.Black;
+            this.txtMaDN.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMaDN.HoverState.Parent = this.txtMaDN;
+            this.txtMaDN.Location = new System.Drawing.Point(147, 43);
+            this.txtMaDN.Name = "txtMaDN";
+            this.txtMaDN.PasswordChar = '\0';
+            this.txtMaDN.PlaceholderText = "";
+            this.txtMaDN.SelectedText = "";
+            this.txtMaDN.ShadowDecoration.Parent = this.txtMaDN;
+            this.txtMaDN.Size = new System.Drawing.Size(150, 36);
+            this.txtMaDN.TabIndex = 77;
+            // 
+            // AddHoaDon
+            // 
+            this.AddHoaDon.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.AddHoaDon.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AddHoaDon.IconChar = FontAwesome.Sharp.IconChar.FileMedical;
+            this.AddHoaDon.IconColor = System.Drawing.Color.Blue;
+            this.AddHoaDon.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.AddHoaDon.IconSize = 30;
+            this.AddHoaDon.Location = new System.Drawing.Point(326, 43);
+            this.AddHoaDon.Name = "AddHoaDon";
+            this.AddHoaDon.Size = new System.Drawing.Size(117, 36);
+            this.AddHoaDon.TabIndex = 76;
+            this.AddHoaDon.Text = "Hóa đơn";
+            this.AddHoaDon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.AddHoaDon.UseVisualStyleBackColor = false;
+            this.AddHoaDon.Click += new System.EventHandler(this.AddHoaDon_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(26, 59);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(115, 20);
+            this.label2.TabIndex = 75;
+            this.label2.Text = "Mã đơn nhập :";
+            // 
             // txtTong
             // 
             this.txtTong.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -242,6 +293,7 @@ namespace GUI
             this.txtTong.ShadowDecoration.Parent = this.txtTong;
             this.txtTong.Size = new System.Drawing.Size(166, 36);
             this.txtTong.TabIndex = 74;
+            this.txtTong.TextChanged += new System.EventHandler(this.txtTong_TextChanged);
             // 
             // textBox1
             // 
@@ -553,57 +605,6 @@ namespace GUI
             this.cbbSort.ShadowDecoration.Parent = this.cbbSort;
             this.cbbSort.Size = new System.Drawing.Size(140, 36);
             this.cbbSort.TabIndex = 50;
-            // 
-            // txtMaDN
-            // 
-            this.txtMaDN.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtMaDN.DefaultText = "";
-            this.txtMaDN.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtMaDN.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtMaDN.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMaDN.DisabledState.Parent = this.txtMaDN;
-            this.txtMaDN.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMaDN.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMaDN.FocusedState.Parent = this.txtMaDN;
-            this.txtMaDN.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtMaDN.ForeColor = System.Drawing.Color.Black;
-            this.txtMaDN.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMaDN.HoverState.Parent = this.txtMaDN;
-            this.txtMaDN.Location = new System.Drawing.Point(147, 43);
-            this.txtMaDN.Name = "txtMaDN";
-            this.txtMaDN.PasswordChar = '\0';
-            this.txtMaDN.PlaceholderText = "";
-            this.txtMaDN.SelectedText = "";
-            this.txtMaDN.ShadowDecoration.Parent = this.txtMaDN;
-            this.txtMaDN.Size = new System.Drawing.Size(150, 36);
-            this.txtMaDN.TabIndex = 77;
-            // 
-            // AddHoaDon
-            // 
-            this.AddHoaDon.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.AddHoaDon.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.AddHoaDon.IconChar = FontAwesome.Sharp.IconChar.FileMedical;
-            this.AddHoaDon.IconColor = System.Drawing.Color.Blue;
-            this.AddHoaDon.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.AddHoaDon.IconSize = 30;
-            this.AddHoaDon.Location = new System.Drawing.Point(326, 43);
-            this.AddHoaDon.Name = "AddHoaDon";
-            this.AddHoaDon.Size = new System.Drawing.Size(117, 36);
-            this.AddHoaDon.TabIndex = 76;
-            this.AddHoaDon.Text = "Hóa đơn";
-            this.AddHoaDon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.AddHoaDon.UseVisualStyleBackColor = false;
-            this.AddHoaDon.Click += new System.EventHandler(this.AddHoaDon_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(26, 59);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(115, 20);
-            this.label2.TabIndex = 75;
-            this.label2.Text = "Mã đơn nhập :";
             // 
             // QuanLySach
             // 

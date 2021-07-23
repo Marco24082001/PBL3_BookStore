@@ -80,7 +80,11 @@ namespace GUI
             foreach (DataGridViewRow i in r)
             {
                 string manv = i.Cells["MaNhanVien"].Value.ToString();
-                BLL_QuanLy.Instance.Bll_ChangeTrangThaiNV(manv);
+                if(manv == BLL_QuanLy.Instance.Bll_SearchAdim())
+                {
+                    MessageBox.Show(manv + "La Adim");
+                }
+                else BLL_QuanLy.Instance.Bll_ChangeTrangThaiNV(manv);
             }
             setData();
         }
@@ -110,6 +114,19 @@ namespace GUI
         {
             string a = txtName.Text;
             dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetNhanVienByName(a);
+        }
+
+        private void Admin_Click(object sender, EventArgs e)
+        {
+            DataGridViewSelectedRowCollection r = dataGridView1.SelectedRows;
+            if (r.Count > 1)
+            {
+                MessageBox.Show("Chi duoc phep Edit 1 Row");
+                return;
+            }
+            string maNV = dataGridView1.CurrentRow.Cells["MaNhanVien"].Value.ToString();
+            BLL_QuanLy.Instance.Bll_ChangeAdmin(maNV);
+
         }
     }
 }
