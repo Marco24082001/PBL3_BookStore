@@ -62,40 +62,40 @@
           </Key>
           <Property Name="MaDonNhap" Type="int" Nullable="false" />
           <Property Name="NgayNhap" Type="date" />
-          <Property Name="GhiChu" Type="varchar" MaxLength="60" />
+          <Property Name="GhiChu" Type="nvarchar" MaxLength="60" />
         </EntityType>
         <EntityType Name="KHACH_HANG">
           <Key>
             <PropertyRef Name="SDT" />
           </Key>
           <Property Name="SDT" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="HoTen" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="HoTen" Type="nvarchar" MaxLength="30" Nullable="false" />
         </EntityType>
         <EntityType Name="LOAI_SACH">
           <Key>
             <PropertyRef Name="MaLoaiSach" />
           </Key>
           <Property Name="MaLoaiSach" Type="varchar" MaxLength="5" Nullable="false" />
-          <Property Name="TenLoaiSach" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="TenLoaiSach" Type="nvarchar" MaxLength="40" Nullable="false" />
         </EntityType>
         <EntityType Name="NHA_XUAT_BAN">
           <Key>
             <PropertyRef Name="MaNXB" />
           </Key>
           <Property Name="MaNXB" Type="varchar" MaxLength="5" Nullable="false" />
-          <Property Name="TenNXB" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="TenNXB" Type="nvarchar" MaxLength="30" Nullable="false" />
         </EntityType>
         <EntityType Name="NHAN_VIEN">
           <Key>
             <PropertyRef Name="MaNhanVien" />
           </Key>
           <Property Name="MaNhanVien" Type="varchar" MaxLength="5" Nullable="false" />
-          <Property Name="HoTen" Type="varchar" MaxLength="30" Nullable="false" />
-          <Property Name="DanToc" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="GioiTinh" Type="varchar" MaxLength="3" Nullable="false" />
+          <Property Name="HoTen" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="DanToc" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="GioiTinh" Type="nvarchar" MaxLength="3" Nullable="false" />
           <Property Name="CMND" Type="varchar" MaxLength="12" Nullable="false" />
           <Property Name="SoDienThoai" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="QueQuan" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="QueQuan" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="NgaySinh" Type="date" Nullable="false" />
           <Property Name="TrangThai" Type="bit" Nullable="false" />
           <Property Name="isAdmin" Type="bit" Nullable="false" />
@@ -105,7 +105,7 @@
             <PropertyRef Name="MaSach" />
           </Key>
           <Property Name="MaSach" Type="varchar" MaxLength="5" Nullable="false" />
-          <Property Name="TenSach" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="TenSach" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="GiaBan" Type="int" Nullable="false" />
           <Property Name="GiaNhap" Type="int" Nullable="false" />
           <Property Name="SoLuong" Type="int" Nullable="false" />
@@ -381,7 +381,7 @@
           </Key>
           <Property Name="MaDonNhap" Type="Int32" Nullable="false" />
           <Property Name="NgayNhap" Type="DateTime" Precision="0" />
-          <Property Name="GhiChu" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="GhiChu" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="CHI_TIET_HOA_DON_NHAP" Relationship="Self.FK__CHI_TIET___MaDon__36B12243" FromRole="HOA_DON_NHAP" ToRole="CHI_TIET_HOA_DON_NHAP" />
         </EntityType>
         <EntityType Name="KHACH_HANG">
@@ -389,7 +389,7 @@
             <PropertyRef Name="SDT" />
           </Key>
           <Property Name="SDT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="HoTen" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="HoTen" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="HOA_DON_BAN" Relationship="Self.FK__HOA_DON_B__SDT_K__3A81B327" FromRole="KHACH_HANG" ToRole="HOA_DON_BAN" />
         </EntityType>
         <EntityType Name="LOAI_SACH">
@@ -397,7 +397,7 @@
             <PropertyRef Name="MaLoaiSach" />
           </Key>
           <Property Name="MaLoaiSach" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="TenLoaiSach" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TenLoaiSach" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="SACHes" Relationship="Self.FK__SACH__MaLoaiSach__29572725" FromRole="LOAI_SACH" ToRole="SACH" />
         </EntityType>
         <EntityType Name="NHA_XUAT_BAN">
@@ -405,7 +405,7 @@
             <PropertyRef Name="MaNXB" />
           </Key>
           <Property Name="MaNXB" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="TenNXB" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TenNXB" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="SACHes" Relationship="Self.FK__SACH__MaNXB__286302EC" FromRole="NHA_XUAT_BAN" ToRole="SACH" />
         </EntityType>
         <EntityType Name="NHAN_VIEN">
@@ -413,12 +413,12 @@
             <PropertyRef Name="MaNhanVien" />
           </Key>
           <Property Name="MaNhanVien" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="HoTen" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="DanToc" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="GioiTinh" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="HoTen" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DanToc" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="GioiTinh" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="CMND" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="SoDienThoai" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="QueQuan" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="QueQuan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="NgaySinh" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="TrangThai" Type="Boolean" Nullable="false" />
           <Property Name="isAdmin" Type="Boolean" Nullable="false" />
@@ -431,7 +431,7 @@
             <PropertyRef Name="MaSach" />
           </Key>
           <Property Name="MaSach" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="TenSach" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TenSach" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="GiaBan" Type="Int32" Nullable="false" />
           <Property Name="GiaNhap" Type="Int32" Nullable="false" />
           <Property Name="SoLuong" Type="Int32" Nullable="false" />
