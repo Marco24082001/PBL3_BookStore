@@ -15,7 +15,7 @@ namespace GUI
     {
         public string masach { get; set; }
         public delegate void MyDel();
-        public MyDel d;
+        public MyDel reset;
         string boxTitle = "Thông báo";
         public bool check { get; set; }
         public ThemSach()
@@ -178,7 +178,7 @@ namespace GUI
             {
                 EditSach();
             }
-            if(check) d();
+            if(check) reset();
         }
 
         private void ThemSach_Load(object sender, EventArgs e)

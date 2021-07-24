@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GUI.BLL;
@@ -15,6 +16,9 @@ namespace GUI
     public partial class QLNV : Form
     {
         string boxTitle = "Thông báo";
+        public delegate void Mydel();
+        public Mydel Exit_QuanLy;
+        Thread Luong;
         public QLNV()
         {
             InitializeComponent();
@@ -83,7 +87,7 @@ namespace GUI
                 string manv = i.Cells["MaNhanVien"].Value.ToString();
                 if(manv == BLL_QuanLy.Instance.Bll_SearchAdim())
                 {
-                    MessageBox.Show(manv + "La Adim");
+                    MessageBox.Show("Bạn đang là Admin", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else BLL_QuanLy.Instance.Bll_ChangeTrangThaiNV(manv);
             }
@@ -117,17 +121,30 @@ namespace GUI
             dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetNhanVienByName(a);
         }
 
+        private void openFormDangNhap(object newForm)
+        {
+            DangNhap f = new DangNhap();
+            Application.Run(f);
+        }
+
         private void Admin_Click(object sender, EventArgs e)
         {
             DataGridViewSelectedRowCollection r = dataGridView1.SelectedRows;
             if (r.Count > 1)
             {
-                MessageBox.Show("Chi duoc phep Edit 1 Row");
+                MessageBox.Show("Chỉ được phép Edit một hàng", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             string maNV = dataGridView1.CurrentRow.Cells["MaNhanVien"].Value.ToString();
+            if (BLL_QuanLy.Instance.Bll_CheckAdmin(maNV))
+            {
+                return;
+            }
             BLL_QuanLy.Instance.Bll_ChangeAdmin(maNV);
-
+            Exit_QuanLy();
+            Luong = new Thread(openFormDangNhap);
+            Luong.SetApartmentState(ApartmentState.STA);
+            Luong.Start();
         }
     }
 }

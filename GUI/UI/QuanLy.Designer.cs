@@ -168,9 +168,9 @@ namespace GUI
             this.btnQLDT.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnQLDT.IconSize = 35;
             this.btnQLDT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQLDT.Location = new System.Drawing.Point(0, 165);
+            this.btnQLDT.Location = new System.Drawing.Point(3, 165);
             this.btnQLDT.Name = "btnQLDT";
-            this.btnQLDT.Size = new System.Drawing.Size(238, 65);
+            this.btnQLDT.Size = new System.Drawing.Size(235, 65);
             this.btnQLDT.TabIndex = 1;
             this.btnQLDT.Text = "Quản lý doanh thu";
             this.btnQLDT.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;

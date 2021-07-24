@@ -39,7 +39,7 @@ namespace GUI
             this.Them = new FontAwesome.Sharp.IconButton();
             this.sortBtn = new FontAwesome.Sharp.IconButton();
             this.cbbSort = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.Admin = new System.Windows.Forms.Button();
+            this.Admin = new FontAwesome.Sharp.IconButton();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -214,12 +214,21 @@ namespace GUI
             // 
             // Admin
             // 
-            this.Admin.Location = new System.Drawing.Point(585, 635);
+            this.Admin.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.Admin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Admin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Admin.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
+            this.Admin.IconColor = System.Drawing.Color.Teal;
+            this.Admin.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Admin.IconSize = 25;
+            this.Admin.Location = new System.Drawing.Point(498, 627);
             this.Admin.Name = "Admin";
-            this.Admin.Size = new System.Drawing.Size(75, 23);
-            this.Admin.TabIndex = 72;
+            this.Admin.Size = new System.Drawing.Size(90, 36);
+            this.Admin.TabIndex = 73;
             this.Admin.Text = "Admin";
-            this.Admin.UseVisualStyleBackColor = true;
+            this.Admin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Admin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Admin.UseVisualStyleBackColor = false;
             this.Admin.Click += new System.EventHandler(this.Admin_Click);
             // 
             // QLNV
@@ -256,6 +265,6 @@ namespace GUI
         private FontAwesome.Sharp.IconButton sortBtn;
         private Guna.UI2.WinForms.Guna2TextBox txtName;
         private Guna.UI2.WinForms.Guna2ComboBox cbbSort;
-        private System.Windows.Forms.Button Admin;
+        private FontAwesome.Sharp.IconButton Admin;
     }
 }

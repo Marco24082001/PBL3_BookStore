@@ -39,6 +39,11 @@ namespace GUI
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
+
+        public void exit()
+        {
+            this.Close();
+        }
         //Structs
         private struct RGBColors
         {
@@ -121,7 +126,9 @@ namespace GUI
         private void btnQLNV_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color3);
-            OpenChildForm(new QLNV());
+            QLNV s = new QLNV();
+            s.Exit_QuanLy += new QLNV.Mydel(exit);
+            OpenChildForm(s);
         }
 
         private void btnHome_Click(object sender, EventArgs e)

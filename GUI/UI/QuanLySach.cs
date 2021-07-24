@@ -23,6 +23,14 @@ namespace GUI
             setcbbTheLoai();
             setcbbSort();
         }
+        
+        public void reset()
+        {
+            setData1();
+            setcbbMaSach();
+            setcbbTheLoai();
+            setcbbSort();
+        }
         public void setData1()
         {
             if (cbbTheLoai.SelectedIndex == -1)
@@ -103,7 +111,7 @@ namespace GUI
         {
             ThemSach f = new ThemSach();
             f.Show();
-            f.d += new ThemSach.MyDel(setData1);
+            f.reset += new ThemSach.MyDel(reset);
         }
         private void ThemChiTiet_Click(object sender, EventArgs e)
         {
@@ -238,7 +246,7 @@ namespace GUI
             ThemSach f = new ThemSach();
             f.masach = dataGridView1.CurrentRow.Cells["MaSach"].Value.ToString();
             f.Show();
-            f.d = new ThemSach.MyDel(setData1);
+            f.reset = new ThemSach.MyDel(setData1);
         }
 
         private void XoaSach_Click(object sender, EventArgs e)
