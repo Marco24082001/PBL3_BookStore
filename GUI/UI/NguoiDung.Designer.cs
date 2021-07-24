@@ -98,7 +98,9 @@ namespace GUI.UI
             // 
             this.Save.BorderRadius = 20;
             this.Save.CheckedState.Parent = this.Save;
+            this.Save.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Save.CustomImages.Parent = this.Save;
+            this.Save.DisabledState.Parent = this.Save;
             this.Save.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Save.ForeColor = System.Drawing.Color.White;
             this.Save.HoverState.Parent = this.Save;
@@ -124,6 +126,7 @@ namespace GUI.UI
             // isChange
             // 
             this.isChange.AutoSize = true;
+            this.isChange.Cursor = System.Windows.Forms.Cursors.Hand;
             this.isChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.isChange.Location = new System.Drawing.Point(150, 261);
             this.isChange.Name = "isChange";
@@ -135,12 +138,15 @@ namespace GUI.UI
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.panel1.Controls.Add(this.Thoat);
+            this.panel1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(450, 45);
             this.panel1.TabIndex = 58;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
             // Thoat
             // 

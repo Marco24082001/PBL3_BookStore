@@ -60,6 +60,7 @@ namespace GUI
             // XacNhan
             // 
             this.XacNhan.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.XacNhan.Cursor = System.Windows.Forms.Cursors.Hand;
             this.XacNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.XacNhan.IconChar = FontAwesome.Sharp.IconChar.Check;
             this.XacNhan.IconColor = System.Drawing.Color.Blue;
@@ -78,6 +79,7 @@ namespace GUI
             // Thoat
             // 
             this.Thoat.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.Thoat.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Thoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Thoat.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
             this.Thoat.IconColor = System.Drawing.Color.Red;

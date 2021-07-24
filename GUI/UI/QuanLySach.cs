@@ -15,6 +15,7 @@ namespace GUI
     public partial class QuanLySach : Form
     {
         List<CHI_TIET_HOA_DON_NHAP> list = new List<CHI_TIET_HOA_DON_NHAP>();
+        string boxTitle = "Thống báo";
         public QuanLySach()
         {
             InitializeComponent();
@@ -26,7 +27,7 @@ namespace GUI
         {
             if (cbbTheLoai.SelectedIndex == -1)
             {
-                MessageBox.Show("Vui long chon loai sach");
+                MessageBox.Show("Vui lòng chọn 'Thể loại'", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (cbbTheLoai.SelectedIndex == 0)
@@ -108,12 +109,12 @@ namespace GUI
         {
             if (txtMaDN.Text == "")
             {
-                MessageBox.Show("Nhap ma hoa don");
+                MessageBox.Show("Vui lòng nhập 'Mã hóa đơn'", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (cbbMaSach.SelectedIndex == -1)
             {
-                MessageBox.Show("Vui lòng chọn mã sách");
+                MessageBox.Show("Vui lòng chọn 'Mã sách'", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (numericUpDown4.Value == 0)
@@ -150,7 +151,7 @@ namespace GUI
         {
             if (list.Count == 0)
             {
-                MessageBox.Show("Gio Hang rỗng");
+                MessageBox.Show("Giỏ hàng rỗng", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             HOA_DON_NHAP hdn = new HOA_DON_NHAP()
@@ -187,7 +188,7 @@ namespace GUI
         {
             if (list.Count == 0)
             {
-                MessageBox.Show("Gio hang rong");
+                MessageBox.Show("Giỏ hàng rỗng", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             DataGridViewSelectedRowCollection r = dataGridView2.SelectedRows;
@@ -218,7 +219,7 @@ namespace GUI
         {
             if (cbbTheLoai.SelectedIndex == -1)
             {
-                MessageBox.Show("Vui long chon The Loai");
+                MessageBox.Show("Vui lòng chọn 'Thể loại'", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             string theloai = cbbTheLoai.SelectedItem.ToString();
@@ -231,7 +232,7 @@ namespace GUI
             DataGridViewSelectedRowCollection r = dataGridView1.SelectedRows;
             if (r.Count > 1)
             {
-                MessageBox.Show("Chi duoc phep Edit 1 Row");
+                MessageBox.Show("Chỉ được phép chỉnh sửa một hàng", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             ThemSach f = new ThemSach();
@@ -245,7 +246,7 @@ namespace GUI
             DataGridViewSelectedRowCollection r = dataGridView1.SelectedRows;
             if (r.Count == 0)
             {
-                MessageBox.Show("Chon Row can xoa");
+                MessageBox.Show("Vui lòng chọn hàng cần xóa", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             foreach (DataGridViewRow i in r)
@@ -292,7 +293,7 @@ namespace GUI
         {
             if (cbbTheLoai.SelectedIndex == -1)
             {
-                MessageBox.Show("Vui long chon The Loai");
+                MessageBox.Show("Vui lòng chọn 'Thể loại'", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             string theloai = cbbTheLoai.SelectedItem.ToString();

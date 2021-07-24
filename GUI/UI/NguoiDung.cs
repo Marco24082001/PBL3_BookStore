@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,6 +14,7 @@ namespace GUI.UI
 {
     public partial class NguoiDung : Form
     {
+        string boxTitle = "Thông báo";
         public string MaNhanVien { get; set; }
         public NguoiDung(string MaNhanVien)
         {
@@ -20,6 +22,18 @@ namespace GUI.UI
             this.ControlBox = false;
             this.Text = string.Empty;
             this.MaNhanVien = MaNhanVien;
+        }
+
+        //Drag Form
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
         private void Thoat_Click(object sender, EventArgs e)
@@ -30,7 +44,8 @@ namespace GUI.UI
         private void NguoiDung_Load(object sender, EventArgs e)
         {
             txtTenDN.Text = MaNhanVien;
-            //txtHoTen = 
+            txtHoTen.ReadOnly = true;
+            txtChucVu.ReadOnly = true;
             txtTenDN.Enabled = false;
             isChange.Checked = false;
             txtMKcu.Enabled = false;
@@ -61,6 +76,7 @@ namespace GUI.UI
                 txtMKcu.Enabled = false;
                 txtMKmoi.Enabled = false;
                 txtReMK.Enabled = false;
+                Save.Enabled = false;
             }
         }
 
@@ -68,22 +84,22 @@ namespace GUI.UI
         {
             if (txtMKcu.Text != BLL_QuanLy.Instance.Bll_GetMKByTK(MaNhanVien))
             {
-                MessageBox.Show("Mật khẩu cũ sai");
+                MessageBox.Show("Sai 'Mật khẩu cũ'", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             if (txtMKmoi.Text == "")
             {
-                MessageBox.Show("Vui lòng nhập mật khẩu");
+                MessageBox.Show("Vui lòng nhập 'Mật khẩu mới'", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             if (txtMKmoi.Text.Length > 10)
             {
-                MessageBox.Show("Không nhập quá 10 kí tự");
+                MessageBox.Show("'Mật khẩu mới' không được quá 10 kí tự", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             if (txtReMK.Text != txtMKmoi.Text)
             {
-                MessageBox.Show("Mật khẩu mới không khớp");
+                MessageBox.Show("'Mật khẩu mới' không khớp", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             return true;

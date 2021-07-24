@@ -115,6 +115,7 @@ namespace GUI
             // cbbTheLoai
             // 
             this.cbbTheLoai.BackColor = System.Drawing.Color.Transparent;
+            this.cbbTheLoai.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbbTheLoai.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbbTheLoai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbTheLoai.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -238,7 +239,8 @@ namespace GUI
             this.txtMaDN.PlaceholderText = "";
             this.txtMaDN.SelectedText = "";
             this.txtMaDN.ShadowDecoration.Parent = this.txtMaDN;
-            this.txtMaDN.Size = new System.Drawing.Size(150, 36);
+
+            this.txtMaDN.Size = new System.Drawing.Size(130, 36);
             this.txtMaDN.TabIndex = 77;
             // 
             // AddHoaDon
@@ -249,7 +251,7 @@ namespace GUI
             this.AddHoaDon.IconColor = System.Drawing.Color.Blue;
             this.AddHoaDon.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.AddHoaDon.IconSize = 30;
-            this.AddHoaDon.Location = new System.Drawing.Point(326, 43);
+            this.AddHoaDon.Location = new System.Drawing.Point(305, 43);
             this.AddHoaDon.Name = "AddHoaDon";
             this.AddHoaDon.Size = new System.Drawing.Size(117, 36);
             this.AddHoaDon.TabIndex = 76;
@@ -310,35 +312,36 @@ namespace GUI
             this.textBox1.ForeColor = System.Drawing.Color.Black;
             this.textBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.textBox1.HoverState.Parent = this.textBox1;
-            this.textBox1.Location = new System.Drawing.Point(426, 172);
+            this.textBox1.Location = new System.Drawing.Point(405, 172);
             this.textBox1.Name = "textBox1";
             this.textBox1.PasswordChar = '\0';
             this.textBox1.PlaceholderText = "";
             this.textBox1.SelectedText = "";
             this.textBox1.ShadowDecoration.Parent = this.textBox1;
-            this.textBox1.Size = new System.Drawing.Size(166, 36);
+            this.textBox1.Size = new System.Drawing.Size(187, 36);
             this.textBox1.TabIndex = 73;
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.CheckedState.Parent = this.dateTimePicker1;
+            this.dateTimePicker1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dateTimePicker1.FillColor = System.Drawing.Color.DodgerBlue;
             this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.dateTimePicker1.HoverState.Parent = this.dateTimePicker1;
-            this.dateTimePicker1.Location = new System.Drawing.Point(426, 109);
+            this.dateTimePicker1.Location = new System.Drawing.Point(405, 109);
             this.dateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.ShadowDecoration.Parent = this.dateTimePicker1;
-            this.dateTimePicker1.Size = new System.Drawing.Size(166, 36);
+            this.dateTimePicker1.Size = new System.Drawing.Size(187, 36);
             this.dateTimePicker1.TabIndex = 72;
             this.dateTimePicker1.Value = new System.DateTime(2021, 5, 28, 17, 40, 50, 901);
             // 
             // numericUpDown4
             // 
             this.numericUpDown4.BackColor = System.Drawing.Color.Transparent;
-            this.numericUpDown4.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.numericUpDown4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.numericUpDown4.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.numericUpDown4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.numericUpDown4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -352,12 +355,13 @@ namespace GUI
             this.numericUpDown4.Location = new System.Drawing.Point(147, 172);
             this.numericUpDown4.Name = "numericUpDown4";
             this.numericUpDown4.ShadowDecoration.Parent = this.numericUpDown4;
-            this.numericUpDown4.Size = new System.Drawing.Size(150, 36);
+            this.numericUpDown4.Size = new System.Drawing.Size(130, 36);
             this.numericUpDown4.TabIndex = 71;
             // 
             // cbbMaSach
             // 
             this.cbbMaSach.BackColor = System.Drawing.Color.Transparent;
+            this.cbbMaSach.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbbMaSach.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbbMaSach.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbMaSach.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -371,14 +375,14 @@ namespace GUI
             this.cbbMaSach.Location = new System.Drawing.Point(147, 109);
             this.cbbMaSach.Name = "cbbMaSach";
             this.cbbMaSach.ShadowDecoration.Parent = this.cbbMaSach;
-            this.cbbMaSach.Size = new System.Drawing.Size(150, 36);
+            this.cbbMaSach.Size = new System.Drawing.Size(130, 36);
             this.cbbMaSach.TabIndex = 69;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(322, 120);
+            this.label4.Location = new System.Drawing.Point(301, 120);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(98, 20);
             this.label4.TabIndex = 66;
@@ -388,7 +392,7 @@ namespace GUI
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(322, 188);
+            this.label3.Location = new System.Drawing.Point(301, 188);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(77, 20);
             this.label3.TabIndex = 64;
@@ -590,6 +594,7 @@ namespace GUI
             // cbbSort
             // 
             this.cbbSort.BackColor = System.Drawing.Color.Transparent;
+            this.cbbSort.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbbSort.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbbSort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbSort.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
