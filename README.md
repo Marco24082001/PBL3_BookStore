@@ -1,8 +1,10 @@
-# PBL3-Version...
+# BOOK STORE MN
+
+## PBL3-Version... 
 Model name = QuanLyEntities
 
-Install Packages in NuGetPackage: 
-   FontAwesome.Sharp
-   Guna.UI2.Winforms
-   LiveCharts.WinForms
+## Install Packages in NuGetPackage:   
+- FontAwesome.Sharp
+- Guna.UI2.Winforms
+- LiveCharts.WinForms
 
