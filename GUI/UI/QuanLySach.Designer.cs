@@ -239,6 +239,7 @@ namespace GUI
             this.txtMaDN.PlaceholderText = "";
             this.txtMaDN.SelectedText = "";
             this.txtMaDN.ShadowDecoration.Parent = this.txtMaDN;
+
             this.txtMaDN.Size = new System.Drawing.Size(130, 36);
             this.txtMaDN.TabIndex = 77;
             // 
@@ -294,6 +295,7 @@ namespace GUI
             this.txtTong.ShadowDecoration.Parent = this.txtTong;
             this.txtTong.Size = new System.Drawing.Size(166, 36);
             this.txtTong.TabIndex = 74;
+            this.txtTong.TextChanged += new System.EventHandler(this.txtTong_TextChanged);
             // 
             // textBox1
             // 

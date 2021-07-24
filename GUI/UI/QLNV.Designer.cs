@@ -39,6 +39,7 @@ namespace GUI
             this.Them = new FontAwesome.Sharp.IconButton();
             this.sortBtn = new FontAwesome.Sharp.IconButton();
             this.cbbSort = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.Admin = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -211,12 +212,23 @@ namespace GUI
             this.cbbSort.Size = new System.Drawing.Size(130, 36);
             this.cbbSort.TabIndex = 71;
             // 
+            // Admin
+            // 
+            this.Admin.Location = new System.Drawing.Point(585, 635);
+            this.Admin.Name = "Admin";
+            this.Admin.Size = new System.Drawing.Size(75, 23);
+            this.Admin.TabIndex = 72;
+            this.Admin.Text = "Admin";
+            this.Admin.UseVisualStyleBackColor = true;
+            this.Admin.Click += new System.EventHandler(this.Admin_Click);
+            // 
             // QLNV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1444, 753);
+            this.Controls.Add(this.Admin);
             this.Controls.Add(this.cbbSort);
             this.Controls.Add(this.sortBtn);
             this.Controls.Add(this.Xoa);
@@ -244,5 +256,6 @@ namespace GUI
         private FontAwesome.Sharp.IconButton sortBtn;
         private Guna.UI2.WinForms.Guna2TextBox txtName;
         private Guna.UI2.WinForms.Guna2ComboBox cbbSort;
+        private System.Windows.Forms.Button Admin;
     }
 }
