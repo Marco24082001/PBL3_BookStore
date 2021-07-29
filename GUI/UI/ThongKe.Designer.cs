@@ -143,7 +143,7 @@ namespace GUI
             this.cbbSort.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbbSort.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbbSort.FocusedState.Parent = this.cbbSort;
-            this.cbbSort.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbSort.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbSort.ForeColor = System.Drawing.Color.Black;
             this.cbbSort.HoverState.Parent = this.cbbSort;
             this.cbbSort.ItemHeight = 30;
@@ -187,7 +187,7 @@ namespace GUI
             this.cbbNgay.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbbNgay.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbbNgay.FocusedState.Parent = this.cbbNgay;
-            this.cbbNgay.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbNgay.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbNgay.ForeColor = System.Drawing.Color.Black;
             this.cbbNgay.HoverState.Parent = this.cbbNgay;
             this.cbbNgay.ItemHeight = 30;
@@ -207,7 +207,7 @@ namespace GUI
             this.cbbThang.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbbThang.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbbThang.FocusedState.Parent = this.cbbThang;
-            this.cbbThang.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbThang.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbThang.ForeColor = System.Drawing.Color.Black;
             this.cbbThang.HoverState.Parent = this.cbbThang;
             this.cbbThang.ItemHeight = 30;
@@ -227,7 +227,7 @@ namespace GUI
             this.cbbNam.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbbNam.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbbNam.FocusedState.Parent = this.cbbNam;
-            this.cbbNam.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbNam.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbNam.ForeColor = System.Drawing.Color.Black;
             this.cbbNam.HoverState.Parent = this.cbbNam;
             this.cbbNam.ItemHeight = 30;

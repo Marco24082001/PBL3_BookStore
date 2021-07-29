@@ -276,7 +276,7 @@ namespace GUI
                 DoanhSoBan = tong,
                 ThoiGian = DateTime.Now,
             };
-            BLL_QuanLy.Instance.Bll_AddDoanhSoBanHang(dsbh);
+            BLL_QuanLy.Instance.Bll_AddDoanhSoBanHang(dsbh); 
             list.Clear();
             dataGridView2.DataSource = null;
             txtHoTen.Enabled = true;
@@ -394,6 +394,16 @@ namespace GUI
             string theloai = cbbTheLoai.SelectedItem.ToString();
             string name = txtTenSach.Text;
             dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetSachByNameLSAndTT(name, theloai);
+        }
+
+        private void txtMaDonBan_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
