@@ -166,7 +166,6 @@ namespace PBL3.UI
             {
                 MaDonNhap = Convert.ToInt32(txtMaDN.Text),
                 NgayNhap = DateTime.Now,
-                GhiChu = "",
             };
             BLL_QuanLy.Instance.Bll_AddHoaDonNhap(hdn);
             foreach (CHI_TIET_HOA_DON_NHAP a in list)
