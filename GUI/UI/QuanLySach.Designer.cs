@@ -103,6 +103,7 @@ namespace GUI
             this.txtTenSach.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTenSach.HoverState.Parent = this.txtTenSach;
             this.txtTenSach.Location = new System.Drawing.Point(634, 33);
+            this.txtTenSach.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTenSach.Name = "txtTenSach";
             this.txtTenSach.PasswordChar = '\0';
             this.txtTenSach.PlaceholderText = "";
@@ -234,6 +235,7 @@ namespace GUI
             this.txtMaDN.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtMaDN.HoverState.Parent = this.txtMaDN;
             this.txtMaDN.Location = new System.Drawing.Point(147, 43);
+            this.txtMaDN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtMaDN.Name = "txtMaDN";
             this.txtMaDN.PasswordChar = '\0';
             this.txtMaDN.PlaceholderText = "";
@@ -312,6 +314,7 @@ namespace GUI
             this.textBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.textBox1.HoverState.Parent = this.textBox1;
             this.textBox1.Location = new System.Drawing.Point(405, 172);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox1.Name = "textBox1";
             this.textBox1.PasswordChar = '\0';
             this.textBox1.PlaceholderText = "";
@@ -349,9 +352,10 @@ namespace GUI
             this.numericUpDown4.DisabledState.UpDownButtonForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(203)))), ((int)(((byte)(203)))));
             this.numericUpDown4.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.numericUpDown4.FocusedState.Parent = this.numericUpDown4;
-            this.numericUpDown4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown4.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDown4.ForeColor = System.Drawing.Color.Black;
             this.numericUpDown4.Location = new System.Drawing.Point(147, 172);
+            this.numericUpDown4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.numericUpDown4.Name = "numericUpDown4";
             this.numericUpDown4.ShadowDecoration.Parent = this.numericUpDown4;
             this.numericUpDown4.Size = new System.Drawing.Size(130, 36);

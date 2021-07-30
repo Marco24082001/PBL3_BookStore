@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media;
 using GUI.DTO;
-//helo1
+
 namespace GUI.BLL
 {
     class BLL_QuanLy

@@ -85,7 +85,7 @@ namespace GUI
             this.cbbNgay.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbbNgay.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbbNgay.FocusedState.Parent = this.cbbNgay;
-            this.cbbNgay.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbNgay.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbNgay.ForeColor = System.Drawing.Color.Black;
             this.cbbNgay.HoverState.Parent = this.cbbNgay;
             this.cbbNgay.ItemHeight = 30;
@@ -106,7 +106,7 @@ namespace GUI
             this.cbbThang.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbbThang.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbbThang.FocusedState.Parent = this.cbbThang;
-            this.cbbThang.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbThang.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbThang.ForeColor = System.Drawing.Color.Black;
             this.cbbThang.HoverState.Parent = this.cbbThang;
             this.cbbThang.ItemHeight = 30;
@@ -127,7 +127,7 @@ namespace GUI
             this.cbbNam.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbbNam.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbbNam.FocusedState.Parent = this.cbbNam;
-            this.cbbNam.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbNam.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbNam.ForeColor = System.Drawing.Color.Black;
             this.cbbNam.HoverState.Parent = this.cbbNam;
             this.cbbNam.ItemHeight = 30;
@@ -163,7 +163,7 @@ namespace GUI
             this.cbbSort.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbbSort.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbbSort.FocusedState.Parent = this.cbbSort;
-            this.cbbSort.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbSort.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbSort.ForeColor = System.Drawing.Color.Black;
             this.cbbSort.HoverState.Parent = this.cbbSort;
             this.cbbSort.ItemHeight = 30;
@@ -185,7 +185,7 @@ namespace GUI
             this.TongDoanhThu.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.TongDoanhThu.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TongDoanhThu.FocusedState.Parent = this.TongDoanhThu;
-            this.TongDoanhThu.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TongDoanhThu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TongDoanhThu.ForeColor = System.Drawing.Color.Black;
             this.TongDoanhThu.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TongDoanhThu.HoverState.Parent = this.TongDoanhThu;
@@ -315,12 +315,12 @@ namespace GUI
             this.numDay.DisabledState.UpDownButtonForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(203)))), ((int)(((byte)(203)))));
             this.numDay.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.numDay.FocusedState.Parent = this.numDay;
-            this.numDay.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.numDay.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numDay.ForeColor = System.Drawing.Color.Black;
-            this.numDay.Location = new System.Drawing.Point(66, 56);
+            this.numDay.Location = new System.Drawing.Point(66, 57);
             this.numDay.Name = "numDay";
             this.numDay.ShadowDecoration.Parent = this.numDay;
-            this.numDay.Size = new System.Drawing.Size(83, 36);
+            this.numDay.Size = new System.Drawing.Size(83, 32);
             this.numDay.TabIndex = 73;
             this.numDay.ValueChanged += new System.EventHandler(this.numDay_ValueChanged);
             // 
@@ -344,7 +344,7 @@ namespace GUI
             this.loadBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loadBtn.ForeColor = System.Drawing.Color.White;
             this.loadBtn.HoverState.Parent = this.loadBtn;
-            this.loadBtn.Location = new System.Drawing.Point(508, 61);
+            this.loadBtn.Location = new System.Drawing.Point(523, 57);
             this.loadBtn.Name = "loadBtn";
             this.loadBtn.ShadowDecoration.Parent = this.loadBtn;
             this.loadBtn.Size = new System.Drawing.Size(125, 31);

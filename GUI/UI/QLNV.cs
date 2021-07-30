@@ -140,11 +140,16 @@ namespace GUI
             {
                 return;
             }
-            BLL_QuanLy.Instance.Bll_ChangeAdmin(maNV);
-            Exit_QuanLy();
-            Luong = new Thread(openFormDangNhap);
-            Luong.SetApartmentState(ApartmentState.STA);
-            Luong.Start();
+            DialogResult result;
+            result = MessageBox.Show("Bạn chắc chắn đổi Admin không ?", boxTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if(result == System.Windows.Forms.DialogResult.Yes)
+            {
+                BLL_QuanLy.Instance.Bll_ChangeAdmin(maNV);
+                Exit_QuanLy();
+                Luong = new Thread(openFormDangNhap);
+                Luong.SetApartmentState(ApartmentState.STA);
+                Luong.Start();
+            }
         }
     }
 }
