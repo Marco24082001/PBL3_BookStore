@@ -1,4 +1,4 @@
-﻿using GUI.BLL;
+﻿using PBL3.BLL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GUI.UI
+namespace PBL3.UI
 {
     public partial class NguoiDung : Form
     {

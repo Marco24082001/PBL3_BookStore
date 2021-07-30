@@ -1,5 +1,5 @@
 ﻿
-namespace GUI
+namespace PBL3.UI
 {
     partial class Thongke
     {
@@ -549,7 +549,7 @@ namespace GUI
             // 
             // dOANHSOBANHANGBindingSource
             // 
-            this.dOANHSOBANHANGBindingSource.DataSource = typeof(GUI.DOANH_SO_BAN_HANG);
+            this.dOANHSOBANHANGBindingSource.DataSource = typeof(PBL3.DOANH_SO_BAN_HANG);
             // 
             // Thongke
             // 

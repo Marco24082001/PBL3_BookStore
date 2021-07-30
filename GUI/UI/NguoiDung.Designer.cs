@@ -1,5 +1,5 @@
 ﻿
-namespace GUI.UI
+namespace PBL3.UI
 {
     partial class NguoiDung
     {

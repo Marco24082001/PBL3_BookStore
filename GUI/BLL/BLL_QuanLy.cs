@@ -8,9 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media;
-using GUI.DTO;
+using PBL3.DTO;
 
-namespace GUI.BLL
+namespace PBL3.BLL
 {
     class BLL_QuanLy
     {

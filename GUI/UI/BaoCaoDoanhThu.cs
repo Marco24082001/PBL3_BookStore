@@ -8,11 +8,11 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using GUI.BLL;
+using PBL3.BLL;
 using LiveCharts;
 using LiveCharts.Wpf;
 
-namespace GUI
+namespace PBL3.UI
 {
     public partial class BaoCaoDoanhThu : Form
     {

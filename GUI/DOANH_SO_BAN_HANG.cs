@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GUI
+namespace PBL3
 {
     using System;
     using System.Collections.Generic;

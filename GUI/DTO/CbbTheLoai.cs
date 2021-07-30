@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GUI.DTO
+namespace PBL3.DTO
 {
     class CbbTheLoai
     {

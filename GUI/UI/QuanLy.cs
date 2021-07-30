@@ -10,11 +10,10 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
-using GUI.BLL;
-using GUI.UI;
+using PBL3.BLL;
 using LiveCharts;
 
-namespace GUI
+namespace PBL3.UI
 {
     public partial class QuanLy : Form
     {

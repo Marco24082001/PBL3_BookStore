@@ -10,10 +10,9 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using GUI.BLL;
-using GUI.UI;
+using PBL3.BLL;
 
-namespace GUI
+namespace PBL3.UI
 {
     public partial class NhanVien : Form
     {

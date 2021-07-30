@@ -1,5 +1,5 @@
 ﻿
-namespace GUI
+namespace PBL3.UI
 {
     partial class DangNhap
     {

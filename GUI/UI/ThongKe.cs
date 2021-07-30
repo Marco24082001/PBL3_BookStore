@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using LiveCharts;
-using GUI.BLL;
+using PBL3.BLL;
 using LiveCharts.Wpf;
 using System.Reflection;
 
-namespace GUI
+namespace PBL3.UI
 {
     public partial class Thongke : Form
     {

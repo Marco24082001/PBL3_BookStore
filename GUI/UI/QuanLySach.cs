@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Reflection;
-using GUI.BLL;
+using PBL3.BLL;
 
-namespace GUI
+namespace PBL3.UI
 {
     public partial class QuanLySach : Form
     {

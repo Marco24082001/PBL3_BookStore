@@ -8,8 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using GUI.BLL;
-namespace GUI
+using PBL3.BLL;
+
+namespace PBL3.UI
 {
     public partial class ThemTLSach : Form
     {
