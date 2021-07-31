@@ -74,6 +74,7 @@ namespace PBL3.UI
             this.txtName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtName.HoverState.Parent = this.txtName;
             this.txtName.Location = new System.Drawing.Point(132, 61);
+            this.txtName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtName.Name = "txtName";
             this.txtName.PasswordChar = '\0';
             this.txtName.PlaceholderText = "";
@@ -125,11 +126,11 @@ namespace PBL3.UI
             this.Xoa.IconColor = System.Drawing.Color.Red;
             this.Xoa.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Xoa.IconSize = 25;
-            this.Xoa.Location = new System.Drawing.Point(385, 627);
+            this.Xoa.Location = new System.Drawing.Point(388, 627);
             this.Xoa.Name = "Xoa";
-            this.Xoa.Size = new System.Drawing.Size(85, 36);
+            this.Xoa.Size = new System.Drawing.Size(181, 36);
             this.Xoa.TabIndex = 25;
-            this.Xoa.Text = "Xóa";
+            this.Xoa.Text = "Thay đổi trạng thái";
             this.Xoa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Xoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Xoa.UseVisualStyleBackColor = false;
@@ -144,7 +145,7 @@ namespace PBL3.UI
             this.ChinhSua.IconColor = System.Drawing.Color.Blue;
             this.ChinhSua.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ChinhSua.IconSize = 25;
-            this.ChinhSua.Location = new System.Drawing.Point(222, 627);
+            this.ChinhSua.Location = new System.Drawing.Point(227, 627);
             this.ChinhSua.Name = "ChinhSua";
             this.ChinhSua.Size = new System.Drawing.Size(131, 36);
             this.ChinhSua.TabIndex = 25;
@@ -221,7 +222,7 @@ namespace PBL3.UI
             this.Admin.IconColor = System.Drawing.Color.Teal;
             this.Admin.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Admin.IconSize = 25;
-            this.Admin.Location = new System.Drawing.Point(498, 627);
+            this.Admin.Location = new System.Drawing.Point(598, 627);
             this.Admin.Name = "Admin";
             this.Admin.Size = new System.Drawing.Size(90, 36);
             this.Admin.TabIndex = 73;

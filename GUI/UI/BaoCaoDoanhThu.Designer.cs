@@ -190,6 +190,7 @@ namespace PBL3.UI
             this.TongDoanhThu.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TongDoanhThu.HoverState.Parent = this.TongDoanhThu;
             this.TongDoanhThu.Location = new System.Drawing.Point(551, 469);
+            this.TongDoanhThu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TongDoanhThu.Name = "TongDoanhThu";
             this.TongDoanhThu.PasswordChar = '\0';
             this.TongDoanhThu.PlaceholderText = "";

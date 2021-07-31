@@ -509,9 +509,9 @@ namespace PBL3.UI
             this.XoaSach.IconSize = 20;
             this.XoaSach.Location = new System.Drawing.Point(967, 523);
             this.XoaSach.Name = "XoaSach";
-            this.XoaSach.Size = new System.Drawing.Size(78, 34);
+            this.XoaSach.Size = new System.Drawing.Size(177, 34);
             this.XoaSach.TabIndex = 36;
-            this.XoaSach.Text = "Xóa";
+            this.XoaSach.Text = "Thay đổi trạng thái";
             this.XoaSach.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.XoaSach.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.XoaSach.UseVisualStyleBackColor = false;
