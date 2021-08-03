@@ -328,11 +328,12 @@ namespace PBL3.UI
             this.groupBox2.Controls.Add(this.radioMonth);
             this.groupBox2.Controls.Add(this.salesChart);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Location = new System.Drawing.Point(688, 131);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(688, 128);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(715, 528);
+            this.groupBox2.Size = new System.Drawing.Size(677, 530);
             this.groupBox2.TabIndex = 53;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Doanh thu";
@@ -372,7 +373,7 @@ namespace PBL3.UI
             this.num3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.num3.ForeColor = System.Drawing.Color.Black;
             this.num3.Location = new System.Drawing.Point(362, 53);
-            this.num3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.num3.Margin = new System.Windows.Forms.Padding(4);
             this.num3.Name = "num3";
             this.num3.ShadowDecoration.Parent = this.num3;
             this.num3.Size = new System.Drawing.Size(93, 32);
@@ -393,7 +394,7 @@ namespace PBL3.UI
             this.num2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.num2.ForeColor = System.Drawing.Color.Black;
             this.num2.Location = new System.Drawing.Point(227, 53);
-            this.num2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.num2.Margin = new System.Windows.Forms.Padding(4);
             this.num2.Name = "num2";
             this.num2.ShadowDecoration.Parent = this.num2;
             this.num2.Size = new System.Drawing.Size(93, 32);
@@ -414,7 +415,7 @@ namespace PBL3.UI
             this.num1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.num1.ForeColor = System.Drawing.Color.Black;
             this.num1.Location = new System.Drawing.Point(91, 53);
-            this.num1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.num1.Margin = new System.Windows.Forms.Padding(4);
             this.num1.Name = "num1";
             this.num1.ShadowDecoration.Parent = this.num1;
             this.num1.Size = new System.Drawing.Size(93, 32);
@@ -533,7 +534,7 @@ namespace PBL3.UI
             this.NextPage.Name = "NextPage";
             this.NextPage.Size = new System.Drawing.Size(148, 48);
             this.NextPage.TabIndex = 54;
-            this.NextPage.Text = "Next Page";
+            this.NextPage.Text = "Doanh Thu";
             this.NextPage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.NextPage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.NextPage.UseVisualStyleBackColor = false;

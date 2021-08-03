@@ -72,7 +72,7 @@ namespace PBL3.UI
             this.groupBox1.Location = new System.Drawing.Point(12, 122);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(734, 530);
-            this.groupBox1.TabIndex = 54;
+            this.groupBox1.TabIndex = 52;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Doanh thu";
             // 
@@ -266,7 +266,7 @@ namespace PBL3.UI
             this.backPage.Name = "backPage";
             this.backPage.Size = new System.Drawing.Size(147, 48);
             this.backPage.TabIndex = 55;
-            this.backPage.Text = "Back Page";
+            this.backPage.Text = "Doanh Số";
             this.backPage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.backPage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.backPage.UseVisualStyleBackColor = false;
@@ -280,12 +280,11 @@ namespace PBL3.UI
             this.groupBox2.Controls.Add(this.loadBtn);
             this.groupBox2.Controls.Add(this.turnoverChart);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Location = new System.Drawing.Point(751, 124);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(751, 122);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(682, 528);
-            this.groupBox2.TabIndex = 56;
+            this.groupBox2.Size = new System.Drawing.Size(682, 530);
+            this.groupBox2.TabIndex = 54;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Doanh thu";
             // 
@@ -329,7 +328,7 @@ namespace PBL3.UI
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(169, 59);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(170, 60);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(90, 24);
             this.guna2HtmlLabel1.TabIndex = 53;
@@ -366,8 +365,7 @@ namespace PBL3.UI
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(6, 0);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(7, 1);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(207, 29);
             this.label3.TabIndex = 25;
