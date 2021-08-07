@@ -164,7 +164,7 @@ namespace PBL3.UI
             }
             HOA_DON_NHAP hdn = new HOA_DON_NHAP()
             {
-                MaDonNhap = Convert.ToInt32(txtMaDN.Text),
+                //MaDonNhap = Convert.ToInt32(txtMaDN.Text),
                 NgayNhap = DateTime.Now,
             };
             BLL_QuanLy.Instance.Bll_AddHoaDonNhap(hdn);

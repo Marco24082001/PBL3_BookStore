@@ -60,6 +60,9 @@ namespace PBL3.UI
             this.NextPage = new FontAwesome.Sharp.IconButton();
             this.entityCommand1 = new System.Data.Entity.Core.EntityClient.EntityCommand();
             this.dOANHSOBANHANGBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
@@ -115,7 +118,10 @@ namespace PBL3.UI
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.cbbSort);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.TongDoanhSo);
             this.groupBox1.Controls.Add(this.cbbNgay);
             this.groupBox1.Controls.Add(this.cbbThang);
@@ -126,11 +132,11 @@ namespace PBL3.UI
             this.groupBox1.Controls.Add(this.sortBtn);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(49, 128);
+            this.groupBox1.Location = new System.Drawing.Point(49, 113);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(635, 530);
+            this.groupBox1.Size = new System.Drawing.Size(635, 545);
             this.groupBox1.TabIndex = 52;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Doanh thu";
@@ -149,7 +155,7 @@ namespace PBL3.UI
             this.cbbSort.HoverState.Parent = this.cbbSort;
             this.cbbSort.ItemHeight = 30;
             this.cbbSort.ItemsAppearance.Parent = this.cbbSort;
-            this.cbbSort.Location = new System.Drawing.Point(139, 476);
+            this.cbbSort.Location = new System.Drawing.Point(138, 501);
             this.cbbSort.Name = "cbbSort";
             this.cbbSort.ShadowDecoration.Parent = this.cbbSort;
             this.cbbSort.Size = new System.Drawing.Size(122, 36);
@@ -170,7 +176,7 @@ namespace PBL3.UI
             this.TongDoanhSo.ForeColor = System.Drawing.Color.Black;
             this.TongDoanhSo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TongDoanhSo.HoverState.Parent = this.TongDoanhSo;
-            this.TongDoanhSo.Location = new System.Drawing.Point(458, 476);
+            this.TongDoanhSo.Location = new System.Drawing.Point(457, 501);
             this.TongDoanhSo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TongDoanhSo.Name = "TongDoanhSo";
             this.TongDoanhSo.PasswordChar = '\0';
@@ -194,7 +200,7 @@ namespace PBL3.UI
             this.cbbNgay.HoverState.Parent = this.cbbNgay;
             this.cbbNgay.ItemHeight = 30;
             this.cbbNgay.ItemsAppearance.Parent = this.cbbNgay;
-            this.cbbNgay.Location = new System.Drawing.Point(387, 55);
+            this.cbbNgay.Location = new System.Drawing.Point(386, 80);
             this.cbbNgay.Name = "cbbNgay";
             this.cbbNgay.ShadowDecoration.Parent = this.cbbNgay;
             this.cbbNgay.Size = new System.Drawing.Size(145, 36);
@@ -215,7 +221,7 @@ namespace PBL3.UI
             this.cbbThang.HoverState.Parent = this.cbbThang;
             this.cbbThang.ItemHeight = 30;
             this.cbbThang.ItemsAppearance.Parent = this.cbbThang;
-            this.cbbThang.Location = new System.Drawing.Point(228, 55);
+            this.cbbThang.Location = new System.Drawing.Point(227, 80);
             this.cbbThang.Name = "cbbThang";
             this.cbbThang.ShadowDecoration.Parent = this.cbbThang;
             this.cbbThang.Size = new System.Drawing.Size(145, 36);
@@ -236,7 +242,7 @@ namespace PBL3.UI
             this.cbbNam.HoverState.Parent = this.cbbNam;
             this.cbbNam.ItemHeight = 30;
             this.cbbNam.ItemsAppearance.Parent = this.cbbNam;
-            this.cbbNam.Location = new System.Drawing.Point(68, 55);
+            this.cbbNam.Location = new System.Drawing.Point(67, 80);
             this.cbbNam.Name = "cbbNam";
             this.cbbNam.ShadowDecoration.Parent = this.cbbNam;
             this.cbbNam.Size = new System.Drawing.Size(145, 36);
@@ -247,7 +253,7 @@ namespace PBL3.UI
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeight = 47;
-            this.dataGridView1.Location = new System.Drawing.Point(31, 116);
+            this.dataGridView1.Location = new System.Drawing.Point(30, 141);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -265,7 +271,7 @@ namespace PBL3.UI
             this.iconPictureBox2.IconColor = System.Drawing.Color.Black;
             this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox2.IconSize = 29;
-            this.iconPictureBox2.Location = new System.Drawing.Point(31, 58);
+            this.iconPictureBox2.Location = new System.Drawing.Point(30, 83);
             this.iconPictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.iconPictureBox2.Name = "iconPictureBox2";
             this.iconPictureBox2.Size = new System.Drawing.Size(32, 29);
@@ -276,7 +282,7 @@ namespace PBL3.UI
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(266, 479);
+            this.label8.Location = new System.Drawing.Point(265, 504);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(187, 29);
@@ -293,7 +299,7 @@ namespace PBL3.UI
             this.sortBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.sortBtn.IconSize = 20;
             this.sortBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.sortBtn.Location = new System.Drawing.Point(31, 477);
+            this.sortBtn.Location = new System.Drawing.Point(30, 502);
             this.sortBtn.Margin = new System.Windows.Forms.Padding(2);
             this.sortBtn.Name = "sortBtn";
             this.sortBtn.Size = new System.Drawing.Size(100, 34);
@@ -552,6 +558,33 @@ namespace PBL3.UI
             // 
             this.dOANHSOBANHANGBindingSource.DataSource = typeof(PBL3.DOANH_SO_BAN_HANG);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(382, 57);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(47, 20);
+            this.label5.TabIndex = 81;
+            this.label5.Text = "Ngày";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(223, 57);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(55, 20);
+            this.label6.TabIndex = 82;
+            this.label6.Text = "Tháng";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(63, 57);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(44, 20);
+            this.label7.TabIndex = 83;
+            this.label7.Text = "Năm";
+            // 
             // Thongke
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -618,5 +651,8 @@ namespace PBL3.UI
         private Guna.UI2.WinForms.Guna2CustomRadioButton radioMonth;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblMonth;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }

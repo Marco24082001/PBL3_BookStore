@@ -51,7 +51,7 @@
           <Key>
             <PropertyRef Name="MaDonBan" />
           </Key>
-          <Property Name="MaDonBan" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MaDonBan" Type="int" Nullable="false" />
           <Property Name="SDT_KH" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="MaNhanVien" Type="varchar" MaxLength="5" Nullable="false" />
           <Property Name="NgayBan" Type="date" />
@@ -60,7 +60,7 @@
           <Key>
             <PropertyRef Name="MaDonNhap" />
           </Key>
-          <Property Name="MaDonNhap" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MaDonNhap" Type="int" Nullable="false" />
           <Property Name="NgayNhap" Type="date" />
         </EntityType>
         <EntityType Name="KHACH_HANG">
@@ -366,7 +366,7 @@
           <Key>
             <PropertyRef Name="MaDonBan" />
           </Key>
-          <Property Name="MaDonBan" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MaDonBan" Type="Int32" Nullable="false" />
           <Property Name="SDT_KH" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="MaNhanVien" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="NgayBan" Type="DateTime" Precision="0" />
@@ -378,7 +378,7 @@
           <Key>
             <PropertyRef Name="MaDonNhap" />
           </Key>
-          <Property Name="MaDonNhap" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MaDonNhap" Type="Int32" Nullable="false" />
           <Property Name="NgayNhap" Type="DateTime" Precision="0" />
           <NavigationProperty Name="CHI_TIET_HOA_DON_NHAP" Relationship="Self.FK__CHI_TIET___MaDon__36B12243" FromRole="HOA_DON_NHAP" ToRole="CHI_TIET_HOA_DON_NHAP" />
         </EntityType>

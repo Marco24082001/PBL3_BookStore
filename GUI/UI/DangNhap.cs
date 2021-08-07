@@ -15,8 +15,8 @@ namespace PBL3.UI
     public partial class DangNhap : Form
     {
         Thread Luong;
-        string TaiKhoan;
-        string MatKhau;
+        private string TaiKhoan;
+        private string MatKhau;
         public DangNhap()
         {
             InitializeComponent();
@@ -29,18 +29,17 @@ namespace PBL3.UI
             bool checktkmk = BLL_QuanLy.Instance.Bll_CheckTKMK(TaiKhoan, MatKhau);
             if(checktkmk == true)
             {
-                if (BLL_QuanLy.Instance.Bll_CheckAdmin(TaiKhoan) == false)
+                if (BLL_QuanLy.Instance.Bll_CheckAdmin(TaiKhoan))
                 {
-                    
                     this.Close();
-                    Luong = new Thread(openFormNhanVien);
+                    Luong = new Thread(openFormQuanLy);
                     Luong.SetApartmentState(ApartmentState.STA);
                     Luong.Start();
                 }
                 else
                 {
                     this.Close();
-                    Luong = new Thread(openFormQuanLy);
+                    Luong = new Thread(openFormNhanVien);
                     Luong.SetApartmentState(ApartmentState.STA);
                     Luong.Start();
                 }

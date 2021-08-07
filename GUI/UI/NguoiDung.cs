@@ -115,6 +115,7 @@ namespace PBL3.UI
                     Pass = txtMKmoi.Text
                 };
                 BLL_QuanLy.Instance.BLL_EditMatKhau(tk);
+                MessageBox.Show("Đổi mật khẩu thành công", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Hide();
             }
         }

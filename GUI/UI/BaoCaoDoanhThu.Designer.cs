@@ -30,6 +30,9 @@ namespace PBL3.UI
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.cbbNgay = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cbbThang = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cbbNam = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -58,6 +61,9 @@ namespace PBL3.UI
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.cbbNgay);
             this.groupBox1.Controls.Add(this.cbbThang);
             this.groupBox1.Controls.Add(this.cbbNam);
@@ -69,12 +75,39 @@ namespace PBL3.UI
             this.groupBox1.Controls.Add(this.sortBtn);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 122);
+            this.groupBox1.Location = new System.Drawing.Point(12, 106);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(734, 530);
+            this.groupBox1.Size = new System.Drawing.Size(734, 546);
             this.groupBox1.TabIndex = 52;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Doanh thu";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(398, 53);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(47, 20);
+            this.label4.TabIndex = 80;
+            this.label4.Text = "Ngày";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(229, 53);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(55, 20);
+            this.label2.TabIndex = 80;
+            this.label2.Text = "Tháng";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(69, 53);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 20);
+            this.label1.TabIndex = 80;
+            this.label1.Text = "Năm";
             // 
             // cbbNgay
             // 
@@ -90,7 +123,7 @@ namespace PBL3.UI
             this.cbbNgay.HoverState.Parent = this.cbbNgay;
             this.cbbNgay.ItemHeight = 30;
             this.cbbNgay.ItemsAppearance.Parent = this.cbbNgay;
-            this.cbbNgay.Location = new System.Drawing.Point(392, 43);
+            this.cbbNgay.Location = new System.Drawing.Point(392, 76);
             this.cbbNgay.Name = "cbbNgay";
             this.cbbNgay.ShadowDecoration.Parent = this.cbbNgay;
             this.cbbNgay.Size = new System.Drawing.Size(145, 36);
@@ -111,7 +144,7 @@ namespace PBL3.UI
             this.cbbThang.HoverState.Parent = this.cbbThang;
             this.cbbThang.ItemHeight = 30;
             this.cbbThang.ItemsAppearance.Parent = this.cbbThang;
-            this.cbbThang.Location = new System.Drawing.Point(233, 43);
+            this.cbbThang.Location = new System.Drawing.Point(233, 76);
             this.cbbThang.Name = "cbbThang";
             this.cbbThang.ShadowDecoration.Parent = this.cbbThang;
             this.cbbThang.Size = new System.Drawing.Size(145, 36);
@@ -132,7 +165,7 @@ namespace PBL3.UI
             this.cbbNam.HoverState.Parent = this.cbbNam;
             this.cbbNam.ItemHeight = 30;
             this.cbbNam.ItemsAppearance.Parent = this.cbbNam;
-            this.cbbNam.Location = new System.Drawing.Point(73, 43);
+            this.cbbNam.Location = new System.Drawing.Point(73, 76);
             this.cbbNam.Name = "cbbNam";
             this.cbbNam.ShadowDecoration.Parent = this.cbbNam;
             this.cbbNam.Size = new System.Drawing.Size(145, 36);
@@ -147,7 +180,7 @@ namespace PBL3.UI
             this.iconPictureBox2.IconColor = System.Drawing.Color.Black;
             this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox2.IconSize = 29;
-            this.iconPictureBox2.Location = new System.Drawing.Point(36, 46);
+            this.iconPictureBox2.Location = new System.Drawing.Point(36, 79);
             this.iconPictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.iconPictureBox2.Name = "iconPictureBox2";
             this.iconPictureBox2.Size = new System.Drawing.Size(32, 29);
@@ -168,7 +201,7 @@ namespace PBL3.UI
             this.cbbSort.HoverState.Parent = this.cbbSort;
             this.cbbSort.ItemHeight = 30;
             this.cbbSort.ItemsAppearance.Parent = this.cbbSort;
-            this.cbbSort.Location = new System.Drawing.Point(152, 469);
+            this.cbbSort.Location = new System.Drawing.Point(152, 497);
             this.cbbSort.Name = "cbbSort";
             this.cbbSort.ShadowDecoration.Parent = this.cbbSort;
             this.cbbSort.Size = new System.Drawing.Size(122, 36);
@@ -189,7 +222,7 @@ namespace PBL3.UI
             this.TongDoanhThu.ForeColor = System.Drawing.Color.Black;
             this.TongDoanhThu.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TongDoanhThu.HoverState.Parent = this.TongDoanhThu;
-            this.TongDoanhThu.Location = new System.Drawing.Point(551, 469);
+            this.TongDoanhThu.Location = new System.Drawing.Point(551, 497);
             this.TongDoanhThu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TongDoanhThu.Name = "TongDoanhThu";
             this.TongDoanhThu.PasswordChar = '\0';
@@ -203,7 +236,7 @@ namespace PBL3.UI
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(35, 90);
+            this.dataGridView1.Location = new System.Drawing.Point(35, 118);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
@@ -216,7 +249,7 @@ namespace PBL3.UI
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(352, 473);
+            this.label8.Location = new System.Drawing.Point(352, 501);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(193, 29);
             this.label8.TabIndex = 32;
@@ -232,7 +265,7 @@ namespace PBL3.UI
             this.sortBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.sortBtn.IconSize = 20;
             this.sortBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.sortBtn.Location = new System.Drawing.Point(35, 470);
+            this.sortBtn.Location = new System.Drawing.Point(35, 498);
             this.sortBtn.Name = "sortBtn";
             this.sortBtn.Size = new System.Drawing.Size(100, 34);
             this.sortBtn.TabIndex = 31;
@@ -281,9 +314,9 @@ namespace PBL3.UI
             this.groupBox2.Controls.Add(this.turnoverChart);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(751, 122);
+            this.groupBox2.Location = new System.Drawing.Point(751, 106);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(682, 530);
+            this.groupBox2.Size = new System.Drawing.Size(682, 546);
             this.groupBox2.TabIndex = 54;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Doanh thu";
@@ -417,5 +450,8 @@ namespace PBL3.UI
         private Guna.UI2.WinForms.Guna2ComboBox cbbNam;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }
