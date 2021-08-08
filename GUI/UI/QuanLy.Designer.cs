@@ -129,7 +129,7 @@ namespace PBL3.UI
             this.btnQLNV.Location = new System.Drawing.Point(3, 307);
             this.btnQLNV.Name = "btnQLNV";
             this.btnQLNV.Size = new System.Drawing.Size(235, 65);
-            this.btnQLNV.TabIndex = 1;
+            this.btnQLNV.TabIndex = 3;
             this.btnQLNV.Text = "Quản lý nhân viên";
             this.btnQLNV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnQLNV.UseVisualStyleBackColor = true;
@@ -150,7 +150,7 @@ namespace PBL3.UI
             this.btnQLKS.Location = new System.Drawing.Point(3, 235);
             this.btnQLKS.Name = "btnQLKS";
             this.btnQLKS.Size = new System.Drawing.Size(235, 65);
-            this.btnQLKS.TabIndex = 1;
+            this.btnQLKS.TabIndex = 2;
             this.btnQLKS.Text = "Quản lý kho sách";
             this.btnQLKS.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnQLKS.UseVisualStyleBackColor = true;

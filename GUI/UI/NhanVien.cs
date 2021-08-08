@@ -61,10 +61,6 @@ namespace PBL3.UI
                 dataGridView2.Columns["SoLuong"].HeaderText = "Số lượng";
                 dataGridView2.Columns["DonGia"].HeaderText = "Đơn giá";
                 dataGridView2.Columns["ThanhTien"].HeaderText = "Thành tiền";
-                dataGridView2.Columns[0].Visible = false;
-                dataGridView2.Columns[6].Visible = false;
-                dataGridView2.Columns[7].Visible = false;
-                dataGridView2.CurrentCell = dataGridView2.Rows[0].Cells[1];
             }
         }
         public void setCbbMaSach()
@@ -358,11 +354,6 @@ namespace PBL3.UI
             txtMaDonBan.Text = BLL_HoaDonBan.Instance.Bll_CreateHDB();
         }
 
-        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            cbbMaSach.SelectedItem = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            numericUpDown1.Value = 1;
-        }
 
         private void sortBtn_Click(object sender, EventArgs e)
         {
@@ -397,6 +388,12 @@ namespace PBL3.UI
             string theloai = cbbTheLoai.SelectedItem.ToString();
             string name = txtTenSach.Text;
             dataGridView1.DataSource = BLL_Sach.Instance.Bll_GetSachByNameLSAndTT(name, theloai);
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            cbbMaSach.SelectedItem = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            numericUpDown1.Value = 1;
         }
     }
 }

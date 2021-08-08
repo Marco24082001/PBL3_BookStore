@@ -34,25 +34,25 @@ namespace PBL3.UI
             this.Thoat = new FontAwesome.Sharp.IconButton();
             this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtMaNXB = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtTenNXB = new System.Windows.Forms.TextBox();
+            this.txtMaNXB = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtTenNXB = new Guna.UI2.WinForms.Guna2TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtTenNXB);
+            this.groupBox1.Controls.Add(this.txtMaNXB);
             this.groupBox1.Controls.Add(this.XacNhan);
             this.groupBox1.Controls.Add(this.Thoat);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txtMaNXB);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtTenNXB);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(3, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(445, 307);
+            this.groupBox1.Size = new System.Drawing.Size(443, 316);
             this.groupBox1.TabIndex = 33;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
@@ -66,7 +66,7 @@ namespace PBL3.UI
             this.XacNhan.IconColor = System.Drawing.Color.Blue;
             this.XacNhan.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.XacNhan.IconSize = 20;
-            this.XacNhan.Location = new System.Drawing.Point(291, 238);
+            this.XacNhan.Location = new System.Drawing.Point(281, 238);
             this.XacNhan.Name = "XacNhan";
             this.XacNhan.Size = new System.Drawing.Size(122, 34);
             this.XacNhan.TabIndex = 37;
@@ -113,13 +113,6 @@ namespace PBL3.UI
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã nhà xuất bản :";
             // 
-            // txtMaNXB
-            // 
-            this.txtMaNXB.Location = new System.Drawing.Point(199, 93);
-            this.txtMaNXB.Name = "txtMaNXB";
-            this.txtMaNXB.Size = new System.Drawing.Size(147, 27);
-            this.txtMaNXB.TabIndex = 1;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -129,19 +122,61 @@ namespace PBL3.UI
             this.label2.TabIndex = 0;
             this.label2.Text = "Tên nhà xuất bản :";
             // 
+            // txtMaNXB
+            // 
+            this.txtMaNXB.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMaNXB.DefaultText = "";
+            this.txtMaNXB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtMaNXB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtMaNXB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMaNXB.DisabledState.Parent = this.txtMaNXB;
+            this.txtMaNXB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMaNXB.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMaNXB.FocusedState.Parent = this.txtMaNXB;
+            this.txtMaNXB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaNXB.ForeColor = System.Drawing.Color.Black;
+            this.txtMaNXB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMaNXB.HoverState.Parent = this.txtMaNXB;
+            this.txtMaNXB.Location = new System.Drawing.Point(199, 87);
+            this.txtMaNXB.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtMaNXB.Name = "txtMaNXB";
+            this.txtMaNXB.PasswordChar = '\0';
+            this.txtMaNXB.PlaceholderText = "";
+            this.txtMaNXB.SelectedText = "";
+            this.txtMaNXB.ShadowDecoration.Parent = this.txtMaNXB;
+            this.txtMaNXB.Size = new System.Drawing.Size(204, 33);
+            this.txtMaNXB.TabIndex = 38;
+            // 
             // txtTenNXB
             // 
-            this.txtTenNXB.Location = new System.Drawing.Point(199, 148);
+            this.txtTenNXB.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTenNXB.DefaultText = "";
+            this.txtTenNXB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtTenNXB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtTenNXB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTenNXB.DisabledState.Parent = this.txtTenNXB;
+            this.txtTenNXB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTenNXB.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTenNXB.FocusedState.Parent = this.txtTenNXB;
+            this.txtTenNXB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenNXB.ForeColor = System.Drawing.Color.Black;
+            this.txtTenNXB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTenNXB.HoverState.Parent = this.txtTenNXB;
+            this.txtTenNXB.Location = new System.Drawing.Point(199, 142);
+            this.txtTenNXB.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtTenNXB.Name = "txtTenNXB";
-            this.txtTenNXB.Size = new System.Drawing.Size(147, 27);
-            this.txtTenNXB.TabIndex = 1;
+            this.txtTenNXB.PasswordChar = '\0';
+            this.txtTenNXB.PlaceholderText = "";
+            this.txtTenNXB.SelectedText = "";
+            this.txtTenNXB.ShadowDecoration.Parent = this.txtTenNXB;
+            this.txtTenNXB.Size = new System.Drawing.Size(204, 33);
+            this.txtTenNXB.TabIndex = 39;
             // 
             // ThemNXB
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(449, 332);
+            this.ClientSize = new System.Drawing.Size(449, 334);
             this.Controls.Add(this.groupBox1);
             this.Name = "ThemNXB";
             this.Text = "ThemNXB";
@@ -155,10 +190,10 @@ namespace PBL3.UI
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtMaNXB;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtTenNXB;
         private FontAwesome.Sharp.IconButton XacNhan;
         private FontAwesome.Sharp.IconButton Thoat;
+        private Guna.UI2.WinForms.Guna2TextBox txtTenNXB;
+        private Guna.UI2.WinForms.Guna2TextBox txtMaNXB;
     }
 }

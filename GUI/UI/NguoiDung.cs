@@ -120,5 +120,6 @@ namespace PBL3.UI
                 this.Hide();
             }
         }
+
     }
 }

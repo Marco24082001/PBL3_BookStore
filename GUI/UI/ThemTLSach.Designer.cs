@@ -30,13 +30,13 @@ namespace PBL3.UI
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.txtMaLS = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtTenLS = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.OK = new FontAwesome.Sharp.IconButton();
             this.label8 = new System.Windows.Forms.Label();
             this.Thoat = new FontAwesome.Sharp.IconButton();
+            this.txtMaLS = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtTenLS = new Guna.UI2.WinForms.Guna2TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,13 +49,6 @@ namespace PBL3.UI
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã loại sách :";
             // 
-            // txtMaLS
-            // 
-            this.txtMaLS.Location = new System.Drawing.Point(220, 104);
-            this.txtMaLS.Name = "txtMaLS";
-            this.txtMaLS.Size = new System.Drawing.Size(131, 27);
-            this.txtMaLS.TabIndex = 1;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -65,22 +58,15 @@ namespace PBL3.UI
             this.label2.TabIndex = 0;
             this.label2.Text = "Tên loại sách :";
             // 
-            // txtTenLS
-            // 
-            this.txtTenLS.Location = new System.Drawing.Point(220, 159);
-            this.txtTenLS.Name = "txtTenLS";
-            this.txtTenLS.Size = new System.Drawing.Size(131, 27);
-            this.txtTenLS.TabIndex = 1;
-            // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtTenLS);
+            this.groupBox1.Controls.Add(this.txtMaLS);
             this.groupBox1.Controls.Add(this.OK);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.Thoat);
-            this.groupBox1.Controls.Add(this.txtMaLS);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtTenLS);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(3, 12);
             this.groupBox1.Name = "groupBox1";
@@ -136,10 +122,59 @@ namespace PBL3.UI
             this.Thoat.UseVisualStyleBackColor = false;
             this.Thoat.Click += new System.EventHandler(this.Thoat_Click);
             // 
+            // txtMaLS
+            // 
+            this.txtMaLS.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMaLS.DefaultText = "";
+            this.txtMaLS.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtMaLS.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtMaLS.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMaLS.DisabledState.Parent = this.txtMaLS;
+            this.txtMaLS.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMaLS.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMaLS.FocusedState.Parent = this.txtMaLS;
+            this.txtMaLS.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaLS.ForeColor = System.Drawing.Color.Black;
+            this.txtMaLS.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMaLS.HoverState.Parent = this.txtMaLS;
+            this.txtMaLS.Location = new System.Drawing.Point(220, 98);
+            this.txtMaLS.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtMaLS.Name = "txtMaLS";
+            this.txtMaLS.PasswordChar = '\0';
+            this.txtMaLS.PlaceholderText = "";
+            this.txtMaLS.SelectedText = "";
+            this.txtMaLS.ShadowDecoration.Parent = this.txtMaLS;
+            this.txtMaLS.Size = new System.Drawing.Size(131, 33);
+            this.txtMaLS.TabIndex = 39;
+            // 
+            // txtTenLS
+            // 
+            this.txtTenLS.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTenLS.DefaultText = "";
+            this.txtTenLS.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtTenLS.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtTenLS.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTenLS.DisabledState.Parent = this.txtTenLS;
+            this.txtTenLS.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTenLS.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTenLS.FocusedState.Parent = this.txtTenLS;
+            this.txtTenLS.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenLS.ForeColor = System.Drawing.Color.Black;
+            this.txtTenLS.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTenLS.HoverState.Parent = this.txtTenLS;
+            this.txtTenLS.Location = new System.Drawing.Point(220, 153);
+            this.txtTenLS.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtTenLS.Name = "txtTenLS";
+            this.txtTenLS.PasswordChar = '\0';
+            this.txtTenLS.PlaceholderText = "";
+            this.txtTenLS.SelectedText = "";
+            this.txtTenLS.ShadowDecoration.Parent = this.txtTenLS;
+            this.txtTenLS.Size = new System.Drawing.Size(131, 33);
+            this.txtTenLS.TabIndex = 40;
+            // 
             // ThemTLSach
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(407, 338);
             this.Controls.Add(this.groupBox1);
@@ -154,12 +189,12 @@ namespace PBL3.UI
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtMaLS;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtTenLS;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label8;
         private FontAwesome.Sharp.IconButton Thoat;
         private FontAwesome.Sharp.IconButton OK;
+        private Guna.UI2.WinForms.Guna2TextBox txtTenLS;
+        private Guna.UI2.WinForms.Guna2TextBox txtMaLS;
     }
 }

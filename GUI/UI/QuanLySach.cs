@@ -65,10 +65,6 @@ namespace PBL3.UI
             dataGridView2.Columns["MaSach"].HeaderText = "Mã sách";
             dataGridView2.Columns["SoLuong"].HeaderText = "Số lượng";
             dataGridView2.Columns["ThanhTien"].HeaderText = "Thành tiền";
-            dataGridView2.Columns[0].Visible = false;
-            dataGridView2.Columns[5].Visible = false;
-            dataGridView2.Columns[6].Visible = false;
-            if (list.Count != 0) dataGridView2.CurrentCell = dataGridView2.Rows[0].Cells[1];
         }
         public void setcbbMaSach()
         {
@@ -270,12 +266,6 @@ namespace PBL3.UI
             txtMaDN.Text = BLL_HoaDonNhap.Instance.Bll_CreateHDN();
         }
 
-        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            cbbMaSach.SelectedItem = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            numericUpDown4.Value = 1;
-        }
-
         private void sortBtn_Click(object sender, EventArgs e)
         {
             List<string> LMS = new List<string>();
@@ -309,9 +299,10 @@ namespace PBL3.UI
             dataGridView1.Columns[12].Visible = false;
         }
 
-        private void txtTong_TextChanged(object sender, EventArgs e)
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            cbbMaSach.SelectedItem = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            numericUpDown4.Value = 1;
         }
     }
 }
