@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PBL3.BLL;
+using PBL3.DTO;
 
 namespace PBL3.UI
 {
@@ -25,7 +26,7 @@ namespace PBL3.UI
         public void loadData()
         {
             txtMaNV.Enabled = false;
-            NHAN_VIEN nv = BLL_QuanLy.Instance.Bll_GetNVByMaNV(maNV);
+            DTO.NhanVien nv = BLL_NhanVien.Instance.Bll_GetNVByMaNV(maNV);
             txtMaNV.Text = nv.MaNhanVien;
             txtHoTen.Text = nv.HoTen;
             if (nv.GioiTinh == "Nam") Nam.Checked = true;
@@ -72,7 +73,7 @@ namespace PBL3.UI
                 MessageBox.Show("Vui lòng nhập 'Mã nhân viên'", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-            foreach(string ma in BLL_QuanLy.Instance.Bll_GetAllMaNV())
+            foreach(string ma in BLL_NhanVien.Instance.Bll_GetAllMaNV())
             {
                 if(ma == txtMaNV.Text)
                 {
@@ -199,7 +200,7 @@ namespace PBL3.UI
             if (NhapSDT() == false) return;
             if (NhapQueQuan() == false) return;
             if (!NhapMatKhau()) return;
-            NHAN_VIEN nv = new NHAN_VIEN();            
+            DTO.NhanVien nv = new DTO.NhanVien();            
             nv.MaNhanVien = txtMaNV.Text;
             nv.HoTen = txtHoTen.Text;
             if (Nam.Checked == true) nv.GioiTinh = "Nam";
@@ -210,11 +211,11 @@ namespace PBL3.UI
             nv.QueQuan = txtQueQuan.Text;
             nv.NgaySinh = dateTimePicker1.Value;
             nv.TrangThai = true;
-            BLL_QuanLy.Instance.Bll_AddNhanVien(nv);
-            TK_NHANVIEN tk = new TK_NHANVIEN();
+            BLL_NhanVien.Instance.Bll_AddNhanVien(nv);
+            TKNhanVien tk = new TKNhanVien();
             tk.TKNV = txtMaNV.Text;
             tk.Pass = txtMatKhau.Text;
-            BLL_QuanLy.Instance.Bll_AddTKNhanVien(tk);
+            BLL_TKNhanVien.Instance.Bll_AddTKNhanVien(tk);
         }
 
         private void Edit(string maNV)
@@ -223,7 +224,7 @@ namespace PBL3.UI
             if (NhapCMND() == false) return;
             if (NhapSDT() == false) return;
             if (NhapQueQuan() == false) return;
-            NHAN_VIEN nv = new NHAN_VIEN(); 
+            DTO.NhanVien nv = new DTO.NhanVien(); 
             txtMaNV.Text = maNV;
             txtMaNV.Enabled = false;
             nv.MaNhanVien = txtMaNV.Text;
@@ -235,7 +236,7 @@ namespace PBL3.UI
             nv.SoDienThoai = txtSdt.Text;
             nv.QueQuan = txtQueQuan.Text;
             nv.NgaySinh = dateTimePicker1.Value;
-            BLL_QuanLy.Instance.Bll_EditNhanVien(nv);
+            BLL_NhanVien.Instance.Bll_EditNhanVien(nv);
         }
 
         private void XacNhan_Click(object sender, EventArgs e)

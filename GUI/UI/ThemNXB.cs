@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PBL3.BLL;
-
+using PBL3.DTO;
 namespace PBL3.UI
 {
     public partial class ThemNXB : Form
@@ -24,19 +24,19 @@ namespace PBL3.UI
 
         private void XacNhan_Click(object sender, EventArgs e)
         {
-            foreach (string a in BLL_QuanLy.Instance.Bll_GetAllMaNXB()) {
+            foreach (string a in BLL_NhaXuatBan.Instance.Bll_GetAllMaNXB()) {
                 if(txtMaNXB.Text == a)
                 {
                     MessageBox.Show("Nhà xuất bản đã tồn tại", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
             }
-            NHA_XUAT_BAN nxb = new NHA_XUAT_BAN();
+            NhaXuatBan nxb = new NhaXuatBan();
             nxb.MaNXB = txtMaNXB.Text;
             nxb.TenNXB = txtTenNXB.Text;
             try
             {
-                BLL_QuanLy.Instance.Bll_AddNXB(nxb);
+                BLL_NhaXuatBan.Instance.Bll_AddNXB(nxb);
             }
             catch(DbEntityValidationException ex)
             {

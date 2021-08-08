@@ -27,7 +27,7 @@ namespace PBL3.UI
 
         public void setData()
         {
-            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetAllNhanVien();
+            dataGridView1.DataSource = BLL_NhanVien.Instance.Bll_GetAllNhanVien();
             dataGridView1.Columns["MaNhanVien"].HeaderText = "Mã nhân viên";
             dataGridView1.Columns["HoTen"].HeaderText = "Họ tên";
             dataGridView1.Columns["DanToc"].HeaderText = "Dân tộc";
@@ -38,9 +38,6 @@ namespace PBL3.UI
             dataGridView1.Columns["NgaySinh"].HeaderText = "Ngày sinh";
             dataGridView1.Columns["TrangThai"].HeaderText = "Trạng thái";
             dataGridView1.Columns["isAdmin"].HeaderText = "Admin";
-            dataGridView1.Columns[10].Visible = false;
-            dataGridView1.Columns[11].Visible = false;
-            dataGridView1.Columns[12].Visible = false;
         }
 
         public void setcbbSort()
@@ -85,11 +82,11 @@ namespace PBL3.UI
             foreach (DataGridViewRow i in r)
             {
                 string manv = i.Cells["MaNhanVien"].Value.ToString();
-                if(manv == BLL_QuanLy.Instance.Bll_SearchAdim())
+                if(manv == BLL_NhanVien.Instance.Bll_SearchAdim())
                 {
                     MessageBox.Show("Bạn đang là Admin", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                else BLL_QuanLy.Instance.Bll_ChangeTrangThaiNV(manv);
+                else BLL_NhanVien.Instance.Bll_ChangeTrangThaiNV(manv);
             }
             setData();
         }
@@ -112,13 +109,13 @@ namespace PBL3.UI
                 LMNV.Add(dataGridView1.Rows[i].Cells[0].Value.ToString());
             }
             string CategorySort = cbbSort.SelectedItem.ToString();
-            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_SapXepNV(LMNV, CategorySort);
+            dataGridView1.DataSource = BLL_NhanVien.Instance.Bll_SapXepNV(LMNV, CategorySort);
         }
 
         private void txtName_TextChanged(object sender, EventArgs e)
         {
             string a = txtName.Text;
-            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetNhanVienByName(a);
+            dataGridView1.DataSource = BLL_NhanVien.Instance.Bll_GetNhanVienByName(a);
         }
 
         private void openFormDangNhap(object newForm)
@@ -136,7 +133,7 @@ namespace PBL3.UI
                 return;
             }
             string maNV = dataGridView1.CurrentRow.Cells["MaNhanVien"].Value.ToString();
-            if (BLL_QuanLy.Instance.Bll_CheckAdmin(maNV))
+            if (BLL_NhanVien.Instance.Bll_CheckAdmin(maNV))
             {
                 return;
             }
@@ -144,7 +141,7 @@ namespace PBL3.UI
             result = MessageBox.Show("Bạn chắc chắn đổi Admin không ?", boxTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if(result == System.Windows.Forms.DialogResult.Yes)
             {
-                BLL_QuanLy.Instance.Bll_ChangeAdmin(maNV);
+                BLL_NhanVien.Instance.Bll_ChangeAdmin(maNV);
                 Exit_QuanLy();
                 Luong = new Thread(openFormDangNhap);
                 Luong.SetApartmentState(ApartmentState.STA);

@@ -11,13 +11,14 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PBL3.BLL;
+using PBL3.DTO;
 
 namespace PBL3.UI
 {
     public partial class NhanVien : Form
     {
         Thread Luong;
-        List<CHI_TIET_HOA_DON_BAN> list = new List<CHI_TIET_HOA_DON_BAN>();
+        List<ChiTietHoaDonBan> list = new List<ChiTietHoaDonBan>();
         public string maNV { get; set; }
         bool checkKhachHang = false;
         NguoiDung user;
@@ -37,7 +38,7 @@ namespace PBL3.UI
 
         public void setData1()
         {
-            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetAllViewSachByTrangThai().ToList();
+            dataGridView1.DataSource = BLL_Sach.Instance.Bll_GetAllViewSachByTrangThai().ToList();
             dataGridView1.Columns["MaSach"].HeaderText = "Mã sách";
             dataGridView1.Columns["TenSach"].HeaderText = "Tên sách";
             dataGridView1.Columns["GiaBan"].HeaderText = "Giá";
@@ -68,7 +69,7 @@ namespace PBL3.UI
         }
         public void setCbbMaSach()
         {
-            foreach (string i in BLL_QuanLy.Instance.Bll_GetAllMaSachByTrangThai())
+            foreach (string i in BLL_Sach.Instance.Bll_GetAllMaSachByTrangThai())
             {
                 cbbMaSach.Items.Add(i);
             }
@@ -77,7 +78,7 @@ namespace PBL3.UI
         public void setCbbLoaiSach()
         {
             cbbTheLoai.Items.Add("All");
-            foreach (string i in BLL_QuanLy.Instance.Bll_GetAllMaLS())
+            foreach (string i in BLL_Sach.Instance.Bll_GetAllMaLS())
             {
                 cbbTheLoai.Items.Add(i);
             }
@@ -94,7 +95,7 @@ namespace PBL3.UI
 
         private void NhanVien_Load(object sender, EventArgs e)
         {
-            txtMaNhanVien.Text = txtTen.Text = BLL_QuanLy.Instance.Bll_GetNameNVByMaNV(maNV);
+            txtMaNhanVien.Text = txtTen.Text = BLL_Sach.Instance.Bll_GetNameNVByMaNV(maNV);
             txtMaNhanVien.Enabled = false;
             txtMaDonBan.Enabled = false;
             TongCong.Text = "0";
@@ -159,14 +160,14 @@ namespace PBL3.UI
                 return;
             }
             int soSachinList = 0;
-            foreach (CHI_TIET_HOA_DON_BAN i in list)
+            foreach (ChiTietHoaDonBan i in list)
             {
                 if (i.MaSach == cbbMaSach.SelectedItem.ToString())
                 {
                     soSachinList += i.SoLuong;
                 }
             }
-            if (numericUpDown1.Value + soSachinList > BLL_QuanLy.Instance.Bll_GetSLByMaSach(cbbMaSach.SelectedItem.ToString()))
+            if (numericUpDown1.Value + soSachinList > BLL_Sach.Instance.Bll_GetSLByMaSach(cbbMaSach.SelectedItem.ToString()))
             {
                 MessageBox.Show("Số lượng sách trong kho không đủ", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -174,9 +175,9 @@ namespace PBL3.UI
             txtHoTen.Enabled = false;
             txtSDT.Enabled = false;
             txtMaDonBan.Enabled = false;
-            int donGia = BLL_QuanLy.Instance.Bll_GetGiaBanByMaSach(cbbMaSach.SelectedItem.ToString());
+            int donGia = BLL_Sach.Instance.Bll_GetGiaBanByMaSach(cbbMaSach.SelectedItem.ToString());
             int soLuong = Convert.ToInt32(numericUpDown1.Value.ToString());
-            CHI_TIET_HOA_DON_BAN chitiet = new CHI_TIET_HOA_DON_BAN()
+            ChiTietHoaDonBan chitiet = new ChiTietHoaDonBan()
             {
                 MaDonBan = Convert.ToInt32(txtMaDonBan.Text),
                 MaSach = cbbMaSach.SelectedItem.ToString(),
@@ -186,7 +187,7 @@ namespace PBL3.UI
             };
             int tong = Convert.ToInt32(TongCong.Text);
             TongCong.Text = (tong + chitiet.ThanhTien).ToString();
-            foreach (CHI_TIET_HOA_DON_BAN p in list)
+            foreach (ChiTietHoaDonBan p in list)
             {
                 if (chitiet.MaSach == p.MaSach)
                 {
@@ -199,11 +200,6 @@ namespace PBL3.UI
             list.Add(chitiet);
             setData2();
             return;
-        }
-
-        private void ChinhSua_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void Xoa_Click(object sender, EventArgs e)
@@ -238,52 +234,52 @@ namespace PBL3.UI
             }
             if (checkKhachHang == false)
             {
-                KHACH_HANG kh = new KHACH_HANG();
+                KhachHang kh = new KhachHang();
                 kh.SDT = txtSDT.Text;
                 kh.HoTen = txtHoTen.Text;
-                BLL_QuanLy.Instance.Bll_AddKhachHang(kh);
+                BLL_KhachHang.Instance.Bll_AddKhachHang(kh);
             }
-            HOA_DON_BAN hdb = new HOA_DON_BAN()
+            HoaDonBan hdb = new HoaDonBan()
             {
                 MaDonBan = Convert.ToInt32(txtMaDonBan.Text),
                 SDT_KH = txtSDT.Text,
                 MaNhanVien = maNV,
                 NgayBan = DateTime.Now,
             };
-            BLL_QuanLy.Instance.Bll_AddHoaDonBan(hdb);
-            foreach (CHI_TIET_HOA_DON_BAN a in list)
+            BLL_HoaDonBan.Instance.Bll_AddHoaDonBan(hdb);
+            foreach (ChiTietHoaDonBan a in list)
             {
-                BLL_QuanLy.Instance.Bll_AddChiTietHoaDonBan(a);
+                BLL_ChiTietHoaDonBan.Instance.Bll_AddChiTietHoaDonBan(a);
                 string maSach = a.MaSach;
                 int soLuongban = a.SoLuong;
-                int soLuongNow = BLL_QuanLy.Instance.Bll_GetSLByMaSach(maSach);
-                BLL_QuanLy.Instance.Bll_EditSLByMaSach(maSach, soLuongNow - soLuongban);
+                int soLuongNow = BLL_Sach.Instance.Bll_GetSLByMaSach(maSach);
+                BLL_Sach.Instance.Bll_EditSLByMaSach(maSach, soLuongNow - soLuongban);
             }
-            foreach (CHI_TIET_HOA_DON_BAN a in list)
+            foreach (ChiTietHoaDonBan a in list)
             {
-                BAO_CAO_DOANH_THU bcdt = new BAO_CAO_DOANH_THU()
+                DTO.BaoCaoDoanhThu bcdt = new DTO.BaoCaoDoanhThu()
                 {
                     MaSach = a.MaSach,
-                    GiaNhap = BLL_QuanLy.Instance.Bll_GetGiaNhapByMaSach(a.MaSach),
-                    GiaBan = BLL_QuanLy.Instance.Bll_GetGiaBanByMaSach(a.MaSach),
+                    GiaNhap = BLL_Sach.Instance.Bll_GetGiaNhapByMaSach(a.MaSach),
+                    GiaBan = BLL_Sach.Instance.Bll_GetGiaBanByMaSach(a.MaSach),
                     SoLuongBan = a.SoLuong,
-                    DoanhThu = a.SoLuong * (BLL_QuanLy.Instance.Bll_GetGiaBanByMaSach(a.MaSach) - BLL_QuanLy.Instance.Bll_GetGiaNhapByMaSach(a.MaSach)),
+                    DoanhThu = a.SoLuong * (BLL_Sach.Instance.Bll_GetGiaBanByMaSach(a.MaSach) - BLL_Sach.Instance.Bll_GetGiaNhapByMaSach(a.MaSach)),
                     ThoiGian = DateTime.Now,
                 };
-                BLL_QuanLy.Instance.Bll_AddBaoCaoDoanhThu(bcdt);
+                BLL_BaoCaoDoanhThu.Instance.Bll_AddBaoCaoDoanhThu(bcdt);
             }
             int tong = 0;
-            foreach (CHI_TIET_HOA_DON_BAN a in list)
+            foreach (ChiTietHoaDonBan a in list)
             {
-                tong += a.SoLuong * (BLL_QuanLy.Instance.Bll_GetGiaBanByMaSach(a.MaSach) - BLL_QuanLy.Instance.Bll_GetGiaNhapByMaSach(a.MaSach));
+                tong += a.SoLuong * (BLL_Sach.Instance.Bll_GetGiaBanByMaSach(a.MaSach) - BLL_Sach.Instance.Bll_GetGiaNhapByMaSach(a.MaSach));
             }
-            DOANH_SO_BAN_HANG dsbh = new DOANH_SO_BAN_HANG()
+            DoanhSoBanHang dsbh = new DoanhSoBanHang()
             {
                 MaNhanVien = maNV,
                 DoanhSoBan = tong,
                 ThoiGian = DateTime.Now,
             };
-            BLL_QuanLy.Instance.Bll_AddDoanhSoBanHang(dsbh);
+            BLL_DoanhSoBanHang.Instance.Bll_AddDoanhSoBanHang(dsbh);
             list.Clear();
             dataGridView2.DataSource = null;
             txtHoTen.Enabled = true;
@@ -300,12 +296,12 @@ namespace PBL3.UI
 
         private void SDT_TextChanged(object sender, EventArgs e)
         {
-            foreach (string i in BLL_QuanLy.Instance.Bll_GetAllSDT())
+            foreach (string i in BLL_KhachHang.Instance.Bll_GetAllSDT())
             {
                 if (txtSDT.Text == i)
                 {
                     checkKhachHang = true;
-                    txtHoTen.Text = BLL_QuanLy.Instance.Bll_GetKHBySDT(txtSDT.Text);
+                    txtHoTen.Text = BLL_KhachHang.Instance.Bll_GetKHBySDT(txtSDT.Text);
                     txtHoTen.Enabled = false;
                     return;
                 }
@@ -359,7 +355,7 @@ namespace PBL3.UI
 
         private void AddHoaDon_Click(object sender, EventArgs e)
         {
-            txtMaDonBan.Text = BLL_QuanLy.Instance.Bll_CreateHDB();
+            txtMaDonBan.Text = BLL_HoaDonBan.Instance.Bll_CreateHDB();
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -376,7 +372,7 @@ namespace PBL3.UI
                 LMS.Add(dataGridView1.Rows[i].Cells[0].Value.ToString());
             }
             string CategorySort = cbbSort.SelectedItem.ToString();
-            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_SapXepViewSach(LMS, CategorySort);
+            dataGridView1.DataSource = BLL_Sach.Instance.Bll_SapXepViewSach(LMS, CategorySort);
         }
 
         private void cbbTheLoai_SelectedIndexChanged(object sender, EventArgs e)
@@ -387,7 +383,7 @@ namespace PBL3.UI
             }
             else
             {
-                dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetViewSachByLSAndTT(cbbTheLoai.SelectedItem.ToString());
+                dataGridView1.DataSource = BLL_Sach.Instance.Bll_GetViewSachByLSAndTT(cbbTheLoai.SelectedItem.ToString());
             }
         }
 
@@ -400,7 +396,7 @@ namespace PBL3.UI
             }
             string theloai = cbbTheLoai.SelectedItem.ToString();
             string name = txtTenSach.Text;
-            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetSachByNameLSAndTT(name, theloai);
+            dataGridView1.DataSource = BLL_Sach.Instance.Bll_GetSachByNameLSAndTT(name, theloai);
         }
     }
 }
