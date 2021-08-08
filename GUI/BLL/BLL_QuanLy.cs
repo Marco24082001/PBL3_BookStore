@@ -287,11 +287,7 @@ namespace PBL3.BLL
             db.HOA_DON_NHAP.Add(a);
             db.SaveChanges();
         }
-        public void Bll_AddChiTietHoaDonBan(CHI_TIET_HOA_DON_BAN a)
-        {
-            db.CHI_TIET_HOA_DON_BAN.Add(a);
-            db.SaveChanges();
-        }
+        
         public void Bll_AddChiTietHoaDonNhap(CHI_TIET_HOA_DON_NHAP a)
         {
             db.CHI_TIET_HOA_DON_NHAP.Add(a);

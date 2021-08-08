@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PBL3.DTO;
 
 namespace PBL3.UI
 {
@@ -53,7 +54,7 @@ namespace PBL3.UI
             txtReMK.Enabled = false;
             Save.Enabled = false;
 
-            NHAN_VIEN nv = BLL_QuanLy.Instance.Bll_GetNVByMaNV(MaNhanVien);
+            DTO.NhanVien nv = BLL_NhanVien.Instance.Bll_GetNVByMaNV(MaNhanVien);
             txtHoTen.Text = nv.HoTen;
             if (nv.isAdmin) txtChucVu.Text = "Quản Lý";
             else txtChucVu.Text = "Nhân viên bán hàng";
@@ -82,7 +83,7 @@ namespace PBL3.UI
 
         private bool checkPass()
         {
-            if (txtMKcu.Text != BLL_QuanLy.Instance.Bll_GetMKByTK(MaNhanVien))
+            if (txtMKcu.Text != BLL_TKNhanVien.Instance.Bll_GetMKByTK(MaNhanVien))
             {
                 MessageBox.Show("Sai 'Mật khẩu cũ'", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
@@ -109,12 +110,12 @@ namespace PBL3.UI
         {
             if(checkPass())
             {
-                TK_NHANVIEN tk = new TK_NHANVIEN()
+                TKNhanVien tk = new TKNhanVien()
                 {
                     TKNV = MaNhanVien,
                     Pass = txtMKmoi.Text
                 };
-                BLL_QuanLy.Instance.BLL_EditMatKhau(tk);
+                BLL_TKNhanVien.Instance.BLL_EditMatKhau(tk);
                 MessageBox.Show("Đổi mật khẩu thành công", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Hide();
             }

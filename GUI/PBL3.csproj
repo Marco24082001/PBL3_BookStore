@@ -60,6 +60,18 @@
     <Compile Include="BAO_CAO_DOANH_THU.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="BLL\BLL_BaoCaoDoanhThu.cs" />
+    <Compile Include="BLL\BLL_ChiTietHoaDonBan.cs" />
+    <Compile Include="BLL\BLL_ChiTietHoaDonNhap.cs" />
+    <Compile Include="BLL\BLL_DoanhSoBanHang.cs" />
+    <Compile Include="BLL\BLL_HoaDonBan.cs" />
+    <Compile Include="BLL\BLL_HoaDonNhap.cs" />
+    <Compile Include="BLL\BLL_KhachHang.cs" />
+    <Compile Include="BLL\BLL_LoaiSach.cs" />
+    <Compile Include="BLL\BLL_NhanVien.cs" />
+    <Compile Include="BLL\BLL_NhaXuatBan.cs" />
+    <Compile Include="BLL\BLL_Sach.cs" />
+    <Compile Include="BLL\BLL_TKNhanVien.cs" />
     <Compile Include="CHI_TIET_HOA_DON_BAN.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -69,7 +81,19 @@
     <Compile Include="DOANH_SO_BAN_HANG.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="DTO\BaoCaoDoanhThu.cs" />
     <Compile Include="DTO\CbbTheLoai.cs" />
+    <Compile Include="DTO\ChiTietHoaDonBan.cs" />
+    <Compile Include="DTO\ChiTietHoaDonNhap.cs" />
+    <Compile Include="DTO\DoanhSoBanHang.cs" />
+    <Compile Include="DTO\HoaDonBan.cs" />
+    <Compile Include="DTO\HoaDonNhap.cs" />
+    <Compile Include="DTO\KhachHang.cs" />
+    <Compile Include="DTO\LoaiSach.cs" />
+    <Compile Include="DTO\NhanVien.cs" />
+    <Compile Include="DTO\NhaXuatBan.cs" />
+    <Compile Include="DTO\Sach.cs" />
+    <Compile Include="DTO\TKNhanVien.cs" />
     <Compile Include="DTO\View_BCDT.cs" />
     <Compile Include="DTO\View_NhanVien.cs" />
     <Compile Include="DTO\View_Sach.cs" />

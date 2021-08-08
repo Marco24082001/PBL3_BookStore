@@ -26,10 +26,10 @@ namespace PBL3.UI
         {
             TaiKhoan = textBox1.Text;
             MatKhau = textBox2.Text;
-            bool checktkmk = BLL_QuanLy.Instance.Bll_CheckTKMK(TaiKhoan, MatKhau);
+            bool checktkmk = BLL_TKNhanVien.Instance.Bll_CheckTKMK(TaiKhoan, MatKhau);
             if(checktkmk == true)
             {
-                if (BLL_QuanLy.Instance.Bll_CheckAdmin(TaiKhoan))
+                if (BLL_NhanVien.Instance.Bll_CheckAdmin(TaiKhoan))
                 {
                     this.Close();
                     Luong = new Thread(openFormQuanLy);

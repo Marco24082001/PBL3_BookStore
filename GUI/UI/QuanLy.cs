@@ -172,7 +172,7 @@ namespace PBL3.UI
 
         private void QuanLy_Load(object sender, EventArgs e)
         {
-            txtTen.Text = BLL_QuanLy.Instance.Bll_GetNameNVByMaNV(maNV);
+            txtTen.Text = BLL_NhanVien.Instance.Bll_GetNameNVByMaNV(maNV);
             set_TopProduct();
             set_RemainProduct();
             set_AllNum();
@@ -200,7 +200,7 @@ namespace PBL3.UI
         private void set_TopProduct()
         {
             chartTopProducts.InnerRadius = 50;
-            chartTopProducts.Series = BLL_QuanLy.Instance.Bll_GetValueChart_Products();
+            chartTopProducts.Series = BLL_BaoCaoDoanhThu.Instance.Bll_GetValueChart_Products();
             chartTopProducts.DefaultLegend.Foreground = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Colors.White);
             chartTopProducts.LegendLocation = LegendLocation.Right;    
         }
@@ -210,7 +210,7 @@ namespace PBL3.UI
             chartRemainProduct.AxisY.Add(new LiveCharts.Wpf.Axis
             {
                 Title = "Sách",
-                Labels = BLL_QuanLy.Instance.Bll_GetLabel_Remain_Products()
+                Labels = BLL_Sach.Instance.Bll_GetLabel_Remain_Products()
             });
 
             chartRemainProduct.AxisX.Add(new LiveCharts.Wpf.Axis
@@ -218,18 +218,18 @@ namespace PBL3.UI
                 Title = "Số lượng",
                 LabelFormatter = value => value.ToString("N")
             });
-            chartRemainProduct.Series = BLL_QuanLy.Instance.Bll_GetValueChart_Remain_Products();
+            chartRemainProduct.Series = BLL_Sach.Instance.Bll_GetValueChart_Remain_Products();
             chartRemainProduct.DefaultLegend.Foreground = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Colors.White);
         }
 
         private void set_AllNum()
         {
-            numDonHang.Text = Convert.ToString(BLL_QuanLy.Instance.Bll_getTotal_Sales());
-            numDoanhThu.Text = Convert.ToString(BLL_QuanLy.Instance.Bll_getTotal_TurnOver());
-            numNhanVien.Text = Convert.ToString(BLL_QuanLy.Instance.Bll_getTotal_Employees());
-            numSach.Text = Convert.ToString(BLL_QuanLy.Instance.Bll_getTotal_Books());
-            numTheLoai.Text = Convert.ToString(BLL_QuanLy.Instance.Bll_getTotal_Categorys());
-            numKhachHang.Text = Convert.ToString(BLL_QuanLy.Instance.Bll_getTotal_Customers());
+            numDonHang.Text = Convert.ToString(BLL_HoaDonBan.Instance.Bll_getTotal_Sales());
+            numDoanhThu.Text = Convert.ToString(BLL_BaoCaoDoanhThu.Instance.Bll_getTotal_TurnOver());
+            numNhanVien.Text = Convert.ToString(BLL_NhanVien.Instance.Bll_getTotal_Employees());
+            numSach.Text = Convert.ToString(BLL_Sach.Instance.Bll_getTotal_Books());
+            numTheLoai.Text = Convert.ToString(BLL_LoaiSach.Instance.Bll_getTotal_Categorys());
+            numKhachHang.Text = Convert.ToString(BLL_TKNhanVien.Instance.Bll_getTotal_Customers());
         }
     }
 }

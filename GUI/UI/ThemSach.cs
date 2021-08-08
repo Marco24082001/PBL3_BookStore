@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PBL3.BLL;
+using PBL3.DTO;
 
 namespace PBL3.UI
 {
@@ -28,7 +29,7 @@ namespace PBL3.UI
         public void setcbbNXB()
         {
             cbbNXB.Items.Clear();
-            foreach(string i in BLL_QuanLy.Instance.Bll_GetAllMaNXB())
+            foreach(string i in BLL_NhaXuatBan.Instance.Bll_GetAllMaNXB())
             {
                 cbbNXB.Items.Add(i);
             }
@@ -37,7 +38,7 @@ namespace PBL3.UI
         public void setcbbTL()
         {
             cbbTL.Items.Clear();
-            foreach (string i in BLL_QuanLy.Instance.Bll_GetAllMaLS())
+            foreach (string i in BLL_LoaiSach.Instance.Bll_GetAllMaLS())
             {
                 cbbTL.Items.Add(i);
             }
@@ -69,7 +70,7 @@ namespace PBL3.UI
                 MessageBox.Show("Vui lòng nhập 'Mã sách'", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-            foreach(string i in BLL_QuanLy.Instance.Bll_GetAllMaSach())
+            foreach(string i in BLL_Sach.Instance.Bll_GetAllMaSach())
             {
                 if(txtMaSach.Text == i)
                 {
@@ -131,7 +132,7 @@ namespace PBL3.UI
                 MessageBox.Show("Vui lòng chọn 'Thể loại sách's", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            SACH a = new SACH();
+            Sach a = new Sach();
             a.MaSach = txtMaSach.Text;
             a.TenSach = txtTenSach.Text;
             a.GiaNhap = Convert.ToInt32(txtGiaNhap.Text);
@@ -139,7 +140,7 @@ namespace PBL3.UI
             a.SoLuong = 0;
             a.MaNXB = cbbNXB.SelectedItem.ToString();
             a.MaLoaiSach = cbbTL.SelectedItem.ToString();
-            BLL_QuanLy.Instance.Bll_AddSach(a);
+            BLL_Sach.Instance.Bll_AddSach(a);
             check = true;
         }
         private void EditSach()
@@ -157,7 +158,7 @@ namespace PBL3.UI
                 MessageBox.Show("Vui lòng chọn 'Thể loại sách'", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            SACH a = new SACH();
+            Sach a = new Sach();
             a.MaSach = txtMaSach.Text;
             a.TenSach = txtTenSach.Text;
             a.GiaNhap = Convert.ToInt32(txtGiaNhap.Text);
@@ -165,7 +166,7 @@ namespace PBL3.UI
             a.SoLuong = 0;
             a.MaNXB = cbbNXB.SelectedItem.ToString();
             a.MaLoaiSach = cbbTL.SelectedItem.ToString();
-            BLL_QuanLy.Instance.Bll_EditSach(a);
+            BLL_Sach.Instance.Bll_EditSach(a);
             check = true;
         }
         private void XacNhan_Click(object sender, EventArgs e)
@@ -187,8 +188,8 @@ namespace PBL3.UI
             if(masach != null)
             {
                 txtMaSach.Text = masach; txtMaSach.Enabled = false;
-                SACH a = new SACH();
-                a = BLL_QuanLy.Instance.Bll_GetSachByMaSach(masach);
+                Sach a = new Sach();
+                a = BLL_Sach.Instance.Bll_GetSachByMaSach(masach);
                 txtTenSach.Text = a.TenSach;
                 txtGiaNhap.Text = a.GiaNhap.ToString();
                 txtGiaNhap.Enabled = false;

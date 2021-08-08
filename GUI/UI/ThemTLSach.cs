@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PBL3.BLL;
+using PBL3.DTO;
 
 namespace PBL3.UI
 {
@@ -32,12 +33,12 @@ namespace PBL3.UI
                     return;
                 }
             }
-            LOAI_SACH ls = new LOAI_SACH();
+            LoaiSach ls = new LoaiSach();
             ls.MaLoaiSach = txtMaLS.Text;
             ls.TenLoaiSach = txtTenLS.Text;
             try
             {
-                BLL_QuanLy.Instance.Bll_AddLoaiSach(ls);
+                BLL_LoaiSach.Instance.Bll_AddLoaiSach(ls);
             }
             catch(DbEntityValidationException ex)
             {

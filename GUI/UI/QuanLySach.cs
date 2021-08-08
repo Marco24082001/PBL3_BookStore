@@ -9,12 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Reflection;
 using PBL3.BLL;
+using PBL3.DTO;
 
 namespace PBL3.UI
 {
     public partial class QuanLySach : Form
     {
-        List<CHI_TIET_HOA_DON_NHAP> list = new List<CHI_TIET_HOA_DON_NHAP>();
+        List<ChiTietHoaDonNhap> list = new List<ChiTietHoaDonNhap>();
         string boxTitle = "Thống báo";
         public QuanLySach()
         {
@@ -40,12 +41,12 @@ namespace PBL3.UI
             }
             if (cbbTheLoai.SelectedIndex == 0)
             {
-                dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetAllSach();
+                dataGridView1.DataSource = BLL_Sach.Instance.Bll_GetAllSach();
             }
             else
             {
                 string ls = cbbTheLoai.SelectedItem.ToString();
-                dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetSachByLS(ls);
+                dataGridView1.DataSource = BLL_Sach.Instance.Bll_GetSachByLS(ls);
             }
             dataGridView1.Columns["MaSach"].HeaderText = "Mã sách";
             dataGridView1.Columns["TenSach"].HeaderText = "Tên sách";
@@ -55,11 +56,6 @@ namespace PBL3.UI
             dataGridView1.Columns["MaNXB"].HeaderText = "Nhà xuất bản";
             dataGridView1.Columns["MaLoaiSach"].HeaderText = "Thể loại";
             dataGridView1.Columns["TrangThai"].HeaderText = "Trạng thái";
-            dataGridView1.Columns[8].Visible = false;
-            dataGridView1.Columns[9].Visible = false;
-            dataGridView1.Columns[10].Visible = false;
-            dataGridView1.Columns[11].Visible = false;
-            dataGridView1.Columns[12].Visible = false;
         }
         public void setData2()
         {
@@ -76,7 +72,7 @@ namespace PBL3.UI
         }
         public void setcbbMaSach()
         {
-            foreach (string i in BLL_QuanLy.Instance.Bll_GetAllMaSach())
+            foreach (string i in BLL_Sach.Instance.Bll_GetAllMaSach())
             {
                 cbbMaSach.Items.Add(i);
             }
@@ -84,7 +80,7 @@ namespace PBL3.UI
         public void setcbbTheLoai()
         {
             cbbTheLoai.Items.Add("All");
-            foreach (string i in BLL_QuanLy.Instance.Bll_GetAllMaLS())
+            foreach (string i in BLL_LoaiSach.Instance.Bll_GetAllMaLS())
             {
                 cbbTheLoai.Items.Add(i);
             }
@@ -101,9 +97,9 @@ namespace PBL3.UI
 
         private void Them_Click(object sender, EventArgs e)
         {
-            foreach (CHI_TIET_HOA_DON_NHAP i in list)
+            foreach (ChiTietHoaDonNhap i in list)
             {
-                BLL_QuanLy.Instance.Bll_AddChiTietHoaDonNhap(i);
+                BLL_ChiTietHoaDonNhap.Instance.Bll_AddChiTietHoaDonNhap(i);
             }
         }
 
@@ -130,22 +126,22 @@ namespace PBL3.UI
                 MessageBox.Show("Vui lòng chọn số lượng sách");
                 return;
             }
-            CHI_TIET_HOA_DON_NHAP ct = new CHI_TIET_HOA_DON_NHAP()
+            ChiTietHoaDonNhap ct = new ChiTietHoaDonNhap()
             {
                 MaDonNhap = Convert.ToInt32(txtMaDN.Text),
                 MaSach = cbbMaSach.SelectedItem.ToString(),
                 SoLuong = Convert.ToInt32(numericUpDown4.Value.ToString()),
                 ThanhTien = Convert.ToInt32(numericUpDown4.Value.ToString())
-                            * BLL_QuanLy.Instance.Bll_GetGiaNhapByMaSach(cbbMaSach.SelectedItem.ToString()),
+                            * BLL_Sach.Instance.Bll_GetGiaNhapByMaSach(cbbMaSach.SelectedItem.ToString()),
             };
             int tong = Convert.ToInt32(txtTong.Text);
             txtTong.Text = (tong + ct.ThanhTien).ToString();
-            foreach (CHI_TIET_HOA_DON_NHAP p in list)
+            foreach (ChiTietHoaDonNhap p in list)
             {
                 if (ct.MaSach == p.MaSach)
                 {
                     p.SoLuong += ct.SoLuong;
-                    p.ThanhTien = p.SoLuong * BLL_QuanLy.Instance.Bll_GetGiaNhapByMaSach(p.MaSach);
+                    p.ThanhTien = p.SoLuong * BLL_Sach.Instance.Bll_GetGiaNhapByMaSach(p.MaSach);
                     setData2();
                     return;
                 }
@@ -162,19 +158,19 @@ namespace PBL3.UI
                 MessageBox.Show("Giỏ hàng rỗng", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            HOA_DON_NHAP hdn = new HOA_DON_NHAP()
+            HoaDonNhap hdn = new HoaDonNhap()
             {
                 //MaDonNhap = Convert.ToInt32(txtMaDN.Text),
                 NgayNhap = DateTime.Now,
             };
-            BLL_QuanLy.Instance.Bll_AddHoaDonNhap(hdn);
-            foreach (CHI_TIET_HOA_DON_NHAP a in list)
+            BLL_HoaDonNhap.Instance.Bll_AddHoaDonNhap(hdn);
+            foreach (ChiTietHoaDonNhap a in list)
             {
-                BLL_QuanLy.Instance.Bll_AddChiTietHoaDonNhap(a);
+                BLL_ChiTietHoaDonNhap.Instance.Bll_AddChiTietHoaDonNhap(a);
                 string maSach = a.MaSach;
                 int soLuongnhap = (int)a.SoLuong;
-                int soLuongNow = BLL_QuanLy.Instance.Bll_GetSLByMaSach(maSach);
-                BLL_QuanLy.Instance.Bll_EditSLByMaSach(maSach, soLuongNow + soLuongnhap);
+                int soLuongNow = BLL_Sach.Instance.Bll_GetSLByMaSach(maSach);
+                BLL_Sach.Instance.Bll_EditSLByMaSach(maSach, soLuongNow + soLuongnhap);
             }
             list.Clear();
             dataGridView2.DataSource = null;
@@ -231,7 +227,7 @@ namespace PBL3.UI
             }
             string theloai = cbbTheLoai.SelectedItem.ToString();
             string name = txtTenSach.Text;
-            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetSachByNameAndLS(name, theloai);
+            dataGridView1.DataSource = BLL_Sach.Instance.Bll_GetSachByNameAndLS(name, theloai);
         }
 
         private void Edit_Click(object sender, EventArgs e)
@@ -259,7 +255,7 @@ namespace PBL3.UI
             foreach (DataGridViewRow i in r)
             {
                 string maSach = i.Cells["MaSach"].Value.ToString();
-                BLL_QuanLy.Instance.Bll_ChaneTrangThaiSach(maSach);
+                BLL_Sach.Instance.Bll_ChaneTrangThaiSach(maSach);
             }
             setData1();
         }
@@ -271,7 +267,7 @@ namespace PBL3.UI
 
         private void AddHoaDon_Click(object sender, EventArgs e)
         {
-            txtMaDN.Text = BLL_QuanLy.Instance.Bll_CreateHDN();
+            txtMaDN.Text = BLL_HoaDonNhap.Instance.Bll_CreateHDN();
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -288,7 +284,7 @@ namespace PBL3.UI
                 LMS.Add(dataGridView1.Rows[i].Cells["MaSach"].Value.ToString());
             }
             string CategorySort = cbbSort.SelectedItem.ToString();
-            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_SapXepSach(LMS, CategorySort);
+            dataGridView1.DataSource = BLL_Sach.Instance.Bll_SapXepSach(LMS, CategorySort);
         }
 
         private void cbbTheLoai_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -305,7 +301,7 @@ namespace PBL3.UI
             }
             string theloai = cbbTheLoai.SelectedItem.ToString();
             string name = txtTenSach.Text;
-            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetSachByNameAndLS(name, theloai);
+            dataGridView1.DataSource = BLL_Sach.Instance.Bll_GetSachByNameAndLS(name, theloai);
             dataGridView1.Columns[8].Visible = false;
             dataGridView1.Columns[9].Visible = false;
             dataGridView1.Columns[10].Visible = false;

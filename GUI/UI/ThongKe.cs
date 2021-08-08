@@ -28,7 +28,11 @@ namespace PBL3.UI
 
         public void setData()
         {
-            dataGridView1.DataSource = BLL_QuanLy.Instance.BLL_GetAllDoanhSoBanHang();      
+            dataGridView1.DataSource = BLL_DoanhSoBanHang.Instance.BLL_GetAllDoanhSoBanHang();
+            dataGridView1.Columns["STT"].HeaderText = "Số TT";
+            dataGridView1.Columns["MaNhanVien"].HeaderText = "Mã Nhân Viên";
+            dataGridView1.Columns["DoanhSoBan"].HeaderText = "Doanh Số Bán";
+            dataGridView1.Columns["ThoiGian"].HeaderText = "Thời Gian";
         }
 
         private void NextPage_Click(object sender, EventArgs e)
@@ -187,7 +191,7 @@ namespace PBL3.UI
             }
             foreach(string i in listMa)
             {
-                lbBestSeller.Text = BLL_QuanLy.Instance.Bll_GetNameNVByMaNV(i);
+                lbBestSeller.Text = BLL_NhanVien.Instance.Bll_GetNameNVByMaNV(i);
             }
         }
         private void setBackground()
@@ -200,7 +204,6 @@ namespace PBL3.UI
             }
             TongDoanhSo.Text = Tong.ToString();
             setBestSeller();
-            dataGridView1.Columns["NHAN_VIEN"].Visible = false;
         }
 
         private void cbbNam_SelectedIndexChanged(object sender, EventArgs e)
@@ -210,20 +213,20 @@ namespace PBL3.UI
             cbbThang.Text = "";
             cbbNgay.Text = "";
             setcbbThang();
-            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetDoanhSoBanHangFolowNam(Convert.ToInt32(cbbNam.SelectedItem.ToString()));
+            dataGridView1.DataSource = BLL_DoanhSoBanHang.Instance.Bll_GetDoanhSoBanHangFolowNam(Convert.ToInt32(cbbNam.SelectedItem.ToString()));
             setBackground();
         }
 
         private void cbbThang_SelectedIndexChanged(object sender, EventArgs e)
         {
             setcbbNgay();
-            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetDoanhSoBanHangFolowNamThang(Convert.ToInt32(cbbNam.SelectedItem.ToString()), Convert.ToInt32(cbbThang.SelectedItem.ToString()));
+            dataGridView1.DataSource = BLL_DoanhSoBanHang.Instance.Bll_GetDoanhSoBanHangFolowNamThang(Convert.ToInt32(cbbNam.SelectedItem.ToString()), Convert.ToInt32(cbbThang.SelectedItem.ToString()));
             setBackground();
         }
 
         private void cbbNgay_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetDoanhSoBanHangFolowNamThangNgay(Convert.ToInt32(cbbNam.SelectedItem.ToString()),
+            dataGridView1.DataSource = BLL_DoanhSoBanHang.Instance.Bll_GetDoanhSoBanHangFolowNamThangNgay(Convert.ToInt32(cbbNam.SelectedItem.ToString()),
                 Convert.ToInt32(cbbThang.SelectedItem.ToString()), 
                 Convert.ToInt32(cbbNgay.SelectedItem.ToString()));
             setBackground();
@@ -272,7 +275,7 @@ namespace PBL3.UI
         private void loadChart(int num1, int num2, int num3 = -1)
         {
             salesChart.Series.Clear();
-            salesChart.Series = BLL_QuanLy.Instance.Bll_GetValueChart_Sales(num1, num2, num3);
+            salesChart.Series = BLL_DoanhSoBanHang.Instance.Bll_GetValueChart_Sales(num1, num2, num3);
         }
 
         private void radioYear_CheckedChanged(object sender, EventArgs e)
@@ -312,7 +315,7 @@ namespace PBL3.UI
                 LSTT.Add((int)dataGridView1.Rows[i].Cells[0].Value);
             }
             string CategorySort = cbbSort.SelectedItem.ToString();
-            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_Sort_Sales(LSTT, CategorySort);
+            dataGridView1.DataSource = BLL_DoanhSoBanHang.Instance.Bll_Sort_Sales(LSTT, CategorySort);
         }
 
         private void cbbNam_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -322,20 +325,20 @@ namespace PBL3.UI
             cbbThang.Text = "";
             cbbNgay.Text = "";
             setcbbThang();
-            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetDoanhSoBanHangFolowNam(Convert.ToInt32(cbbNam.SelectedItem.ToString()));
+            dataGridView1.DataSource = BLL_DoanhSoBanHang.Instance.Bll_GetDoanhSoBanHangFolowNam(Convert.ToInt32(cbbNam.SelectedItem.ToString()));
             setBackground();
         }
 
         private void cbbThang_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             setcbbNgay();
-            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetDoanhSoBanHangFolowNamThang(Convert.ToInt32(cbbNam.SelectedItem.ToString()), Convert.ToInt32(cbbThang.SelectedItem.ToString()));
+            dataGridView1.DataSource = BLL_DoanhSoBanHang.Instance.Bll_GetDoanhSoBanHangFolowNamThang(Convert.ToInt32(cbbNam.SelectedItem.ToString()), Convert.ToInt32(cbbThang.SelectedItem.ToString()));
             setBackground();
         }
 
         private void cbbNgay_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = BLL_QuanLy.Instance.Bll_GetDoanhSoBanHangFolowNamThangNgay(Convert.ToInt32(cbbNam.SelectedItem.ToString()),
+            dataGridView1.DataSource = BLL_DoanhSoBanHang.Instance.Bll_GetDoanhSoBanHangFolowNamThangNgay(Convert.ToInt32(cbbNam.SelectedItem.ToString()),
                 Convert.ToInt32(cbbThang.SelectedItem.ToString()),
                 Convert.ToInt32(cbbNgay.SelectedItem.ToString()));
             setBackground();
