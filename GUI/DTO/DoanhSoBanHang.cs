@@ -10,7 +10,7 @@ namespace PBL3.DTO
     {
         public int STT { get; set; }
         public string MaNhanVien { get; set; }
-        public Nullable<int> DoanhSoBan { get; set; }
-        public Nullable<System.DateTime> ThoiGian { get; set; }
+        public int DoanhSoBan { get; set; }
+        public System.DateTime ThoiGian { get; set; }
     }
 }

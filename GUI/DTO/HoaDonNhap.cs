@@ -9,6 +9,6 @@ namespace PBL3.DTO
     class HoaDonNhap
     {
         public int MaDonNhap { get; set; }
-        public Nullable<System.DateTime> NgayNhap { get; set; }
+        public System.DateTime NgayNhap { get; set; }
     }
 }

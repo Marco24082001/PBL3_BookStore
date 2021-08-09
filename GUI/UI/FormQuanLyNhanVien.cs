@@ -27,7 +27,7 @@ namespace PBL3.UI
 
         public void setData()
         {
-            dataGridView1.DataSource = BLL_NhanVien.Instance.Bll_GetAllNhanVien();
+            dataGridView1.DataSource = BLL_NhanVien.Instance.Bll_GetNhanVienByName(txtName.Text);
             dataGridView1.Columns["MaNhanVien"].HeaderText = "Mã nhân viên";
             dataGridView1.Columns["HoTen"].HeaderText = "Họ tên";
             dataGridView1.Columns["DanToc"].HeaderText = "Dân tộc";

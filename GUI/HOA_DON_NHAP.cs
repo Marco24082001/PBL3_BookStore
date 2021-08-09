@@ -21,7 +21,7 @@ namespace PBL3
         }
     
         public int MaDonNhap { get; set; }
-        public Nullable<System.DateTime> NgayNhap { get; set; }
+        public System.DateTime NgayNhap { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CHI_TIET_HOA_DON_NHAP> CHI_TIET_HOA_DON_NHAP { get; set; }

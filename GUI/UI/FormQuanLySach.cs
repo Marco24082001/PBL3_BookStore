@@ -25,29 +25,30 @@ namespace PBL3.UI
             setcbbSort();
         }
         
-        public void reset()
-        {
-            setData1();
-            setcbbMaSach();
-            setcbbTheLoai();
-            setcbbSort();
-        }
+        //public void reset()
+        //{
+        //    setData1();
+        //    setcbbMaSach();
+        //    setcbbTheLoai();
+        //    setcbbSort();
+        //}
         public void setData1()
         {
-            if (cbbTheLoai.SelectedIndex == -1)
-            {
-                MessageBox.Show("Vui lòng chọn 'Thể loại'", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            if (cbbTheLoai.SelectedIndex == 0)
-            {
-                dataGridView1.DataSource = BLL_Sach.Instance.Bll_GetAllSach();
-            }
-            else
-            {
-                string ls = cbbTheLoai.SelectedItem.ToString();
-                dataGridView1.DataSource = BLL_Sach.Instance.Bll_GetSachByLS(ls);
-            }
+            //if (cbbTheLoai.SelectedIndex == -1)
+            //{
+            //    MessageBox.Show("Vui lòng chọn 'Thể loại'", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    return;
+            //}
+            //if (cbbTheLoai.SelectedIndex == 0)
+            //{
+            //    dataGridView1.DataSource = BLL_Sach.Instance.Bll_GetAllSach();
+            //}
+            //else
+            //{
+            //    string ls = cbbTheLoai.SelectedItem.ToString();
+            //    dataGridView1.DataSource = BLL_Sach.Instance.Bll_GetSachByLS(ls);
+            //}
+            dataGridView1.DataSource = BLL_Sach.Instance.Bll_GetSachByNameAndLS(txtTenSach.Text, cbbTheLoai.SelectedItem.ToString());
             dataGridView1.Columns["MaSach"].HeaderText = "Mã sách";
             dataGridView1.Columns["TenSach"].HeaderText = "Tên sách";
             dataGridView1.Columns["GiaBan"].HeaderText = "Giá bán";
@@ -104,7 +105,7 @@ namespace PBL3.UI
         {
             FormThemSach f = new FormThemSach();
             f.Show();
-            f.reset += new FormThemSach.MyDel(reset);
+            f.reset += new FormThemSach.MyDel(setData1);
         }
         private void ThemChiTiet_Click(object sender, EventArgs e)
         {
@@ -257,11 +258,6 @@ namespace PBL3.UI
             setData1();
         }
 
-        private void ChinhSua_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void AddHoaDon_Click(object sender, EventArgs e)
         {
             txtMaDN.Text = BLL_HoaDonNhap.Instance.Bll_CreateHDN();
@@ -285,19 +281,15 @@ namespace PBL3.UI
 
         private void txtTenSach_TextChanged_1(object sender, EventArgs e)
         {
-            if (cbbTheLoai.SelectedIndex == -1)
-            {
-                MessageBox.Show("Vui lòng chọn 'Thể loại'", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            string theloai = cbbTheLoai.SelectedItem.ToString();
-            string name = txtTenSach.Text;
-            dataGridView1.DataSource = BLL_Sach.Instance.Bll_GetSachByNameAndLS(name, theloai);
-            dataGridView1.Columns[8].Visible = false;
-            dataGridView1.Columns[9].Visible = false;
-            dataGridView1.Columns[10].Visible = false;
-            dataGridView1.Columns[11].Visible = false;
-            dataGridView1.Columns[12].Visible = false;
+            //if (cbbTheLoai.SelectedIndex == -1)
+            //{
+            //    MessageBox.Show("Vui lòng chọn 'Thể loại'", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    return;
+            //}
+            //string theloai = cbbTheLoai.SelectedItem.ToString();
+            //string name = txtTenSach.Text;
+            //dataGridView1.DataSource = BLL_Sach.Instance.Bll_GetSachByNameAndLS(name, theloai);
+            setData1();
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

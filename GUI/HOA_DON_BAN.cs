@@ -23,7 +23,7 @@ namespace PBL3
         public int MaDonBan { get; set; }
         public string SDT_KH { get; set; }
         public string MaNhanVien { get; set; }
-        public Nullable<System.DateTime> NgayBan { get; set; }
+        public System.DateTime NgayBan { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CHI_TIET_HOA_DON_BAN> CHI_TIET_HOA_DON_BAN { get; set; }
