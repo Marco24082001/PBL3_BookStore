@@ -44,7 +44,7 @@ namespace PBL3.UI
             dataGridView1.Columns["GiaBan"].HeaderText = "Giá";
             dataGridView1.Columns["SoLuong"].HeaderText = "Số lượng";
             dataGridView1.Columns["TenNXB"].HeaderText = "Nhà xuất bản";
-            dataGridView1.Columns["TenLS"].HeaderText = "Thể loại";
+            dataGridView1.Columns["TenLS"].HeaderText = "Thể loại";            
         }
         public void setData2()
         {
