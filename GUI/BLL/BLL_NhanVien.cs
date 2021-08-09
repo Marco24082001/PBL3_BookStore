@@ -74,8 +74,6 @@ namespace PBL3.BLL
             tmp.SoDienThoai = nv.SoDienThoai;
             tmp.QueQuan = nv.QueQuan;
             tmp.NgaySinh = nv.NgaySinh;
-            tmp.TrangThai = nv.TrangThai;
-            tmp.isAdmin = nv.isAdmin;
             db.SaveChanges();
         }
         public string Bll_GetNameNVByMaNV(string manv)

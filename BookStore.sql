@@ -59,7 +59,7 @@ CREATE TABLE KHACH_HANG
 CREATE TABLE HOA_DON_NHAP
 (
 	MaDonNhap INT Primary key not null,
-	NgayNhap DATE,
+	NgayNhap DATE not null,
 )
 
 CREATE TABLE CHI_TIET_HOA_DON_NHAP
@@ -69,8 +69,8 @@ CREATE TABLE CHI_TIET_HOA_DON_NHAP
 	MaSach VARCHAR(5) not null,
     FOREIGN KEY (MaSach)  REFERENCES SACH (MaSach),
 	FOREIGN KEY (MaDonNhap) REFERENCES HOA_DON_NHAP (MaDonNhap),
-	SoLuong INT,
-	ThanhTien INT ,
+	SoLuong INT not null,
+	ThanhTien INT not null,
 	UNIQUE(MaDonNhap,MaSach)
 )
 
@@ -82,7 +82,7 @@ CREATE TABLE HOA_DON_BAN
 	MaNhanVien VARCHAR(5) not null,
 	FOREIGN KEY(MaNhanVien) REFERENCES NHAN_VIEN(MaNhanVien) ,
 	FOREIGN KEY (SDT_KH) REFERENCES KHACH_HANG(SDT),
-	NgayBan DATE
+	NgayBan DATE not null
 )
 
 CREATE TABLE CHI_TIET_HOA_DON_BAN
@@ -106,8 +106,8 @@ CREATE TABLE BAO_CAO_DOANH_THU
 	GiaNhap INT not null,
 	GiaBan INT not null,
 	SoLuongBan	INT not null,
-	DoanhThu INT,
-	ThoiGian Date
+	DoanhThu INT not null,
+	ThoiGian Date not null
 )
 
 CREATE TABLE DOANH_SO_BAN_HANG
@@ -115,8 +115,8 @@ CREATE TABLE DOANH_SO_BAN_HANG
 	STT INT IDENTITY(1,1) PRIMARY KEY not null,
 	MaNhanVien VARCHAR(5) not null,
 	FOREIGN KEY (MaNhanVien) REFERENCES NHAN_VIEN(MaNhanVien),
-	DoanhSoBan INT,
-	ThoiGian Date
+	DoanhSoBan INT not null,
+	ThoiGian Date not null
 )
 
 insert NHAN_VIEN values ('NV01', N'Phan Văn Bình', 'Kinh', 'Nam', '2012551678', '077121244', 'QuangNam', '12-12-2000', 1, 1)
