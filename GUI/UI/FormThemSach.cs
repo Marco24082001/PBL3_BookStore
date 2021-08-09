@@ -12,14 +12,14 @@ using PBL3.DTO;
 
 namespace PBL3.UI
 {
-    public partial class ThemSach : Form
+    public partial class FormThemSach : Form
     {
         public string masach { get; set; }
         public delegate void MyDel();
         public MyDel reset;
         string boxTitle = "Thông báo";
         public bool check { get; set; }
-        public ThemSach()
+        public FormThemSach()
         {
             InitializeComponent();
             setcbbNXB();
@@ -46,16 +46,16 @@ namespace PBL3.UI
 
         private void ThemNXB_Click(object sender, EventArgs e)
         {
-            ThemNXB f = new ThemNXB();
+            FormThemNhaXuatBan f = new FormThemNhaXuatBan();
             f.Show();
-            f.d = new ThemNXB.MyDel(setcbbNXB);
+            f.d = new FormThemNhaXuatBan.MyDel(setcbbNXB);
         }
 
         private void ThemTheLoai_Click(object sender, EventArgs e)
         {
-            ThemTLSach f = new ThemTLSach();
+            FormThemTheLoaiSach f = new FormThemTheLoaiSach();
             f.Show();
-            f.d = new ThemTLSach.MyDel(setcbbTL);
+            f.d = new FormThemTheLoaiSach.MyDel(setcbbTL);
         }
 
         private void Thoat_Click(object sender, EventArgs e)

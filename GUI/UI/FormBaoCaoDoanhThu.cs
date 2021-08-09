@@ -14,11 +14,11 @@ using LiveCharts.Wpf;
 
 namespace PBL3.UI
 {
-    public partial class BaoCaoDoanhThu : Form
+    public partial class FormBaoCaoDoanhThu : Form
     {
         public delegate void MyDel(Form childForm);
         public MyDel Sender;
-        public BaoCaoDoanhThu()
+        public FormBaoCaoDoanhThu()
         {
             InitializeComponent();
             setData();
@@ -41,7 +41,7 @@ namespace PBL3.UI
 
         private void backPage_Click(object sender, EventArgs e)
         {
-            Thongke f = new Thongke();
+            FormBaoCaoDoanhSo f = new FormBaoCaoDoanhSo();
             Sender(f);
         }
         public void setcbbNam()

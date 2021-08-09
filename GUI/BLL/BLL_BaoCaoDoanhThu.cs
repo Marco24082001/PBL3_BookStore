@@ -157,7 +157,7 @@ namespace PBL3.BLL
         {
             List<DateTime> listDate = new List<DateTime>();
             listDate.Add(DateTime.Now);
-            for (int i = 0; i <= numDay; i++)
+            for (int i = 0; i < numDay; i++)
             {
                 listDate.Add(listDate[i].AddDays(-1));
             }

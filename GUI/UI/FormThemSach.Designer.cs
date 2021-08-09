@@ -1,7 +1,7 @@
 ﻿
 namespace PBL3.UI
 {
-    partial class ThemSach
+    partial class FormThemSach
     {
         /// <summary>
         /// Required designer variable.
@@ -30,6 +30,12 @@ namespace PBL3.UI
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbbTL = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cbbNXB = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.txtGiaBan = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtGiaNhap = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtTenSach = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtMaSach = new Guna.UI2.WinForms.Guna2TextBox();
             this.ThemTheLoai = new FontAwesome.Sharp.IconButton();
             this.ThemNXB = new FontAwesome.Sharp.IconButton();
             this.Thoat = new FontAwesome.Sharp.IconButton();
@@ -41,12 +47,6 @@ namespace PBL3.UI
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtMaSach = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtTenSach = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtGiaNhap = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtGiaBan = new Guna.UI2.WinForms.Guna2TextBox();
-            this.cbbNXB = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.cbbTL = new Guna.UI2.WinForms.Guna2ComboBox();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,6 +77,144 @@ namespace PBL3.UI
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "groupBox2";
             // 
+            // cbbTL
+            // 
+            this.cbbTL.BackColor = System.Drawing.Color.Transparent;
+            this.cbbTL.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbTL.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbTL.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbTL.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbTL.FocusedState.Parent = this.cbbTL;
+            this.cbbTL.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbTL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbbTL.HoverState.Parent = this.cbbTL;
+            this.cbbTL.ItemHeight = 30;
+            this.cbbTL.ItemsAppearance.Parent = this.cbbTL;
+            this.cbbTL.Location = new System.Drawing.Point(168, 278);
+            this.cbbTL.Name = "cbbTL";
+            this.cbbTL.ShadowDecoration.Parent = this.cbbTL;
+            this.cbbTL.Size = new System.Drawing.Size(151, 36);
+            this.cbbTL.TabIndex = 61;
+            // 
+            // cbbNXB
+            // 
+            this.cbbNXB.BackColor = System.Drawing.Color.Transparent;
+            this.cbbNXB.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbNXB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbNXB.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbNXB.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbNXB.FocusedState.Parent = this.cbbNXB;
+            this.cbbNXB.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbNXB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbbNXB.HoverState.Parent = this.cbbNXB;
+            this.cbbNXB.ItemHeight = 30;
+            this.cbbNXB.ItemsAppearance.Parent = this.cbbNXB;
+            this.cbbNXB.Location = new System.Drawing.Point(168, 230);
+            this.cbbNXB.Name = "cbbNXB";
+            this.cbbNXB.ShadowDecoration.Parent = this.cbbNXB;
+            this.cbbNXB.Size = new System.Drawing.Size(151, 36);
+            this.cbbNXB.TabIndex = 59;
+            // 
+            // txtGiaBan
+            // 
+            this.txtGiaBan.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtGiaBan.DefaultText = "";
+            this.txtGiaBan.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtGiaBan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtGiaBan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtGiaBan.DisabledState.Parent = this.txtGiaBan;
+            this.txtGiaBan.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtGiaBan.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtGiaBan.FocusedState.Parent = this.txtGiaBan;
+            this.txtGiaBan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGiaBan.ForeColor = System.Drawing.Color.Black;
+            this.txtGiaBan.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtGiaBan.HoverState.Parent = this.txtGiaBan;
+            this.txtGiaBan.Location = new System.Drawing.Point(168, 187);
+            this.txtGiaBan.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtGiaBan.Name = "txtGiaBan";
+            this.txtGiaBan.PasswordChar = '\0';
+            this.txtGiaBan.PlaceholderText = "";
+            this.txtGiaBan.SelectedText = "";
+            this.txtGiaBan.ShadowDecoration.Parent = this.txtGiaBan;
+            this.txtGiaBan.Size = new System.Drawing.Size(151, 33);
+            this.txtGiaBan.TabIndex = 58;
+            // 
+            // txtGiaNhap
+            // 
+            this.txtGiaNhap.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtGiaNhap.DefaultText = "";
+            this.txtGiaNhap.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtGiaNhap.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtGiaNhap.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtGiaNhap.DisabledState.Parent = this.txtGiaNhap;
+            this.txtGiaNhap.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtGiaNhap.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtGiaNhap.FocusedState.Parent = this.txtGiaNhap;
+            this.txtGiaNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGiaNhap.ForeColor = System.Drawing.Color.Black;
+            this.txtGiaNhap.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtGiaNhap.HoverState.Parent = this.txtGiaNhap;
+            this.txtGiaNhap.Location = new System.Drawing.Point(168, 142);
+            this.txtGiaNhap.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtGiaNhap.Name = "txtGiaNhap";
+            this.txtGiaNhap.PasswordChar = '\0';
+            this.txtGiaNhap.PlaceholderText = "";
+            this.txtGiaNhap.SelectedText = "";
+            this.txtGiaNhap.ShadowDecoration.Parent = this.txtGiaNhap;
+            this.txtGiaNhap.Size = new System.Drawing.Size(151, 33);
+            this.txtGiaNhap.TabIndex = 57;
+            // 
+            // txtTenSach
+            // 
+            this.txtTenSach.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTenSach.DefaultText = "";
+            this.txtTenSach.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtTenSach.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtTenSach.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTenSach.DisabledState.Parent = this.txtTenSach;
+            this.txtTenSach.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTenSach.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTenSach.FocusedState.Parent = this.txtTenSach;
+            this.txtTenSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenSach.ForeColor = System.Drawing.Color.Black;
+            this.txtTenSach.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTenSach.HoverState.Parent = this.txtTenSach;
+            this.txtTenSach.Location = new System.Drawing.Point(168, 93);
+            this.txtTenSach.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtTenSach.Name = "txtTenSach";
+            this.txtTenSach.PasswordChar = '\0';
+            this.txtTenSach.PlaceholderText = "";
+            this.txtTenSach.SelectedText = "";
+            this.txtTenSach.ShadowDecoration.Parent = this.txtTenSach;
+            this.txtTenSach.Size = new System.Drawing.Size(151, 33);
+            this.txtTenSach.TabIndex = 56;
+            // 
+            // txtMaSach
+            // 
+            this.txtMaSach.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMaSach.DefaultText = "";
+            this.txtMaSach.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtMaSach.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtMaSach.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMaSach.DisabledState.Parent = this.txtMaSach;
+            this.txtMaSach.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMaSach.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMaSach.FocusedState.Parent = this.txtMaSach;
+            this.txtMaSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaSach.ForeColor = System.Drawing.Color.Black;
+            this.txtMaSach.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMaSach.HoverState.Parent = this.txtMaSach;
+            this.txtMaSach.Location = new System.Drawing.Point(168, 43);
+            this.txtMaSach.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtMaSach.Name = "txtMaSach";
+            this.txtMaSach.PasswordChar = '\0';
+            this.txtMaSach.PlaceholderText = "";
+            this.txtMaSach.SelectedText = "";
+            this.txtMaSach.ShadowDecoration.Parent = this.txtMaSach;
+            this.txtMaSach.Size = new System.Drawing.Size(151, 33);
+            this.txtMaSach.TabIndex = 55;
+            // 
             // ThemTheLoai
             // 
             this.ThemTheLoai.BackColor = System.Drawing.SystemColors.ScrollBar;
@@ -86,9 +224,10 @@ namespace PBL3.UI
             this.ThemTheLoai.IconColor = System.Drawing.Color.Blue;
             this.ThemTheLoai.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ThemTheLoai.IconSize = 25;
-            this.ThemTheLoai.Location = new System.Drawing.Point(346, 283);
+            this.ThemTheLoai.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.ThemTheLoai.Location = new System.Drawing.Point(345, 286);
             this.ThemTheLoai.Name = "ThemTheLoai";
-            this.ThemTheLoai.Size = new System.Drawing.Size(88, 31);
+            this.ThemTheLoai.Size = new System.Drawing.Size(88, 28);
             this.ThemTheLoai.TabIndex = 62;
             this.ThemTheLoai.Text = "Thêm";
             this.ThemTheLoai.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -105,6 +244,7 @@ namespace PBL3.UI
             this.ThemNXB.IconColor = System.Drawing.Color.Blue;
             this.ThemNXB.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ThemNXB.IconSize = 25;
+            this.ThemNXB.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ThemNXB.Location = new System.Drawing.Point(345, 238);
             this.ThemNXB.Name = "ThemNXB";
             this.ThemNXB.Size = new System.Drawing.Size(89, 28);
@@ -223,144 +363,6 @@ namespace PBL3.UI
             this.label1.Size = new System.Drawing.Size(229, 29);
             this.label1.TabIndex = 44;
             this.label1.Text = "Thông tin nhập sách";
-            // 
-            // txtMaSach
-            // 
-            this.txtMaSach.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtMaSach.DefaultText = "";
-            this.txtMaSach.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtMaSach.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtMaSach.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMaSach.DisabledState.Parent = this.txtMaSach;
-            this.txtMaSach.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMaSach.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMaSach.FocusedState.Parent = this.txtMaSach;
-            this.txtMaSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaSach.ForeColor = System.Drawing.Color.Black;
-            this.txtMaSach.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMaSach.HoverState.Parent = this.txtMaSach;
-            this.txtMaSach.Location = new System.Drawing.Point(168, 43);
-            this.txtMaSach.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtMaSach.Name = "txtMaSach";
-            this.txtMaSach.PasswordChar = '\0';
-            this.txtMaSach.PlaceholderText = "";
-            this.txtMaSach.SelectedText = "";
-            this.txtMaSach.ShadowDecoration.Parent = this.txtMaSach;
-            this.txtMaSach.Size = new System.Drawing.Size(151, 33);
-            this.txtMaSach.TabIndex = 55;
-            // 
-            // txtTenSach
-            // 
-            this.txtTenSach.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTenSach.DefaultText = "";
-            this.txtTenSach.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtTenSach.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtTenSach.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTenSach.DisabledState.Parent = this.txtTenSach;
-            this.txtTenSach.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTenSach.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTenSach.FocusedState.Parent = this.txtTenSach;
-            this.txtTenSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenSach.ForeColor = System.Drawing.Color.Black;
-            this.txtTenSach.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTenSach.HoverState.Parent = this.txtTenSach;
-            this.txtTenSach.Location = new System.Drawing.Point(168, 93);
-            this.txtTenSach.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtTenSach.Name = "txtTenSach";
-            this.txtTenSach.PasswordChar = '\0';
-            this.txtTenSach.PlaceholderText = "";
-            this.txtTenSach.SelectedText = "";
-            this.txtTenSach.ShadowDecoration.Parent = this.txtTenSach;
-            this.txtTenSach.Size = new System.Drawing.Size(151, 33);
-            this.txtTenSach.TabIndex = 56;
-            // 
-            // txtGiaNhap
-            // 
-            this.txtGiaNhap.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtGiaNhap.DefaultText = "";
-            this.txtGiaNhap.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtGiaNhap.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtGiaNhap.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtGiaNhap.DisabledState.Parent = this.txtGiaNhap;
-            this.txtGiaNhap.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtGiaNhap.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtGiaNhap.FocusedState.Parent = this.txtGiaNhap;
-            this.txtGiaNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGiaNhap.ForeColor = System.Drawing.Color.Black;
-            this.txtGiaNhap.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtGiaNhap.HoverState.Parent = this.txtGiaNhap;
-            this.txtGiaNhap.Location = new System.Drawing.Point(168, 142);
-            this.txtGiaNhap.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtGiaNhap.Name = "txtGiaNhap";
-            this.txtGiaNhap.PasswordChar = '\0';
-            this.txtGiaNhap.PlaceholderText = "";
-            this.txtGiaNhap.SelectedText = "";
-            this.txtGiaNhap.ShadowDecoration.Parent = this.txtGiaNhap;
-            this.txtGiaNhap.Size = new System.Drawing.Size(151, 33);
-            this.txtGiaNhap.TabIndex = 57;
-            // 
-            // txtGiaBan
-            // 
-            this.txtGiaBan.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtGiaBan.DefaultText = "";
-            this.txtGiaBan.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtGiaBan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtGiaBan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtGiaBan.DisabledState.Parent = this.txtGiaBan;
-            this.txtGiaBan.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtGiaBan.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtGiaBan.FocusedState.Parent = this.txtGiaBan;
-            this.txtGiaBan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGiaBan.ForeColor = System.Drawing.Color.Black;
-            this.txtGiaBan.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtGiaBan.HoverState.Parent = this.txtGiaBan;
-            this.txtGiaBan.Location = new System.Drawing.Point(168, 187);
-            this.txtGiaBan.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtGiaBan.Name = "txtGiaBan";
-            this.txtGiaBan.PasswordChar = '\0';
-            this.txtGiaBan.PlaceholderText = "";
-            this.txtGiaBan.SelectedText = "";
-            this.txtGiaBan.ShadowDecoration.Parent = this.txtGiaBan;
-            this.txtGiaBan.Size = new System.Drawing.Size(151, 33);
-            this.txtGiaBan.TabIndex = 58;
-            // 
-            // cbbNXB
-            // 
-            this.cbbNXB.BackColor = System.Drawing.Color.Transparent;
-            this.cbbNXB.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbbNXB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbNXB.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbbNXB.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbbNXB.FocusedState.Parent = this.cbbNXB;
-            this.cbbNXB.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbbNXB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cbbNXB.HoverState.Parent = this.cbbNXB;
-            this.cbbNXB.ItemHeight = 30;
-            this.cbbNXB.ItemsAppearance.Parent = this.cbbNXB;
-            this.cbbNXB.Location = new System.Drawing.Point(168, 230);
-            this.cbbNXB.Name = "cbbNXB";
-            this.cbbNXB.ShadowDecoration.Parent = this.cbbNXB;
-            this.cbbNXB.Size = new System.Drawing.Size(151, 36);
-            this.cbbNXB.TabIndex = 59;
-            // 
-            // cbbTL
-            // 
-            this.cbbTL.BackColor = System.Drawing.Color.Transparent;
-            this.cbbTL.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbbTL.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbTL.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbbTL.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbbTL.FocusedState.Parent = this.cbbTL;
-            this.cbbTL.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbbTL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cbbTL.HoverState.Parent = this.cbbTL;
-            this.cbbTL.ItemHeight = 30;
-            this.cbbTL.ItemsAppearance.Parent = this.cbbTL;
-            this.cbbTL.Location = new System.Drawing.Point(168, 278);
-            this.cbbTL.Name = "cbbTL";
-            this.cbbTL.ShadowDecoration.Parent = this.cbbTL;
-            this.cbbTL.Size = new System.Drawing.Size(151, 36);
-            this.cbbTL.TabIndex = 61;
             // 
             // ThemSach
             // 

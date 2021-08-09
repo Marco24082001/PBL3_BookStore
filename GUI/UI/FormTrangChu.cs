@@ -15,7 +15,7 @@ using LiveCharts;
 
 namespace PBL3.UI
 {
-    public partial class QuanLy : Form
+    public partial class FormTrangChu : Form
     {
         //Fields
         private IconButton currentBtn;
@@ -23,10 +23,10 @@ namespace PBL3.UI
         private Form currentChildForm;
         Thread Luong;
         public string maNV;
-        NguoiDung user;
+        FormCaiDatThongTin user;
         //Constructor
 
-        public QuanLy()
+        public FormTrangChu()
         {
             InitializeComponent();
             leftBorderBtn = new Panel();
@@ -111,22 +111,22 @@ namespace PBL3.UI
         private void btnQLDT_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
-            Thongke f = new Thongke();
-            Thongke.Sender = new Thongke.MyDel(OpenChildForm);
+            FormBaoCaoDoanhSo f = new FormBaoCaoDoanhSo();
+            FormBaoCaoDoanhSo.Sender = new FormBaoCaoDoanhSo.MyDel(OpenChildForm);
             OpenChildForm(f);
         }
 
         private void btnQLKS_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
-            OpenChildForm(new QuanLySach());
+            OpenChildForm(new FormQuanLySach());
         }
 
         private void btnQLNV_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color3);
-            QLNV s = new QLNV();
-            s.Exit_QuanLy += new QLNV.Mydel(exit);
+            FormQuanLyNhanVien s = new FormQuanLyNhanVien();
+            s.Exit_QuanLy += new FormQuanLyNhanVien.Mydel(exit);
             OpenChildForm(s);
         }
 
@@ -165,7 +165,7 @@ namespace PBL3.UI
         {
             if (user == null)
             {
-                user = new NguoiDung(maNV);
+                user = new FormCaiDatThongTin(maNV);
             }
             user.Show();
         }
@@ -188,7 +188,7 @@ namespace PBL3.UI
 
         private void openFormDangNhap(object newForm)
         {
-            DangNhap f = new DangNhap();
+            FormDangNhap f = new FormDangNhap();
             Application.Run(f);
         }
 

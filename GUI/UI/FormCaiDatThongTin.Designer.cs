@@ -1,7 +1,7 @@
 ﻿
 namespace PBL3.UI
 {
-    partial class NguoiDung
+    partial class FormCaiDatThongTin
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace PBL3.UI
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NguoiDung));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCaiDatThongTin));
             this.Save = new Guna.UI2.WinForms.Guna2Button();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.isChange = new System.Windows.Forms.CheckBox();

@@ -10,42 +10,43 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using PBL3.BLL;
 using PBL3.DTO;
+
 namespace PBL3.UI
 {
-    public partial class ThemNXB : Form
+    public partial class FormThemTheLoaiSach : Form
     {
         public delegate void MyDel();
         public MyDel d;
-        string boxTitle = "Thông báo";
-        public ThemNXB()
+        string boxTitle = "Thống báo";
+        public FormThemTheLoaiSach()
         {
             InitializeComponent();
         }
 
-        private void XacNhan_Click(object sender, EventArgs e)
+        private void OK_Click(object sender, EventArgs e)
         {
-            foreach (string a in BLL_NhaXuatBan.Instance.Bll_GetAllMaNXB()) {
-                if(txtMaNXB.Text == a)
+            foreach (string a in BLL_QuanLy.Instance.Bll_GetAllMaLS())
+            {
+                if (txtMaLS.Text == a)
                 {
-                    MessageBox.Show("Nhà xuất bản đã tồn tại", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("'Loại sách' đã tồn tại", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
             }
-            NhaXuatBan nxb = new NhaXuatBan();
-            nxb.MaNXB = txtMaNXB.Text;
-            nxb.TenNXB = txtTenNXB.Text;
+            LoaiSach ls = new LoaiSach();
+            ls.MaLoaiSach = txtMaLS.Text;
+            ls.TenLoaiSach = txtTenLS.Text;
             try
             {
-                BLL_NhaXuatBan.Instance.Bll_AddNXB(nxb);
+                BLL_LoaiSach.Instance.Bll_AddLoaiSach(ls);
             }
             catch(DbEntityValidationException ex)
             {
-                MessageBox.Show(ex.ToString(), boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }              
+                MessageBox.Show(ex.ToString(), boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
             d();
         }
-
         private void Thoat_Click(object sender, EventArgs e)
         {
             this.Dispose();

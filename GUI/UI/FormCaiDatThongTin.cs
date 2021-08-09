@@ -13,11 +13,11 @@ using PBL3.DTO;
 
 namespace PBL3.UI
 {
-    public partial class NguoiDung : Form
+    public partial class FormCaiDatThongTin : Form
     {
         string boxTitle = "Thông báo";
         public string MaNhanVien { get; set; }
-        public NguoiDung(string MaNhanVien)
+        public FormCaiDatThongTin(string MaNhanVien)
         {
             InitializeComponent();
             this.ControlBox = false;

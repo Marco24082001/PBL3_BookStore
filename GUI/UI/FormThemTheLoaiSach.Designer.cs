@@ -1,7 +1,7 @@
 ﻿
 namespace PBL3.UI
 {
-    partial class ThemTLSach
+    partial class FormThemTheLoaiSach
     {
         /// <summary>
         /// Required designer variable.
@@ -32,11 +32,11 @@ namespace PBL3.UI
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtTenLS = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtMaLS = new Guna.UI2.WinForms.Guna2TextBox();
             this.OK = new FontAwesome.Sharp.IconButton();
             this.label8 = new System.Windows.Forms.Label();
             this.Thoat = new FontAwesome.Sharp.IconButton();
-            this.txtMaLS = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtTenLS = new Guna.UI2.WinForms.Guna2TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,52 +75,30 @@ namespace PBL3.UI
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
-            // OK
+            // txtTenLS
             // 
-            this.OK.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.OK.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.OK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OK.IconChar = FontAwesome.Sharp.IconChar.Check;
-            this.OK.IconColor = System.Drawing.Color.Blue;
-            this.OK.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.OK.IconSize = 20;
-            this.OK.Location = new System.Drawing.Point(229, 244);
-            this.OK.Name = "OK";
-            this.OK.Size = new System.Drawing.Size(122, 34);
-            this.OK.TabIndex = 32;
-            this.OK.Text = "Xác nhận";
-            this.OK.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.OK.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.OK.UseVisualStyleBackColor = false;
-            this.OK.Click += new System.EventHandler(this.OK_Click);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(6, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(101, 29);
-            this.label8.TabIndex = 11;
-            this.label8.Text = "Thể loại";
-            // 
-            // Thoat
-            // 
-            this.Thoat.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.Thoat.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Thoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Thoat.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
-            this.Thoat.IconColor = System.Drawing.Color.Red;
-            this.Thoat.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Thoat.IconSize = 25;
-            this.Thoat.Location = new System.Drawing.Point(54, 244);
-            this.Thoat.Name = "Thoat";
-            this.Thoat.Size = new System.Drawing.Size(110, 34);
-            this.Thoat.TabIndex = 31;
-            this.Thoat.Text = "Thoát";
-            this.Thoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Thoat.UseVisualStyleBackColor = false;
-            this.Thoat.Click += new System.EventHandler(this.Thoat_Click);
+            this.txtTenLS.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTenLS.DefaultText = "";
+            this.txtTenLS.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtTenLS.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtTenLS.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTenLS.DisabledState.Parent = this.txtTenLS;
+            this.txtTenLS.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTenLS.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTenLS.FocusedState.Parent = this.txtTenLS;
+            this.txtTenLS.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenLS.ForeColor = System.Drawing.Color.Black;
+            this.txtTenLS.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTenLS.HoverState.Parent = this.txtTenLS;
+            this.txtTenLS.Location = new System.Drawing.Point(220, 153);
+            this.txtTenLS.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtTenLS.Name = "txtTenLS";
+            this.txtTenLS.PasswordChar = '\0';
+            this.txtTenLS.PlaceholderText = "";
+            this.txtTenLS.SelectedText = "";
+            this.txtTenLS.ShadowDecoration.Parent = this.txtTenLS;
+            this.txtTenLS.Size = new System.Drawing.Size(131, 33);
+            this.txtTenLS.TabIndex = 40;
             // 
             // txtMaLS
             // 
@@ -147,30 +125,54 @@ namespace PBL3.UI
             this.txtMaLS.Size = new System.Drawing.Size(131, 33);
             this.txtMaLS.TabIndex = 39;
             // 
-            // txtTenLS
+            // OK
             // 
-            this.txtTenLS.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTenLS.DefaultText = "";
-            this.txtTenLS.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtTenLS.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtTenLS.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTenLS.DisabledState.Parent = this.txtTenLS;
-            this.txtTenLS.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTenLS.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTenLS.FocusedState.Parent = this.txtTenLS;
-            this.txtTenLS.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenLS.ForeColor = System.Drawing.Color.Black;
-            this.txtTenLS.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTenLS.HoverState.Parent = this.txtTenLS;
-            this.txtTenLS.Location = new System.Drawing.Point(220, 153);
-            this.txtTenLS.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtTenLS.Name = "txtTenLS";
-            this.txtTenLS.PasswordChar = '\0';
-            this.txtTenLS.PlaceholderText = "";
-            this.txtTenLS.SelectedText = "";
-            this.txtTenLS.ShadowDecoration.Parent = this.txtTenLS;
-            this.txtTenLS.Size = new System.Drawing.Size(131, 33);
-            this.txtTenLS.TabIndex = 40;
+            this.OK.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.OK.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.OK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OK.IconChar = FontAwesome.Sharp.IconChar.Check;
+            this.OK.IconColor = System.Drawing.Color.Blue;
+            this.OK.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.OK.IconSize = 25;
+            this.OK.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.OK.Location = new System.Drawing.Point(220, 244);
+            this.OK.Name = "OK";
+            this.OK.Size = new System.Drawing.Size(131, 34);
+            this.OK.TabIndex = 32;
+            this.OK.Text = "Xác nhận";
+            this.OK.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.OK.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.OK.UseVisualStyleBackColor = false;
+            this.OK.Click += new System.EventHandler(this.OK_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(6, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(101, 29);
+            this.label8.TabIndex = 11;
+            this.label8.Text = "Thể loại";
+            // 
+            // Thoat
+            // 
+            this.Thoat.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.Thoat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Thoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Thoat.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
+            this.Thoat.IconColor = System.Drawing.Color.Red;
+            this.Thoat.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Thoat.IconSize = 25;
+            this.Thoat.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Thoat.Location = new System.Drawing.Point(54, 244);
+            this.Thoat.Name = "Thoat";
+            this.Thoat.Size = new System.Drawing.Size(110, 34);
+            this.Thoat.TabIndex = 31;
+            this.Thoat.Text = "Thoát";
+            this.Thoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Thoat.UseVisualStyleBackColor = false;
+            this.Thoat.Click += new System.EventHandler(this.Thoat_Click);
             // 
             // ThemTLSach
             // 

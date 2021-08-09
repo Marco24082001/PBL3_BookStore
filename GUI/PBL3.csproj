@@ -136,104 +136,104 @@
     <Compile Include="TK_NHANVIEN.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="UI\BaoCaoDoanhThu.cs">
+    <Compile Include="UI\FormBaoCaoDoanhThu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\BaoCaoDoanhThu.Designer.cs">
-      <DependentUpon>BaoCaoDoanhThu.cs</DependentUpon>
+    <Compile Include="UI\FormBaoCaoDoanhThu.Designer.cs">
+      <DependentUpon>FormBaoCaoDoanhThu.cs</DependentUpon>
     </Compile>
     <Compile Include="BLL\BLL_QuanLy.cs" />
-    <Compile Include="UI\NguoiDung.cs">
+    <Compile Include="UI\FormCaiDatThongTin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\NguoiDung.Designer.cs">
-      <DependentUpon>NguoiDung.cs</DependentUpon>
+    <Compile Include="UI\FormCaiDatThongTin.Designer.cs">
+      <DependentUpon>FormCaiDatThongTin.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\ThemNXB.cs">
+    <Compile Include="UI\FormThemNhaXuatBan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\ThemNXB.Designer.cs">
-      <DependentUpon>ThemNXB.cs</DependentUpon>
+    <Compile Include="UI\FormThemNhaXuatBan.Designer.cs">
+      <DependentUpon>FormThemNhaXuatBan.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\ThemSach.cs">
+    <Compile Include="UI\FormThemSach.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\ThemSach.Designer.cs">
-      <DependentUpon>ThemSach.cs</DependentUpon>
+    <Compile Include="UI\FormThemSach.Designer.cs">
+      <DependentUpon>FormThemSach.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\ThemTLSach.cs">
+    <Compile Include="UI\FormThemTheLoaiSach.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\ThemTLSach.Designer.cs">
-      <DependentUpon>ThemTLSach.cs</DependentUpon>
+    <Compile Include="UI\FormThemTheLoaiSach.Designer.cs">
+      <DependentUpon>FormThemTheLoaiSach.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\ThemNhanViens.cs">
+    <Compile Include="UI\FormThemNhanViens.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\ThemNhanViens.Designer.cs">
-      <DependentUpon>ThemNhanViens.cs</DependentUpon>
+    <Compile Include="UI\FormThemNhanViens.Designer.cs">
+      <DependentUpon>FormThemNhanViens.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\DangNhap.cs">
+    <Compile Include="UI\FormDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\DangNhap.Designer.cs">
-      <DependentUpon>DangNhap.cs</DependentUpon>
+    <Compile Include="UI\FormDangNhap.Designer.cs">
+      <DependentUpon>FormDangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\NhanVien.cs">
+    <Compile Include="UI\FormBanHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\NhanVien.Designer.cs">
-      <DependentUpon>NhanVien.cs</DependentUpon>
+    <Compile Include="UI\FormBanHang.Designer.cs">
+      <DependentUpon>FormBanHang.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UI\QLNV.cs">
+    <Compile Include="UI\FormQuanLyNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\QLNV.Designer.cs">
-      <DependentUpon>QLNV.cs</DependentUpon>
+    <Compile Include="UI\FormQuanLyNhanVien.Designer.cs">
+      <DependentUpon>FormQuanLyNhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\QuanLy.cs">
+    <Compile Include="UI\FormTrangChu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\QuanLy.Designer.cs">
-      <DependentUpon>QuanLy.cs</DependentUpon>
+    <Compile Include="UI\FormTrangChu.Designer.cs">
+      <DependentUpon>FormTrangChu.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\QuanLySach.cs">
+    <Compile Include="UI\FormQuanLySach.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\QuanLySach.Designer.cs">
-      <DependentUpon>QuanLySach.cs</DependentUpon>
+    <Compile Include="UI\FormQuanLySach.Designer.cs">
+      <DependentUpon>FormQuanLySach.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\ThongKe.cs">
+    <Compile Include="UI\FormBaoCaoDoanhSo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\ThongKe.Designer.cs">
-      <DependentUpon>ThongKe.cs</DependentUpon>
+    <Compile Include="UI\FormBaoCaoDoanhSo.Designer.cs">
+      <DependentUpon>FormBaoCaoDoanhSo.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UI\BaoCaoDoanhThu.resx">
-      <DependentUpon>BaoCaoDoanhThu.cs</DependentUpon>
+    <EmbeddedResource Include="UI\FormBaoCaoDoanhThu.resx">
+      <DependentUpon>FormBaoCaoDoanhThu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\NguoiDung.resx">
-      <DependentUpon>NguoiDung.cs</DependentUpon>
+    <EmbeddedResource Include="UI\FormCaiDatThongTin.resx">
+      <DependentUpon>FormCaiDatThongTin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\ThemNXB.resx">
-      <DependentUpon>ThemNXB.cs</DependentUpon>
+    <EmbeddedResource Include="UI\FormThemNhaXuatBan.resx">
+      <DependentUpon>FormThemNhaXuatBan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\ThemSach.resx">
-      <DependentUpon>ThemSach.cs</DependentUpon>
+    <EmbeddedResource Include="UI\FormThemSach.resx">
+      <DependentUpon>FormThemSach.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\ThemTLSach.resx">
-      <DependentUpon>ThemTLSach.cs</DependentUpon>
+    <EmbeddedResource Include="UI\FormThemTheLoaiSach.resx">
+      <DependentUpon>FormThemTheLoaiSach.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\ThemNhanViens.resx">
-      <DependentUpon>ThemNhanViens.cs</DependentUpon>
+    <EmbeddedResource Include="UI\FormThemNhanViens.resx">
+      <DependentUpon>FormThemNhanViens.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\DangNhap.resx">
-      <DependentUpon>DangNhap.cs</DependentUpon>
+    <EmbeddedResource Include="UI\FormDangNhap.resx">
+      <DependentUpon>FormDangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\NhanVien.resx">
-      <DependentUpon>NhanVien.cs</DependentUpon>
+    <EmbeddedResource Include="UI\FormBanHang.resx">
+      <DependentUpon>FormBanHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -245,17 +245,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UI\QLNV.resx">
-      <DependentUpon>QLNV.cs</DependentUpon>
+    <EmbeddedResource Include="UI\FormQuanLyNhanVien.resx">
+      <DependentUpon>FormQuanLyNhanVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\QuanLy.resx">
-      <DependentUpon>QuanLy.cs</DependentUpon>
+    <EmbeddedResource Include="UI\FormTrangChu.resx">
+      <DependentUpon>FormTrangChu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\QuanLySach.resx">
-      <DependentUpon>QuanLySach.cs</DependentUpon>
+    <EmbeddedResource Include="UI\FormQuanLySach.resx">
+      <DependentUpon>FormQuanLySach.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\ThongKe.resx">
-      <DependentUpon>ThongKe.cs</DependentUpon>
+    <EmbeddedResource Include="UI\FormBaoCaoDoanhSo.resx">
+      <DependentUpon>FormBaoCaoDoanhSo.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

@@ -14,11 +14,11 @@ using System.Reflection;
 
 namespace PBL3.UI
 {
-    public partial class Thongke : Form
+    public partial class FormBaoCaoDoanhSo : Form
     {
         public delegate void MyDel(Form childForm);
         public static MyDel Sender;
-        public Thongke()
+        public FormBaoCaoDoanhSo()
         {
             InitializeComponent();
             setData();
@@ -37,8 +37,8 @@ namespace PBL3.UI
 
         private void NextPage_Click(object sender, EventArgs e)
         {
-            BaoCaoDoanhThu f = new BaoCaoDoanhThu();
-            f.Sender = new BaoCaoDoanhThu.MyDel(Sender);
+            FormBaoCaoDoanhThu f = new FormBaoCaoDoanhThu();
+            f.Sender = new FormBaoCaoDoanhThu.MyDel(Sender);
             Sender(f);
         }
 

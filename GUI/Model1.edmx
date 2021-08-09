@@ -324,7 +324,7 @@
           <Property Name="GiaBan" Type="Int32" Nullable="false" />
           <Property Name="SoLuongBan" Type="Int32" Nullable="false" />
           <Property Name="DoanhThu" Type="Int32" />
-          <Property Name="ThoiGian" Type="DateTime" Precision="0" />
+          <Property Name="ThoiGian" Type="DateTime" />
           <NavigationProperty Name="SACH" Relationship="Self.FK__BAO_CAO_D__MaSac__4222D4EF" FromRole="BAO_CAO_DOANH_THU" ToRole="SACH" />
         </EntityType>
         <EntityType Name="CHI_TIET_HOA_DON_BAN">
@@ -359,7 +359,7 @@
           <Property Name="STT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="MaNhanVien" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="DoanhSoBan" Type="Int32" />
-          <Property Name="ThoiGian" Type="DateTime" Precision="0" />
+          <Property Name="ThoiGian" Type="DateTime" />
           <NavigationProperty Name="NHAN_VIEN" Relationship="Self.FK__DOANH_SO___MaNha__44FF419A" FromRole="DOANH_SO_BAN_HANG" ToRole="NHAN_VIEN" />
         </EntityType>
         <EntityType Name="HOA_DON_BAN">
@@ -369,7 +369,7 @@
           <Property Name="MaDonBan" Type="Int32" Nullable="false" />
           <Property Name="SDT_KH" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="MaNhanVien" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="NgayBan" Type="DateTime" Precision="0" />
+          <Property Name="NgayBan" Type="DateTime" />
           <NavigationProperty Name="CHI_TIET_HOA_DON_BAN" Relationship="Self.FK__CHI_TIET___MaDon__3F466844" FromRole="HOA_DON_BAN" ToRole="CHI_TIET_HOA_DON_BAN" />
           <NavigationProperty Name="NHAN_VIEN" Relationship="Self.FK__HOA_DON_B__MaNha__398D8EEE" FromRole="HOA_DON_BAN" ToRole="NHAN_VIEN" />
           <NavigationProperty Name="KHACH_HANG" Relationship="Self.FK__HOA_DON_B__SDT_K__3A81B327" FromRole="HOA_DON_BAN" ToRole="KHACH_HANG" />
@@ -379,7 +379,7 @@
             <PropertyRef Name="MaDonNhap" />
           </Key>
           <Property Name="MaDonNhap" Type="Int32" Nullable="false" />
-          <Property Name="NgayNhap" Type="DateTime" Precision="0" />
+          <Property Name="NgayNhap" Type="DateTime" />
           <NavigationProperty Name="CHI_TIET_HOA_DON_NHAP" Relationship="Self.FK__CHI_TIET___MaDon__36B12243" FromRole="HOA_DON_NHAP" ToRole="CHI_TIET_HOA_DON_NHAP" />
         </EntityType>
         <EntityType Name="KHACH_HANG">
@@ -417,7 +417,7 @@
           <Property Name="CMND" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="SoDienThoai" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="QueQuan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="NgaySinh" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="NgaySinh" Type="DateTime" Nullable="false" />
           <Property Name="TrangThai" Type="Boolean" Nullable="false" />
           <Property Name="isAdmin" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="DOANH_SO_BAN_HANG" Relationship="Self.FK__DOANH_SO___MaNha__44FF419A" FromRole="NHAN_VIEN" ToRole="DOANH_SO_BAN_HANG" />
