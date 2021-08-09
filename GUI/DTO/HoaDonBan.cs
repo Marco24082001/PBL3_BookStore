@@ -11,6 +11,6 @@ namespace PBL3.DTO
         public int MaDonBan { get; set; }
         public string SDT_KH { get; set; }
         public string MaNhanVien { get; set; }
-        public Nullable<System.DateTime> NgayBan { get; set; }
+        public System.DateTime NgayBan { get; set; }
     }
 }

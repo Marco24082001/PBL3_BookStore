@@ -553,31 +553,31 @@ namespace PBL3.BLL
 
         public List<View_BCDT> Bll_GetViewBCDTFolowNam(int nam)
         {
-            List<BAO_CAO_DOANH_THU> list = db.BAO_CAO_DOANH_THU.Where(p => p.ThoiGian.Value.Year == nam).ToList();
+            List<BAO_CAO_DOANH_THU> list = db.BAO_CAO_DOANH_THU.Where(p => p.ThoiGian.Year == nam).ToList();
             return ChangeViewBCDT(list);
         }
         public List<View_BCDT> Bll_GetViewBCDTFolowNamThang(int nam, int thang)
         {
-            List<BAO_CAO_DOANH_THU> list = db.BAO_CAO_DOANH_THU.Where(p => p.ThoiGian.Value.Year == nam && p.ThoiGian.Value.Month == thang).ToList();
+            List<BAO_CAO_DOANH_THU> list = db.BAO_CAO_DOANH_THU.Where(p => p.ThoiGian.Year == nam && p.ThoiGian.Month == thang).ToList();
             return ChangeViewBCDT(list);
         }
         public List<View_BCDT> Bll_GetViewBCDTFolowNamThangNgay(int nam, int thang, int ngay)
         {
-            List<BAO_CAO_DOANH_THU> list = db.BAO_CAO_DOANH_THU.Where(p => p.ThoiGian.Value.Year == nam && p.ThoiGian.Value.Month == thang && p.ThoiGian.Value.Day == ngay).ToList();
+            List<BAO_CAO_DOANH_THU> list = db.BAO_CAO_DOANH_THU.Where(p => p.ThoiGian.Year == nam && p.ThoiGian.Month == thang && p.ThoiGian.Day == ngay).ToList();
             return ChangeViewBCDT(list);
         }
 
         public List<DOANH_SO_BAN_HANG> Bll_GetDoanhSoBanHangFolowNam(int nam)
         {
-            return db.DOANH_SO_BAN_HANG.Where(p => p.ThoiGian.Value.Year == nam).ToList();
+            return db.DOANH_SO_BAN_HANG.Where(p => p.ThoiGian.Year == nam).ToList();
         }
         public List<DOANH_SO_BAN_HANG> Bll_GetDoanhSoBanHangFolowNamThang(int nam, int thang)
         {
-            return db.DOANH_SO_BAN_HANG.Where(p => p.ThoiGian.Value.Year == nam && p.ThoiGian.Value.Month == thang).ToList();
+            return db.DOANH_SO_BAN_HANG.Where(p => p.ThoiGian.Year == nam && p.ThoiGian.Month == thang).ToList();
         }
         public List<DOANH_SO_BAN_HANG> Bll_GetDoanhSoBanHangFolowNamThangNgay(int nam, int thang, int ngay)
         {
-            return db.DOANH_SO_BAN_HANG.Where(p => p.ThoiGian.Value.Year == nam && p.ThoiGian.Value.Month == thang && p.ThoiGian.Value.Day == ngay).ToList();
+            return db.DOANH_SO_BAN_HANG.Where(p => p.ThoiGian.Year == nam && p.ThoiGian.Month == thang && p.ThoiGian.Day == ngay).ToList();
         }
 
         public SeriesCollection Bll_GetValueChart_Sales(int num1, int num2, int num3 = -1)
@@ -585,16 +585,16 @@ namespace PBL3.BLL
             SeriesCollection series = new SeriesCollection();
             if (num3 != -1)
             {
-                var months = db.DOANH_SO_BAN_HANG.Where(p => p.ThoiGian.Value.Year.Equals(num3) && p.ThoiGian.Value.Month.Equals(num1) || p.ThoiGian.Value.Month.Equals(num2))
-                                                 .Select(p => new { Month = p.ThoiGian.Value.Month }).Distinct();
+                var months = db.DOANH_SO_BAN_HANG.Where(p => p.ThoiGian.Year.Equals(num3) && p.ThoiGian.Month.Equals(num1) || p.ThoiGian.Month.Equals(num2))
+                                                 .Select(p => new { Month = p.ThoiGian.Month }).Distinct();
                 foreach (var month in months)
                 {
                     List<int> values = new List<int>();
                     for (int day = 1; day <= 31; day++)
                     {
                         int value = 0;
-                        var data = db.DOANH_SO_BAN_HANG.Where(p => p.ThoiGian.Value.Year.Equals(num3) && p.ThoiGian.Value.Month.Equals(month.Month) && p.ThoiGian.Value.Day.Equals(day))
-                                                       .Select(p => new { p.DoanhSoBan, p.ThoiGian.Value.Day })
+                        var data = db.DOANH_SO_BAN_HANG.Where(p => p.ThoiGian.Year.Equals(num3) && p.ThoiGian.Month.Equals(month.Month) && p.ThoiGian.Day.Equals(day))
+                                                       .Select(p => new { p.DoanhSoBan, p.ThoiGian.Day })
                                                        .GroupBy(p => p.Day)
                                                        .Select(p => new { Day = p.Key, SumTurnover = p.Sum(i => i.DoanhSoBan) });
                         if (data.SingleOrDefault() != null)
@@ -607,16 +607,16 @@ namespace PBL3.BLL
             }
             else
             {
-                var years = db.DOANH_SO_BAN_HANG.Where(p => p.ThoiGian.Value.Year.Equals(num1) || p.ThoiGian.Value.Year.Equals(num2))
-                                                .Select(p => new { Year = p.ThoiGian.Value.Year }).Distinct();
+                var years = db.DOANH_SO_BAN_HANG.Where(p => p.ThoiGian.Year.Equals(num1) || p.ThoiGian.Year.Equals(num2))
+                                                .Select(p => new { Year = p.ThoiGian.Year }).Distinct();
                 foreach (var year in years)
                 {
                     List<int> values = new List<int>();
                     for (int month = 1; month <= 12; month++)
                     {
                         int value = 0;
-                        var data = db.DOANH_SO_BAN_HANG.Where(p => p.ThoiGian.Value.Year.Equals(year.Year) && p.ThoiGian.Value.Month.Equals(month))
-                                                       .Select(p => new { p.DoanhSoBan, p.ThoiGian.Value.Month })
+                        var data = db.DOANH_SO_BAN_HANG.Where(p => p.ThoiGian.Year.Equals(year.Year) && p.ThoiGian.Month.Equals(month))
+                                                       .Select(p => new { p.DoanhSoBan, p.ThoiGian.Month })
                                                        .GroupBy(p => p.Month)
                                                        .Select(p => new { Month = p.Key, SumSales = p.Sum(i => i.DoanhSoBan) });
                         if (data.SingleOrDefault() != null)
@@ -649,8 +649,8 @@ namespace PBL3.BLL
             foreach (DateTime date in Bll_GetListDate(numDay))
             {
                 int value = 0;
-                var data = db.BAO_CAO_DOANH_THU.Where(p => p.ThoiGian.Value.Year.Equals(date.Year) && p.ThoiGian.Value.Month.Equals(date.Month) && p.ThoiGian.Value.Day.Equals(date.Day))
-                                               .Select(p => new { p.DoanhThu, Day = p.ThoiGian.Value.Day })
+                var data = db.BAO_CAO_DOANH_THU.Where(p => p.ThoiGian.Year.Equals(date.Year) && p.ThoiGian.Month.Equals(date.Month) && p.ThoiGian.Day.Equals(date.Day))
+                                               .Select(p => new { p.DoanhThu, Day = p.ThoiGian.Day })
                                                .GroupBy(p => p.Day)
                                                .Select(p => new { Day = p.Key, sumTurnover = p.Sum(i => i.DoanhThu) });
                 if (data.SingleOrDefault() != null)
@@ -668,7 +668,7 @@ namespace PBL3.BLL
         {
             SeriesCollection series = new SeriesCollection();
             
-            var data = db.BAO_CAO_DOANH_THU.Where(p => p.ThoiGian.Value.Year.Equals(DateTime.Now.Year))
+            var data = db.BAO_CAO_DOANH_THU.Where(p => p.ThoiGian.Year.Equals(DateTime.Now.Year))
                                            .Select(p => new { p.SACH, p.SoLuongBan })
                                            .GroupBy(p => p.SACH)
                                            .Select(p => new { Sach = p.Key, sumNumber = p.Sum(i => i.SoLuongBan) })

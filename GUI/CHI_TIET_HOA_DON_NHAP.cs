@@ -17,8 +17,8 @@ namespace PBL3
         public int ID { get; set; }
         public int MaDonNhap { get; set; }
         public string MaSach { get; set; }
-        public Nullable<int> SoLuong { get; set; }
-        public Nullable<int> ThanhTien { get; set; }
+        public int SoLuong { get; set; }
+        public int ThanhTien { get; set; }
     
         public virtual HOA_DON_NHAP HOA_DON_NHAP { get; set; }
         public virtual SACH SACH { get; set; }

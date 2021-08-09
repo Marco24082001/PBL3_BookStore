@@ -36,6 +36,7 @@ namespace PBL3.UI
             txtSdt.Text = nv.SoDienThoai;
             txtQueQuan.Text = nv.QueQuan;
             dateTimePicker1.Value = nv.NgaySinh;
+            txtMatKhau.Text = BLL_TKNhanVien.Instance.Bll_GetMKByTK(maNV);
         }
 
         private void ThemNhanViens_Load(object sender, EventArgs e)
@@ -124,9 +125,9 @@ namespace PBL3.UI
                 return false;
             }
             string a = txtCMND.Text;
-            if (txtCMND.TextLength > 12)
+            if (txtCMND.TextLength != 9)
             {
-                MessageBox.Show("'CMND' không được quá 12 số", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("CMND phải 9 số", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             for (int i = 0; i < txtCMND.TextLength; i++)
@@ -139,7 +140,6 @@ namespace PBL3.UI
             }
             return true;
         }
-
         private bool NhapSDT()
         {
             if(txtSdt.Text == "")
@@ -147,12 +147,13 @@ namespace PBL3.UI
                 MessageBox.Show("Vui lòng nhâp 'Số điện thoại'", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-            string a = txtSdt.Text;
-            if(txtSdt.TextLength > 10)
+            if (txtSdt.Text.Length != 10)
             {
-                MessageBox.Show("'Số điện thoại' không được quá 10 số", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Số điện thoại phải 10 số", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
+            string a = txtSdt.Text;
+            
             for (int i = 0; i < txtSdt.TextLength; i++)
             {
                 if ((int)a[i] < 48 || (int)a[i] > 57)
@@ -224,6 +225,7 @@ namespace PBL3.UI
             if (NhapCMND() == false) return;
             if (NhapSDT() == false) return;
             if (NhapQueQuan() == false) return;
+            if (!NhapMatKhau()) return;
             DTO.NhanVien nv = new DTO.NhanVien(); 
             txtMaNV.Text = maNV;
             txtMaNV.Enabled = false;
@@ -237,6 +239,10 @@ namespace PBL3.UI
             nv.QueQuan = txtQueQuan.Text;
             nv.NgaySinh = dateTimePicker1.Value;
             BLL_NhanVien.Instance.Bll_EditNhanVien(nv);
+            TKNhanVien tk = new TKNhanVien();
+            tk.TKNV = txtMaNV.Text;
+            tk.Pass = txtMatKhau.Text;
+            BLL_TKNhanVien.Instance.BLL_EditMatKhau(tk);
         }
 
         private void XacNhan_Click(object sender, EventArgs e)

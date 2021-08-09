@@ -37,7 +37,7 @@ namespace PBL3.UI
             this.txtName = new Guna.UI2.WinForms.Guna2TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.Xoa = new FontAwesome.Sharp.IconButton();
+            this.ThaydoiTT = new FontAwesome.Sharp.IconButton();
             this.ChinhSua = new FontAwesome.Sharp.IconButton();
             this.Them = new FontAwesome.Sharp.IconButton();
             this.sortBtn = new FontAwesome.Sharp.IconButton();
@@ -173,25 +173,25 @@ namespace PBL3.UI
             this.label2.TabIndex = 16;
             this.label2.Text = "Họ và tên:";
             // 
-            // Xoa
+            // ThaydoiTT
             // 
-            this.Xoa.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.Xoa.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Xoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Xoa.IconChar = FontAwesome.Sharp.IconChar.Times;
-            this.Xoa.IconColor = System.Drawing.Color.Red;
-            this.Xoa.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Xoa.IconSize = 25;
-            this.Xoa.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Xoa.Location = new System.Drawing.Point(388, 627);
-            this.Xoa.Name = "Xoa";
-            this.Xoa.Size = new System.Drawing.Size(181, 36);
-            this.Xoa.TabIndex = 55;
-            this.Xoa.Text = "Thay đổi trạng thái";
-            this.Xoa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Xoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Xoa.UseVisualStyleBackColor = false;
-            this.Xoa.Click += new System.EventHandler(this.Xoa_Click);
+            this.ThaydoiTT.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.ThaydoiTT.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ThaydoiTT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ThaydoiTT.IconChar = FontAwesome.Sharp.IconChar.Times;
+            this.ThaydoiTT.IconColor = System.Drawing.Color.Red;
+            this.ThaydoiTT.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ThaydoiTT.IconSize = 25;
+            this.ThaydoiTT.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.ThaydoiTT.Location = new System.Drawing.Point(388, 627);
+            this.ThaydoiTT.Name = "ThaydoiTT";
+            this.ThaydoiTT.Size = new System.Drawing.Size(181, 36);
+            this.ThaydoiTT.TabIndex = 55;
+            this.ThaydoiTT.Text = "Thay đổi trạng thái";
+            this.ThaydoiTT.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ThaydoiTT.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ThaydoiTT.UseVisualStyleBackColor = false;
+            this.ThaydoiTT.Click += new System.EventHandler(this.Xoa_Click);
             // 
             // ChinhSua
             // 
@@ -293,7 +293,7 @@ namespace PBL3.UI
             this.Admin.UseVisualStyleBackColor = false;
             this.Admin.Click += new System.EventHandler(this.Admin_Click);
             // 
-            // QLNV
+            // FormQuanLyNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
@@ -302,11 +302,11 @@ namespace PBL3.UI
             this.Controls.Add(this.Admin);
             this.Controls.Add(this.cbbSort);
             this.Controls.Add(this.sortBtn);
-            this.Controls.Add(this.Xoa);
+            this.Controls.Add(this.ThaydoiTT);
             this.Controls.Add(this.ChinhSua);
             this.Controls.Add(this.Them);
             this.Controls.Add(this.groupBox3);
-            this.Name = "QLNV";
+            this.Name = "FormQuanLyNhanVien";
             this.Text = "Quản lý nhân viên";
             this.Load += new System.EventHandler(this.QLNV_Load);
             this.groupBox3.ResumeLayout(false);
@@ -322,7 +322,7 @@ namespace PBL3.UI
         private System.Windows.Forms.Label label10;
         private FontAwesome.Sharp.IconButton Them;
         private FontAwesome.Sharp.IconButton ChinhSua;
-        private FontAwesome.Sharp.IconButton Xoa;
+        private FontAwesome.Sharp.IconButton ThaydoiTT;
         private FontAwesome.Sharp.IconButton sortBtn;
         private Guna.UI2.WinForms.Guna2TextBox txtName;
         private Guna.UI2.WinForms.Guna2ComboBox cbbSort;
