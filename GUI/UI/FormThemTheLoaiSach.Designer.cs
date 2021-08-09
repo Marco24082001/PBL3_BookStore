@@ -86,7 +86,7 @@ namespace PBL3.UI
             this.txtTenLS.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtTenLS.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTenLS.FocusedState.Parent = this.txtTenLS;
-            this.txtTenLS.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenLS.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenLS.ForeColor = System.Drawing.Color.Black;
             this.txtTenLS.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTenLS.HoverState.Parent = this.txtTenLS;
@@ -111,7 +111,7 @@ namespace PBL3.UI
             this.txtMaLS.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtMaLS.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtMaLS.FocusedState.Parent = this.txtMaLS;
-            this.txtMaLS.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaLS.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaLS.ForeColor = System.Drawing.Color.Black;
             this.txtMaLS.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtMaLS.HoverState.Parent = this.txtMaLS;
@@ -174,13 +174,13 @@ namespace PBL3.UI
             this.Thoat.UseVisualStyleBackColor = false;
             this.Thoat.Click += new System.EventHandler(this.Thoat_Click);
             // 
-            // ThemTLSach
+            // FormThemTheLoaiSach
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(407, 338);
             this.Controls.Add(this.groupBox1);
-            this.Name = "ThemTLSach";
+            this.Name = "FormThemTheLoaiSach";
             this.Text = "ThemTLSach";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

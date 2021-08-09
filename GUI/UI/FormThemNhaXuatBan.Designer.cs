@@ -68,7 +68,7 @@ namespace PBL3.UI
             this.txtTenNXB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtTenNXB.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTenNXB.FocusedState.Parent = this.txtTenNXB;
-            this.txtTenNXB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenNXB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenNXB.ForeColor = System.Drawing.Color.Black;
             this.txtTenNXB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTenNXB.HoverState.Parent = this.txtTenNXB;
@@ -93,7 +93,7 @@ namespace PBL3.UI
             this.txtMaNXB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtMaNXB.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtMaNXB.FocusedState.Parent = this.txtMaNXB;
-            this.txtMaNXB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaNXB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaNXB.ForeColor = System.Drawing.Color.Black;
             this.txtMaNXB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtMaNXB.HoverState.Parent = this.txtMaNXB;
@@ -172,13 +172,13 @@ namespace PBL3.UI
             this.label2.TabIndex = 0;
             this.label2.Text = "Tên nhà xuất bản :";
             // 
-            // ThemNXB
+            // FormThemNhaXuatBan
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(449, 334);
             this.Controls.Add(this.groupBox1);
-            this.Name = "ThemNXB";
+            this.Name = "FormThemNhaXuatBan";
             this.Text = "ThemNXB";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
