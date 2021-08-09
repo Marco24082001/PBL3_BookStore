@@ -17,7 +17,7 @@ namespace PBL3
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DangNhap());
+            Application.Run(new FormDangNhap());
             //Application.Run(new NhanVien());
             //Application.Run(new QuanLy());
             //Application.Run(new NguoiDung("NV01"));

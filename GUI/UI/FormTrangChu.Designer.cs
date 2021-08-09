@@ -1,7 +1,7 @@
 ﻿
 namespace PBL3.UI
 {
-    partial class QuanLy
+    partial class FormTrangChu
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace PBL3.UI
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuanLy));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTrangChu));
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnQLNV = new FontAwesome.Sharp.IconButton();
             this.btnQLKS = new FontAwesome.Sharp.IconButton();

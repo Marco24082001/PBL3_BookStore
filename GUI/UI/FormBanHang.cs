@@ -15,15 +15,15 @@ using PBL3.DTO;
 
 namespace PBL3.UI
 {
-    public partial class NhanVien : Form
+    public partial class FormBanHang : Form
     {
         Thread Luong;
         List<ChiTietHoaDonBan> list = new List<ChiTietHoaDonBan>();
         public string maNV { get; set; }
         bool checkKhachHang = false;
-        NguoiDung user;
+        FormCaiDatThongTin user;
         string boxTitle = "Thông báo";
-        public NhanVien()
+        public FormBanHang()
         {
             InitializeComponent();
             setCbbMaSach();
@@ -61,6 +61,7 @@ namespace PBL3.UI
                 dataGridView2.Columns["SoLuong"].HeaderText = "Số lượng";
                 dataGridView2.Columns["DonGia"].HeaderText = "Đơn giá";
                 dataGridView2.Columns["ThanhTien"].HeaderText = "Thành tiền";
+                dataGridView2.Columns[0].Visible = false;
             }
         }
         public void setCbbMaSach()
@@ -320,7 +321,7 @@ namespace PBL3.UI
 
         private void openFormDangNhap(object newForm)
         {
-            DangNhap f = new DangNhap();
+            FormDangNhap f = new FormDangNhap();
             Application.Run(f);
         }
 
@@ -344,7 +345,7 @@ namespace PBL3.UI
         {
             if (user == null)
             {
-                user = new NguoiDung(maNV);
+                user = new FormCaiDatThongTin(maNV);
             }
             user.Show();
         }

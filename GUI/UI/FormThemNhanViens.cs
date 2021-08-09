@@ -12,13 +12,13 @@ using PBL3.DTO;
 
 namespace PBL3.UI
 {
-    public partial class ThemNhanViens : Form
+    public partial class FormThemNhanViens : Form
     {
         public delegate void MyDel();
         public MyDel d;
         public string maNV { get; set; }
         string boxTitle = "Thông báo";
-        public ThemNhanViens()
+        public FormThemNhanViens()
         {
             InitializeComponent();
         }

@@ -13,11 +13,11 @@ using PBL3.DTO;
 
 namespace PBL3.UI
 {
-    public partial class QuanLySach : Form
+    public partial class FormQuanLySach : Form
     {
         List<ChiTietHoaDonNhap> list = new List<ChiTietHoaDonNhap>();
         string boxTitle = "Thống báo";
-        public QuanLySach()
+        public FormQuanLySach()
         {
             InitializeComponent();
             setcbbMaSach();
@@ -102,9 +102,9 @@ namespace PBL3.UI
 
         private void ThemSach_Click(object sender, EventArgs e)
         {
-            ThemSach f = new ThemSach();
+            FormThemSach f = new FormThemSach();
             f.Show();
-            f.reset += new ThemSach.MyDel(reset);
+            f.reset += new FormThemSach.MyDel(reset);
         }
         private void ThemChiTiet_Click(object sender, EventArgs e)
         {
@@ -235,10 +235,10 @@ namespace PBL3.UI
                 MessageBox.Show("Chỉ được phép chỉnh sửa một hàng", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            ThemSach f = new ThemSach();
+            FormThemSach f = new FormThemSach();
             f.masach = dataGridView1.CurrentRow.Cells["MaSach"].Value.ToString();
             f.Show();
-            f.reset = new ThemSach.MyDel(setData1);
+            f.reset = new FormThemSach.MyDel(setData1);
         }
 
         private void XoaSach_Click(object sender, EventArgs e)

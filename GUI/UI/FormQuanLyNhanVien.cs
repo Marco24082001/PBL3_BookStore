@@ -13,13 +13,13 @@ using PBL3.BLL;
 
 namespace PBL3.UI
 {
-    public partial class QLNV : Form
+    public partial class FormQuanLyNhanVien : Form
     {
         string boxTitle = "Thông báo";
         public delegate void Mydel();
         public Mydel Exit_QuanLy;
         Thread Luong;
-        public QLNV()
+        public FormQuanLyNhanVien()
         {
             InitializeComponent();
             setcbbSort();
@@ -51,9 +51,9 @@ namespace PBL3.UI
 
         private void Them_Click(object sender, EventArgs e)
         {
-            ThemNhanViens f = new ThemNhanViens();
+            FormThemNhanViens f = new FormThemNhanViens();
             f.maNV = null;
-            f.d = new ThemNhanViens.MyDel(setData);
+            f.d = new FormThemNhanViens.MyDel(setData);
             f.Show();
         }
 
@@ -65,10 +65,10 @@ namespace PBL3.UI
                 MessageBox.Show("Chỉ được phép chỉnh sửa 1 hàng", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            ThemNhanViens f = new ThemNhanViens();
+            FormThemNhanViens f = new FormThemNhanViens();
             f.maNV = dataGridView1.CurrentRow.Cells["MaNhanVien"].Value.ToString();
             f.Show();
-            f.d = new ThemNhanViens.MyDel(setData);
+            f.d = new FormThemNhanViens.MyDel(setData);
         }
 
         private void Xoa_Click(object sender, EventArgs e)
@@ -120,7 +120,7 @@ namespace PBL3.UI
 
         private void openFormDangNhap(object newForm)
         {
-            DangNhap f = new DangNhap();
+            FormDangNhap f = new FormDangNhap();
             Application.Run(f);
         }
 

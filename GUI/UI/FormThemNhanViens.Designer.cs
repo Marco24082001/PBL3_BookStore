@@ -1,7 +1,7 @@
 ﻿
 namespace PBL3.UI
 {
-    partial class ThemNhanViens
+    partial class FormThemNhanViens
     {
         /// <summary>
         /// Required designer variable.
@@ -64,10 +64,11 @@ namespace PBL3.UI
             this.LamMoi.IconChar = FontAwesome.Sharp.IconChar.Sync;
             this.LamMoi.IconColor = System.Drawing.Color.Blue;
             this.LamMoi.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.LamMoi.IconSize = 20;
-            this.LamMoi.Location = new System.Drawing.Point(248, 424);
+            this.LamMoi.IconSize = 25;
+            this.LamMoi.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.LamMoi.Location = new System.Drawing.Point(240, 424);
             this.LamMoi.Name = "LamMoi";
-            this.LamMoi.Size = new System.Drawing.Size(113, 34);
+            this.LamMoi.Size = new System.Drawing.Size(122, 34);
             this.LamMoi.TabIndex = 28;
             this.LamMoi.Text = "Làm mới";
             this.LamMoi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -91,10 +92,11 @@ namespace PBL3.UI
             this.XacNhan.IconChar = FontAwesome.Sharp.IconChar.Check;
             this.XacNhan.IconColor = System.Drawing.Color.Blue;
             this.XacNhan.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.XacNhan.IconSize = 20;
-            this.XacNhan.Location = new System.Drawing.Point(470, 424);
+            this.XacNhan.IconSize = 25;
+            this.XacNhan.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.XacNhan.Location = new System.Drawing.Point(465, 424);
             this.XacNhan.Name = "XacNhan";
-            this.XacNhan.Size = new System.Drawing.Size(122, 34);
+            this.XacNhan.Size = new System.Drawing.Size(127, 34);
             this.XacNhan.TabIndex = 25;
             this.XacNhan.Text = "Xác nhận";
             this.XacNhan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -325,6 +327,7 @@ namespace PBL3.UI
             this.Thoat.IconColor = System.Drawing.Color.Red;
             this.Thoat.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Thoat.IconSize = 25;
+            this.Thoat.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Thoat.Location = new System.Drawing.Point(32, 424);
             this.Thoat.Name = "Thoat";
             this.Thoat.Size = new System.Drawing.Size(110, 34);
@@ -336,8 +339,7 @@ namespace PBL3.UI
             // 
             // ThemNhanViens
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(648, 542);
             this.Controls.Add(this.groupBox1);

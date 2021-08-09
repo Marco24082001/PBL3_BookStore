@@ -12,12 +12,12 @@ using PBL3.BLL;
 
 namespace PBL3.UI
 {
-    public partial class DangNhap : Form
+    public partial class FormDangNhap : Form
     {
         Thread Luong;
         private string TaiKhoan;
         private string MatKhau;
-        public DangNhap()
+        public FormDangNhap()
         {
             InitializeComponent();
         }
@@ -50,16 +50,16 @@ namespace PBL3.UI
             }
         }
 
-        private void openFormNhanVien(object newForm)
+        private void openFormNhanVien()
         {
-            NhanVien f = new NhanVien();
+            FormBanHang f = new FormBanHang();
             f.maNV = TaiKhoan;
             Application.Run(f);
         }
 
-        private void openFormQuanLy(object newForm)
+        private void openFormQuanLy()
         {
-            QuanLy f = new QuanLy();
+            FormTrangChu f = new FormTrangChu();
             f.maNV = TaiKhoan;
             Application.Run(f);
         }
