@@ -61,6 +61,7 @@ namespace PBL3.UI
         {
             dataGridView2.DataSource = null;
             dataGridView2.DataSource = list;
+            dataGridView2.Columns["ID"].Visible = false;
             dataGridView2.Columns["MaDonNhap"].HeaderText = "Mã đơn nhập";
             dataGridView2.Columns["MaSach"].HeaderText = "Mã sách";
             dataGridView2.Columns["SoLuong"].HeaderText = "Số lượng";
@@ -156,8 +157,8 @@ namespace PBL3.UI
             }
             HoaDonNhap hdn = new HoaDonNhap()
             {
-                //MaDonNhap = Convert.ToInt32(txtMaDN.Text),
-                NgayNhap = DateTime.Now,
+                MaDonNhap = Convert.ToInt32(txtMaDN.Text),
+                NgayNhap = dateTimePicker1.Value,
             };
             BLL_HoaDonNhap.Instance.Bll_AddHoaDonNhap(hdn);
             foreach (ChiTietHoaDonNhap a in list)
