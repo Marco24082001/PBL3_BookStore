@@ -252,6 +252,7 @@ namespace PBL3.UI
                 Edit(maNV);
             }
             else Add();
+            this.Close();
             d();
         }
 

@@ -22,29 +22,53 @@ namespace PBL3.UI
         {
             InitializeComponent();
         }
-
-        private void OK_Click(object sender, EventArgs e)
+        private bool checkMaLS(string ma)
         {
+            if (ma.Length == 0)
+            {
+                MessageBox.Show("'Không nhập quá Mã loại sách", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if (ma.Length > 5)
+            {
+                MessageBox.Show("Không nhập quá 5 kí tự", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
             foreach (string a in BLL_QuanLy.Instance.Bll_GetAllMaLS())
             {
                 if (txtMaLS.Text == a)
                 {
-                    MessageBox.Show("'Loại sách' đã tồn tại", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
+                    MessageBox.Show("Loại sách' đã tồn tại", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
                 }
             }
-            LoaiSach ls = new LoaiSach();
-            ls.MaLoaiSach = txtMaLS.Text;
-            ls.TenLoaiSach = txtTenLS.Text;
-            try
+            return true;
+        }
+        private bool checkTenLS(string ten)
+        {
+            if (ten.Length == 0)
             {
-                BLL_LoaiSach.Instance.Bll_AddLoaiSach(ls);
+                MessageBox.Show("Không nhập tên loại sách", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
             }
-            catch(DbEntityValidationException ex)
+            if (ten.Length > 40)
             {
-                MessageBox.Show(ex.ToString(), boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Không nhập quá 40 kí tự", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
             }
-            
+            return true;
+        }
+        private void OK_Click(object sender, EventArgs e)
+        {
+            if (!checkMaLS(txtMaLS.Text)) return;
+            if (!checkTenLS(txtTenLS.Text)) return;
+            LoaiSach ls = new LoaiSach()
+            {
+                MaLoaiSach = txtMaLS.Text,
+                TenLoaiSach = txtTenLS.Text
+            };
+            BLL_LoaiSach.Instance.Bll_AddLoaiSach(ls);
+            this.Close();
             d();
         }
         private void Thoat_Click(object sender, EventArgs e)

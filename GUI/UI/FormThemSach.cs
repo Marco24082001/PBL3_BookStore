@@ -179,7 +179,11 @@ namespace PBL3.UI
             {
                 EditSach();
             }
-            if(check) reset();
+            if(check)
+            {
+                this.Close();
+                reset();
+            }
         }
 
         private void ThemSach_Load(object sender, EventArgs e)
