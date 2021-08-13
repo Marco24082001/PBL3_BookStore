@@ -243,6 +243,7 @@ namespace PBL3.UI
                 MaNhanVien = maNV,
                 NgayBan = DateTime.Now,
             };
+            //Them HoaDonBan
             BLL_HoaDonBan.Instance.Bll_AddHoaDonBan(hdb);
             foreach (ChiTietHoaDonBan a in list)
             {
@@ -252,6 +253,7 @@ namespace PBL3.UI
                 int soLuongNow = BLL_Sach.Instance.Bll_GetSLByMaSach(maSach);
                 BLL_Sach.Instance.Bll_EditSLByMaSach(maSach, soLuongNow - soLuongban);
             }
+            //Them ChietHoaDonBan
             foreach (ChiTietHoaDonBan a in list)
             {
                 DTO.BaoCaoDoanhThu bcdt = new DTO.BaoCaoDoanhThu()
@@ -265,10 +267,11 @@ namespace PBL3.UI
                 };
                 BLL_BaoCaoDoanhThu.Instance.Bll_AddBaoCaoDoanhThu(bcdt);
             }
+            //Them DoanhSoBanHang
             int tong = 0;
             foreach (ChiTietHoaDonBan a in list)
             {
-                tong += a.SoLuong * (BLL_Sach.Instance.Bll_GetGiaBanByMaSach(a.MaSach) - BLL_Sach.Instance.Bll_GetGiaNhapByMaSach(a.MaSach));
+                tong += a.SoLuong * BLL_Sach.Instance.Bll_GetGiaBanByMaSach(a.MaSach);
             }
             DoanhSoBanHang dsbh = new DoanhSoBanHang()
             {
@@ -277,6 +280,7 @@ namespace PBL3.UI
                 ThoiGian = DateTime.Now,
             };
             BLL_DoanhSoBanHang.Instance.Bll_AddDoanhSoBanHang(dsbh);
+            //setup lại giao diện
             list.Clear();
             dataGridView2.DataSource = null;
             txtHoTen.Enabled = true;
