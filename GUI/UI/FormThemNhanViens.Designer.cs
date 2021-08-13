@@ -36,6 +36,8 @@ namespace PBL3.UI
             this.label7 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.Nu = new System.Windows.Forms.RadioButton();
+            this.Nam = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -50,8 +52,6 @@ namespace PBL3.UI
             this.txtMaNV = new Guna.UI2.WinForms.Guna2TextBox();
             this.dateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.Thoat = new FontAwesome.Sharp.IconButton();
-            this.Nam = new System.Windows.Forms.RadioButton();
-            this.Nu = new System.Windows.Forms.RadioButton();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -147,6 +147,30 @@ namespace PBL3.UI
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Giới tính";
+            // 
+            // Nu
+            // 
+            this.Nu.AutoSize = true;
+            this.Nu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Nu.Location = new System.Drawing.Point(98, 38);
+            this.Nu.Name = "Nu";
+            this.Nu.Size = new System.Drawing.Size(51, 24);
+            this.Nu.TabIndex = 65;
+            this.Nu.TabStop = true;
+            this.Nu.Text = "Nữ";
+            this.Nu.UseVisualStyleBackColor = true;
+            // 
+            // Nam
+            // 
+            this.Nam.AutoSize = true;
+            this.Nam.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Nam.Location = new System.Drawing.Point(16, 38);
+            this.Nam.Name = "Nam";
+            this.Nam.Size = new System.Drawing.Size(65, 24);
+            this.Nam.TabIndex = 64;
+            this.Nam.TabStop = true;
+            this.Nam.Text = "Nam";
+            this.Nam.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -431,30 +455,6 @@ namespace PBL3.UI
             this.Thoat.UseVisualStyleBackColor = false;
             this.Thoat.Click += new System.EventHandler(this.Thoat_Click_1);
             // 
-            // Nam
-            // 
-            this.Nam.AutoSize = true;
-            this.Nam.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Nam.Location = new System.Drawing.Point(16, 38);
-            this.Nam.Name = "Nam";
-            this.Nam.Size = new System.Drawing.Size(65, 24);
-            this.Nam.TabIndex = 64;
-            this.Nam.TabStop = true;
-            this.Nam.Text = "Nam";
-            this.Nam.UseVisualStyleBackColor = true;
-            // 
-            // Nu
-            // 
-            this.Nu.AutoSize = true;
-            this.Nu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Nu.Location = new System.Drawing.Point(98, 38);
-            this.Nu.Name = "Nu";
-            this.Nu.Size = new System.Drawing.Size(51, 24);
-            this.Nu.TabIndex = 65;
-            this.Nu.TabStop = true;
-            this.Nu.Text = "Nữ";
-            this.Nu.UseVisualStyleBackColor = true;
-            // 
             // FormThemNhanViens
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -462,6 +462,7 @@ namespace PBL3.UI
             this.ClientSize = new System.Drawing.Size(637, 520);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormThemNhanViens";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ThemNhanViens";
             this.Load += new System.EventHandler(this.ThemNhanViens_Load);
             this.groupBox2.ResumeLayout(false);

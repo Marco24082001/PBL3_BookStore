@@ -181,6 +181,7 @@ namespace PBL3.UI
             this.ClientSize = new System.Drawing.Size(407, 338);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormThemTheLoaiSach";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ThemTLSach";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
