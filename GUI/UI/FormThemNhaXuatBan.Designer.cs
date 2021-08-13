@@ -179,6 +179,7 @@ namespace PBL3.UI
             this.ClientSize = new System.Drawing.Size(449, 334);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormThemNhaXuatBan";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ThemNXB";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
