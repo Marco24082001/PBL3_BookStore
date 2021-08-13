@@ -317,6 +317,11 @@
     <None Include="Resources\money.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\books-stack-of-three.png" />
+    <None Include="Resources\lock.png" />
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -327,9 +332,6 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
-    <None Include="Resources\books-stack-of-three.png" />
-    <None Include="Resources\lock.png" />
-    <None Include="Resources\user.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
