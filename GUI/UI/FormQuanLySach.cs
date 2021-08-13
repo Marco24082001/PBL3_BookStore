@@ -177,6 +177,7 @@ namespace PBL3.UI
             numericUpDown4.Value = 0;
             txtTong.Text = "0";
             setData1();
+            MessageBox.Show("Nhập thành công", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void QuanLySach_Load(object sender, EventArgs e)

@@ -22,12 +22,26 @@ namespace PBL3.UI
             InitializeComponent();
         }
 
+        private void openFormNhanVien()
+        {
+            FormBanHang f = new FormBanHang();
+            f.maNV = TaiKhoan;
+            Application.Run(f);
+        }
+
+        private void openFormQuanLy()
+        {
+            FormTrangChu f = new FormTrangChu();
+            f.maNV = TaiKhoan;
+            Application.Run(f);
+        }
+
         private void iconButton2_Click(object sender, EventArgs e)
         {
             TaiKhoan = textBox1.Text;
             MatKhau = textBox2.Text;
             bool checktkmk = BLL_TKNhanVien.Instance.Bll_CheckTKMK(TaiKhoan, MatKhau);
-            if(checktkmk == true)
+            if (checktkmk == true)
             {
                 if (BLL_NhanVien.Instance.Bll_CheckAdmin(TaiKhoan))
                 {
@@ -48,20 +62,6 @@ namespace PBL3.UI
             {
                 MessageBox.Show("Đăng nhập sai", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void openFormNhanVien()
-        {
-            FormBanHang f = new FormBanHang();
-            f.maNV = TaiKhoan;
-            Application.Run(f);
-        }
-
-        private void openFormQuanLy()
-        {
-            FormTrangChu f = new FormTrangChu();
-            f.maNV = TaiKhoan;
-            Application.Run(f);
         }
 
         private void iconButton1_Click(object sender, EventArgs e)

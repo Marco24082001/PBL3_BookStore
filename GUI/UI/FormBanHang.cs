@@ -107,7 +107,7 @@ namespace PBL3.UI
             }
             if (txtSDT.Text.Length != 10)
             {
-                MessageBox.Show("'Số điện thoại' không được quá 10 số", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("'Số điện thoại' phải đúng 10 chữ số", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             string a = txtSDT.Text;
@@ -268,15 +268,10 @@ namespace PBL3.UI
                 BLL_BaoCaoDoanhThu.Instance.Bll_AddBaoCaoDoanhThu(bcdt);
             }
             //Them DoanhSoBanHang
-            int tong = 0;
-            foreach (ChiTietHoaDonBan a in list)
-            {
-                tong += a.SoLuong * BLL_Sach.Instance.Bll_GetGiaBanByMaSach(a.MaSach);
-            }
             DoanhSoBanHang dsbh = new DoanhSoBanHang()
             {
                 MaNhanVien = maNV,
-                DoanhSoBan = tong,
+                DoanhSoBan = Convert.ToInt32(TongCong.Text),
                 ThoiGian = DateTime.Now,
             };
             BLL_DoanhSoBanHang.Instance.Bll_AddDoanhSoBanHang(dsbh);
@@ -291,8 +286,9 @@ namespace PBL3.UI
             txtHoTen.Text = "";
             cbbMaSach.SelectedIndex = 0;
             numericUpDown1.Value = 0;
+            MessageBox.Show("Thanh Toán thành công\nTổng tiền : " + TongCong.Text + " VNĐ", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
             setData1();
-            MessageBox.Show("Thanh Toán thành công", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            TongCong.Text = "0";
         }
 
         private void SDT_TextChanged(object sender, EventArgs e)
