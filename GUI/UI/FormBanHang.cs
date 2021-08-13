@@ -261,7 +261,7 @@ namespace PBL3.UI
                     MaSach = a.MaSach,
                     GiaNhap = BLL_Sach.Instance.Bll_GetGiaNhapByMaSach(a.MaSach),
                     GiaBan = BLL_Sach.Instance.Bll_GetGiaBanByMaSach(a.MaSach),
-                    SoLuongBan = a.SoLuong,
+                       SoLuongBan = a.SoLuong,
                     DoanhThu = a.SoLuong * (BLL_Sach.Instance.Bll_GetGiaBanByMaSach(a.MaSach) - BLL_Sach.Instance.Bll_GetGiaNhapByMaSach(a.MaSach)),
                     ThoiGian = DateTime.Now.Date,
                 };
