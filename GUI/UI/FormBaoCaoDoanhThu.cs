@@ -21,7 +21,7 @@ namespace PBL3.UI
         public FormBaoCaoDoanhThu()
         {
             InitializeComponent();
-            setData();
+            //setData();
             setcbbNam();
             setcbbSort();
             setNumbericDayUpdown();

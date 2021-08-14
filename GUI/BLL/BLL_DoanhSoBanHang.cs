@@ -49,15 +49,19 @@ namespace PBL3.BLL
             };
             return ds;
         }
-        public List<DoanhSoBanHang> BLL_GetAllDoanhSoBanHang()
+        public List<DOANH_SO_BAN_HANG> BLL_GetAllDoanhSoBanHang()
         {
-            List<DoanhSoBanHang> list = new List<DoanhSoBanHang>();
-            foreach(DOANH_SO_BAN_HANG i in db.DOANH_SO_BAN_HANG.ToList())
-            {
-                list.Add(ConvertToDSBH(i));
-            }
-            return list;
+            return db.DOANH_SO_BAN_HANG.ToList();
         }
+        //public List<DoanhSoBanHang> BLL_GetAllDoanhSoBanHang()
+        //{
+        //    List<DoanhSoBanHang> list = new List<DoanhSoBanHang>();
+        //    foreach(DOANH_SO_BAN_HANG i in db.DOANH_SO_BAN_HANG.ToList())
+        //    {
+        //        list.Add(ConvertToDSBH(i));
+        //    }
+        //    return list;
+        //}
         public List<DoanhSoBanHang> Bll_GetDoanhSoBanHangFolowNam(int nam)
         {
             List<DoanhSoBanHang> list = new List<DoanhSoBanHang>();
