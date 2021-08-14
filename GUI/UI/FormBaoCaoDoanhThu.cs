@@ -21,7 +21,7 @@ namespace PBL3.UI
         public FormBaoCaoDoanhThu()
         {
             InitializeComponent();
-            setData();
+            //setData();
             setcbbNam();
             setcbbSort();
             setNumbericDayUpdown();
@@ -36,6 +36,7 @@ namespace PBL3.UI
             dataGridView1.Columns["GiaNhap"].HeaderText = "Giá nhập";
             dataGridView1.Columns["SoLuong"].HeaderText = "Số lượng";
             dataGridView1.Columns["DoanhThu"].HeaderText = "Doanh Thu";
+            dataGridView1.Columns["ThoiGian"].DefaultCellStyle.Format = "dd/MM/yyyy";
             dataGridView1.Columns["ThoiGian"].HeaderText = "Thời Gian";
         }
 

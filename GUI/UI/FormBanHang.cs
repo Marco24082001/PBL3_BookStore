@@ -236,15 +236,16 @@ namespace PBL3.UI
                 kh.HoTen = txtHoTen.Text;
                 BLL_KhachHang.Instance.Bll_AddKhachHang(kh);
             }
+            //Them HoaDonBan
             HoaDonBan hdb = new HoaDonBan()
             {
                 MaDonBan = Convert.ToInt32(txtMaDonBan.Text),
                 SDT_KH = txtSDT.Text,
                 MaNhanVien = maNV,
                 NgayBan = DateTime.Now,
-            };
-            //Them HoaDonBan
+            };            
             BLL_HoaDonBan.Instance.Bll_AddHoaDonBan(hdb);
+            //Them ChiTietHoaDonBan va update SL sách
             foreach (ChiTietHoaDonBan a in list)
             {
                 BLL_ChiTietHoaDonBan.Instance.Bll_AddChiTietHoaDonBan(a);
@@ -253,7 +254,7 @@ namespace PBL3.UI
                 int soLuongNow = BLL_Sach.Instance.Bll_GetSLByMaSach(maSach);
                 BLL_Sach.Instance.Bll_EditSLByMaSach(maSach, soLuongNow - soLuongban);
             }
-            //Them ChietHoaDonBan
+            //Them BaoCaoDoanhThu
             foreach (ChiTietHoaDonBan a in list)
             {
                 DTO.BaoCaoDoanhThu bcdt = new DTO.BaoCaoDoanhThu()
@@ -263,7 +264,7 @@ namespace PBL3.UI
                     GiaBan = BLL_Sach.Instance.Bll_GetGiaBanByMaSach(a.MaSach),
                        SoLuongBan = a.SoLuong,
                     DoanhThu = a.SoLuong * (BLL_Sach.Instance.Bll_GetGiaBanByMaSach(a.MaSach) - BLL_Sach.Instance.Bll_GetGiaNhapByMaSach(a.MaSach)),
-                    ThoiGian = DateTime.Now.Date,
+                    ThoiGian = DateTime.Now,
                 };
                 BLL_BaoCaoDoanhThu.Instance.Bll_AddBaoCaoDoanhThu(bcdt);
             }
@@ -272,7 +273,7 @@ namespace PBL3.UI
             {
                 MaNhanVien = maNV,
                 DoanhSoBan = Convert.ToInt32(TongCong.Text),
-                ThoiGian = DateTime.Now.Date,
+                ThoiGian = DateTime.Now
             };
             BLL_DoanhSoBanHang.Instance.Bll_AddDoanhSoBanHang(dsbh);
             //setup lại giao diện

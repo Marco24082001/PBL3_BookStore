@@ -21,18 +21,20 @@ namespace PBL3.UI
         public FormBaoCaoDoanhSo()
         {
             InitializeComponent();
-            setData();
+            //setData();
             setcbbNam();
             setcbbSort();
         }   
 
         public void setData()
         {
-            dataGridView1.DataSource = BLL_DoanhSoBanHang.Instance.BLL_GetAllDoanhSoBanHang();
+            dataGridView1.DataSource = BLL_DoanhSoBanHang.Instance.BLL_GetAllDoanhSoBanHang();            
             dataGridView1.Columns["STT"].HeaderText = "Số TT";
             dataGridView1.Columns["MaNhanVien"].HeaderText = "Mã Nhân Viên";
             dataGridView1.Columns["DoanhSoBan"].HeaderText = "Doanh Số Bán";
+            dataGridView1.Columns["ThoiGian"].DefaultCellStyle.Format = "dd/MM/yyyy";
             dataGridView1.Columns["ThoiGian"].HeaderText = "Thời Gian";
+            
         }
 
         private void NextPage_Click(object sender, EventArgs e)

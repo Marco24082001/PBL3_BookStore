@@ -106,6 +106,7 @@ namespace PBL3.UI
             FormThemSach f = new FormThemSach();
             f.Show();
             f.reset += new FormThemSach.MyDel(setData1);
+            f.reset += new FormThemSach.MyDel(setcbbMaSach);
         }
         private void ThemChiTiet_Click(object sender, EventArgs e)
         {

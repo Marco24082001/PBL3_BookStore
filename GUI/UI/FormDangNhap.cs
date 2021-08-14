@@ -45,14 +45,14 @@ namespace PBL3.UI
             {
                 if (BLL_NhanVien.Instance.Bll_CheckAdmin(TaiKhoan))
                 {
-                    this.Close();
+                    this.Dispose();
                     Luong = new Thread(openFormQuanLy);
                     Luong.SetApartmentState(ApartmentState.STA);
                     Luong.Start();
                 }
                 else
                 {
-                    this.Close();
+                    this.Dispose();
                     Luong = new Thread(openFormNhanVien);
                     Luong.SetApartmentState(ApartmentState.STA);
                     Luong.Start();

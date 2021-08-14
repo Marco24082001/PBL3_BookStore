@@ -14,6 +14,6 @@ namespace PBL3.DTO
         public int GiaBan { get; set; }
         public int SoLuong { get; set; }
         public int DoanhThu { get; set; }
-        public System.DateTime ThoiGian { get; set; }
+        public DateTime ThoiGian { get; set; }
     }
 }

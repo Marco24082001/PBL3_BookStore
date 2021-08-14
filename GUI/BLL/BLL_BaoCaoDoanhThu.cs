@@ -98,7 +98,7 @@ namespace PBL3.BLL
                     GiaBan = i.GiaBan,
                     SoLuong = i.SoLuongBan,
                     DoanhThu = (int)i.DoanhThu,
-                    ThoiGian = i.ThoiGian
+                    ThoiGian = (DateTime)i.ThoiGian
                 };
                 listview.Add(obj);
             }
