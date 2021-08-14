@@ -21,7 +21,7 @@ namespace PBL3.UI
         public FormBaoCaoDoanhSo()
         {
             InitializeComponent();
-            //setData();
+            setData();
             setcbbNam();
             setcbbSort();
         }   
