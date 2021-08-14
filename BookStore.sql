@@ -119,10 +119,10 @@ CREATE TABLE DOANH_SO_BAN_HANG
 	ThoiGian Date not null
 )
 
-insert NHAN_VIEN values ('NV01', N'Phan Văn Bình', 'Kinh', 'Nam', '2012551678', '077121244', 'QuangNam', '12-12-2000', 1, 1)
-insert NHAN_VIEN values ('NV02', N'Lê Văn Huy', 'Kinh', 'Nam', '2012551678', '077992244', 'QuangNam', '12-12-2000', 1, 0)
-insert NHAN_VIEN values ('NV03', N'Nguyễn Thanh Cơ', 'Kinh', 'Nam', '2012551678', '077122244', 'QuangNam', '12-12-2000', 1, 0)
-insert NHAN_VIEN values ('NV04', N'Võ Thành Vĩ', 'Kinh', 'Nam', '2012551678', '077125544', 'QuangNam', '12-12-2000', 1, 0)
+insert NHAN_VIEN values ('NV01', N'Phan Văn Bình', 'Kinh', 'Nam', '201255167', '077121244', 'QuangNam', '12-12-2000', 1, 1)
+insert NHAN_VIEN values ('NV02', N'Lê Văn Huy', 'Kinh', 'Nam', '201255162', '077992244', 'QuangNam', '12-12-2000', 1, 0)
+insert NHAN_VIEN values ('NV03', N'Nguyễn Thanh Cơ', 'Kinh', 'Nam', '201255112', '077122244', 'QuangNam', '12-12-2000', 1, 0)
+insert NHAN_VIEN values ('NV04', N'Võ Thành Vĩ', 'Kinh', 'Nam', '201255161', '077125544', 'QuangNam', '12-12-2000', 1, 0)
 
 
 insert TK_NHANVIEN values ('NV01', 'MK01')
