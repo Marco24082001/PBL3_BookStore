@@ -21,7 +21,7 @@ namespace PBL3.UI
         public FormBaoCaoDoanhSo()
         {
             InitializeComponent();
-            //setData();
+            setData();
             setcbbNam();
             setcbbSort();
         }   
@@ -153,13 +153,16 @@ namespace PBL3.UI
                 }
                 else
                 {
+                    bool existence = false;
                     for (int j = 0; j < lMaNV.Count; j++)
                     {
-                        if (i.Cells["MaNhanVien"].Value.ToString() != lMaNV[j])
+                        if (i.Cells["MaNhanVien"].Value.ToString() == lMaNV[j])
                         {
-                            lMaNV.Add(i.Cells["MaNhanVien"].Value.ToString());
+                            existence = true;
+                            break;
                         }
                     }
+                    if (!existence) lMaNV.Add(i.Cells["MaNhanVien"].Value.ToString());
                 }
             }
 
