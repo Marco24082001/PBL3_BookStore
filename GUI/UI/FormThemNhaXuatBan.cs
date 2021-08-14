@@ -67,7 +67,7 @@ namespace PBL3.UI
                 TenNXB = txtTenNXB.Text,
             };
             BLL_NhaXuatBan.Instance.Bll_AddNXB(nxb);
-            this.Close();       
+            this.Dispose();       
             d();
         }
 

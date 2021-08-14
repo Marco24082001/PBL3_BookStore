@@ -217,6 +217,7 @@ namespace PBL3.UI
             tk.TKNV = txtMaNV.Text;
             tk.Pass = txtMatKhau.Text;
             BLL_TKNhanVien.Instance.Bll_AddTKNhanVien(tk);
+            this.Dispose();
         }
 
         private void Edit(string maNV)
@@ -243,6 +244,7 @@ namespace PBL3.UI
             tk.TKNV = txtMaNV.Text;
             tk.Pass = txtMatKhau.Text;
             BLL_TKNhanVien.Instance.BLL_EditMatKhau(tk);
+            this.Dispose();
         }
 
         private void XacNhan_Click(object sender, EventArgs e)
@@ -252,7 +254,6 @@ namespace PBL3.UI
                 Edit(maNV);
             }
             else Add();
-            this.Close();
             d();
         }
 
