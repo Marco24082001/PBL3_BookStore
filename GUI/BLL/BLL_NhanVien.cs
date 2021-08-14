@@ -178,5 +178,9 @@ namespace PBL3.BLL
         {
             return db.NHAN_VIEN.Where(p => p.TrangThai.Equals(true)).Count();
         }
+        public bool Bll_CheckTrangThai(string Ma)
+        {
+            return db.NHAN_VIEN.Find(Ma).TrangThai;
+        }
     }
 }

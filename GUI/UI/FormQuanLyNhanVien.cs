@@ -132,9 +132,16 @@ namespace PBL3.UI
                 MessageBox.Show("Chỉ được phép Edit một hàng", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+        
             string maNV = dataGridView1.CurrentRow.Cells["MaNhanVien"].Value.ToString();
             if (BLL_NhanVien.Instance.Bll_CheckAdmin(maNV))
             {
+                MessageBox.Show("Nhân viên này hiện đang là Admin", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if(!BLL_NhanVien.Instance.Bll_CheckTrangThai(maNV))
+            {
+                MessageBox.Show("Nhân viên hiện không còn hoạt động", boxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             DialogResult result;

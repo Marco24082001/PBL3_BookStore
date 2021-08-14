@@ -45,7 +45,7 @@ namespace PBL3.BLL
                 STT = a.STT,
                 MaNhanVien = a.MaNhanVien,
                 DoanhSoBan = a.DoanhSoBan,
-                ThoiGian = a.ThoiGian
+                ThoiGian = a.ThoiGian.Date
             };
             return ds;
         }

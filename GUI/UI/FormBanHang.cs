@@ -264,7 +264,7 @@ namespace PBL3.UI
                     GiaBan = BLL_Sach.Instance.Bll_GetGiaBanByMaSach(a.MaSach),
                        SoLuongBan = a.SoLuong,
                     DoanhThu = a.SoLuong * (BLL_Sach.Instance.Bll_GetGiaBanByMaSach(a.MaSach) - BLL_Sach.Instance.Bll_GetGiaNhapByMaSach(a.MaSach)),
-                    ThoiGian = DateTime.Now,
+                    ThoiGian = DateTime.Now.Date,
                 };
                 BLL_BaoCaoDoanhThu.Instance.Bll_AddBaoCaoDoanhThu(bcdt);
             }
@@ -273,7 +273,7 @@ namespace PBL3.UI
             {
                 MaNhanVien = maNV,
                 DoanhSoBan = Convert.ToInt32(TongCong.Text),
-                ThoiGian = DateTime.Now
+                ThoiGian = DateTime.Now.Date
             };
             BLL_DoanhSoBanHang.Instance.Bll_AddDoanhSoBanHang(dsbh);
             //setup lại giao diện
